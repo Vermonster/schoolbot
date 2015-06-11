@@ -1,16 +1,18 @@
 # Omnibus
 
+An app that parents can use to track the location of their student's school bus.
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:
 
-    % ./bin/setup
+    % bin/setup
 
 It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
 your machine with [this script].
 
-[this script]: https://github.com/thoughtbot/laptop
+[this script]: https://github.com/Vermonster/laptop
 
 After setting up, you can run the application using [foreman]:
 
@@ -22,19 +24,26 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
 
-## Guidelines
+## Running Tests
 
-Use the following guides for getting things done, programming well, and
-programming in style.
+To run the application's [RSpec] test suite, use the default Rake task:
 
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+    % rake
+
+This will also run [Rubocop] and [SCSS-Lint] to check Ruby and SCSS style. To
+generate a code coverage report in the `coverage/` directory, set a `COVERAGE`
+environment variable:
+
+    % COVERAGE=true rake
+
+[RSpec]: http://rspec.info/
+[Rubocop]: https://github.com/bbatsov/rubocop
+[SCSS-Lint]: https://github.com/brigade/scss-lint
 
 ## Deploying
 
-If you have previously run the `./bin/setup` script,
-you can deploy to staging and production with:
+If you have previously run the `bin/setup` script, you can deploy to staging and
+production with:
 
-    $ ./bin/deploy staging
-    $ ./bin/deploy production
+    $ bin/deploy staging
+    $ bin/deploy production
