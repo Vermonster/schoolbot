@@ -5,7 +5,14 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 task(:default).clear
-task default: [:spec]
+
+if Rails.env.test? || Rails.env.development?
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new(:rubocop)
+  task default: :rubocop
+end
+
+task default: :spec
 
 if defined? RSpec
   task(:spec).clear
