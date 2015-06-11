@@ -10,6 +10,10 @@ if Rails.env.test? || Rails.env.development?
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop)
   task default: :rubocop
+
+  require 'scss_lint/rake_task'
+  SCSSLint::RakeTask.new(:scss_lint)
+  task default: :scss_lint
 end
 
 task default: :spec

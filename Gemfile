@@ -40,6 +40,7 @@ group :development, :test do
   gem "pry-rails"
   gem "rspec-rails", "~> 3.1.0"
   gem "rubocop", require: false
+  gem "scss-lint", require: false
 end
 
 group :test do

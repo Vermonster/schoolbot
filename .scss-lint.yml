@@ -1,0 +1,9 @@
+exclude: 'vendor/assets/stylesheets/**'
+
+linters:
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+
+  QualifyingElement:
+    allow_element_with_attribute: true
