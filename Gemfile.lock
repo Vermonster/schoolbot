@@ -115,7 +115,6 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
     loofah (2.0.2)
@@ -146,6 +145,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     rack (1.6.1)
     rack-canonical-host (0.1.0)
       addressable
@@ -178,7 +179,6 @@ GEM
       activesupport (= 4.2.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.13.0)
     rake (10.4.2)
     recipient_interceptor (0.1.2)
       mail
@@ -244,10 +244,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.9.0)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     web-console (2.1.2)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -290,6 +286,7 @@ DEPENDENCIES
   pg
   poltergeist
   pry-rails
+  puma
   rack-canonical-host
   rack-timeout
   rails (= 4.2.1)
@@ -306,7 +303,6 @@ DEPENDENCIES
   timecop
   title
   uglifier
-  unicorn
   web-console
   webmock
 
