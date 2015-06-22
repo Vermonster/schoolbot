@@ -1,8 +1,7 @@
 @charset 'utf-8';
 
-@import 'normalize-rails';
+@import 'bower_components/normalize.css/normalize';
 @import 'bourbon';
 @import 'base/grid-settings';
 @import 'neat';
 @import 'base/base';
-@import 'refills/flashes';

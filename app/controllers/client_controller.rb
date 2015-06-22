@@ -1,5 +1,5 @@
 class ClientController < ApplicationController
   def show
-    render file: Rails.root.join('client', 'dist', 'index.html')
+    render file: Rails.root.join('client', 'dist', 'index.html'), layout: false
   end
 end
