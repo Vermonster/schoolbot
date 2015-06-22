@@ -14,9 +14,20 @@ if Rails.env.test? || Rails.env.development?
   require 'scss_lint/rake_task'
   SCSSLint::RakeTask.new(:scss_lint)
   task default: :scss_lint
-end
 
-task default: :spec
+  task default: :spec
+
+  desc 'Run the Ember app tests'
+  task 'ember:test' do
+    ember = Rails.root.join('client', 'node_modules', '.bin', 'ember')
+    if File.exist? ember
+      sh "cd #{Rails.root.join('client')} && #{ember} test --reporter dot"
+    else
+      fail "Ember binary missing: #{ember}"
+    end
+  end
+  task default: 'ember:test'
+end
 
 if defined? RSpec
   task(:spec).clear
