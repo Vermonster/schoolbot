@@ -1,4 +1,10 @@
-exclude: 'vendor/assets/stylesheets/**'
+exclude:
+  - 'vendor/assets/stylesheets/**'
+  - 'client/bower_components/**/*'
+  - 'client/dist/**/*'
+  - 'client/node_modules/**/*'
+  - 'client/tmp/**/*'
+  - 'client/vendor/**/*'
 
 linters:
   SelectorFormat:

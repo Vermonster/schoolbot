@@ -6,6 +6,7 @@ AllCops:
   Exclude:
   - "vendor/**/*"
   - "db/**/*"
+  - "client/**/*"
   RunRailsCops: true
 
 GuardClause:
