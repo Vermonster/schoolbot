@@ -285,7 +285,6 @@ DEPENDENCIES
   bourbon (~> 4.2.0)
   bundler-audit
   byebug
-  coffee-rails (~> 4.1.0)
   database_cleaner
   delayed_job_active_record
   dotenv-rails
