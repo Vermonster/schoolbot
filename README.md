@@ -26,19 +26,18 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 
 ## Running Tests
 
-To run the application's [RSpec] test suite, use the default Rake task:
+To run all available test suites and linters, use the default Rake task:
 
     % rake
 
-This will also run [Rubocop] and [SCSS-Lint] to check Ruby and SCSS style. To
-generate a code coverage report in the `coverage/` directory, set a `COVERAGE`
-environment variable:
+To run only the Rails or Ember test suites, use the appropriate Rake tasks:
 
-    % COVERAGE=true rake
+    % rake spec
+    % rake ember:test
 
-[RSpec]: http://rspec.info/
-[Rubocop]: https://github.com/bbatsov/rubocop
-[SCSS-Lint]: https://github.com/brigade/scss-lint
+Be aware that using the `rspec` command (e.g. for faster focused testing) will
+not automatically rebuild the Ember app. Use `ember build -w` for this, or just
+keep `bin/serve` running.
 
 ## Deploying
 
