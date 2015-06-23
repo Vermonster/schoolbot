@@ -12,7 +12,7 @@ namespace :ember do
   desc 'Build the Ember app'
   task :build do
     if File.exist? ember
-      sh "cd #{Rails.root.join('client')} && #{ember} build"
+      sh "cd #{Rails.root.join('client')} && #{ember} build", verbose: false
     else
       fail "Ember binary missing: #{ember}"
     end
@@ -21,7 +21,7 @@ namespace :ember do
   desc 'Run the Ember tests'
   task :test do
     if File.exist? ember
-      sh "cd #{Rails.root.join('client')} && #{ember} test --reporter dot"
+      sh "cd #{Rails.root.join('client')} && #{ember} test --reporter dot", verbose: false
     else
       fail "Ember binary missing: #{ember}"
     end
