@@ -6,6 +6,28 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 task(:default).clear
 
+namespace :ember do
+  ember = Rails.root.join('client', 'node_modules', '.bin', 'ember')
+
+  desc 'Build the Ember app'
+  task :build do
+    if File.exist? ember
+      sh "cd #{Rails.root.join('client')} && #{ember} build"
+    else
+      fail "Ember binary missing: #{ember}"
+    end
+  end
+
+  desc 'Run the Ember tests'
+  task :test do
+    if File.exist? ember
+      sh "cd #{Rails.root.join('client')} && #{ember} test --reporter dot"
+    else
+      fail "Ember binary missing: #{ember}"
+    end
+  end
+end
+
 if Rails.env.test? || Rails.env.development?
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop)
@@ -17,15 +39,6 @@ if Rails.env.test? || Rails.env.development?
 
   task default: :spec
 
-  desc 'Run the Ember app tests'
-  task 'ember:test' do
-    ember = Rails.root.join('client', 'node_modules', '.bin', 'ember')
-    if File.exist? ember
-      sh "cd #{Rails.root.join('client')} && #{ember} test --reporter dot"
-    else
-      fail "Ember binary missing: #{ember}"
-    end
-  end
   task default: 'ember:test'
 end
 
@@ -34,6 +47,8 @@ if defined? RSpec
   RSpec::Core::RakeTask.new(:spec) do |t|
     t.verbose = false
   end
+
+  task spec: 'ember:build'
 end
 
 task default: "bundler:audit"
