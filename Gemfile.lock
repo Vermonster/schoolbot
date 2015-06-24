@@ -125,6 +125,7 @@ GEM
     rack-canonical-host (0.1.0)
       addressable
       rack (~> 1.0)
+    rack-ssl-enforcer (0.2.8)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.2.4)
@@ -239,6 +240,7 @@ DEPENDENCIES
   pry-rails
   puma
   rack-canonical-host
+  rack-ssl-enforcer
   rack-timeout
   rails (= 4.2.2)
   rails_stdout_logging

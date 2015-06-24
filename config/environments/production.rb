@@ -28,6 +28,9 @@ Rails.application.configure do
   # Enable deflate / gzip compression of controller-generated responses
   config.middleware.use Rack::Deflater
 
+  # Enforce SSL connections and use HSTS
+  config.middleware.use Rack::SslEnforcer, hsts: true
+
   # Ensure requests are only served from one, canonical host name
   config.middleware.use Rack::CanonicalHost, ENV.fetch("HOST")
 
