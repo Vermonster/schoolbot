@@ -11,6 +11,7 @@ gem "puma"
 gem "rack-canonical-host"
 gem "rails", "4.2.2"
 gem "recipient_interceptor"
+gem "redis"
 
 group :development do
   gem "spring"

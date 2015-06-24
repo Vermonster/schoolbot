@@ -157,6 +157,7 @@ GEM
     rake (10.4.2)
     recipient_interceptor (0.1.2)
       mail
+    redis (3.2.1)
     rspec-core (3.3.1)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.0)
@@ -242,6 +243,7 @@ DEPENDENCIES
   rails (= 4.2.2)
   rails_stdout_logging
   recipient_interceptor
+  redis
   rspec-rails
   rubocop
   scss-lint

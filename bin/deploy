@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Run this script to deploy the app to Heroku.
+# Run this script to deploy the Rails app to Heroku and the Ember app to S3.
 
 set -e
 
@@ -10,3 +10,7 @@ target="${1:-staging}"
 git push "$target" "$branch:master"
 heroku run rake db:migrate --remote "$target"
 heroku restart --remote "$target"
+
+cd client
+ember deploy --environment "$target"
+ember deploy:activate --environment "$target" --revision client:$(git rev-parse --short=7 HEAD)

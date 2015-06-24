@@ -21,6 +21,9 @@ cd ..
 if [ ! -f .env ]; then
   cp .sample.env .env
 fi
+if [ ! -f client/.env ]; then
+  cp client/.sample.env client/.env
+fi
 
 # Set up database and add any development seed data
 bundle exec rake db:setup dev:prime
