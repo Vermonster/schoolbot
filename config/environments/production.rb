@@ -31,9 +31,6 @@ Rails.application.configure do
   # Enforce SSL connections and use HSTS
   config.middleware.use Rack::SslEnforcer, hsts: true
 
-  # Ensure requests are only served from one, canonical host name
-  config.middleware.use Rack::CanonicalHost, ENV.fetch("HOST")
-
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -88,7 +85,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
 end
 Rack::Timeout.timeout = (ENV.fetch("RACK_TIMEOUT", 20)).to_i
