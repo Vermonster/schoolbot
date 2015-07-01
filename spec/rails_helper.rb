@@ -8,6 +8,12 @@ require "capybara/poltergeist"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 
+module Requests
+  # Extend this module in spec/support/requests/*.rb
+  include JSONRequests
+  include ResponseJSON
+end
+
 module Features
   # Extend this module in spec/support/features/*.rb
   include Formulaic::Dsl

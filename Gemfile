@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby File.read(".ruby-version").strip
 
+gem "active_model_serializers"
 gem "airbrake"
 gem "delayed_job_active_record"
 gem "email_validator"
@@ -12,6 +13,7 @@ gem "rack-ssl-enforcer"
 gem "rails", "4.2.2"
 gem "recipient_interceptor"
 gem "redis"
+gem "responders"
 
 group :development do
   gem "spring"

@@ -1,4 +1,4 @@
-class ClientController < ApplicationController
+class ClientController < ActionController::Base
   def show
     render text: client_html
   end
