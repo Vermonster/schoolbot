@@ -37,9 +37,9 @@ if Rails.env.test? || Rails.env.development?
   SCSSLint::RakeTask.new(:scss_lint)
   task default: :scss_lint
 
-  task default: :spec
-
   task default: 'ember:test'
+
+  task default: :spec
 end
 
 if defined? RSpec
