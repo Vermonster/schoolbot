@@ -11,6 +11,10 @@ class District < ActiveRecord::Base
     :zonar_password,
     presence: true
 
+  validates :slug,
+    length: { minimum: 1, maximum: 63 },
+    format: { with: /\A[0-9a-z-]*\z/ }
+
   private
 
   def assign_api_secret
