@@ -7,6 +7,8 @@ if Rails.env.development? || Rails.env.test?
       include FactoryGirl::Syntax::Methods
 
       boston = create(:district, name: 'Boston Public Schools', slug: 'boston')
+      brockton = create(:district, name: 'Brockton Schools', slug: 'brockton')
+
       create(:school,
         district: boston,
         name: 'Samuel Adams Elementary',
@@ -16,6 +18,17 @@ if Rails.env.development? || Rails.env.test?
         district: boston,
         name: 'Jeremiah E. Burke High',
         address: '60 Washington St, Dorchester, MA'
+      )
+      create(:school,
+        district: brockton,
+        name: 'Brockton High School',
+        address: '470 Forest Avenue, Brockton, MA'
+      )
+
+      create(:user,
+        district: boston,
+        email: 'test@test.com',
+        password: 'testtest'
       )
     end
   end

@@ -38,6 +38,8 @@
     "ember-cli-neat": "0.0.4",
     "ember-cli-qunit": "0.3.15",
     "ember-cli-sass": "4.0.1",
+    "ember-cli-simple-auth": "0.8.0",
+    "ember-cli-simple-auth-devise": "0.8.0",
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.13.5",
     "ember-deploy-redis": "0.0.7",

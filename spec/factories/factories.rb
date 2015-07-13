@@ -14,4 +14,10 @@ FactoryGirl.define do
     sequence(:name) { |n| "Test School #{n}" }
     sequence(:address) { |n| "#{n} School St, Anytown, USA" }
   end
+
+  factory :user do
+    district
+    sequence(:email) { |n| "user#{n}@example.org" }
+    password "TestPassword"
+  end
 end

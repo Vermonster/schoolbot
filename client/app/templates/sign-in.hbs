@@ -1,0 +1,14 @@
+<form {{action 'signIn' on='submit'}}>
+  {{#if errorMessage}}
+    <div class="alert alert-danger">
+      <p>
+        Login failed: <code>{{errorMessage}}</code>
+      </p>
+    </div>
+  {{/if}}
+
+  <label for="email">Please login</label>
+  {{input placeholder='Your email' value=identification}}
+  {{input placeholder='Password' type='password' value=password}}
+  <button type="submit">Submit</button>
+</form>

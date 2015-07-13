@@ -14,6 +14,7 @@
     "qunit": "1.18.0",
     "bourbon": "4.2.3",
     "neat": "~1.7.2",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "ember-simple-auth": "0.8.0"
   }
 }

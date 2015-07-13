@@ -7,6 +7,13 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     i18n: { defaultLocale: 'en' },
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:devise',
+      authenticationRoute: 'sign-in'
+    },
+    'simple-auth-devise': {
+      serverTokenEndpoint: '/api/users/sign_in'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
