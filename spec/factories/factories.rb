@@ -8,4 +8,10 @@ FactoryGirl.define do
     zonar_username "TestUsername"
     zonar_password "TestPassword"
   end
+
+  factory :school do
+    district
+    sequence(:name) { |n| "Test School #{n}" }
+    sequence(:address) { |n| "#{n} School St, Anytown, USA" }
+  end
 end

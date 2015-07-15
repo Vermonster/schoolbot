@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629203046) do
+ActiveRecord::Schema.define(version: 20150715154610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,4 +48,15 @@ ActiveRecord::Schema.define(version: 20150629203046) do
   add_index "districts", ["api_secret"], name: "index_districts_on_api_secret", unique: true, using: :btree
   add_index "districts", ["slug"], name: "index_districts_on_slug", unique: true, using: :btree
 
+  create_table "schools", force: :cascade do |t|
+    t.integer "district_id", null: false
+    t.text    "name",        null: false
+    t.text    "address",     null: false
+    t.float   "latitude",    null: false
+    t.float   "longitude",   null: false
+  end
+
+  add_index "schools", ["district_id"], name: "index_schools_on_district_id", using: :btree
+
+  add_foreign_key "schools", "districts", on_delete: :restrict
 end

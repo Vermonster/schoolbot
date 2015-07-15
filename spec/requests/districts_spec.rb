@@ -13,4 +13,16 @@ describe 'Districts API' do
     expect(district_values).to_not include district.zonar_username
     expect(district_values).to_not include district.zonar_password
   end
+
+  it 'includes school information' do
+    district = create(:district, slug: 'baz')
+    create(:school, district: district, name: 'middle')
+    create(:school, district: district, name: 'elementary')
+
+    get api_current_district_url(subdomain: 'baz')
+
+    expect(response).to be_successful
+    expect(response_json).to have_key :schools
+    expect(response_json[:schools]).to have(2).items
+  end
 end

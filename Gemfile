@@ -6,6 +6,7 @@ gem "active_model_serializers"
 gem "airbrake"
 gem "delayed_job_active_record"
 gem "email_validator"
+gem "geocoder"
 gem "newrelic_rpm"
 gem "pg"
 gem "puma"
@@ -37,6 +38,7 @@ group :test do
   gem "formulaic"
   gem "launchy"
   gem "poltergeist"
+  gem "rspec-collection_matchers"
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
   gem "timecop"

@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+include FactoryGirl::Syntax::Methods
+
+boston = create(:district, name: 'Boston Public Schools', slug: 'boston')
+create(:school,
+  district: boston,
+  name: 'Samuel Adams Elementary',
+  address: '165 East Webster St, East Boston, MA'
+)
+create(:school,
+  district: boston,
+  name: 'Jeremiah E. Burke High',
+  address: '60 Washington St, Dorchester, MA'
+)

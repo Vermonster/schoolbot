@@ -1,4 +1,6 @@
 class District < ActiveRecord::Base
+  has_many :schools
+
   after_initialize :assign_api_secret, if: :new_record?
 
   validates :name,
