@@ -24,5 +24,9 @@ Metrics/LineLength:
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+# https://github.com/bbatsov/rubocop/issues/1758
+Style/ClosingParenthesisIndentation:
+  Enabled: false
+
 Lint/EndAlignment:
   AlignWith: variable
