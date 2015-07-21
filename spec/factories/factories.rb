@@ -9,6 +9,14 @@ FactoryGirl.define do
     student
   end
 
+  factory :bus_location do
+    bus
+    sequence(:latitude) { |n| 42 + (n * 0.001) }
+    sequence(:longitude) { |n| -71 + (n * 0.001) }
+    heading { %w(North South East West).sample }
+    recorded_at { Time.zone.now }
+  end
+
   factory :district do
     sequence(:name) { |n| "Test District #{n}" }
     sequence(:slug) { |n| "district#{n}" }

@@ -16,6 +16,7 @@ gem "rails", "4.2.3"
 gem "recipient_interceptor"
 gem "redis"
 gem "responders"
+gem "rest-client"
 
 group :development do
   gem "spring"

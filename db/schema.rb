@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729174143) do
+ActiveRecord::Schema.define(version: 20150730015275) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,24 @@ ActiveRecord::Schema.define(version: 20150729174143) do
 
   add_index "bus_assignments", ["bus_id"], name: "index_bus_assignments_on_bus_id", using: :btree
   add_index "bus_assignments", ["student_id"], name: "index_bus_assignments_on_student_id", using: :btree
+
+  create_table "bus_locations", force: :cascade do |t|
+    t.integer  "bus_id",       null: false
+    t.float    "latitude",     null: false
+    t.float    "longitude",    null: false
+    t.string   "heading",      null: false
+    t.datetime "recorded_at",  null: false
+    t.float    "distance"
+    t.float    "speed"
+    t.float    "acceleration"
+    t.string   "reason"
+    t.string   "zone"
+    t.string   "address"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "bus_locations", ["bus_id"], name: "index_bus_locations_on_bus_id", using: :btree
 
   create_table "buses", force: :cascade do |t|
     t.integer  "district_id", null: false
@@ -128,6 +146,7 @@ ActiveRecord::Schema.define(version: 20150729174143) do
 
   add_foreign_key "bus_assignments", "buses", on_delete: :restrict
   add_foreign_key "bus_assignments", "students", on_delete: :cascade
+  add_foreign_key "bus_locations", "buses", on_delete: :restrict
   add_foreign_key "buses", "districts", on_delete: :restrict
   add_foreign_key "schools", "districts", on_delete: :restrict
   add_foreign_key "student_labels", "schools", on_delete: :restrict
