@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.findRecord('district', 'current').catch(() => {
+  districts: Ember.inject.service(),
+
+  beforeModel: function() {
+    if (!this.get('districts.current')) {
       this.transitionTo('about');
-    });
+    }
   }
 });
