@@ -3,7 +3,7 @@
 {{/if}}
 
 {{#if session.isAuthenticated}}
-  <a href="#" {{action 'invalidateSession'}}>Sign Out</a>
+  <a href="#" {{action 'signOut'}}>Sign Out</a>
 {{else}}
   {{#link-to 'sign-in'}}Sign In{{/link-to}}
 {{/if}}
