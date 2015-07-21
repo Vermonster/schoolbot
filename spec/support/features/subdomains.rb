@@ -8,6 +8,16 @@ module Subdomains
   def use_root_domain
     use_subdomain nil
   end
+
+  def sign_in_to_district
+    use_subdomain('boston')
+
+    visit root_path
+    click_on 'Sign In'
+    fill_in 'Your email', with: 'bob@example.com'
+    fill_in 'Password', with: 'secretpass'
+    click_on 'Submit'
+  end
 end
 
 RSpec.configure do |config|
