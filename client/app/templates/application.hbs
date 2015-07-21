@@ -1,4 +1,6 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#if districts.current}}
+  <h2>Welcome to {{districts.current.name}}</h2>
+{{/if}}
 
 {{#if session.isAuthenticated}}
   <a href="#" {{action 'invalidateSession'}}>Sign Out</a>
