@@ -23,4 +23,18 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('translations').setup()
     ]);
   }
+
+  actions: {
+    openModal: function(modal) {
+      this.controllerFor(modal).set('hasModal', true);
+    };
+
+    closeModal: function() {
+      return this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
+      });
+    }
+  }
+
 });
