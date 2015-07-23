@@ -19,7 +19,7 @@ After setting up, this script will launch the application using [foreman]:
     % bin/serve
 
 If you don't have `foreman`, see [Foreman's install instructions][foreman]. It
-is [purposefully excluded from the project's `Gemfile`][exclude].
+is [purposefully excluded from the project's `Gemfile`][exclude]. Be sure to use version 0.78.0 or higher.
 
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
