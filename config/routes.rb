@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'api/users', module: 'api'
   namespace :api do
     get 'districts/current', to: 'districts#show', as: :current_district
+    resource :translations, only: :show
   end
 
   root to: 'client#show'
