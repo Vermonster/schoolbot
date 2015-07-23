@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
+  localStorage: Ember.inject.service(),
 
   // FIXME: https://github.com/jamesarosen/ember-i18n/issues/281
   availableLocales: ['en', 'es'],
@@ -23,6 +24,7 @@ export default Ember.Component.extend({
 
     setLocale: function(locale) {
       this.get('i18n').set('locale', locale);
+      this.get('localStorage').set('locale', locale);
       this.send('toggle');
     }
   }
