@@ -1,4 +1,5 @@
 exclude:
+  - '.bundle/**/*'
   - 'client/bower_components/**/*'
   - 'client/dist/**/*'
   - 'client/node_modules/**/*'

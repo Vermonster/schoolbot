@@ -13,7 +13,7 @@ bundle check || bundle install
 # Set up NPM and Bower dependencies for the Ember app
 cd client
 npm install
-bower --version &> /dev/null || npm install -g bower
+bower --version || npm install -g bower
 bower install
 cd ..
 
