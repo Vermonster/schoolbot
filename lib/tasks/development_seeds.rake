@@ -12,17 +12,23 @@ if Rails.env.development? || Rails.env.test?
       create(:school,
         district: boston,
         name: 'Samuel Adams Elementary',
-        address: '165 East Webster St, East Boston, MA'
+        address: '165 East Webster St, East Boston, MA',
+        latitude: 42.365727789474,
+        longitude: -71.034763052632
       )
       create(:school,
         district: boston,
         name: 'Jeremiah E. Burke High',
-        address: '60 Washington St, Dorchester, MA'
+        address: '60 Washington St, Dorchester, MA',
+        latitude: 42.246033,
+        longitude: -71.1199965
       )
       create(:school,
         district: brockton,
         name: 'Brockton High School',
-        address: '470 Forest Avenue, Brockton, MA'
+        address: '470 Forest Avenue, Brockton, MA',
+        latitude: 42.070156,
+        longitude: -71.039912
       )
 
       create(:user,
