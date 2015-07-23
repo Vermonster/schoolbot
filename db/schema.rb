@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150722173319) do
   create_table "student_labels", force: :cascade do |t|
     t.integer "user_id",    null: false
     t.integer "student_id", null: false
-    t.string  "nickname",         null: false
+    t.string  "nickname",   null: false
   end
 
   create_table "students", force: :cascade do |t|
