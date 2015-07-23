@@ -1,0 +1,14 @@
+en: &common
+  locales:
+    en: English
+    es: Español
+  titles:
+    application: SchoolBot
+
+en:
+  <<: *common
+  example: Example text!
+
+es:
+  <<: *common
+  example: ¡Texto de ejemplo!

@@ -2,6 +2,8 @@
   <h2>Welcome to {{districts.current.name}}</h2>
 {{/if}}
 
+{{locale-picker}}
+
 {{#if session.isAuthenticated}}
   <a href="#" {{action 'signOut'}}>Sign Out</a>
 {{else}}

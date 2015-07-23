@@ -1,0 +1,7 @@
+Language: <a href="#" {{action 'toggle'}}>{{currentLabel}}</a>
+
+{{#if isOpen}}
+  {{#each locales as |locale|}}
+    <a href="#" {{action 'setLocale' locale.id}}>{{locale.label}}</a>
+  {{/each}}
+{{/if}}
