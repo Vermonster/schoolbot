@@ -3,6 +3,10 @@
 require('dotenv').load();
 
 module.exports = {
+  development: {
+    buildEnv: 'development'
+  },
+
   staging: {
     buildEnv: 'staging',
     store: process.env['REDIS_URL_STAGING'],
