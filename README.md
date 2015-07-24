@@ -19,12 +19,15 @@ After setting up, this script will launch the application using [foreman]:
     % bin/serve
 
 If you don't have `foreman`, see [Foreman's install instructions][foreman]. It
-is [purposefully excluded from the project's `Gemfile`][exclude]. Be sure to use version 0.78.0 or higher.
+is [purposefully excluded from the project's `Gemfile`][exclude]. Be sure to use
+version 0.78.0 or higher.
+
+To access the app in development, use the `lvh.me` domain. This resolves to
+127.0.0.1, but allows arbitrary subdomains to be used. For instance, with the
+development seed data, try <http://boston.lvh.me:5000>.
 
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
-
-For development you can visit http://boston.lvh.me:5000
 
 ## Running Tests
 
