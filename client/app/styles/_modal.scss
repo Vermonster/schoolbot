@@ -1,0 +1,12 @@
+.modal__fade-screen { // overlay
+  @include transition(opacity .25s ease);
+  @include position(fixed, 0);
+  padding-top: .6rem;
+  background-color: rgba(#000, .85);
+  text-align: left;
+  z-index: 99999999999;
+}
+
+.modal {
+  color: $modal-font-color;
+}
