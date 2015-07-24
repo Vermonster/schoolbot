@@ -197,8 +197,8 @@ GEM
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
-    sass (3.4.15)
-    scss-lint (0.38.0)
+    sass (3.4.16)
+    scss_lint (0.40.1)
       rainbow (~> 2.0)
       sass (~> 3.4.1)
     shoulda-matchers (2.8.0)
@@ -267,7 +267,7 @@ DEPENDENCIES
   rspec-collection_matchers
   rspec-rails
   rubocop
-  scss-lint
+  scss_lint
   shoulda-matchers
   simplecov
   spring
@@ -276,4 +276,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.10.3
+   1.10.5
