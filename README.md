@@ -24,6 +24,8 @@ is [purposefully excluded from the project's `Gemfile`][exclude]. Be sure to use
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
 
+For development you can visit http://boston.lvh.me:5000
+
 ## Running Tests
 
 To run all available test suites and linters, use the default Rake task:
