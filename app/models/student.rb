@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
+  belongs_to :district
   has_many :student_labels
-  has_many :users, through: :student_labels
 
-  validates :sha, presence: true
+  validates! :hash, presence: true
 end
