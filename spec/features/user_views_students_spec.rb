@@ -20,11 +20,11 @@ feature 'User views students' do
 
     click_on 'Profile'
 
-    within(:div, text: 'My Students') do
-      within(:div, text: 'First Student') do
+    within('section', text: 'My Students') do
+      within('div', text: 'First Student') do
         expect(page).to have_content 'Middle School'
       end
-      within(:div, text: 'Second Student') do
+      within('div', text: 'Second Student') do
         expect(page).to have_content 'High School'
       end
     end

@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   before_save :ensure_authentication_token
 
   def self.find_for_authentication(conditions)
-    district = District.find_by(slug: conditions.delete(:subdomain))
+    district = District.find_by!(slug: conditions.delete(:subdomain))
     find_first_by_auth_conditions(conditions, district_id: district.id)
   end
 

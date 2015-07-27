@@ -1,6 +1,4 @@
 class StudentLabelSerializer < ActiveModel::Serializer
-  attributes :id,
-    :user_id,
-    :student_id,
-    :nickname,
+  has_one :school
+  attributes :id, :nickname
 end

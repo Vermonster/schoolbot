@@ -1,2 +1,18 @@
 <h1>Signed into district!</h1>
-<button {{action 'openModal' 'modal'}}>Open modal</button>
+
+<button {{action 'toggleProfile'}}>Profile</button>
+
+{{#if showingProfile}}
+  <div class='modal'>
+    <h2 class='modal__title'>My Profile</h2>
+    <div class='modal__body'>
+      <section>
+        <h3>My Students</h3>
+        {{#each studentLabels as |studentLabel|}}
+          <div>{{studentLabel.nickname}} — {{studentLabel.school.name}}</div>
+        {{/each}}
+      </section>
+    </div>
+  </div>
+  <button {{action 'toggleProfile'}}>Close</button>
+{{/if}}
