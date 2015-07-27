@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150722173319) do
 
   create_table "students", force: :cascade do |t|
     t.integer "district_id", null: false
-    t.string  "hash",        null: false
+    t.string  "digest",      null: false
   end
 
   add_index "students", ["district_id"], name: "index_students_on_district_id", using: :btree

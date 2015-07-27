@@ -5,16 +5,16 @@ feature 'User views students' do
     district = create(:district)
     user = create(:user, district: district)
     create(:student_label,
-      school: create(:school, name: 'Middle School')
+      school: create(:school, name: 'Middle School'),
       student: create(:student, district: district),
       user: user,
-      nickname: 'First Student',
+      nickname: 'First Student'
     )
     create(:student_label,
-      school: create(:school, name: 'High School')
+      school: create(:school, name: 'High School'),
       student: create(:student, district: district),
       user: user,
-      nickname: 'Second Student',
+      nickname: 'Second Student'
     )
     sign_in_as user
 

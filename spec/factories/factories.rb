@@ -17,7 +17,7 @@ FactoryGirl.define do
 
   factory :student do
     district
-    sequence(:hash) { |n| "student-hash-#{n}" }
+    sequence(:digest) { |n| "student-digest-#{n}" }
   end
 
   factory :student_label do
