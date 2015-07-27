@@ -15,6 +15,18 @@ FactoryGirl.define do
     sequence(:address) { |n| "#{n} School St, Anytown, USA" }
   end
 
+  factory :student do
+    district
+    sequence(:hash) { |n| "student-hash-#{n}" }
+  end
+
+  factory :student_label do
+    school
+    student
+    user
+    sequence(:nickname) { |n| "Nickname #{n}" }
+  end
+
   factory :user do
     district
     sequence(:email) { |n| "user#{n}@example.org" }
