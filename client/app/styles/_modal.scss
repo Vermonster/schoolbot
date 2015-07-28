@@ -3,10 +3,24 @@
   @include position(fixed, 0);
   padding-top: .6rem;
   background-color: rgba(#000, .85);
-  text-align: left;
+  text-align: center;
   z-index: 99999999999;
 }
 
 .modal {
+  max-width: rem(270); //temp
+  margin: auto;
+  padding-bottom: rem(5);
+  border-radius: rem(10);
+  background-color: $base-background-color;
   color: $modal-font-color;
+}
+
+.modal__title {
+  border-top-left-radius: rem(10);
+  border-top-right-radius: rem(10);
+  background-color: $color-secondary;
+  color: $base-font-color-invert;
+  text-align: center;
+  text-transform: uppercase;
 }
