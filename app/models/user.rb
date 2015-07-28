@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :district
+  has_many :student_labels
 
   devise :database_authenticatable,
     :registerable,
