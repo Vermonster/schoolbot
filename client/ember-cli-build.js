@@ -25,6 +25,43 @@ module.exports = function(defaults) {
     hinting: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
   });
 
+  app.import('vendor/fonts/PrintBold-webfont.eot', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/PrintBold-webfont.svg', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/PrintBold-webfont.ttf', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/PrintBold-webfont.woff', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/merriweathersans-regular-webfont.eot', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/merriweathersans-regular-webfont.svg', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/merriweathersans-regular-webfont.ttf', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/merriweathersans-regular-webfont.woff', {
+    destDir: 'assets/fonts/'
+  });
+
+  app.import('vendor/fonts/merriweathersans-regular-webfont.woff2', {
+    destDir: 'assets/fonts/'
+  });
+
+  //
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
