@@ -1,6 +1,11 @@
+// File Paths
+$font-path: 'fonts/';
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+//$base-font-family: $helvetica;
+//$heading-font-family: $base-font-family;
+$base-font-family: 'Merriweather-Sans', $helvetica;
+$heading-font-family: 'Print-Bold', $helvetica;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -21,9 +26,13 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
+$color-primary: #66cce8;
+$color-secondary: #f5c738;
+
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
+$base-font-color-invert: #fff;
 $action-color: $blue;
 
 // Border
@@ -33,3 +42,6 @@ $base-border: 1px solid $base-border-color;
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
+
+// Modals
+$modal-font-color: #fff;

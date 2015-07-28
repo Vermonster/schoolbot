@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716191633) do
+ActiveRecord::Schema.define(version: 20150722173319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,24 @@ ActiveRecord::Schema.define(version: 20150716191633) do
 
   add_index "schools", ["district_id"], name: "index_schools_on_district_id", using: :btree
 
+  create_table "student_labels", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "school_id",  null: false
+    t.integer "user_id",    null: false
+    t.string  "nickname",   null: false
+  end
+
+  add_index "student_labels", ["school_id"], name: "index_student_labels_on_school_id", using: :btree
+  add_index "student_labels", ["student_id"], name: "index_student_labels_on_student_id", using: :btree
+  add_index "student_labels", ["user_id"], name: "index_student_labels_on_user_id", using: :btree
+
+  create_table "students", force: :cascade do |t|
+    t.integer "district_id", null: false
+    t.string  "digest",      null: false
+  end
+
+  add_index "students", ["district_id"], name: "index_students_on_district_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.integer  "district_id",                         null: false
     t.string   "email",                  default: "", null: false
@@ -89,5 +107,9 @@ ActiveRecord::Schema.define(version: 20150716191633) do
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
   add_foreign_key "schools", "districts", on_delete: :restrict
+  add_foreign_key "student_labels", "schools", on_delete: :restrict
+  add_foreign_key "student_labels", "students", on_delete: :cascade
+  add_foreign_key "student_labels", "users", on_delete: :cascade
+  add_foreign_key "students", "districts", on_delete: :restrict
   add_foreign_key "users", "districts", on_delete: :restrict
 end

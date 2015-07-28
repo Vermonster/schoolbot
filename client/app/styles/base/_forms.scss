@@ -1,3 +1,7 @@
+form {
+  color: $base-font-color;
+}
+
 fieldset {
   background-color: lighten($base-border-color, 10%);
   border: $base-border;
@@ -16,6 +20,7 @@ select {
 label {
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
+  text-align: left;
 
   &.required::after {
     content: '*';

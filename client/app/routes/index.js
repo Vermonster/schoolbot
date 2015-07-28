@@ -10,5 +10,14 @@ export default Ember.Route.extend(AuthenticatedRoute, {
     } else {
       this._super(...arguments);
     }
+  },
+
+  afterModel: function() {
+    this.studentLabels = this.store.findAll('student-label');
+    return this.studentLabels;
+  },
+
+  setupController: function(controller) {
+    controller.set('studentLabels', this.studentLabels);
   }
 });
