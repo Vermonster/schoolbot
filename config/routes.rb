@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'client#show'
-  get '*path', to: 'client#show', constraints: { format: :html }
+  get ':anything', to: 'client#show', constraints: { anything: /(?!api).+/ }
 end
