@@ -4,6 +4,11 @@ FactoryGirl.define do
     sequence(:identifier) { |n| "TEST-BUS-#{n}" }
   end
 
+  factory :bus_assignment do
+    bus
+    student
+  end
+
   factory :district do
     sequence(:name) { |n| "Test District #{n}" }
     sequence(:slug) { |n| "district#{n}" }
@@ -23,6 +28,16 @@ FactoryGirl.define do
   factory :student do
     district
     sequence(:digest) { |n| "student-digest-#{n}" }
+
+    transient do
+      current_bus nil
+    end
+
+    after(:create) do |student, evaluator|
+      if evaluator.current_bus.present?
+        student.bus_assignments.create!(bus: evaluator.current_bus)
+      end
+    end
   end
 
   factory :student_label do

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     get 'districts/current', to: 'districts#show', as: :current_district
     resources :student_labels, only: :index
     resource :translations, only: :show
+
+    namespace :v0 do
+      resources :assignments, only: [:show, :create]
+    end
   end
 
   root to: 'client#show'
