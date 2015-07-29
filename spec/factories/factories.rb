@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :bus do
+    district
+    sequence(:identifier) { |n| "TEST-BUS-#{n}" }
+  end
+
   factory :district do
     sequence(:name) { |n| "Test District #{n}" }
     sequence(:slug) { |n| "district#{n}" }
