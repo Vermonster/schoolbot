@@ -3,18 +3,20 @@
 <button {{action 'toggleProfile'}}>Profile</button>
 
 {{#if showingProfile}}
-  <div class='modal'>
-    <h2 class='modal__title'>My Profile</h2>
-    <div class='modal__body'>
-      <section>
-        <h3>My Students</h3>
-        <ul>
-          {{#each studentLabels as |studentLabel|}}
-            <li>{{studentLabel.nickname}} — {{studentLabel.school.name}}</li>
-          {{/each}}
-        </ul>
-      </section>
+  <div class='modal modal__overlay'>
+    <div class='modal__inner'>
+      <h2 class='modal__title'>My Profile</h2>
+      <div class='modal__body'>
+        <section>
+          <h3>My Students</h3>
+          <ul>
+            {{#each studentLabels as |studentLabel|}}
+              <li>{{studentLabel.nickname}} — {{studentLabel.school.name}}</li>
+            {{/each}}
+          </ul>
+        </section>
+      </div>
     </div>
+    <button {{action 'toggleProfile'}}>Close</button>
   </div>
-  <button {{action 'toggleProfile'}}>Close</button>
 {{/if}}
