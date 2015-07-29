@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804174639) do
+ActiveRecord::Schema.define(version: 20150804174640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,7 +105,9 @@ ActiveRecord::Schema.define(version: 20150804174639) do
     t.string  "nickname",   null: false
   end
 
+  add_index "student_labels", ["nickname", "user_id"], name: "index_student_labels_on_nickname_and_user_id", unique: true, using: :btree
   add_index "student_labels", ["school_id"], name: "index_student_labels_on_school_id", using: :btree
+  add_index "student_labels", ["student_id", "user_id"], name: "index_student_labels_on_student_id_and_user_id", unique: true, using: :btree
   add_index "student_labels", ["student_id"], name: "index_student_labels_on_student_id", using: :btree
   add_index "student_labels", ["user_id"], name: "index_student_labels_on_user_id", using: :btree
 
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150804174639) do
     t.string  "digest",      null: false
   end
 
+  add_index "students", ["digest", "district_id"], name: "index_students_on_digest_and_district_id", unique: true, using: :btree
   add_index "students", ["district_id"], name: "index_students_on_district_id", using: :btree
 
   create_table "users", force: :cascade do |t|
