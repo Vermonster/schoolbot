@@ -60,3 +60,13 @@
 .modal form {
   font-size: .9em;
 }
+
+.modal__title {
+  @include border-top-radius($modal-radius);
+  padding-top: $modal-item-padding;
+  background-color: $color-secondary;
+  font-size: rem(20);
+  color: $base-font-color-invert;
+  text-align: center;
+  text-transform: uppercase;
+}
