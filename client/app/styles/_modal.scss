@@ -1,12 +1,31 @@
-.modal__fade-screen { // overlay
+.modal__overlay {
   @include transition(opacity .25s ease);
   @include position(fixed, 0);
-  padding-top: .6rem;
   background-color: rgba(#000, .85);
-  text-align: left;
-  z-index: 99999999999;
+  padding-top: rem(10);
+  text-align: center;
+  z-index: z('modal-overlay');
+
+  @include media($large-screen) {
+    padding-top: rem(160);
+  }
 }
 
-.modal {
+.modal__inner {
+  max-width: rem(270);
+  margin: auto;
+  padding-bottom: $modal-item-padding;
+  border-radius: $modal-radius;
+  background-color: $base-background-color;
   color: $modal-font-color;
+}
+
+.modal__title {
+  @include border-top-radius($modal-radius);
+  padding-top: $modal-item-padding;
+  background-color: $color-secondary;
+  font-size: rem(20);
+  color: $base-font-color-invert;
+  text-align: center;
+  text-transform: uppercase;
 }
