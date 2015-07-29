@@ -7,11 +7,12 @@
     <div class='modal__inner'>
       <h2 class='modal__title'>My Profile</h2>
       <div class='modal__body'>
-        <section>
-          <h3>My Students</h3>
+        <section class='modal__section'>
+          <h3 class='modal__section-heading'>My Students</h3>
+          <span class='modal__section__cta btn-plus'>+</span>
           <ul>
             {{#each studentLabels as |studentLabel|}}
-              <li>{{studentLabel.nickname}} — {{studentLabel.school.name}}</li>
+              <li>{{studentLabel.nickname}}</li>
             {{/each}}
           </ul>
         </section>

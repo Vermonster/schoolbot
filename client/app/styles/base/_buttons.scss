@@ -29,3 +29,13 @@ button {
     opacity: .5;
   }
 }
+
+[class*="btn"] {
+  cursor: pointer;
+}
+
+.btn-plus {
+  @extend %icon-circle-plus;
+  background-color: $color-secondary;
+  color: $base-font-color-invert;
+}

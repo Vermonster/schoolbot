@@ -46,7 +46,12 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Modals
 $modal-font-color: $base-font-color;
 $modal-radius: rem(10);
+$modal-padding: rem(10);
 $modal-item-padding: rem(5);
+$modal-section-padding: rem(10) rem(15);
+
+// Icons
+$icon-circle-radius: rem(10);
 
 // Z-index
 $z-layers: (
