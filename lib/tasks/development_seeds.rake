@@ -9,14 +9,14 @@ if Rails.env.development? || Rails.env.test?
       boston = create(:district, name: 'Boston Public Schools', slug: 'boston')
       brockton = create(:district, name: 'Brockton Schools', slug: 'brockton')
 
-      create(:school,
+      adams_elementary = create(:school,
         district: boston,
         name: 'Samuel Adams Elementary',
         address: '165 East Webster St, East Boston, MA',
         latitude: 42.365727789474,
         longitude: -71.034763052632
       )
-      create(:school,
+      burke_high = create(:school,
         district: boston,
         name: 'Jeremiah E. Burke High',
         address: '60 Washington St, Dorchester, MA',
@@ -31,10 +31,23 @@ if Rails.env.development? || Rails.env.test?
         longitude: -71.039912
       )
 
-      create(:user,
+      user = create(:user,
         district: boston,
         email: 'test@test.com',
         password: 'testtest'
+      )
+
+      create(:student_label,
+        nickname: 'Bobby',
+        user: user,
+        school: adams_elementary,
+        student: create(:student, district: boston)
+      )
+      create(:student_label,
+        nickname: 'Jenny',
+        user: user,
+        school: burke_high,
+        student: create(:student, district: boston)
       )
     end
   end
