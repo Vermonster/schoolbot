@@ -1,6 +1,11 @@
+// File Paths
+$font-path: 'fonts/';
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+//$base-font-family: $helvetica;
+//$heading-font-family: $base-font-family;
+$base-font-family: 'Merriweather-Sans', $helvetica;
+$heading-font-family: 'Print-Bold', $helvetica;
 
 // Font Sizes
 $base-font-size: 1em;
