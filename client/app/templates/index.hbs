@@ -9,7 +9,10 @@
       <div class='modal__body'>
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Students</h3>
-          <span class='modal__section__cta btn-plus'>+</span>
+          <button class="modal__section__cta {{if showingAddStudentForm 'btn--minus' 'btn--plus'}}" {{action 'toggleAddStudent'}}></button>
+          {{#if showingAddStudentForm}}
+            {{render 'add-student-form'}}
+          {{/if}}
           <ul>
             {{#each studentLabels as |studentLabel|}}
               <li>{{studentLabel.nickname}}</li>
