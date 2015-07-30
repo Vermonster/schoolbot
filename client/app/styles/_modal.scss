@@ -1,11 +1,11 @@
 .modal__overlay {
   @include transition(opacity .25s ease);
   @include position(fixed, 0);
-  background-color: rgba(#000, .85);
   padding-top: rem(10);
+  background-color: rgba(#000, .85);
   text-align: center;
-  overflow-y: scroll;
   z-index: z('modal-overlay');
+  overflow-y: scroll;
 
   @include media($large-screen) {
     padding-top: rem(160);
@@ -19,8 +19,8 @@
   margin-bottom: $modal-section-padding-top-bottom;
   border-radius: $modal-radius;
   background-color: $base-background-color;
-  text-align: left;
   color: $modal-font-color;
+  text-align: left;
 }
 
 .modal__title {
@@ -28,21 +28,21 @@
   margin-bottom: 0;
   padding-top: $modal-item-padding;
   background-color: $color-secondary;
-  font-size: rem(20);
   color: $base-font-color-invert;
+  font-size: rem(20);
   text-align: center;
   text-transform: uppercase;
 }
 
 .modal__section {
-  border-top: 1px solid $base-border-color;
   padding: $modal-section-padding;
+  border-top: 1px solid $base-border-color;
 }
 
 .modal__section-heading {
   display: inline-block;
-  text-transform: uppercase;
   font-family: $heading-font-family;
+  text-transform: uppercase;
 }
 
 .modal__section__cta {
@@ -50,13 +50,13 @@
 }
 
 .modal fieldset {
-  border: 0;
   margin-bottom: 0;
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
+  border: 0;
   background-color: $base-background-color;
 }
 
 .modal form {
-  font-size: 0.9em;
+  font-size: .9em;
 }
