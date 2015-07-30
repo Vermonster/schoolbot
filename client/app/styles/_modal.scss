@@ -4,6 +4,7 @@
   padding-top: rem(10);
   background-color: rgba(#000, .85);
   text-align: center;
+  overflow-y: scroll;
   z-index: z('modal-overlay');
   overflow-y: scroll;
 
@@ -81,8 +82,21 @@
 .modal__section-heading {
   display: inline-block;
   text-transform: uppercase;
+  font-family: $heading-font-family;
 }
 
 .modal__section__cta {
   float: right;
+}
+
+.modal fieldset {
+  border: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $base-background-color;
+}
+
+.modal form {
+  font-size: 0.9em;
 }
