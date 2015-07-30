@@ -1,4 +1,8 @@
 form {
+  border-top: 1px solid $base-border-color;
+  border-bottom: 1px solid $base-border-color;
+  margin-bottom: $modal-item-padding;
+  padding-top: rem(15);
   color: $base-font-color;
 }
 
@@ -18,7 +22,6 @@ select {
 }
 
 label {
-  font-weight: 600;
   margin-bottom: $small-spacing / 2;
 
   &.required::after {
@@ -50,7 +53,7 @@ textarea {
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $color-action;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }

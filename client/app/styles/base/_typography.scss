@@ -49,14 +49,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $color-action;
   text-decoration: none;
   transition: color .1s linear;
 
   &:active,
   &:focus,
   &:hover {
-    color: darken($action-color, 15%);
+    color: darken($color-action, 15%);
   }
 
   &:active,

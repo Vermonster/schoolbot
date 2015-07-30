@@ -4,16 +4,19 @@
   background-color: rgba(#000, .85);
   padding-top: rem(10);
   text-align: center;
+  overflow-y: scroll;
   z-index: z('modal-overlay');
 
   @include media($large-screen) {
     padding-top: rem(160);
+    padding-bottom: rem(160);
   }
 }
 
 .modal__inner {
   max-width: rem(270);
   margin: auto;
+  margin-bottom: $modal-section-padding-top-bottom;
   border-radius: $modal-radius;
   background-color: $base-background-color;
   text-align: left;
@@ -39,8 +42,21 @@
 .modal__section-heading {
   display: inline-block;
   text-transform: uppercase;
+  font-family: $heading-font-family;
 }
 
 .modal__section__cta {
   float: right;
+}
+
+.modal fieldset {
+  border: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $base-background-color;
+}
+
+.modal form {
+  font-size: 0.9em;
 }

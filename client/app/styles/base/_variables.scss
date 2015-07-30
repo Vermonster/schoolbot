@@ -33,7 +33,7 @@ $color-secondary: #f6c838;
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
 $base-font-color-invert: #fff;
-$action-color: $blue;
+$color-action: $color-secondary;
 
 // Border
 $base-border-color: $light-gray;
@@ -41,7 +41,7 @@ $base-border: 1px solid $base-border-color;
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
 
 // Modals
 $modal-font-color: $base-font-color;
@@ -49,6 +49,7 @@ $modal-radius: rem(10);
 $modal-padding: rem(10);
 $modal-item-padding: rem(5);
 $modal-section-padding: rem(10) rem(15);
+$modal-section-padding-top-bottom: rem(10);
 
 // Icons
 $icon-circle-radius: rem(10);
