@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804174640) do
+ActiveRecord::Schema.define(version: 20150804174641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20150804174640) do
     t.integer "student_id", null: false
     t.integer "school_id",  null: false
     t.integer "user_id",    null: false
-    t.string  "nickname",   null: false
+    t.text    "nickname",   null: false
   end
 
   add_index "student_labels", ["nickname", "user_id"], name: "index_student_labels_on_nickname_and_user_id", unique: true, using: :btree
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20150804174640) do
 
   create_table "students", force: :cascade do |t|
     t.integer "district_id", null: false
-    t.string  "digest",      null: false
+    t.text    "digest",      null: false
   end
 
   add_index "students", ["digest", "district_id"], name: "index_students_on_digest_and_district_id", unique: true, using: :btree
@@ -121,10 +121,10 @@ ActiveRecord::Schema.define(version: 20150804174640) do
 
   create_table "users", force: :cascade do |t|
     t.integer  "district_id",                         null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "authentication_token",                null: false
-    t.string   "reset_password_token"
+    t.text     "email",                  default: "", null: false
+    t.text     "encrypted_password",     default: "", null: false
+    t.text     "authentication_token",                null: false
+    t.text     "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
@@ -133,13 +133,13 @@ ActiveRecord::Schema.define(version: 20150804174640) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.integer  "failed_attempts",        default: 0,  null: false
-    t.string   "unlock_token"
+    t.text     "unlock_token"
     t.datetime "locked_at"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "street_address"
-    t.string   "city"
-    t.string   "zip_code"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.text     "street_address"
+    t.text     "city"
+    t.text     "zip_code"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
