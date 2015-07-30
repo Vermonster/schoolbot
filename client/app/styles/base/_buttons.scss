@@ -1,10 +1,10 @@
 #{$all-button-inputs},
 button {
   @include appearance(none);
-  background-color: $action-color;
+  background-color: $color-action;
   border: 0;
   border-radius: $base-border-radius;
-  color: $base-background-color;
+ color: $base-background-color;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -20,7 +20,7 @@ button {
 
   &:hover,
   &:focus {
-    background-color: darken($action-color, 15%);
+    background-color: darken($color-action, 15%);
     color: $base-background-color;
   }
 
@@ -34,8 +34,43 @@ button {
   cursor: pointer;
 }
 
-.btn-plus {
-  @extend %icon-circle-plus;
-  background-color: $color-secondary;
-  color: $base-font-color-invert;
+button.btn--plus,
+.btn--plus {
+  @extend %icon-circle;
+
+  &:before {
+    width: rem(9);
+    height: rem(1);
+    margin-left: rem(-4);
+  }
+
+  &:after {
+    width: rem(1);
+    height: rem(9);
+    margin-top: rem(-4);
+  }
+}
+
+button.btn--minus,
+.btn--minus {
+  @extend %icon-circle;
+
+  &:before {
+    width: rem(9);
+    height: rem(1);
+    margin-left: rem(-4);
+  }
+
+  &:after {
+    width: 0;
+    height: 0;
+  }
+}
+
+.button-group [class*= 'btn-'] {
+  margin-bottom: rem(3);
+}
+
+.btn--add-student {
+  margin-top: rem(10);
 }

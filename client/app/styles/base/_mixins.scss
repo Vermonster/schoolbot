@@ -1,10 +1,15 @@
 // Icons
-%icon-circle-plus {
+%icon-circle {
+  display: inline-block;
   position: relative;
   width: $icon-circle-radius * 2;
   height: $icon-circle-radius * 2;
+  padding: 0;
+  background-color: $color-secondary;
+  color: $base-font-color-invert;
   border-radius: $icon-circle-radius;
   text-indent: rem(-9999);
+  vertical-align: middle;
 
   &:before, &:after {
     position: absolute;
@@ -12,17 +17,5 @@
     left: 50%;
     content: '';
     box-shadow: inset 0 0 0 32px;
-  }
-
-  &:before {
-    width: rem(9);
-    height: rem(1);
-    margin-left: rem(-4);
-  }
-
-  &:after {
-    width: rem(1);
-    height: rem(9);
-    margin-top: rem(-4);
   }
 }
