@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804174641) do
+ActiveRecord::Schema.define(version: 20150804174642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,20 +89,24 @@ ActiveRecord::Schema.define(version: 20150804174641) do
   add_index "districts", ["slug"], name: "index_districts_on_slug", unique: true, using: :btree
 
   create_table "schools", force: :cascade do |t|
-    t.integer "district_id", null: false
-    t.text    "name",        null: false
-    t.text    "address",     null: false
-    t.float   "latitude",    null: false
-    t.float   "longitude",   null: false
+    t.integer  "district_id", null: false
+    t.text     "name",        null: false
+    t.text     "address",     null: false
+    t.float    "latitude",    null: false
+    t.float    "longitude",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "schools", ["district_id"], name: "index_schools_on_district_id", using: :btree
 
   create_table "student_labels", force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "school_id",  null: false
-    t.integer "user_id",    null: false
-    t.text    "nickname",   null: false
+    t.integer  "student_id", null: false
+    t.integer  "school_id",  null: false
+    t.integer  "user_id",    null: false
+    t.text     "nickname",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "student_labels", ["nickname", "user_id"], name: "index_student_labels_on_nickname_and_user_id", unique: true, using: :btree
@@ -112,8 +116,10 @@ ActiveRecord::Schema.define(version: 20150804174641) do
   add_index "student_labels", ["user_id"], name: "index_student_labels_on_user_id", using: :btree
 
   create_table "students", force: :cascade do |t|
-    t.integer "district_id", null: false
-    t.text    "digest",      null: false
+    t.integer  "district_id", null: false
+    t.text     "digest",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "students", ["digest", "district_id"], name: "index_students_on_digest_and_district_id", unique: true, using: :btree
