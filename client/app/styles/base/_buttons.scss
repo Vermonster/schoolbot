@@ -1,22 +1,22 @@
 #{$all-button-inputs},
 button {
   @include appearance(none);
-  background-color: $color-action;
+  display: inline-block;
+  padding: .75em 1em;
   border: 0;
   border-radius: $base-border-radius;
- color: $base-background-color;
-  cursor: pointer;
-  display: inline-block;
+  background-color: $color-action;
+  color: $base-background-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: .75em 1em;
   text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
   white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
 
   &:hover,
   &:focus {
@@ -34,7 +34,6 @@ button {
   cursor: pointer;
 }
 
-button.btn--plus,
 .btn--plus {
   @extend %icon-circle;
 
@@ -51,7 +50,6 @@ button.btn--plus,
   }
 }
 
-button.btn--minus,
 .btn--minus {
   @extend %icon-circle;
 
