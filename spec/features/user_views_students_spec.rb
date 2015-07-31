@@ -20,7 +20,7 @@ feature 'User views students' do
 
     click_on 'Profile'
 
-    within('section', text: 'My Students') do
+    within('section', text: 'MY STUDENTS') do
       within('li', text: 'First Student') do
         expect(page).to have_content 'Middle School'
       end
