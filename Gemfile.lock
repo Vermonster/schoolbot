@@ -61,6 +61,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     cliver (0.3.2)
+    clockwork (1.2.0)
+      activesupport
+      tzinfo
     coderay (1.1.0)
     columnize (0.9.0)
     crack (0.4.2)
@@ -254,6 +257,7 @@ DEPENDENCIES
   awesome_print
   bundler-audit
   byebug
+  clockwork
   database_cleaner
   delayed_job_active_record
   devise
@@ -288,4 +292,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
