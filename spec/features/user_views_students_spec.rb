@@ -22,9 +22,11 @@ feature 'User views students' do
 
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'First Student') do
+        expect(page).to have_content 'FI'
         expect(page).to have_content 'Middle School'
       end
       within('li', text: 'Second Student') do
+        expect(page).to have_content 'SE'
         expect(page).to have_content 'High School'
       end
     end

@@ -15,7 +15,17 @@
           {{/if}}
           <ul>
             {{#each studentLabels as |studentLabel|}}
-              <li>{{studentLabel.nickname}} - {{studentLabel.school.name}}</li>
+              <li class='student-label'>
+                <span class='student-label__nickname--abbrev'>{{studentLabel.nicknameAbbrev}}</span>
+                <div class='student-label__nickname-set'>
+                  <div class='student-label__nickname'>
+                    {{studentLabel.nickname}}
+                  </div>
+                  <div class='student-label__school'>
+                    {{studentLabel.school.name}}
+                  </div>
+                </div>
+              </li>
             {{/each}}
           </ul>
         </section>
