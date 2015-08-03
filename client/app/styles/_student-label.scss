@@ -1,0 +1,39 @@
+.student-label {
+  display: flex;
+  margin-bottom: $item-spacing*2;
+  flex-direction: row;
+  align-items: center;
+
+  &:nth-child(odd) {
+    .student-label__nickname--abbrev {
+      background-color: $nickname-abbrev-odd-color;
+    }
+  }
+
+  &:nth-child(even) {
+    .student-label__nickname--abbrev {
+      background-color: $nickname-abbrev-even-color;
+    }
+  }
+}
+
+.student-label__nickname--abbrev {
+  width: rem(42);
+  height: rem(42);
+  margin-right: $item-spacing*2;
+  padding: rem(10);
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $base-font-invert-color;
+  font-family: $heading-font-family;
+  font-size: rem(18);
+  text-align: center;
+}
+
+.student-label__nickname {
+  font-size: rem(14);
+}
+
+.student-label__school {
+  font-size: rem(10);
+}

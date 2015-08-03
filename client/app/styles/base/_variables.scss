@@ -19,6 +19,7 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$item-spacing: rem(5);
 
 // Colors
 $blue: #477dca;
@@ -28,11 +29,16 @@ $light-gray: #ddd;
 
 $color-primary: #66cce8;
 $color-secondary: #f6c838;
+$color-secondary-darken-1: #f8b558;
+$color-secondary-darken-2: #f89a38;
+$color-secondary-darken-3: #e66366;
+$color-secondary-darken-4: #ef4558;
+$color-secondary-darken-5: #b9276e;
 
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$base-font-color-invert: #fff;
+$base-font-invert-color: #fff;
 $color-action: $color-secondary;
 
 // Border
@@ -47,12 +53,16 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $l
 $modal-font-color: $base-font-color;
 $modal-radius: rem(10);
 $modal-padding: rem(10);
-$modal-item-padding: rem(5);
+$modal-item-padding: $item-spacing*2;
 $modal-section-padding: rem(10) rem(15);
 $modal-section-padding-top-bottom: rem(10);
 
 // Icons
 $icon-circle-radius: rem(10);
+
+// Nickname Abbreviations
+$nickname-abbrev-odd-color: $color-primary;
+$nickname-abbrev-even-color: $color-secondary-darken-3;
 
 // Z-index
 $z-layers: (
