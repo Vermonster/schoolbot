@@ -1,4 +1,4 @@
-module ZonarStub
+module ZonarStubbing
   def zonar_csv
     @zonar_csv ||= File.read('spec/support/files/zonar_showposition_path-brockton.csv')
   end

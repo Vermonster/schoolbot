@@ -20,17 +20,6 @@ class District < ActiveRecord::Base
     length: { minimum: 1, maximum: 63 },
     format: { with: /\A[0-9a-z-]*\z/ }
 
-  def zonar
-    @zonar ||= Zonar.new self
-  end
-
-  def update_bus_locations!
-    zonar.bus_events_since(30.seconds.ago).each do |attrs|
-      bus = buses.find_or_create_by!(identifier: attrs.delete(:bus_identifier))
-      bus.bus_locations.create!(attrs)
-    end
-  end
-
   private
 
   def assign_api_secret
