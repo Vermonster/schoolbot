@@ -9,7 +9,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '789', bus_identifier: 'ABC' }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 3
@@ -29,7 +29,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '123', bus_identifier: 'DEF' }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 1
@@ -52,7 +52,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '456', bus_identifier: nil }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Bus.count).to be 1
     expect(Student.count).to be 2
@@ -79,7 +79,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '123', bus_identifier: 'ABC' }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 2
@@ -103,7 +103,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '123', bus_identifier: 'ABC' }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Student.count).to be 1
     expect(BusAssignment.count).to be 1
@@ -113,7 +113,7 @@ describe API::V0::ImportAssignmentsJob do
   it 'does not unassign students if the input is empty' do
     student = create(:student, digest: '123', current_bus: create(:bus))
 
-    subject.perform(district: student.district, assignments: [])
+    described_class.perform_later(district: student.district, assignments: [])
 
     expect(student.bus_assignments.count).to be 1
     expect(student.current_bus_assignment.bus).to_not be nil
@@ -131,7 +131,7 @@ describe API::V0::ImportAssignmentsJob do
       { sha: '123', bus_identifier: 'XYZ' }
     ]
 
-    subject.perform(district: district, assignments: assignments)
+    described_class.perform_later(district: district, assignments: assignments)
 
     expect(Bus.count).to be 3
     expect(Student.count).to be 1
