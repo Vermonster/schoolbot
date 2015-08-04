@@ -4,4 +4,8 @@ class Bus < ActiveRecord::Base
   has_many :bus_locations
 
   validates! :identifier, presence: true
+
+  def recent_locations
+    bus_locations.order(recorded_at: :desc).limit(5)
+  end
 end
