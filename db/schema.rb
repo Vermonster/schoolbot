@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730015275) do
+ActiveRecord::Schema.define(version: 20150804174639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,9 @@ ActiveRecord::Schema.define(version: 20150730015275) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "bus_locations", ["bus_id", "recorded_at"], name: "index_bus_locations_on_bus_id_and_recorded_at", unique: true, using: :btree
   add_index "bus_locations", ["bus_id"], name: "index_bus_locations_on_bus_id", using: :btree
+  add_index "bus_locations", ["recorded_at"], name: "index_bus_locations_on_recorded_at", using: :btree
 
   create_table "buses", force: :cascade do |t|
     t.integer  "district_id", null: false

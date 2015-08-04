@@ -32,4 +32,14 @@ describe UpdateBusLocationsJob do
     location = bus.bus_locations.order(:recorded_at).last
     expect(location.recorded_at.to_s).to eq '2015-07-24 12:27:12 UTC'
   end
+
+  it 'does not create duplicate location records with the same timestamp' do
+    time = Time.zone.parse('2015-07-24 12:27:12 UTC')
+    bus = create(:bus, identifier: '022051')
+    create(:bus_location, bus: bus, recorded_at: time)
+
+    subject.perform(bus.district, since: Time.zone.now)
+
+    expect(bus.bus_locations.where(recorded_at: time).count).to be 1
+  end
 end
