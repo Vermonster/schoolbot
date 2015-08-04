@@ -13,7 +13,7 @@ describe Bus do
           57.minutes.ago,
           2.hours.ago
         ].each do |time|
-          create(:bus_location, bus: bus, recorded_at: time)
+          create(:bus_location, bus: bus, recorded_at: time.change(usec: 0))
         end
 
         expect(bus.recent_locations.map(&:recorded_at)).to eq [
@@ -22,7 +22,7 @@ describe Bus do
           23.minutes.ago,
           57.minutes.ago,
           2.hours.ago
-        ]
+        ].map { |time| time.change(usec: 0) }
       end
     end
   end
