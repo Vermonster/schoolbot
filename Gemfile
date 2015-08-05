@@ -5,6 +5,7 @@ ruby File.read(".ruby-version").strip
 gem "active_model_serializers"
 gem "airbrake"
 gem "clockwork"
+gem "delayed-plugins-airbrake"
 gem "delayed_job_active_record"
 gem "devise"
 gem "email_validator"

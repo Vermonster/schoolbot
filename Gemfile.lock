@@ -69,6 +69,9 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.4.1)
+    delayed-plugins-airbrake (1.1.0)
+      airbrake
+      delayed_job
     delayed_job (4.0.6)
       activesupport (>= 3.0, < 5.0)
     delayed_job_active_record (4.0.3)
@@ -259,6 +262,7 @@ DEPENDENCIES
   byebug
   clockwork
   database_cleaner
+  delayed-plugins-airbrake
   delayed_job_active_record
   devise
   dotenv-rails
