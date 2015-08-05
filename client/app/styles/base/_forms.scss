@@ -38,7 +38,7 @@ select[multiple=multiple],
 textarea {
   width: 100%;
   margin-bottom: $base-spacing / 2;
-  padding: $base-spacing / 3;
+  padding: rem(10) rem(20);
   transition: border-color;
   border: $base-border;
   border-radius: $base-border-radius;

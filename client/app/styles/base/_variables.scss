@@ -29,9 +29,9 @@ $medium-gray: #999;
 $light-gray: #ddd;
 
 $color-primary: #66cce8;
-$color-secondary: #f6c838;
+$color-secondary: #f5c738;
 $color-secondary-darken-1: #f8b558;
-$color-secondary-darken-2: #f89a38;
+$color-secondary-darken-2: #f89a3b;
 $color-secondary-darken-3: #e66366;
 $color-secondary-darken-4: #ef4558;
 $color-secondary-darken-5: #b9276e;
@@ -50,10 +50,11 @@ $base-border: 1px solid $base-border-color;
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
+$form-radius: rem(10);
 
 // Modals
 $modal-font-color: $base-font-color;
-$modal-radius: rem(10);
+$modal-radius: $form-radius;
 $modal-padding: rem(10);
 $modal-item-padding: $item-spacing*2;
 $modal-section-padding: rem(10) rem(15);
