@@ -48,8 +48,15 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
+  if (['production', 'staging'].indexOf(environment) > -1) {
+    if (!process.env.AIRBRAKE_ID || !process.env.AIRBRAKE_KEY) {
+      throw new Error('AIRBRAKE_ID and AIRBRAKE_KEY must be defined in .env!');
+    }
 
+    ENV.airbrake = {
+      projectId: process.env.AIRBRAKE_ID,
+      projectKey: process.env.AIRBRAKE_KEY
+    };
   }
 
   return ENV;
