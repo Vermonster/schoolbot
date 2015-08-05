@@ -8,6 +8,14 @@ describe UpdateBusLocationsJob do
     described_class.perform_later(district, since: Time.zone.now.to_i)
   end
 
+  it 'handles an empty Zonar response' do
+    stub_zonar(zonar_csv_headers)
+
+    perform(create(:district))
+
+    expect(BusLocation.count).to be 0
+  end
+
   it 'creates a location record for each row in the CSV data' do
     perform(create(:district))
 

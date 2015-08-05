@@ -23,7 +23,7 @@ class Zonar
     address: 'Address'
   }
 
-  MATCH_TIME_HEADER = /^Time\(([A-Z]+)\)$/
+  TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/
 
   def initialize(district)
     @district = district
@@ -51,15 +51,24 @@ class Zonar
 
   def csv_to_attributes(csv_string)
     csv_rows = CSV.parse(csv_string, headers: true)
-    time_header = csv_rows.headers.find { |header| header =~ MATCH_TIME_HEADER }
-    time_zone = time_header[MATCH_TIME_HEADER, 1]
 
-    csv_rows.map do |row|
-      CSV_HEADERS.map { |attrib, header| [attrib, row[header]] }.to_h.merge(
-        recorded_at: Time.zone.parse(
-          "#{row['Date']} #{row[time_header]} #{time_zone}"
-        )
-      )
+    if csv_rows.any?
+      time_header = csv_rows.headers.grep(TIME_HEADER_PATTERN).first
+      time_zone = time_header[TIME_HEADER_PATTERN, 1]
+
+      csv_rows.map do |row|
+        row_to_attributes(row, time_header: time_header, time_zone: time_zone)
+      end
+    else
+      []
     end
+  end
+
+  def row_to_attributes(csv_row, time_header:, time_zone:)
+    CSV_HEADERS.map { |attrib, header| [attrib, csv_row[header]] }.to_h.merge(
+      recorded_at: Time.zone.parse(
+        "#{csv_row['Date']} #{csv_row[time_header]} #{time_zone}"
+      )
+    )
   end
 end
