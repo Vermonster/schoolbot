@@ -1,0 +1,35 @@
+.form--sign-in {
+  padding-top: 0;
+  border: 0;
+  border-radius: $form-radius;
+  background-color: $base-background-color;
+
+  input[type] {
+    margin-bottom: 0;
+    border: 0;
+    border-top: 1px solid $base-border-color;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:first-child {
+      border-top: 0;
+      border-top-left-radius: $form-radius;
+      border-top-right-radius: $form-radius;
+    }
+  }
+}
+
+.sign-in__cta {
+  @extend %form-border-decor;
+  width: 100%;
+  transition: background .1s linear;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: $form-radius;
+  border-bottom-right-radius: $form-radius;
+  text-align: center;
+
+  &:hover {
+    background: darken($color-action, 10%);
+  }
+}

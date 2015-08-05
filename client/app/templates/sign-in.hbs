@@ -1,14 +1,14 @@
-<form {{action 'signIn' on='submit'}}>
-  {{#if errorMessage}}
-    <div class="alert alert-danger">
-      <p>
-        Login failed: <code>{{errorMessage}}</code>
-      </p>
-    </div>
-  {{/if}}
+{{#if errorMessage}}
+  <div class="alert alert-danger">
+    <p>
+      Login failed: <code>{{errorMessage}}</code>
+    </p>
+  </div>
+{{/if}}
 
-  <label for="email">Please login</label>
-  {{input placeholder='Your email' value=identification}}
-  {{input placeholder='Password' type='password' value=password}}
-  <button type="submit">Submit</button>
+<label for="email">Please login</label>
+<form class='form--sign-in' {{action 'signIn' on='submit'}}>
+  {{input class='sign-in__form-field' placeholder='Your email' value=identification}}
+  {{input class='sign-in__form-field' placeholder='Password' type='password' value=password}}
+  <button class='sign-in__cta' type="submit">Submit</button>
 </form>

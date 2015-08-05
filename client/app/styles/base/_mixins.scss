@@ -1,3 +1,13 @@
+%wrapper {
+  width: rem(300);
+  margin: auto;
+}
+
+%form-border-decor {
+  background: url($image-path + 'line_gradient-yellow.svg') repeat-x,
+    $color-secondary;
+}
+
 // Icons
 %icon-circle {
   display: inline-block;
