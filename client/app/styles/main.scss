@@ -3,7 +3,6 @@ body {
   height: 100vh;
   background-image: url($image-path + 'background_sun.svg'),
     url($image-path + 'background_cloud.svg'),
-    url($image-path + 'background_grass.svg'),
     repeating-linear-gradient(
       to right,
       $color-primary,
@@ -11,14 +10,30 @@ body {
       rgba($color-primary, .9) rem(2),
       rgba($color-primary, .9) rem(3)
     );
-  background-repeat: no-repeat, repeat-x, repeat-x;
-  background-position: left top, left top, left bottom;
-  background-size: auto, auto, rem(1) rem(108);
+  background-repeat: no-repeat, repeat-x;
+  background-position: left top, left top;
+  background-size: auto;
+
+  @include media($background-landscape) {
+    background-image: url($image-path + 'background_sun.svg'),
+      url($image-path + 'background_cloud.svg'),
+      url($image-path + 'background_grass.svg'),
+      repeating-linear-gradient(
+        to right,
+        $color-primary,
+        $color-primary rem(2),
+        rgba($color-primary, .9) rem(2),
+        rgba($color-primary, .9) rem(3)
+      );
+    background-repeat: no-repeat, repeat-x, repeat-x;
+    background-position: left top, left top, left bottom;
+    background-size: auto, auto, rem(1) rem(108);
+  }
 }
 
 .main {
   position: relative;
-  max-width: rem(500);
+  max-width: $background-landscape-width;
   height: 100vh;
   margin: auto;
   background-image: url($image-path + 'background_landscape.svg');

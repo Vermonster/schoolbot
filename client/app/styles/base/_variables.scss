@@ -21,6 +21,7 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 $item-spacing: rem(5);
+$background-landscape-width: rem(500);
 
 // Colors
 $blue: #477dca;
@@ -66,6 +67,9 @@ $icon-circle-radius: rem(10);
 // Nickname Abbreviations
 $nickname-abbrev-odd-color: $color-primary;
 $nickname-abbrev-even-color: $color-secondary-darken-3;
+
+// Media Queries
+$background-landscape: new-breakpoint(min-width $background-landscape-width);
 
 // Z-index
 $z-layers: (
