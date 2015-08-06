@@ -6,7 +6,7 @@ module API
       def perform(district:, assignments:)
         @district = district
         @assignments = assignments
-        return if assignments.empty? # TODO: Error logging
+        return if assignments.empty?
 
         ActiveRecord::Base.transaction do
           update_student_assignments!
@@ -46,7 +46,7 @@ module API
               bus_identifier: assignment[:bus_identifier]
             )
           rescue ActiveModel::StrictValidationFailed
-            next # TODO: Error logging
+            Airbrake.notify($ERROR_INFO, parameters: { district: @district })
           end
         end
       end
