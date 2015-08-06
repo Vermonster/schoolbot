@@ -1,8 +1,8 @@
 body {
   position: relative;
   height: 100vh;
-  background-image: url($image-path + 'background_sun.svg'),
-    url($image-path + 'background_cloud.svg'),
+  background-image: image-path('background_sun.svg'),
+    image-path('background_cloud.svg'),
     repeating-linear-gradient(
       to right,
       $color-primary,
@@ -15,9 +15,9 @@ body {
   background-size: auto;
 
   @include media($background-landscape) {
-    background-image: url($image-path + 'background_sun.svg'),
-      url($image-path + 'background_cloud.svg'),
-      url($image-path + 'background_grass.svg'),
+    background-image: image-path('background_sun.svg'),
+      image-path('background_cloud.svg'),
+      image-path('background_grass.svg'),
       repeating-linear-gradient(
         to right,
         $color-primary,
@@ -36,7 +36,7 @@ body {
   max-width: $background-landscape-width;
   height: 100vh;
   margin: auto;
-  background-image: url($image-path + 'background_landscape.svg');
+  background-image: image-path('background_landscape.svg');
   background-repeat: no-repeat;
   background-position: center bottom;
 }
@@ -47,7 +47,7 @@ body {
   right: rem(20);
   width: rem(160);
   height: rem(60);
-  background-image: url($image-path + 'schoolbot_logo.svg');
+  background-image: image-path('schoolbot_logo.svg');
   background-repeat: no-repeat;
   text-indent: rem(-9999);
 }

@@ -4,3 +4,11 @@
   }
   @return map-get($z-layers, $layer);
 }
+
+@function font-path($font) {
+  @return url('fonts/' + $font);
+}
+
+@function image-path($image) {
+  @return url('images/' + $image);
+}

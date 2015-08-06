@@ -4,7 +4,7 @@
 }
 
 %form-border-decor {
-  background: url($image-path + 'line_gradient-yellow.svg') repeat-x,
+  background: image-path('line_gradient-yellow.svg') repeat-x,
     $color-secondary;
 }
 
