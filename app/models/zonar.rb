@@ -1,4 +1,6 @@
 class Zonar
+  READ_TIMEOUT = 5
+
   STATIC_PARAMS = {
     action: 'showposition',
     operation: 'path',
@@ -37,16 +39,23 @@ class Zonar
 
   # https://docs.zonarsystems.net/manuals/OMI/en/exportpath.html
   def csv_events_between(start_time, end_time)
-    RestClient.get(
-      "https://#{@district.zonar_customer}.zonarsystems.net/interface.php",
-      params: STATIC_PARAMS.merge(
-        starttime: start_time.to_i, endtime: end_time.to_i
-      ),
-      cookies: {
-        username: @district.zonar_username,
-        password: @district.zonar_password
-      }
+    RestClient::Request.execute(
+      method: :get,
+      url: "https://#{@district.zonar_customer}.zonarsystems.net/interface.php",
+      # https://github.com/rest-client/rest-client#passing-advanced-options
+      headers: { params:
+        STATIC_PARAMS.merge(starttime: start_time.to_i, endtime: end_time.to_i)
+      },
+      cookies: authentication_params,
+      timeout: READ_TIMEOUT
     )
+  end
+
+  def authentication_params
+    {
+      username: @district.zonar_username,
+      password: @district.zonar_password
+    }
   end
 
   def csv_to_attributes(csv_string)
