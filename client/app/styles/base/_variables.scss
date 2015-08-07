@@ -69,6 +69,8 @@ $nickname-abbrev-even-color: $color-secondary-darken-3;
 $background-landscape: new-breakpoint(min-width $background-landscape-width);
 
 // Z-index
+// NOTE: map-controls should not be less than the Leaflet default of 1000
 $z-layers: (
-  'modal-overlay': 999
+  'map-controls': 1000,
+  'modal-overlay': 2000
 );
