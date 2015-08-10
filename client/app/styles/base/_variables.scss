@@ -5,7 +5,7 @@ $base-font-family: 'Merriweather-Sans', $helvetica;
 $heading-font-family: 'Print-Bold', $helvetica;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: rem(14);
 
 // Line height
 $base-line-height: 1.5;
@@ -17,6 +17,7 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 $item-spacing: rem(5);
+$section-spacing: rem(10);
 $background-landscape-width: rem(500);
 
 // Colors
@@ -39,6 +40,7 @@ $base-background-color: #fff;
 $base-font-color: $dark-gray;
 $base-font-invert-color: #fff;
 $color-action: $color-secondary;
+$color-error: $color-secondary-darken-4;
 
 // Border
 $base-border-color: $light-gray;
@@ -53,9 +55,8 @@ $form-radius: rem(10);
 $modal-font-color: $base-font-color;
 $modal-radius: $form-radius;
 $modal-padding: rem(10);
-$modal-item-padding: $item-spacing*2;
+$modal-item-padding: $section-spacing;
 $modal-section-padding: rem(10) rem(15);
-$modal-section-padding-top-bottom: rem(10);
 
 // Icons
 $icon-circle-radius: rem(10);

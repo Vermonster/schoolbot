@@ -5,6 +5,6 @@ module Sessions
     click_on 'Sign In'
     fill_in 'Your email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Submit'
+    click_on 'SIGN IN'
   end
 end

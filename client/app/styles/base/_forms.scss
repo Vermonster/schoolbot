@@ -1,9 +1,11 @@
 form {
-  margin-bottom: $modal-item-padding;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
   padding-top: rem(15);
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   color: $base-font-color;
+  font-size: rem(14);
 }
 
 fieldset {

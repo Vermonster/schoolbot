@@ -4,6 +4,12 @@
   border-radius: $form-radius;
   background-color: $base-background-color;
 
+  .msg--error {
+    padding: rem(10) rem(20);
+    border-top-left-radius: $form-radius;
+    border-top-right-radius: $form-radius;
+  }
+
   input[type] {
     margin-bottom: 0;
     border: 0;
@@ -31,4 +37,10 @@
   &:hover {
     background: darken($color-action, 10%);
   }
+}
+
+.msg--error {
+  background-color: rgba($color-error, .1);
+  color: $color-error;
+  line-height: 1.4;
 }

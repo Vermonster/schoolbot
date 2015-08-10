@@ -17,7 +17,7 @@ feature 'User signs in' do
     click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
-    click_on 'Submit'
+    click_on 'SIGN IN'
 
     expect(page).to have_content 'Signed into district'
   end
@@ -29,7 +29,7 @@ feature 'User signs in' do
     click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: ''
-    click_on 'Submit'
+    click_on 'SIGN IN'
 
     expect(page).to have_content 'Invalid email or password'
   end
@@ -42,7 +42,7 @@ feature 'User signs in' do
     click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
-    click_on 'Submit'
+    click_on 'SIGN IN'
 
     expect(page).to have_content 'Invalid email or password'
   end

@@ -1,14 +1,14 @@
-{{#if errorMessage}}
-  <div class="alert">
-    <p>
-      Login failed: <code>{{errorMessage}}</code>
-    </p>
-  </div>
-{{/if}}
 
-<label for="email">Please login</label>
 <form class='form--sign-in' {{action 'signIn' on='submit'}}>
+
+  {{#if errorMessage}}
+    <div class="msg--error">
+      {{errorMessage}}
+    </div>
+  {{/if}}
+
   {{input class='sign-in__form-field' placeholder='Your email' value=identification}}
   {{input class='sign-in__form-field' placeholder='Password' type='password' value=password}}
-  <button class='sign-in__cta' type="submit">Submit</button>
+
+  <button class='sign-in__cta' type="submit">SIGN IN</button>
 </form>
