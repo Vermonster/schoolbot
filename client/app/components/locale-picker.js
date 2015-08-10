@@ -4,6 +4,8 @@ export default Ember.Component.extend({
   i18n: Ember.inject.service(),
   localStorage: Ember.inject.service(),
 
+  classNames: ['locale-picker'],
+
   // FIXME: https://github.com/jamesarosen/ember-i18n/issues/281
   availableLocales: ['en', 'es'],
 

@@ -2,16 +2,18 @@
   <div class='main__content'>
     <div class='logo'>Schoolbot</div>
 
-    {{#if districts.current}}
-      <h2>Welcome to {{districts.current.name}}</h2>
-    {{/if}}
-
     {{locale-picker}}
 
-    {{#if session.isAuthenticated}}
-      <a href="#" {{action 'signOut'}}>Sign Out</a>
-    {{else}}
-      {{#link-to 'sign-in'}}Sign In{{/link-to}}
+    {{#if districts.current}}
+      <h2>Welcome to {{districts.current.name}}</h2>
+
+      {{#if session.isAuthenticated}}
+        <a href="#" {{action 'signOut'}}>Sign Out</a>
+      {{else}}
+        {{#link-to 'sign-in'}}Sign In{{/link-to}} or
+        Register
+      {{/if}}
+
     {{/if}}
 
     {{outlet}}
