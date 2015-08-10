@@ -22,7 +22,6 @@
 .sign-in__cta {
   @extend %form-border-decor;
   width: 100%;
-  transition: background .1s linear;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: $form-radius;
