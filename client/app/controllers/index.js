@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
 
     toggleAddStudent() {
       this.toggleProperty('showingAddStudentForm');
+    },
+
+    signOut: function() {
+      this.get('session').invalidate();
     }
   }
 });
