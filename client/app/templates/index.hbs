@@ -16,15 +16,15 @@
             {{render 'add-student-form'}}
           {{/if}}
           <ul>
-            {{#each studentLabels as |studentLabel|}}
-              <li class='student-label'>
-                <span class='student-label__nickname--abbrev'>{{studentLabel.nicknameAbbrev}}</span>
-                <div class='student-label__nickname-set'>
-                  <div class='student-label__nickname'>
-                    {{studentLabel.nickname}}
+            {{#each students as |student|}}
+              <li class='student'>
+                <span class='student__nickname--abbrev'>{{student.nicknameAbbrev}}</span>
+                <div class='student__nickname-set'>
+                  <div class='student__nickname'>
+                    {{student.nickname}}
                   </div>
-                  <div class='student-label__school'>
-                    {{studentLabel.school.name}}
+                  <div class='student__school'>
+                    {{student.school.name}}
                   </div>
                 </div>
               </li>

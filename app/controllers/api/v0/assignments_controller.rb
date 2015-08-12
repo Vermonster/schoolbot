@@ -4,7 +4,10 @@ module API
       include DistrictAuthenticated
 
       def show
-        respond_with Student.find_by!(digest: params[:id])
+        respond_with(
+          Student.find_by!(digest: params[:id]),
+          namespace: ::API::V0 # FIXME: Why is this needed?
+        )
       end
 
       def create
