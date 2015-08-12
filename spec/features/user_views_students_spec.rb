@@ -18,7 +18,9 @@ feature 'User views students' do
     )
     sign_in_as user
 
-    click_on 'Profile'
+    within('.menu') do
+      find('[aria-label="Settings"]').click
+    end
 
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'First Student') do

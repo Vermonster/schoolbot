@@ -1,5 +1,3 @@
-<a href="#" {{action 'signOut'}}>Sign Out</a>
-
 <h1>Signed into district!</h1>
 
 {{bus-map students=students}}
@@ -40,7 +38,7 @@
 {{/if}}
 
 <div class='menu'>
-  <button class='btn--profile' {{action 'toggleProfile'}}>
-    <span class='icon--profile'>Settings</span>
+  <button class='btn--profile' {{action 'toggleProfile'}} aria-label='Settings'>
+    <span class='icon--profile'></span>
   </button>
 </div>
