@@ -9,7 +9,7 @@ describe User do
         .with({ email: 'test' }, district_id: district.id)
         .and_return('found!')
 
-      result = User.find_for_authentication(email: 'test', subdomain: 'foo')
+      result = User.find_for_authentication(email: 'test', subdomains: ['foo'])
 
       expect(result).to eq 'found!'
     end
