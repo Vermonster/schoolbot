@@ -11,7 +11,6 @@
       {{locale-picker}}
 
       <div class='main__content'>
-
         <div class='logo'>Schoolbot</div>
 
         {{#if districts.current}}
@@ -22,10 +21,9 @@
 
         {{/if}}
 
+        {{outlet}}
+
       </div>
-
-      {{outlet}}
-
     </div>
   </div>
 {{/if}}

@@ -40,6 +40,8 @@ $base-background-color: #fff;
 $base-font-color: $dark-gray;
 $base-font-invert-color: #fff;
 $color-action: $color-secondary;
+$color-action-hover: darken($color-action, 10%);
+$color-menu-hover: $base-font-invert-color;
 $color-error: $color-secondary-darken-4;
 
 // Border
@@ -60,10 +62,14 @@ $modal-section-padding: rem(10) rem(15);
 
 // Icons
 $icon-circle-radius: rem(10);
+$icon-color: lighten($color-secondary, 30%);
 
 // Nickname Abbreviations
 $nickname-abbrev-odd-color: $color-primary;
 $nickname-abbrev-even-color: $color-secondary-darken-3;
+
+// Transition
+$base-transition-speed: .15s;
 
 // Media Queries
 $background-landscape: new-breakpoint(min-width $background-landscape-width);

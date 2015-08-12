@@ -73,3 +73,13 @@ button {
 .btn--add-student {
   margin-top: rem(10);
 }
+
+.btn--profile:hover {
+  background-color: transparent;
+
+  [class*='icon--'],
+  [class*='icon--']:before {
+    background-color: $color-menu-hover;
+  }
+}
+

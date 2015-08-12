@@ -13,7 +13,12 @@
   }
 }
 
+.modal__body {
+  padding: $modal-section-padding;
+}
+
 .modal__inner {
+  position: relative;
   max-width: rem(270);
   margin: auto;
   margin-bottom: $modal-item-padding;
