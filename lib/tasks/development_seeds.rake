@@ -37,18 +37,37 @@ if Rails.env.development? || Rails.env.test?
         password: 'testtest'
       )
 
-      create(:student_label,
+      bobby_label = create(:student_label,
         nickname: 'Bobby',
         user: user,
         school: adams_elementary,
         student: create(:student, district: boston)
       )
-      create(:student_label,
+      jenny_label = create(:student_label,
         nickname: 'Jenny',
         user: user,
         school: burke_high,
         student: create(:student, district: boston)
       )
+      create(:student_label,
+        nickname: 'Davie',
+        user: user,
+        school: adams_elementary,
+        student: create(:student, district: boston)
+      )
+
+      bus1 = create(:bus, district: boston, identifier: 'BUS001')
+      bus2 = create(:bus, district: boston, identifier: 'BUS002')
+
+      10.times do |n|
+        create(:bus_location, bus: bus1, recorded_at: n.minutes.ago)
+      end
+      10.times do |n|
+        create(:bus_location, bus: bus2, recorded_at: n.minutes.ago)
+      end
+
+      create(:bus_assignment, student: bobby_label.student, bus: bus1)
+      create(:bus_assignment, student: jenny_label.student, bus: bus2)
     end
   end
 end
