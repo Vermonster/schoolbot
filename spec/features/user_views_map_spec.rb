@@ -18,20 +18,38 @@ feature 'User views map' do
     )
   end
 
-  scenario 'with bus positions indicated by student abbreviations' do
-    first_bus = create(:bus, district: @district)
-    second_bus = create(:bus, district: @district)
-    create(:bus_location, bus: first_bus)
-    create(:bus_location, bus: second_bus)
-    create(:bus_assignment, student: @first_label.student, bus: first_bus)
-    create(:bus_assignment, student: @second_label.student, bus: second_bus)
+  context 'with multiple bus positions' do
+    before do
+      @first_bus = create(:bus, district: @district)
+      second_bus = create(:bus, district: @district)
+      create(:bus_location, bus: @first_bus)
+      create(:bus_location, bus: second_bus)
+      create(:bus_assignment, student: @first_label.student, bus: @first_bus)
+      create(:bus_assignment, student: @second_label.student, bus: second_bus)
+    end
 
-    sign_in_as @user
+    scenario 'indicated by student abbreviations' do
+      sign_in_as @user
 
-    within('.leaflet-container') do
-      expect(page).to have_css('.bus-marker', count: 2)
-      expect(page).to have_css('.bus-marker', text: 'FI')
-      expect(page).to have_css('.bus-marker', text: 'SE')
+      within('.leaflet-container') do
+        expect(page).to have_css('.bus-marker', count: 2)
+        expect(page).to have_css('.bus-marker', text: 'FI')
+        expect(page).to have_css('.bus-marker', text: 'SE')
+      end
+    end
+
+    scenario 'live-updated as locations change' do
+      sign_in_as @user
+
+      first_bus_style = page.find('.bus-marker:first-child')[:style]
+      second_bus_style = page.find('.bus-marker:last-child')[:style]
+
+      create(:bus_location, bus: @first_bus)
+
+      expect(page).to_not have_css(
+        %(.bus-marker[style="#{first_bus_style}"]), wait: 3
+      )
+      expect(page).to have_css(%(.bus-marker[style="#{second_bus_style}"]))
     end
   end
 
@@ -43,9 +61,7 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    within('.leaflet-container') do
-      expect(page).to have_css('.bus-marker', count: 1, text: 'FI | SE')
-    end
+    expect(page).to have_css('.bus-marker', count: 1, text: 'FI | SE')
   end
 
   scenario 'with markers displayed only for buses that have locations' do
