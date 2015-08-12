@@ -48,6 +48,9 @@ $color-error: $color-secondary-darken-4;
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
+// Menu
+$menu-height: rem(60);
+
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
