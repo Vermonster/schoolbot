@@ -18,7 +18,7 @@ feature 'User views students' do
     )
     sign_in_as user
 
-    click_on 'Profile'
+    click_on 'Settings'
 
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'First Student') do
