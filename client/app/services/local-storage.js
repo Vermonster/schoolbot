@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  unknownProperty: function(key) {
+  unknownProperty(key) {
     return localStorage.getItem(key);
   },
 
-  setUnknownProperty: function(key, value) {
+  setUnknownProperty(key, value) {
     if (value != null) {
       localStorage.setItem(key, value);
     } else {

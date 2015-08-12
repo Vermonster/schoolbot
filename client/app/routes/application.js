@@ -10,7 +10,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   title: t('titles.application'),
 
-  beforeModel: function() {
+  beforeModel() {
     this._super(...arguments);
 
     const storedLocale = this.get('localStorage.locale');

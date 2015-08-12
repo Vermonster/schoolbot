@@ -22,9 +22,9 @@ export default Ember.Component.extend({
   isOpen: false,
 
   actions: {
-    toggle: function() { this.toggleProperty('isOpen'); },
+    toggle() { this.toggleProperty('isOpen'); },
 
-    setLocale: function(locale) {
+    setLocale(locale) {
       this.get('i18n').set('locale', locale);
       this.get('localStorage').set('locale', locale);
       this.send('toggle');

@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  district: DS.belongsTo('district'),
+  district: DS.belongsTo('district', { async: false }),
 
   name: DS.attr('string'),
   address: DS.attr('string'),

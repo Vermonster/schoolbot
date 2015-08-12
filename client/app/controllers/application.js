@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   districts: Ember.inject.service(),
 
   actions: {
-    signOut: function() {
+    signOut() {
       this.get('session').invalidate();
     }
   }

@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    toggleProfile: function() {
+    toggleProfile() {
       this.toggleProperty('showingProfile');
     },
 
-    toggleAddStudent: function() {
+    toggleAddStudent() {
       this.toggleProperty('showingAddStudentForm');
     }
   }

@@ -30,7 +30,7 @@ export default LeafletMap.extend({
     attributionControl: false
   },
 
-  didCreateLayer: function() {
+  didCreateLayer() {
     this._super();
     L.control.attribution({ prefix: false })
       .addAttribution(ATTRIBUTION)
@@ -62,7 +62,7 @@ export default LeafletMap.extend({
         })
       }),
 
-      didCreateLayer: function() {
+      didCreateLayer() {
         this._super();
         // TODO: Higher-level default bound that takes the user's home address
         // and school addresses into account

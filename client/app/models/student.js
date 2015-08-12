@@ -2,8 +2,8 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  bus: DS.belongsTo('bus'),
-  school: DS.belongsTo('school'),
+  bus: DS.belongsTo('bus', { async: false }),
+  school: DS.belongsTo('school', { async: false }),
 
   nickname: DS.attr('string'),
 

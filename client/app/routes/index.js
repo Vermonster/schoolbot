@@ -4,7 +4,7 @@ import AuthenticatedRoute from 'simple-auth/mixins/authenticated-route-mixin';
 export default Ember.Route.extend(AuthenticatedRoute, {
   districts: Ember.inject.service(),
 
-  beforeModel: function() {
+  beforeModel() {
     if (!this.get('districts.current')) {
       this.transitionTo('about');
     } else {
@@ -12,12 +12,12 @@ export default Ember.Route.extend(AuthenticatedRoute, {
     }
   },
 
-  afterModel: function() {
+  afterModel() {
     this.students = this.store.findAll('student');
     return this.students;
   },
 
-  setupController: function(controller) {
+  setupController(controller) {
     controller.set('students', this.students);
   }
 });
