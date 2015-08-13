@@ -56,7 +56,7 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: darken($color-action, 10%);
+    color: $color-action-hover;
   }
 
   &:active,

@@ -2,7 +2,6 @@
 
 {{bus-map students=students}}
 
-<button {{action 'toggleProfile'}}>Profile</button>
 
 {{#if showingProfile}}
   <div class='modal modal__overlay'>
@@ -33,6 +32,13 @@
         </section>
       </div>
     </div>
+    <button {{action 'signOut'}}>Sign Out</button>
     <button {{action 'toggleProfile'}}>Close</button>
   </div>
 {{/if}}
+
+<div class='menu'>
+  <button class='btn--profile' {{action 'toggleProfile'}}>
+    <span class='icon--profile'>Settings</span>
+  </button>
+</div>

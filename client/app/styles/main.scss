@@ -1,6 +1,10 @@
-body {
+.main__outer--map-view,
+.main__outer--page-view {
   position: relative;
   height: 100vh;
+}
+
+.main__outer--page-view {
   background-image: image-path('background_sun.svg'),
     image-path('background_cloud.svg'),
     repeating-linear-gradient(
@@ -31,7 +35,7 @@ body {
   }
 }
 
-.main {
+.main__inner--page-view {
   position: relative;
   max-width: $background-landscape-width;
   height: 100vh;

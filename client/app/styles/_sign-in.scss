@@ -1,4 +1,6 @@
 .form--sign-in {
+  @extend %wrapper;
+  margin-top: $section-spacing;
   padding-top: 0;
   border: 0;
   border-radius: $form-radius;
