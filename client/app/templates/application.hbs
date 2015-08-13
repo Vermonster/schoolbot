@@ -1,22 +1,31 @@
-<div class='main'>
-  <div class='main__content'>
-    <div class='logo'>Schoolbot</div>
-
-    {{locale-picker}}
-
-    {{#if districts.current}}
-      <h2>Welcome to {{districts.current.name}}</h2>
-
-      {{#if session.isAuthenticated}}
-        <a href="#" {{action 'signOut'}}>Sign Out</a>
-      {{else}}
-        {{#link-to 'sign-in'}}Sign In{{/link-to}} or
-        Register
-      {{/if}}
-
-    {{/if}}
+{{#if session.isAuthenticated}}
+  <div class='main__outer--map-view'>
 
     {{outlet}}
 
   </div>
-</div>
+{{else}}
+  <div class='main__outer--page-view'>
+    <div class='main__inner--page-view'>
+
+      {{locale-picker}}
+
+      <div class='main__content'>
+
+        <div class='logo'>Schoolbot</div>
+
+        {{#if districts.current}}
+          <h2>Welcome to {{districts.current.name}}</h2>
+
+          {{#link-to 'sign-in'}}Sign In{{/link-to}} or
+          Register
+
+        {{/if}}
+
+      </div>
+
+      {{outlet}}
+
+    </div>
+  </div>
+{{/if}}
