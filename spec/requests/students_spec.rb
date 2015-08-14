@@ -54,11 +54,15 @@ describe 'Students API' do
     expect(response_json.keys).to match_array [
       :students, :schools, :buses, :bus_locations
     ]
-    first_student = response_json[:students].first
-    expect(first_student[:nickname]).to eq 'First'
+    first_student = response_json[:students].find do |student|
+      student[:nickname] == 'First'
+    end
+    second_student = response_json[:students].find do |student|
+      student[:nickname] == 'Second'
+    end
     expect(first_student[:bus_id]).to eq bus.id
     expect(first_student[:school_id]).to eq school.id
-    expect(response_json[:students].second[:bus_id]).to eq nil
+    expect(second_student[:bus_id]).to eq nil
     expect(response_json[:buses].first[:identifier]).to eq 'BUS001'
     expect(response_json[:buses].first[:bus_location_ids]).to have(5).items
     bus_location = response_json[:bus_locations].first
