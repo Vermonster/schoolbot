@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   default_url_options host: ENV.fetch('HOST')
 
-  devise_for :users, path: 'api/users', module: 'api'
+  devise_for :users, skip: :all
+
   namespace :api do
+    devise_scope :user do
+      post 'users/sign_in', to: 'sessions#create', as: :user_session
+    end
     get 'districts/current', to: 'districts#show', as: :current_district
     resources :students, only: :index
     resource :translations, only: :show
