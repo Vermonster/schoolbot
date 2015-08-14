@@ -46,7 +46,7 @@
 }
 
 .logo {
-  @extend %hide-text;
+  @include hide-text;
   position: absolute;
   top: rem(20);
   right: rem(20);
