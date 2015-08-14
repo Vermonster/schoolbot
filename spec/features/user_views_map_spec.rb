@@ -41,8 +41,8 @@ feature 'User views map' do
     scenario 'live-updated as locations change' do
       sign_in_as @user
 
-      first_bus_style = page.find('.bus-marker:first-child')[:style]
-      second_bus_style = page.find('.bus-marker:last-child')[:style]
+      first_bus_style = page.find('.bus-marker', text: 'FI')[:style]
+      second_bus_style = page.find('.bus-marker', text: 'SE')[:style]
 
       create(:bus_location, bus: @first_bus)
 
