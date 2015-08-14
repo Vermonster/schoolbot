@@ -7,8 +7,15 @@
   background: image-path('line_gradient-yellow.jpg') repeat-x, $color-secondary;
 }
 
+%hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 // Icons
 %icon-circle {
+  @extend %hide-text;
   display: inline-block;
   position: relative;
   width: $icon-circle-radius * 2;
@@ -17,7 +24,6 @@
   border-radius: $icon-circle-radius;
   background-color: $color-secondary;
   color: $base-font-invert-color;
-  text-indent: rem(-9999);
   vertical-align: middle;
 
   &:before,
@@ -44,7 +50,6 @@
   border-bottom-left-radius: 0 rem(64);
   border-bottom-right-radius: 0 rem(64);
   background-color: $icon-color;
-  text-indent: rem(-9999);
 
   &:before,
   &:after {
@@ -52,6 +57,7 @@
   }
 
   &:before {
+    @extend %hide-text;
     position: absolute;
     top: rem(-20);
     left: 50%;

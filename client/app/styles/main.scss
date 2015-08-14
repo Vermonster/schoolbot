@@ -46,6 +46,7 @@
 }
 
 .logo {
+  @extend %hide-text;
   position: absolute;
   top: rem(20);
   right: rem(20);
@@ -53,7 +54,6 @@
   height: rem(60);
   background-image: image-path('schoolbot_logo.svg');
   background-repeat: no-repeat;
-  text-indent: rem(-9999);
 }
 
 .main__content {
