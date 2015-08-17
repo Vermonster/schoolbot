@@ -1,5 +1,6 @@
 class District < ActiveRecord::Base
   has_many :buses
+  has_many :bus_locations, through: :buses
   has_many :schools
   has_many :students
   has_many :users

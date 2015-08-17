@@ -23,14 +23,18 @@ class Zonar
     zone: 'Zone'
   }
 
+  MAX_REQUEST_WINDOW = 5.minutes
+
   TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/
 
-  def initialize(district)
-    @district = district
+  def initialize(credentials)
+    @credentials = credentials
   end
 
-  def bus_events_since(time)
-    csv_to_attributes(csv_events_between(time, Time.zone.now))
+  def bus_events_since(start_time)
+    clamped_start_time = [start_time, MAX_REQUEST_WINDOW.ago].compact.max
+
+    csv_to_attributes(csv_events_between(clamped_start_time, Time.zone.now))
   end
 
   private
@@ -39,7 +43,7 @@ class Zonar
   def csv_events_between(start_time, end_time)
     RestClient::Request.execute(
       method: :get,
-      url: "https://#{@district.zonar_customer}.zonarsystems.net/interface.php",
+      url: "https://#{@credentials[:customer]}.zonarsystems.net/interface.php",
       # https://github.com/rest-client/rest-client#passing-advanced-options
       headers: { params:
         STATIC_PARAMS.merge(starttime: start_time.to_i, endtime: end_time.to_i)
@@ -51,8 +55,8 @@ class Zonar
 
   def authentication_params
     {
-      username: @district.zonar_username,
-      password: @district.zonar_password
+      username: @credentials[:username],
+      password: @credentials[:password]
     }
   end
 
