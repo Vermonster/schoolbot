@@ -32,10 +32,12 @@
   @include border-top-radius($modal-radius);
   margin-bottom: 0;
   padding-top: $modal-item-padding;
+  padding-bottom: $modal-item-padding - rem(5);
+  padding-left: rem(30);
   background-color: $color-secondary;
   color: $base-font-invert-color;
   font-size: rem(20);
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 

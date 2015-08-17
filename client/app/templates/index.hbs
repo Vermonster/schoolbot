@@ -3,7 +3,8 @@
 {{#if showingProfile}}
   <div class='modal modal__overlay'>
     <div class='modal__inner'>
-      <h2 class='modal__title'>My Profile</h2>
+      <h2 class='modal__title'>Settings</h2>
+      <button class='btn--close--icon' {{action 'toggleProfile'}} aria-label='Close'></button>
       <div class='modal__body'>
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Students</h3>
@@ -32,10 +33,10 @@
             {{/each}}
           </ul>
         </section>
+        <button class='btn--close' {{action 'toggleProfile'}}>Close</button>
       </div>
+      <button class='btn--sign-out' {{action 'signOut'}}>Sign Out</button>
     </div>
-    <button {{action 'signOut'}}>Sign Out</button>
-    <button {{action 'toggleProfile'}}>Close</button>
   </div>
 {{/if}}
 
