@@ -27,20 +27,6 @@
   }
 }
 
-.sign-in__cta {
-  @extend %form-border-decor;
-  width: 100%;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: $form-radius;
-  border-bottom-right-radius: $form-radius;
-  text-align: center;
-
-  &:hover {
-    background: darken($color-action, 10%);
-  }
-}
-
 .msg--error {
   background-color: rgba($color-error, .1);
   color: $color-error;

@@ -133,3 +133,11 @@ button {
     background-color: $color-menu-hover;
   }
 }
+
+.btn--sign-in {
+  @include full-width-button('true');
+}
+
+.btn--sign-out {
+  @include full-width-button('false');
+}

@@ -60,3 +60,21 @@
     background-color: $icon-color;
   }
 }
+
+// Buttons
+@mixin full-width-button($bg-image: true) {
+  @if $bg-image == 'true' {
+    @extend %form-border-decor;
+  }
+
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: $form-radius;
+  border-bottom-right-radius: $form-radius;
+  text-align: center;
+
+  &:hover {
+    background: darken($color-action, 10%);
+  }
+}
