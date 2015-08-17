@@ -21,11 +21,9 @@ class UpdateBusLocationsJob < ActiveJob::Base
 
   def zonar
     Zonar.new(
-      credentials: {
-        customer: @district.zonar_customer,
-        username: @district.zonar_username,
-        password: @district.zonar_password
-      }
+      customer: @district.zonar_customer,
+      username: @district.zonar_username,
+      password: @district.zonar_password
     )
   end
 end

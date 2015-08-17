@@ -27,8 +27,12 @@ class Zonar
 
   TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/
 
-  def initialize(credentials)
-    @credentials = credentials
+  def initialize(customer:, username:, password:)
+    @credentials = {
+      customer: customer,
+      username: username,
+      password: password
+    }
   end
 
   def bus_events_since(start_time)
