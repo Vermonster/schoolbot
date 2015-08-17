@@ -8,8 +8,7 @@ class Zonar
     version: 2,
     logvers: 3.5,
     type: 'Standard',
-    reqtype: 'fleet',
-    revgeocode: true
+    reqtype: 'fleet'
   }
 
   CSV_HEADERS = {
@@ -21,8 +20,7 @@ class Zonar
     speed: 'Speed(MPH)',
     acceleration: 'Acceleration(Miles/Hour/Sec)',
     reason: 'Log Reason',
-    zone: 'Zone',
-    address: 'Address'
+    zone: 'Zone'
   }
 
   TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/

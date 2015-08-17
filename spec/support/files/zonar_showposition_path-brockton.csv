@@ -1,264 +1,264 @@
-"Asset ID","Asset No.",Date,Time(EDT),Speed(MPH),Heading,"Log Reason","Distance Traveled(Miles)",Lat,Lon,Zone,"Fuel Counter(Gallon)",Acceleration(Miles/Hour/Sec),"Status Mask",Address
-321,"MB033 - 051073",2015-07-24,08:13:35,19,"South West West",Standard,0,42.429811,-71.0299817,Massachusetts,0.00,-15.66,8223,"312 Lynn St, Malden, MA 02148"
-101,022051,2015-07-24,08:13:40,0,"North North West","Power On",0,42.0680122,-71.0451237,"Brockton High","17,025.36",,40991,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:13:53,3,"North North West","Motion Start",0,42.0680122,-71.0451237,"Brockton High","17,025.36",8.95,42015,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:13:55,7.2,"South West","Motion Start",0,42.0700803,-71.046424,Massachusetts,"19,167.80",33.55,42015,"711 Belmont St, Brockton, MA 02301"
-93,022041,2015-07-24,08:13:56,8.2,"South West","Motion Start",0,42.0701747,-71.0462991,Massachusetts,"17,056.27",31.32,42015,"707 Belmont St, Brockton, MA 02301"
-87,022027,2015-07-24,08:13:56,0,"North North West","Power On",0,42.067875,-71.0450765,"Brockton High","17,217.94",,40991,"Angus Beaton Dr, Brockton, MA 02301"
-48,022062,2015-07-24,08:13:57,6.5,"South West","Motion Start",0,42.070271,-71.0461382,Massachusetts,"17,307.50",29.08,42015,"703 Belmont St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:14:03,31,"South West West",Standard,0.2,42.4285592,-71.033243,Massachusetts,0.00,2.24,8223,"240 Lynn St, Malden, MA 02148"
-87,022027,2015-07-24,08:14:05,4.5,"North North West","Motion Start",0,42.0678888,-71.0450896,"Brockton High","17,217.94",24.61,42015,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:14:13,16.5,"South South East",Standard,0.1,42.0689283,-71.045467,"Brockton High","19,167.80",-15.66,40991,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:14:14,21,"South East",Standard,0.1,42.0691472,-71.0456889,"Brockton High","17,056.27",-8.95,40991,"Angus Beaton Dr, Brockton, MA 02301"
-48,022062,2015-07-24,08:14:15,20.7,"South East",Standard,0.1,42.0694536,-71.0460358,"Brockton High","17,307.50",4.47,40991,"Angus Beaton Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:14:31,33.1,"South West West",Standard,0.5,42.4268114,-71.0378319,Massachusetts,0.00,-4.47,8223,"132 Lynn St, Malden, MA 02148"
-93,022041,2015-07-24,08:14:32,16.5,"South South East",Standard,0.2,42.0680799,-71.045751,"Brockton High","17,056.27",,40991,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:14:32,12,"South East",Standard,0.2,42.0677798,-71.0455936,"Brockton High","19,167.80",-6.71,40991,"Angus Beaton Dr, Brockton, MA 02301"
-48,022062,2015-07-24,08:14:33,14,"South South West",Standard,0.2,42.0684905,-71.045763,"Brockton High","17,307.50",,40991,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:14:38,13.2,"South West",Standard,0.1,42.0685376,-71.0457586,"Brockton High","17,025.36",6.71,40991,"Angus Beaton Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:14:46,14.2,"South West",Standard,0.1,42.0684483,-71.0459524,"Brockton High","17,217.94",2.24,40991,"Angus Beaton Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:14:49,33.7,"South West",Standard,0.6,42.4247058,-71.0398865,Massachusetts,0.00,-8.95,8223,"60 Lynn St, Malden, MA 02148"
-93,022041,2015-07-24,08:14:50,10.7,"North North West",Standard,0.3,42.0679704,-71.0451096,"Brockton High","17,056.27",2.24,40991,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:14:51,0,"North North West","Motion Stop",0.2,42.0682488,-71.0452191,"Brockton High","19,167.80",-13.42,42015,"Angus Beaton Dr, Brockton, MA 02301"
-48,022062,2015-07-24,08:14:51,9.2,East,Standard,0.3,42.0677271,-71.0452832,"Brockton High","17,307.50",-2.24,40991,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:14:55,0,"North North West","Motion Stop",0.3,42.0681161,-71.0451651,"Brockton High","17,056.27",-24.61,42015,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:14:59,0,"North North West","Power Off",0.2,42.0682606,-71.0452215,"Brockton High","19,167.80",,32799,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:15:00,20.5,"South South East",Standard,0.2,42.0671804,-71.0457024,"Brockton High","17,025.36",6.71,40991,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:15:05,0,"North North West","Power Off",0.3,42.0681199,-71.0451668,"Brockton High","17,056.27",,32799,"Angus Beaton Dr, Brockton, MA 02301"
-48,022062,2015-07-24,08:15:05,0,"North North West","Motion Stop",0.3,42.0679475,-71.0451123,"Brockton High","17,307.50",-2.24,42015,"Angus Beaton Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:15:06,22.5,"South South East",Standard,0.2,42.0670734,-71.0456624,"Brockton High","17,217.94",4.47,40991,"Angus Beaton Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:15:12,25.5,"South West",Standard,0.8,42.4224317,-71.0419123,Massachusetts,0.00,-6.71,8223,"78 Lynn St, Everett, MA 02149"
-48,022062,2015-07-24,08:15:13,0,"North North West","Door Open/Close",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",,41022,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:15:18,20.5,"South East East",Standard,0.3,42.0658649,-71.0448443,"Brockton High","17,025.36",-6.71,40991,"Magnolia Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:15:24,18.7,"South East East",Standard,0.3,42.0657954,-71.0447096,"Brockton High","17,217.94",-6.71,40991,"Magnolia Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:15:34,18.7,"South South West",Standard,1,42.4206575,-71.0435162,Massachusetts,0.00,-13.42,8223,"6 Lynn St, Everett, MA 02149"
-101,022051,2015-07-24,08:15:36,15.2,"North East East",Standard,0.4,42.0658041,-71.0430715,"Brockton High","17,025.36",-24.61,40991,"97 Breer Circle, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:15:40,0,"South West","Motion Stop",1,42.4204935,-71.0436655,Massachusetts,0.00,-38.03,9247,"Lynn St, Everett, MA 02149"
-87,022027,2015-07-24,08:15:45,5.7,"North East East",Standard,0.4,42.0658282,-71.0429181,"Brockton High","17,217.94",-33.55,40991,"97 Breer Circle, Brockton, MA 02301"
-101,022051,2015-07-24,08:15:56,23,North,Standard,0.5,42.0670278,-71.0423962,"Brockton High","17,025.36",2.24,40991,"75 Breer Circle, Brockton, MA 02301"
-87,022027,2015-07-24,08:16:06,21.7,"North North West",Standard,0.5,42.0671805,-71.0424463,"Brockton High","17,217.94",,40991,"Memorial Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:16:15,9.4,"South West","Motion Start",1,42.4204599,-71.0437013,Massachusetts,0.00,53.69,9247,"Lynn St, Everett, MA 02149"
-101,022051,2015-07-24,08:16:16,19.7,"North East East",Standard,0.6,42.0683577,-71.0426353,"BROCKTON HIGH SCHOOL","17,025.36",24.61,40991,"Memorial Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:16:29,21.2,"North East East",Standard,0.6,42.0683957,-71.0425166,"BROCKTON HIGH SCHOOL","17,218.21",22.37,40991,"Memorial Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:16:33,24.9,"South South West",Standard,1.1,42.4193936,-71.0446482,Massachusetts,0.00,8.95,8223,"Broadway & Manning Terrace, Everett, MA 02149"
-101,022051,2015-07-24,08:16:34,31.5,"North North East",Standard,0.7,42.0693084,-71.0402633,"BROCKTON HIGH SCHOOL","17,025.62",-6.71,40991,"Memorial Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:16:47,25.5,"North East",Standard,0.7,42.0691475,-71.0404241,"BROCKTON HIGH SCHOOL","17,218.21",,40991,"Memorial Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:16:52,24,"South East East",Standard,0.8,42.0698464,-71.0391451,"BROCKTON HIGH SCHOOL","17,025.62",15.66,40991,"452 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:17:02,0,"North East","Motion Stop",0.7,42.0700118,-71.0397644,"BROCKTON HIGH SCHOOL","17,218.21",2.24,42015,"Memorial Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:17:03,8,"North East","Motion Start",0.7,42.0700252,-71.0397413,"BROCKTON HIGH SCHOOL","17,218.21",33.55,42015,"Memorial Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:17:06,16.3,"South South West",Standard,1.3,42.4167291,-71.0469529,Massachusetts,0.00,-24.61,8223,"780 Broadway, Everett, MA 02149"
-101,022051,2015-07-24,08:17:10,22,"South South East",Standard,0.9,42.0694088,-71.0374843,Massachusetts,"17,025.62",13.42,40991,"6 Gordon St, Brockton, MA 02301"
-87,022027,2015-07-24,08:17:21,12.7,"North East East",Standard,0.8,42.0697084,-71.0379673,Massachusetts,"17,218.21",-8.95,40991,"430 Forest Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:17:28,8.3,"South South West",Standard,1.4,42.4158978,-71.0476501,Massachusetts,0.00,-22.37,8223,"748 Broadway, Everett, MA 02149"
-101,022051,2015-07-24,08:17:28,9.5,"South South East",Standard,1,42.0679656,-71.0370206,Massachusetts,"17,025.62",-24.61,40991,"85 Gordon St, Brockton, MA 02301"
-101,022051,2015-07-24,08:17:31,0,"South East","Motion Stop",1,42.0679094,-71.0369658,Massachusetts,"17,025.62",-26.84,42015,"91 Gordon St, Brockton, MA 02301"
-101,022051,2015-07-24,08:17:34,6.2,"South East East","Motion Start",1,42.0679016,-71.0369299,Massachusetts,"17,025.62",31.32,42015,"92 Gordon St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:17:38,0,"South South West","Motion Stop",1.4,42.4156806,-71.0478326,Massachusetts,0.00,-13.42,9247,"742 Broadway, Everett, MA 02149"
-48,022062,2015-07-24,08:17:38,0,"North North West","Door Open/Close",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",,41023,"Angus Beaton Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:17:39,27.5,"North East East",Standard,1,42.0701379,-71.0355463,Massachusetts,"17,218.21",-11.18,40991,"372 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:17:41,0,"North North West","Power On, Motion Stop",0.3,42.0681199,-71.0451668,"Brockton High","17,056.27",,42015,"Angus Beaton Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:17:47,0,"North East East","Motion Stop",1,42.0702448,-71.0349579,Massachusetts,"17,218.21",-22.37,42015,"356 Forest Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:17:50,0,"North North West","Power On",0.2,42.0682679,-71.0452194,"Brockton High","19,167.80",,40991,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:17:52,10.5,East,Standard,1.1,42.0686881,-71.0353341,Massachusetts,"17,025.62",-4.47,40991,"Ettrick St, Brockton, MA 02301"
-87,022027,2015-07-24,08:18:02,7.2,"North East East","Motion Start",1,42.0702485,-71.0349457,Massachusetts,"17,218.21",38.03,42015,"356 Forest Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:18:07,8.1,"South South West","Motion Start",1.4,42.4156293,-71.0478899,Massachusetts,0.00,62.63,9247,"740 Broadway, Everett, MA 02149"
-101,022051,2015-07-24,08:18:10,26.7,"South South East",Standard,1.2,42.0671466,-71.0341572,Massachusetts,"17,025.62",,40991,"49 Ettrick St, Brockton, MA 02301"
-47,022081,2015-07-24,08:18:12,7.2,"North North West","Motion Start",0.2,42.0682907,-71.04523,"Brockton High","19,167.80",29.08,42015,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:18:21,7,"North North West","Motion Start",0.3,42.0681519,-71.0451918,"Brockton High","17,056.27",26.84,42015,"Angus Beaton Dr, Brockton, MA 02301"
-87,022027,2015-07-24,08:18:25,31,"North East East",Standard,1.2,42.0708774,-71.0314844,Massachusetts,"17,218.21",-4.47,40991,"278 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:18:28,3,"North North West","Motion Start",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",6.71,42015,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:18:28,18,"North East East",Standard,1.3,42.0660087,-71.0330908,Massachusetts,"17,025.62",29.08,40991,"288 Menlo St, Brockton, MA 02301"
-47,022081,2015-07-24,08:18:30,23.7,"North West",Standard,0.3,42.0694777,-71.0459481,"Brockton High","19,167.80",-6.71,40991,"Angus Beaton Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:18:33,20.8,"South South West",Standard,1.5,42.4140593,-71.0491688,Massachusetts,0.00,,8223,"688 Broadway, Everett, MA 02149"
-87,022027,2015-07-24,08:18:33,0,"North East East","Motion Stop",1.2,42.0710034,-71.0307753,Massachusetts,"17,218.21",-26.84,42015,"262 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:18:39,25.5,"North West",Standard,0.4,42.069383,-71.0458237,"Brockton High","17,056.27",4.47,40991,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:18:41,0,"North North West","Motion Stop",0.4,42.0699293,-71.0464223,"BROCKTON HIGH SCHOOL","19,167.80",-13.42,42015,"Angus Beaton Dr, Brockton, MA 02301"
-47,022081,2015-07-24,08:18:45,4,"North North West","Motion Start",0.4,42.069938,-71.0464203,"BROCKTON HIGH SCHOOL","19,167.80",13.42,42015,"Angus Beaton Dr, Brockton, MA 02301"
-101,022051,2015-07-24,08:18:46,31,"North East East",Standard,1.4,42.0667186,-71.030683,Massachusetts,"17,025.62",4.47,40991,"228 Menlo St, Brockton, MA 02301"
-87,022027,2015-07-24,08:18:51,8.5,East,"Motion Start",1.2,42.0710049,-71.0307637,Massachusetts,"17,218.21",44.74,42015,"260 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:18:54,19.2,"North West",Standard,0.4,42.069125,-71.0455584,"Brockton High","17,307.50",4.47,40991,"Angus Beaton Dr, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:18:56,14,"South West",Standard,1.6,42.4125163,-71.0505024,Massachusetts,0.00,-4.47,8223,"636 Broadway, Everett, MA 02149"
-93,022041,2015-07-24,08:18:57,24.7,"North East",Standard,0.5,42.0702865,-71.0458971,"BROCKTON HIGH SCHOOL","17,056.27",15.66,40991,"696 Belmont St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:19:02,0,"South South West","Motion Stop",1.7,42.4123849,-71.0506215,Massachusetts,0.00,-20.13,9247,"632 Broadway, Everett, MA 02149"
-47,022081,2015-07-24,08:19:03,21.7,"North East East",Standard,0.5,42.0706232,-71.0450276,"BROCKTON HIGH SCHOOL","19,167.80",15.66,40991,"584 West St, Brockton, MA 02301"
-47,022081,2015-07-24,08:19:09,0,"North East East","Motion Stop",0.5,42.0707494,-71.0445673,"BROCKTON HIGH SCHOOL","19,167.80",-44.74,42015,"566 West St, Brockton, MA 02301"
-87,022027,2015-07-24,08:19:10,30.2,"North East East",Standard,1.4,42.0714755,-71.0281024,Massachusetts,"17,218.21",-2.24,40991,"198 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:19:11,0,"North West","Motion Stop",0.4,42.0698884,-71.0463782,"BROCKTON HIGH SCHOOL","17,307.50",-24.61,42015,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:19:11,0,"North East East","Motion Stop",0.5,42.0707023,-71.0447338,"BROCKTON HIGH SCHOOL","17,056.27",-29.08,42015,"572 West St, Brockton, MA 02301"
-47,022081,2015-07-24,08:19:15,6,"North East East","Motion Start",0.5,42.0707598,-71.0445441,"BROCKTON HIGH SCHOOL","19,167.80",24.61,42015,"564 West St, Brockton, MA 02301"
-93,022041,2015-07-24,08:19:16,4.7,"North East East","Motion Start",0.5,42.0707066,-71.0447213,"BROCKTON HIGH SCHOOL","17,056.27",22.37,42015,"572 West St, Brockton, MA 02301"
-101,022051,2015-07-24,08:19:23,23,"North East East",Standard,1.8,42.0684642,-71.0247873,Massachusetts,"17,025.62",-15.66,40991,"96 Menlo St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:19:25,8.2,"South West","Motion Start",1.7,42.4123496,-71.0506554,Massachusetts,0.00,53.69,9247,"630 Broadway, Everett, MA 02149"
-101,022051,2015-07-24,08:19:32,0,East,"Motion Stop",1.8,42.0685839,-71.024231,Massachusetts,"17,025.62",-2.24,42015,"78 Menlo St, Brockton, MA 02301"
-48,022062,2015-07-24,08:19:34,5.2,"North North West","Motion Start",0.4,42.069914,-71.0463997,"BROCKTON HIGH SCHOOL","17,307.50",26.84,42015,"Angus Beaton Dr, Brockton, MA 02301"
-93,022041,2015-07-24,08:19:34,10.7,"North East East",Standard,0.6,42.0711581,-71.0432766,"BROCKTON HIGH SCHOOL","17,056.27",-17.90,40991,"516 West St, Brockton, MA 02301"
-101,022051,2015-07-24,08:19:38,4.2,East,"Motion Start",1.8,42.0685839,-71.024231,Massachusetts,"17,025.62",15.66,42015,"78 Menlo St, Brockton, MA 02301"
-47,022081,2015-07-24,08:19:38,7.2,"North East East",Standard,0.6,42.071266,-71.0429249,"BROCKTON HIGH SCHOOL","19,167.80",11.18,40991,"504 West St, Brockton, MA 02301"
-93,022041,2015-07-24,08:19:52,26.7,"South East East",Standard,0.7,42.0710891,-71.0422164,"BROCKTON HIGH SCHOOL","17,056.27",15.66,40991,"520 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:19:52,5.5,"North East",Standard,0.5,42.070538,-71.0453924,"BROCKTON HIGH SCHOOL","17,307.50",-29.08,40991,"684 Belmont St, Brockton, MA 02301"
-87,022027,2015-07-24,08:19:52,20.2,"North East East",Standard,1.7,42.0726883,-71.0216114,Massachusetts,"17,218.21",-29.08,40991,"54 Forest Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:19:52,21.3,"South West",Standard,1.8,42.410726,-71.0521611,Massachusetts,0.00,-2.24,8223,"574 Broadway, Everett, MA 02149"
-48,022062,2015-07-24,08:19:54,0,"North East","Motion Stop",0.5,42.0705463,-71.0453667,"BROCKTON HIGH SCHOOL","17,307.50",-33.55,42015,"596 West St, Brockton, MA 02301"
-101,022051,2015-07-24,08:19:56,29,"North East East",Standard,1.9,42.0689236,-71.0229436,Massachusetts,"17,025.62",13.42,40991,"50 Menlo St, Brockton, MA 02301"
-47,022081,2015-07-24,08:19:56,29.5,"South East East",Standard,0.7,42.070586,-71.0410071,"BROCKTON HIGH SCHOOL","19,167.80",2.24,40991,"482 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:19:58,6.7,"North East East","Motion Start",0.5,42.0705557,-71.0453274,"BROCKTON HIGH SCHOOL","17,307.50",29.08,42015,"592 West St, Brockton, MA 02301"
-87,022027,2015-07-24,08:20:10,35.5,South,Standard,1.8,42.0714265,-71.0210691,Massachusetts,"17,218.21",8.95,40991,"701 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:20:14,7,"South East East",Standard,2,42.0694049,-71.0207802,Massachusetts,"17,025.62",22.37,40991,"801 Warren Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:20:14,30.7,East,Standard,0.8,42.0696792,-71.0383472,Massachusetts,"19,167.80",6.71,40991,"438 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:20:15,30.7,"South East East",Standard,0.9,42.0697806,-71.0389178,"BROCKTON HIGH SCHOOL","17,056.53",-2.24,40991,"450 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:20:16,19.7,"North East East",Standard,0.6,42.0710064,-71.0437088,"BROCKTON HIGH SCHOOL","17,307.50",-2.24,40991,"530 West St, Brockton, MA 02301"
-48,022062,2015-07-24,08:20:27,0,"North East East","Motion Stop",0.6,42.0712599,-71.0429431,"BROCKTON HIGH SCHOOL","17,307.50",-33.55,42015,"504 West St, Brockton, MA 02301"
-48,022062,2015-07-24,08:20:28,3,"North East East","Motion Start",0.6,42.0712652,-71.042929,"BROCKTON HIGH SCHOOL","17,307.50",-11.18,42015,"504 West St, Brockton, MA 02301"
-101,022051,2015-07-24,08:20:32,36.5,South,Standard,2.1,42.0675711,-71.0202873,Massachusetts,"17,025.62",-2.24,40991,"884 Warren Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:20:32,29,"North East East",Standard,1,42.0702133,-71.0351566,Massachusetts,"19,167.80",-11.18,40991,"362 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:20:33,32.2,"North East East",Standard,1,42.0700544,-71.035921,Massachusetts,"17,056.53",-8.95,40991,"382 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:20:34,33.2,"South South East",Standard,2,42.0682891,-71.0204841,Massachusetts,"17,218.21",6.71,40991,"848 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:20:39,11.6,"South West",Standard,2.1,42.4073365,-71.055314,Massachusetts,0.00,-31.32,8223,"440 Broadway, Everett, MA 02149"
-321,"MB033 - 051073",2015-07-24,08:20:43,0,"South West","Motion Stop",2.1,42.4072801,-71.055375,Massachusetts,0.00,-24.61,9247,"438 Broadway, Everett, MA 02149"
-48,022062,2015-07-24,08:20:46,21,"South East East",Standard,0.7,42.0708454,-71.0416388,"BROCKTON HIGH SCHOOL","17,307.76",4.47,40991,"494 Forest Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:20:55,21.2,"North East East",Standard,1.2,42.0708866,-71.0315054,Massachusetts,"19,167.80",-17.90,40991,"278 Forest Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:20:58,29.2,"South South East",Standard,2.4,42.0641074,-71.0194562,Massachusetts,"17,025.62",-6.71,40991,"1050 Warren Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:20:59,23,"North East East",Standard,1.2,42.0708165,-71.0317268,Massachusetts,"17,056.53",,40991,"284 Forest Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:21:12,21.7,"South East East",Standard,0.9,42.0697683,-71.0388721,"BROCKTON HIGH SCHOOL","17,307.76",-2.24,40991,"448 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:21:12,26.5,South,Standard,2.4,42.0633502,-71.0192993,Massachusetts,"17,218.21",-13.42,40991,"1090 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:21:16,19.5,"South South East",Standard,2.5,42.0626259,-71.0190441,Massachusetts,"17,025.62",11.18,40991,"1140 Warren Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:21:24,28.5,"North East East",Standard,1.3,42.0713926,-71.028739,Massachusetts,"19,167.80",8.95,40991,"224 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:21:30,27,"South South East",Standard,2.5,42.0618673,-71.0186038,Massachusetts,"17,218.21",13.42,40991,"1178 Warren Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:21:30,28.2,"North East East",Standard,1,42.0699579,-71.0364819,Massachusetts,"17,307.76",2.24,40991,"394 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:21:32,29.7,"North East East",Standard,1.4,42.0714911,-71.027956,Massachusetts,"17,056.53",-2.24,40991,"196 Forest Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:21:34,28.7,"North East East",Standard,2.6,42.0624251,-71.0174256,Massachusetts,"17,025.62",4.47,40991,"46 Market St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:21:34,7.9,"South South West","Motion Start",2.1,42.4072466,-71.0554027,Massachusetts,0.00,42.50,9247,"Broadway, Everett, MA 02149"
-47,022081,2015-07-24,08:21:42,29.7,"North East East",Standard,1.5,42.0719122,-71.0258833,Massachusetts,"19,167.80",-2.24,40991,"154 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:21:48,11.2,"South South East",Standard,2.6,42.0598099,-71.0175068,Massachusetts,"17,218.21",-51.45,40991,"1286 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:21:52,5.7,"South East East",Standard,2.7,42.0628175,-71.0152631,Massachusetts,"17,025.62",13.42,40991,"1141 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:21:55,17.2,"South West",Standard,2.2,42.4060106,-71.0565234,Massachusetts,0.00,-2.24,8223,"396 Broadway, Everett, MA 02149"
-47,022081,2015-07-24,08:22:05,23,"North East East",Standard,1.7,42.0725417,-71.0222697,Massachusetts,"19,167.80",-15.66,40991,"74 Forest Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:22:06,25.7,East,Standard,1.7,42.0724185,-71.0227531,Massachusetts,"17,056.53",-8.95,40991,"86 Forest Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:22:06,30,"North East East",Standard,2.7,42.0599698,-71.0156055,Massachusetts,"17,218.47",-2.24,40991,"Clifton Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:22:06,20.7,"North East East",Standard,1.3,42.0708772,-71.0313121,Massachusetts,"17,307.76",-29.08,40991,"274 Forest Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:22:10,20,"South South East",Standard,2.8,42.0612841,-71.0146471,Massachusetts,"17,025.62",-33.55,40991,"1213 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:22:14,0,"North West West","Motion Stop",2.2,42.405426,-71.0572807,Massachusetts,0.00,-15.66,9247,"7 Corey St, Everett, MA 02149"
-87,022027,2015-07-24,08:22:16,0,"North East East","Motion Stop",2.8,42.0601219,-71.0147109,Massachusetts,"17,218.47",-26.84,42015,"12 Clifton Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:22:19,0,East,"Motion Stop",1.7,42.0726585,-71.0213654,Massachusetts,"19,167.80",-15.66,42015,"653 Warren Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:22:20,4.7,East,"Motion Start",1.7,42.0726572,-71.0213497,Massachusetts,"19,167.80",-2.24,42015,"653 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:22:22,0,"South South East","Motion Stop",2.8,42.0609291,-71.0145224,Massachusetts,"17,025.62",-8.95,42015,"1227 Main St, Brockton, MA 02301"
-87,022027,2015-07-24,08:22:23,3.2,"North East East","Motion Start",2.8,42.0601296,-71.0147029,Massachusetts,"17,218.47",13.42,42015,"12 Clifton Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:22:24,9.7,East,Standard,1.8,42.0726449,-71.0214809,Massachusetts,"17,056.53",8.95,40991,"52 Forest Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:22:29,8.2,"South East","Motion Start",2.8,42.0608956,-71.0144786,Massachusetts,"17,025.62",29.08,42015,"1262 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:22:31,9.6,"North West West","Motion Start",2.3,42.405463,-71.0573581,Massachusetts,0.00,78.29,9247,"10 Corey St, Everett, MA 02149"
-47,022081,2015-07-24,08:22:38,28.7,South,Standard,1.8,42.0714348,-71.0210412,Massachusetts,"19,168.06",4.47,40991,"688 Warren Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:22:43,27.5,South,Standard,1.9,42.0718028,-71.0211504,Massachusetts,"17,056.53",13.42,40991,"685 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:22:47,26.5,"South East East",Standard,2.9,42.0605444,-71.0133889,Massachusetts,"17,025.62",26.84,40991,"31 Plain St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:22:49,19.9,"North North West",Standard,2.3,42.4063057,-71.0577965,Massachusetts,0.00,,8223,"48 Corey St, Everett, MA 02149"
-87,022027,2015-07-24,08:22:57,15.5,"South East East",Standard,2.9,42.0607708,-71.0139049,Massachusetts,"17,218.47",2.24,40991,"19 Plain St, Brockton, MA 02301"
-47,022081,2015-07-24,08:23:05,30.2,"South South East",Standard,2,42.0681954,-71.0204313,Massachusetts,"19,168.06",-4.47,40991,"852 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:23:06,0,North,"Motion Stop",2.4,42.4073562,-71.0580451,Massachusetts,0.00,-26.84,9247,"93 Corey St, Everett, MA 02149"
-93,022041,2015-07-24,08:23:07,29.2,"South South East",Standard,2.1,42.0688717,-71.0206357,Massachusetts,"17,056.53",-4.47,40991,"823 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:23:09,4.5,"North North West","Motion Start",2.4,42.4073828,-71.0580555,Massachusetts,0.00,33.55,9247,"95 Corey St, Everett, MA 02149"
-101,022051,2015-07-24,08:23:11,30.7,"South East East",Standard,3.1,42.0587518,-71.0098836,Massachusetts,"17,025.62",4.47,40991,"97 Plain St, Brockton, MA 02301"
-48,022062,2015-07-24,08:23:23,27.5,"North East East",Standard,1.7,42.0724795,-71.0227143,Massachusetts,"17,307.76",6.71,40991,"84 Forest Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:23:27,26.5,South,Standard,2.2,42.0656167,-71.0198623,Massachusetts,"19,168.06",-2.24,40991,"Warren Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:23:28,40,"South East East",Standard,3.1,42.0587494,-71.0098034,Massachusetts,"17,218.47",-2.24,40991,"100 Plain St, Brockton, MA 02301"
-101,022051,2015-07-24,08:23:29,38,"South East",Standard,3.3,42.0573166,-71.0072968,Massachusetts,"17,025.62",,40991,"201 Plain St, Brockton, MA 02302"
-321,"MB033 - 051073",2015-07-24,08:23:30,11.2,North,Standard,2.5,42.4084596,-71.0591786,Massachusetts,0.00,-38.03,8223,"7 Bucknam St, Everett, MA 02149"
-321,"MB033 - 051073",2015-07-24,08:23:34,0,North,"Motion Stop",2.5,42.4085374,-71.0592026,Massachusetts,0.00,-15.66,9247,"9 Bucknam St, Everett, MA 02149"
-48,022062,2015-07-24,08:23:35,0,East,"Motion Stop",1.8,42.0727011,-71.0214414,Massachusetts,"17,307.76",-40.26,42015,"50 Forest Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:23:46,9.3,"North North West","Motion Start",2.5,42.4085987,-71.0592272,Massachusetts,0.00,60.40,9247,"11 Bucknam St, Everett, MA 02149"
-47,022081,2015-07-24,08:23:46,25.7,"South South East",Standard,2.3,42.0637347,-71.0193933,Massachusetts,"19,168.06",2.24,40991,"1066 Warren Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:23:46,36,"South East",Standard,3.3,42.057205,-71.0070794,Massachusetts,"17,218.47",-2.24,40991,"205 Plain St, Brockton, MA 02302"
-101,022051,2015-07-24,08:23:47,15.5,"South West",Standard,3.4,42.0561944,-71.0055868,Massachusetts,"17,025.89",8.95,40991,"Sargents Way, Brockton, MA 02302"
-93,022041,2015-07-24,08:23:54,21.2,South,Standard,2.5,42.0632461,-71.0192974,Massachusetts,"17,056.53",-15.66,40991,"1103 Warren Ave, Brockton, MA 02301"
-48,022062,2015-07-24,08:24:01,4,East,"Motion Start",1.8,42.0727087,-71.021442,Massachusetts,"17,307.76",13.42,42015,"50 Forest Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:24:04,15.7,"South South East",Standard,2.4,42.0625646,-71.0190839,Massachusetts,"19,168.06",22.37,40991,"1143 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:24:04,24.2,"North North West",Standard,2.6,42.4100003,-71.059688,Massachusetts,0.00,4.47,8223,"51 Bucknam St, Everett, MA 02149"
-87,022027,2015-07-24,08:24:04,21.7,"South West West",Standard,3.4,42.0560625,-71.0058302,Massachusetts,"17,218.47",8.95,40991,"Sargents Way, Brockton, MA 02302"
-101,022051,2015-07-24,08:24:06,0,"South West West","Motion Stop",3.5,42.0554534,-71.0071003,Massachusetts,"17,025.89",4.47,42015,"94 Sargents Way, Brockton, MA 02301"
-101,022051,2015-07-24,08:24:07,3.7,"South West","Motion Start",3.5,42.0554442,-71.0071168,Massachusetts,"17,025.89",6.71,42015,"94 Sargents Way, Brockton, MA 02301"
-48,022062,2015-07-24,08:24:19,23.2,South,Standard,1.9,42.0717768,-71.0211505,Massachusetts,"17,307.76",4.47,40991,"687 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:24:22,22.7,"North East",Standard,2.7,42.4108363,-71.058978,Massachusetts,0.00,,8223,"21 Cleveland Ave, Everett, MA 02149"
-87,022027,2015-07-24,08:24:22,8.5,"South West",Standard,3.5,42.0553897,-71.0071126,Massachusetts,"17,218.47",22.37,40991,"94 Sargents Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:24:22,23.5,"North East East",Standard,2.5,42.0624311,-71.0177974,Massachusetts,"19,168.06",,40991,"55 Market St, Brockton, MA 02301"
-101,022051,2015-07-24,08:24:25,16.7,"South South East",Standard,3.6,42.054483,-71.0065473,Massachusetts,"17,025.89",-13.42,40991,"31 Oak Hill Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:24:26,22.5,"North East East",Standard,2.6,42.0622868,-71.0183324,Massachusetts,"17,056.53",24.61,40991,"66 Market St, Brockton, MA 02301"
-101,022051,2015-07-24,08:24:32,0,"South South East","Motion Stop",3.6,42.054227,-71.0063677,Massachusetts,"17,025.89",-11.18,42015,"39 Oak Hill Way, Brockton, MA 02301"
-101,022051,2015-07-24,08:24:36,7.2,"South South East","Motion Start",3.6,42.0542236,-71.0063625,Massachusetts,"17,025.89",29.08,42015,"39 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:24:40,14,"North East East",Standard,2.6,42.0628405,-71.0155513,Massachusetts,"19,168.06",-15.66,40991,"6 Market St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:24:40,18.6,"North East",Standard,2.8,42.4120909,-71.0572904,Massachusetts,0.00,-8.95,8223,"99 Cleveland Ave, Everett, MA 02149"
-87,022027,2015-07-24,08:24:40,10.7,"South South East",Standard,3.6,42.0543067,-71.0064091,Massachusetts,"17,218.47",,40991,"37 Oak Hill Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:24:45,13.5,East,Standard,2.7,42.0627704,-71.0157147,Massachusetts,"17,056.53",-33.55,40991,"12 Market St, Brockton, MA 02301"
-47,022081,2015-07-24,08:24:45,0,East,"Motion Stop",2.6,42.0628669,-71.0153556,Massachusetts,"19,168.06",-8.95,42015,"4 Market St, Brockton, MA 02301"
-47,022081,2015-07-24,08:24:51,4.2,East,"Motion Start",2.6,42.0628691,-71.015349,Massachusetts,"19,168.06",13.42,42015,"4 Market St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:25:01,13.5,"North East",Standard,2.9,42.4132653,-71.055762,Massachusetts,0.00,-17.90,8223,"190 Cleveland Ave, Everett, MA 02149"
-101,022051,2015-07-24,08:25:03,28.7,"South South East",Standard,3.8,42.0519562,-71.0047338,Massachusetts,"17,025.89",-24.61,40991,"119 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:25:05,0,"North East East","Motion Stop",2.9,42.4133164,-71.0556556,Massachusetts,0.00,-51.45,9247,"Cleveland Ave, Everett, MA 02149"
-321,"MB033 - 051073",2015-07-24,08:25:08,6,East,"Motion Start",2.9,42.4133192,-71.0556177,Massachusetts,0.00,31.32,9247,"Cleveland Ave, Everett, MA 02149"
-93,022041,2015-07-24,08:25:09,27.2,"South South East",Standard,2.8,42.0622681,-71.0150306,Massachusetts,"17,056.53",11.18,40991,"1173 Main St, Brockton, MA 02301"
-48,022062,2015-07-24,08:25:09,29,"South South East",Standard,2.2,42.066577,-71.0200874,Massachusetts,"17,307.76",,40991,"939 Warren Ave, Brockton, MA 02301"
-47,022081,2015-07-24,08:25:09,26.5,"South South East",Standard,2.7,42.061581,-71.0147744,Massachusetts,"19,168.06",-6.71,40991,"50 Lyon Ave, Brockton, MA 02301"
-87,022027,2015-07-24,08:25:11,24,"South South East",Standard,3.8,42.0519481,-71.0047273,Massachusetts,"17,218.47",-6.71,40991,"119 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:25:26,13.1,"North East",Standard,3,42.4130872,-71.0547357,Massachusetts,0.00,8.95,8223,"7 Glendale St, Everett, MA 02149"
-47,022081,2015-07-24,08:25:27,22,"South East",Standard,2.8,42.0606967,-71.0137254,Massachusetts,"19,168.06",20.13,40991,"23 Plain St, Brockton, MA 02301"
-93,022041,2015-07-24,08:25:27,21.5,"South East East",Standard,2.9,42.0608462,-71.0140837,Massachusetts,"17,056.53",6.71,40991,"13 Plain St, Brockton, MA 02301"
-48,022062,2015-07-24,08:25:36,25.2,"South South East",Standard,2.4,42.0636424,-71.0193371,Massachusetts,"17,307.76",-2.24,40991,"1070 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:25:41,6.7,"North East East",Standard,3.9,42.0519187,-71.0032208,"Brockton Yard","17,025.89",2.24,40991,"Appleby St, Brockton, MA 02302"
-87,022027,2015-07-24,08:25:42,0,"North East East","Motion Stop",3.8,42.0517855,-71.0035593,"Brockton Yard","17,218.47",-15.66,42015,"138 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:25:44,19.3,"North East",Standard,3.1,42.4140076,-71.0534963,Massachusetts,0.00,-6.71,8223,"44 Glendale St, Everett, MA 02149"
-93,022041,2015-07-24,08:25:45,34,"South East",Standard,3,42.0596351,-71.0116722,Massachusetts,"17,056.53",4.47,40991,"64 Plain St, Brockton, MA 02301"
-87,022027,2015-07-24,08:25:46,3.2,"North East East","Motion Start",3.8,42.0517884,-71.0035474,"Brockton Yard","17,218.47",6.71,42015,"138 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:25:52,34.7,"South East East",Standard,3,42.0588985,-71.0101699,Massachusetts,"19,168.06",-2.24,40991,"84 Plain St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:25:54,0,"North East","Motion Stop",3.1,42.414319,-71.0530458,Massachusetts,0.00,-17.90,9247,"54 Glendale St, Everett, MA 02149"
-321,"MB033 - 051073",2015-07-24,08:25:58,9.4,"North East","Motion Start",3.1,42.4143773,-71.0529633,Massachusetts,0.00,69.35,9247,"58 Glendale St, Everett, MA 02149"
-93,022041,2015-07-24,08:26:03,31,"South East East",Standard,3.2,42.0584153,-71.0088423,Massachusetts,"17,056.53",-4.47,40991,"139 Plain St, Brockton, MA 02301"
-87,022027,2015-07-24,08:26:04,8.5,"South East",Standard,3.9,42.0518329,-71.002985,"Brockton Yard","17,218.47",11.18,40991,"Appleby St, Brockton, MA 02302"
-47,022081,2015-07-24,08:26:10,34.7,"South East",Standard,3.2,42.0575944,-71.0076521,Massachusetts,"19,168.06",8.95,40991,"195 Plain St, Brockton, MA 02302"
-48,022062,2015-07-24,08:26:14,17.5,"South South East",Standard,2.7,42.0599458,-71.0175507,Massachusetts,"17,307.76",-29.08,40991,"1278 Warren Ave, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:26:19,16.4,"North East",Standard,3.2,42.4156218,-71.0513798,Massachusetts,0.00,-42.50,8223,"115 Glendale St, Everett, MA 02149"
-48,022062,2015-07-24,08:26:20,0,"South South East","Motion Stop",2.7,42.0597831,-71.0174621,Massachusetts,"17,307.76",2.24,42015,"1290 Warren Ave, Brockton, MA 02301"
-101,022051,2015-07-24,08:26:20,0,"North West","Motion Stop",3.9,42.0513639,-71.0036075,"Brockton Yard","17,025.89",,42015,"148 Oak Hill Way, Brockton, MA 02301"
-48,022062,2015-07-24,08:26:21,6,"South South East","Motion Start",2.7,42.0597831,-71.0174621,Massachusetts,"17,307.76",15.66,42015,"1290 Warren Ave, Brockton, MA 02301"
-93,022041,2015-07-24,08:26:21,35,"South East East",Standard,3.4,42.0568587,-71.0064093,Massachusetts,"17,056.53",-2.24,40991,"215 Plain St, Brockton, MA 02302"
-87,022027,2015-07-24,08:26:25,0,"South West West","Motion Stop",3.9,42.0513879,-71.003271,"Brockton Yard","17,218.47",-15.66,42015,"152 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:26:28,13.2,"South South West",Standard,3.3,42.0562673,-71.0054904,Massachusetts,"19,168.06",6.71,40991,"Sargents Way, Brockton, MA 02302"
-321,"MB033 - 051073",2015-07-24,08:26:31,0,"North East","Motion Stop",3.3,42.4160376,-71.0507436,Massachusetts,0.00,-38.03,9247,"140 Glendale St, Everett, MA 02149"
-321,"MB033 - 051073",2015-07-24,08:26:32,0,"North East","Door Open/Close",3.3,42.416041,-71.0507286,Massachusetts,0.00,-15.66,8254,"140 Glendale St, Everett, MA 02149"
-48,022062,2015-07-24,08:26:39,22.5,"North East East",Standard,2.8,42.0599246,-71.0158065,Massachusetts,"17,307.76",-4.47,40991,"Steven Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:26:39,20.7,"South West",Standard,3.5,42.0560174,-71.005935,Massachusetts,"17,056.80",11.18,40991,"Sargents Way, Brockton, MA 02302"
-321,"MB033 - 051073",2015-07-24,08:26:46,0,"North East","Door Open/Close",3.3,42.416041,-71.0507286,Massachusetts,0.00,,8255,"140 Glendale St, Everett, MA 02149"
-47,022081,2015-07-24,08:26:46,12.7,"South West",Standard,3.4,42.0554446,-71.0070668,Massachusetts,"19,168.06",-15.66,40991,"94 Sargents Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:26:51,9.4,"North East","Motion Start",3.3,42.4160944,-71.0506684,Massachusetts,0.00,53.69,9247,"144 Glendale St, Everett, MA 02149"
-48,022062,2015-07-24,08:26:57,8.2,"South East",Standard,2.9,42.060119,-71.0143344,Massachusetts,"17,307.76",11.18,40991,"1283 Main St, Brockton, MA 02301"
-93,022041,2015-07-24,08:26:58,23,"South South East",Standard,3.6,42.0549981,-71.0069353,Massachusetts,"17,056.80",24.61,40991,"13 Oak Hill Way, Brockton, MA 02301"
-87,022027,2015-07-24,08:27:00,4.5,"South West West","Motion Start",3.9,42.0513845,-71.0032851,"Brockton Yard","17,218.47",13.42,42015,"152 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:27:04,27.5,"South South East",Standard,3.5,42.0540397,-71.0062674,Massachusetts,"19,168.06",-2.24,40991,"45 Oak Hill Way, Brockton, MA 02301"
-101,022051,2015-07-24,08:27:12,0,"South East East","Power Off",3.9,42.0513556,-71.0035586,"Brockton Yard","17,025.89",,32799,"150 Oak Hill Way, Brockton, MA 02301"
-48,022062,2015-07-24,08:27:15,28,"South South East",Standard,3,42.0586465,-71.0138087,Massachusetts,"17,307.76",,40991,"1345 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:27:17,4.6,"North East","Motion Start",3.4,42.4170178,-71.0494488,Massachusetts,0.00,31.32,9247,"195 Glendale St, Everett, MA 02149"
-47,022081,2015-07-24,08:27:25,20.5,"South South East",Standard,3.7,42.0519946,-71.0048161,Massachusetts,"19,168.06",-13.42,40991,"117 Oak Hill Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:27:30,16.2,"South South East",Standard,3.8,42.0518576,-71.0046975,Massachusetts,"17,056.80",-11.18,40991,"121 Oak Hill Way, Brockton, MA 02301"
-48,022062,2015-07-24,08:27:33,0,"South South East","Motion Stop",3.1,42.0573036,-71.0133731,Massachusetts,"17,307.76",-20.13,42015,"1411 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:27:35,20.9,"North West West",Standard,3.5,42.4180248,-71.0506026,Massachusetts,0.00,-6.71,8223,"452 Ferry St, Everett, MA 02149"
-48,022062,2015-07-24,08:27:39,6.2,"South South East","Motion Start",3.1,42.057303,-71.0133719,Massachusetts,"17,307.76",31.32,42015,"1411 Main St, Brockton, MA 02301"
-93,022041,2015-07-24,08:27:41,0,"South East East","Motion Stop",3.8,42.0515708,-71.0044548,Massachusetts,"17,056.80",-13.42,42015,"132 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:27:43,0,"North East East","Motion Stop",3.8,42.0513967,-71.0042069,"Brockton Yard","19,168.06",-11.18,42015,"140 Oak Hill Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:27:45,5.5,"South East East","Motion Start",3.8,42.051567,-71.0044376,Massachusetts,"17,056.80",17.90,42015,"132 Oak Hill Way, Brockton, MA 02301"
-47,022081,2015-07-24,08:27:53,0,"North East East","Power Off",3.8,42.0514,-71.0041997,"Brockton Yard","19,168.06",,32799,"140 Oak Hill Way, Brockton, MA 02301"
-87,022027,2015-07-24,08:27:55,0,East,"Power Off",4,42.0513088,-71.0036945,"Brockton Yard","17,218.47",,32799,"148 Oak Hill Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:28:03,5.7,"North East East",Standard,3.9,42.0517061,-71.0038032,"Brockton Yard","17,056.80",-2.24,40991,"136 Oak Hill Way, Brockton, MA 02301"
-48,022062,2015-07-24,08:28:04,31,"South South East",Standard,3.3,42.0551508,-71.0125765,Massachusetts,"17,307.76",6.71,40991,"1513 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:28:05,20.5,"North West",Standard,3.6,42.4194421,-71.0534706,Massachusetts,0.00,6.71,8223,"523 Ferry St, Everett, MA 02149"
-48,022062,2015-07-24,08:28:22,9.5,"South South East",Standard,3.4,42.0533441,-71.011817,Massachusetts,"17,307.76",-35.79,40991,"1615 Main St, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:28:23,25.3,"North West West",Standard,3.8,42.4204236,-71.0554826,Massachusetts,0.00,,8223,"460 Ferry St, Malden, MA 02148"
-321,"MB033 - 051073",2015-07-24,08:28:41,25.6,"North West",Standard,3.9,42.4212946,-71.0579727,Massachusetts,0.00,-13.42,8223,"386 Ferry St, Malden, MA 02148"
-48,022062,2015-07-24,08:28:41,22.7,"North East East",Standard,3.5,42.0533259,-71.0106604,Massachusetts,"17,307.76",,40991,"19 Sargents Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:28:52,0,"North West","Motion Stop",3.9,42.4217195,-71.0585709,Massachusetts,0.00,-26.84,9247,"370 Ferry St, Malden, MA 02148"
-48,022062,2015-07-24,08:28:59,25,"North East",Standard,3.6,42.0543868,-71.008794,Massachusetts,"17,307.76",-4.47,40991,"63 Sargents Way, Brockton, MA 02301"
-93,022041,2015-07-24,08:29:05,0,"South West West","Motion Stop",3.9,42.0514775,-71.0030698,"Brockton Yard","17,056.80",-2.24,42015,"Appleby St, Brockton, MA 02302"
-93,022041,2015-07-24,08:29:06,3,"South West West","Motion Start",3.9,42.0514762,-71.0030876,"Brockton Yard","17,056.80",2.24,42015,"152 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:29:16,6.4,"North West","Motion Start",3.9,42.4217436,-71.0585964,Massachusetts,0.00,31.32,9247,"370 Ferry St, Malden, MA 02148"
-48,022062,2015-07-24,08:29:17,10.7,"South East East",Standard,3.7,42.0552188,-71.0071168,Massachusetts,"17,308.02",,40991,"Oak Hill Way, Brockton, MA 02301"
-87,022027,2015-07-24,08:29:20,0,East,"Power On",4,42.0513088,-71.0036945,"Brockton Yard","17,218.47",,40991,"148 Oak Hill Way, Brockton, MA 02301"
-87,022027,2015-07-24,08:29:25,4.2,"North North West","Motion Start",4,42.0513122,-71.0036967,"Brockton Yard","17,218.47",17.90,42015,"148 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:29:34,33.4,"North East",Standard,4.1,42.4229395,-71.0571927,Massachusetts,0.00,4.47,8223,"241 Cross St, Malden, MA 02148"
-48,022062,2015-07-24,08:29:35,24.2,"South South East",Standard,3.8,42.0539098,-71.0061384,Massachusetts,"17,308.02",,40991,"51 Oak Hill Way, Brockton, MA 02301"
-321,"MB033 - 051073",2015-07-24,08:29:52,28.5,"North North East",Standard,4.2,42.4246407,-71.055535,Massachusetts,0.00,64.87,8223,"389 Cross St, Malden, MA 02148"
-48,022062,2015-07-24,08:29:59,21,"South South East",Standard,4,42.0518213,-71.0046459,Massachusetts,"17,308.02",-6.71,40991,"123 Oak Hill Way, Brockton, MA 02301"
+"Asset ID","Asset No.",Date,Time(EDT),Speed(MPH),Heading,"Log Reason","Distance Traveled(Miles)",Lat,Lon,Zone,"Fuel Counter(Gallon)",Acceleration(Miles/Hour/Sec),"Status Mask"
+321,"MB033 - 051073",2015-07-24,08:13:35,19,"South West West",Standard,0,42.429811,-71.0299817,Massachusetts,0.00,-15.66,8223
+101,022051,2015-07-24,08:13:40,0,"North North West","Power On",0,42.0680122,-71.0451237,"Brockton High","17,025.36",,40991
+101,022051,2015-07-24,08:13:53,3,"North North West","Motion Start",0,42.0680122,-71.0451237,"Brockton High","17,025.36",8.95,42015
+47,022081,2015-07-24,08:13:55,7.2,"South West","Motion Start",0,42.0700803,-71.046424,Massachusetts,"19,167.80",33.55,42015
+93,022041,2015-07-24,08:13:56,8.2,"South West","Motion Start",0,42.0701747,-71.0462991,Massachusetts,"17,056.27",31.32,42015
+87,022027,2015-07-24,08:13:56,0,"North North West","Power On",0,42.067875,-71.0450765,"Brockton High","17,217.94",,40991
+48,022062,2015-07-24,08:13:57,6.5,"South West","Motion Start",0,42.070271,-71.0461382,Massachusetts,"17,307.50",29.08,42015
+321,"MB033 - 051073",2015-07-24,08:14:03,31,"South West West",Standard,0.2,42.4285592,-71.033243,Massachusetts,0.00,2.24,8223
+87,022027,2015-07-24,08:14:05,4.5,"North North West","Motion Start",0,42.0678888,-71.0450896,"Brockton High","17,217.94",24.61,42015
+47,022081,2015-07-24,08:14:13,16.5,"South South East",Standard,0.1,42.0689283,-71.045467,"Brockton High","19,167.80",-15.66,40991
+93,022041,2015-07-24,08:14:14,21,"South East",Standard,0.1,42.0691472,-71.0456889,"Brockton High","17,056.27",-8.95,40991
+48,022062,2015-07-24,08:14:15,20.7,"South East",Standard,0.1,42.0694536,-71.0460358,"Brockton High","17,307.50",4.47,40991
+321,"MB033 - 051073",2015-07-24,08:14:31,33.1,"South West West",Standard,0.5,42.4268114,-71.0378319,Massachusetts,0.00,-4.47,8223
+93,022041,2015-07-24,08:14:32,16.5,"South South East",Standard,0.2,42.0680799,-71.045751,"Brockton High","17,056.27",,40991
+47,022081,2015-07-24,08:14:32,12,"South East",Standard,0.2,42.0677798,-71.0455936,"Brockton High","19,167.80",-6.71,40991
+48,022062,2015-07-24,08:14:33,14,"South South West",Standard,0.2,42.0684905,-71.045763,"Brockton High","17,307.50",,40991
+101,022051,2015-07-24,08:14:38,13.2,"South West",Standard,0.1,42.0685376,-71.0457586,"Brockton High","17,025.36",6.71,40991
+87,022027,2015-07-24,08:14:46,14.2,"South West",Standard,0.1,42.0684483,-71.0459524,"Brockton High","17,217.94",2.24,40991
+321,"MB033 - 051073",2015-07-24,08:14:49,33.7,"South West",Standard,0.6,42.4247058,-71.0398865,Massachusetts,0.00,-8.95,8223
+93,022041,2015-07-24,08:14:50,10.7,"North North West",Standard,0.3,42.0679704,-71.0451096,"Brockton High","17,056.27",2.24,40991
+47,022081,2015-07-24,08:14:51,0,"North North West","Motion Stop",0.2,42.0682488,-71.0452191,"Brockton High","19,167.80",-13.42,42015
+48,022062,2015-07-24,08:14:51,9.2,East,Standard,0.3,42.0677271,-71.0452832,"Brockton High","17,307.50",-2.24,40991
+93,022041,2015-07-24,08:14:55,0,"North North West","Motion Stop",0.3,42.0681161,-71.0451651,"Brockton High","17,056.27",-24.61,42015
+47,022081,2015-07-24,08:14:59,0,"North North West","Power Off",0.2,42.0682606,-71.0452215,"Brockton High","19,167.80",,32799
+101,022051,2015-07-24,08:15:00,20.5,"South South East",Standard,0.2,42.0671804,-71.0457024,"Brockton High","17,025.36",6.71,40991
+93,022041,2015-07-24,08:15:05,0,"North North West","Power Off",0.3,42.0681199,-71.0451668,"Brockton High","17,056.27",,32799
+48,022062,2015-07-24,08:15:05,0,"North North West","Motion Stop",0.3,42.0679475,-71.0451123,"Brockton High","17,307.50",-2.24,42015
+87,022027,2015-07-24,08:15:06,22.5,"South South East",Standard,0.2,42.0670734,-71.0456624,"Brockton High","17,217.94",4.47,40991
+321,"MB033 - 051073",2015-07-24,08:15:12,25.5,"South West",Standard,0.8,42.4224317,-71.0419123,Massachusetts,0.00,-6.71,8223
+48,022062,2015-07-24,08:15:13,0,"North North West","Door Open/Close",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",,41022
+101,022051,2015-07-24,08:15:18,20.5,"South East East",Standard,0.3,42.0658649,-71.0448443,"Brockton High","17,025.36",-6.71,40991
+87,022027,2015-07-24,08:15:24,18.7,"South East East",Standard,0.3,42.0657954,-71.0447096,"Brockton High","17,217.94",-6.71,40991
+321,"MB033 - 051073",2015-07-24,08:15:34,18.7,"South South West",Standard,1,42.4206575,-71.0435162,Massachusetts,0.00,-13.42,8223
+101,022051,2015-07-24,08:15:36,15.2,"North East East",Standard,0.4,42.0658041,-71.0430715,"Brockton High","17,025.36",-24.61,40991
+321,"MB033 - 051073",2015-07-24,08:15:40,0,"South West","Motion Stop",1,42.4204935,-71.0436655,Massachusetts,0.00,-38.03,9247
+87,022027,2015-07-24,08:15:45,5.7,"North East East",Standard,0.4,42.0658282,-71.0429181,"Brockton High","17,217.94",-33.55,40991
+101,022051,2015-07-24,08:15:56,23,North,Standard,0.5,42.0670278,-71.0423962,"Brockton High","17,025.36",2.24,40991
+87,022027,2015-07-24,08:16:06,21.7,"North North West",Standard,0.5,42.0671805,-71.0424463,"Brockton High","17,217.94",,40991
+321,"MB033 - 051073",2015-07-24,08:16:15,9.4,"South West","Motion Start",1,42.4204599,-71.0437013,Massachusetts,0.00,53.69,9247
+101,022051,2015-07-24,08:16:16,19.7,"North East East",Standard,0.6,42.0683577,-71.0426353,"BROCKTON HIGH SCHOOL","17,025.36",24.61,40991
+87,022027,2015-07-24,08:16:29,21.2,"North East East",Standard,0.6,42.0683957,-71.0425166,"BROCKTON HIGH SCHOOL","17,218.21",22.37,40991
+321,"MB033 - 051073",2015-07-24,08:16:33,24.9,"South South West",Standard,1.1,42.4193936,-71.0446482,Massachusetts,0.00,8.95,8223
+101,022051,2015-07-24,08:16:34,31.5,"North North East",Standard,0.7,42.0693084,-71.0402633,"BROCKTON HIGH SCHOOL","17,025.62",-6.71,40991
+87,022027,2015-07-24,08:16:47,25.5,"North East",Standard,0.7,42.0691475,-71.0404241,"BROCKTON HIGH SCHOOL","17,218.21",,40991
+101,022051,2015-07-24,08:16:52,24,"South East East",Standard,0.8,42.0698464,-71.0391451,"BROCKTON HIGH SCHOOL","17,025.62",15.66,40991
+87,022027,2015-07-24,08:17:02,0,"North East","Motion Stop",0.7,42.0700118,-71.0397644,"BROCKTON HIGH SCHOOL","17,218.21",2.24,42015
+87,022027,2015-07-24,08:17:03,8,"North East","Motion Start",0.7,42.0700252,-71.0397413,"BROCKTON HIGH SCHOOL","17,218.21",33.55,42015
+321,"MB033 - 051073",2015-07-24,08:17:06,16.3,"South South West",Standard,1.3,42.4167291,-71.0469529,Massachusetts,0.00,-24.61,8223
+101,022051,2015-07-24,08:17:10,22,"South South East",Standard,0.9,42.0694088,-71.0374843,Massachusetts,"17,025.62",13.42,40991
+87,022027,2015-07-24,08:17:21,12.7,"North East East",Standard,0.8,42.0697084,-71.0379673,Massachusetts,"17,218.21",-8.95,40991
+321,"MB033 - 051073",2015-07-24,08:17:28,8.3,"South South West",Standard,1.4,42.4158978,-71.0476501,Massachusetts,0.00,-22.37,8223
+101,022051,2015-07-24,08:17:28,9.5,"South South East",Standard,1,42.0679656,-71.0370206,Massachusetts,"17,025.62",-24.61,40991
+101,022051,2015-07-24,08:17:31,0,"South East","Motion Stop",1,42.0679094,-71.0369658,Massachusetts,"17,025.62",-26.84,42015
+101,022051,2015-07-24,08:17:34,6.2,"South East East","Motion Start",1,42.0679016,-71.0369299,Massachusetts,"17,025.62",31.32,42015
+321,"MB033 - 051073",2015-07-24,08:17:38,0,"South South West","Motion Stop",1.4,42.4156806,-71.0478326,Massachusetts,0.00,-13.42,9247
+48,022062,2015-07-24,08:17:38,0,"North North West","Door Open/Close",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",,41023
+87,022027,2015-07-24,08:17:39,27.5,"North East East",Standard,1,42.0701379,-71.0355463,Massachusetts,"17,218.21",-11.18,40991
+93,022041,2015-07-24,08:17:41,0,"North North West","Power On, Motion Stop",0.3,42.0681199,-71.0451668,"Brockton High","17,056.27",,42015
+87,022027,2015-07-24,08:17:47,0,"North East East","Motion Stop",1,42.0702448,-71.0349579,Massachusetts,"17,218.21",-22.37,42015
+47,022081,2015-07-24,08:17:50,0,"North North West","Power On",0.2,42.0682679,-71.0452194,"Brockton High","19,167.80",,40991
+101,022051,2015-07-24,08:17:52,10.5,East,Standard,1.1,42.0686881,-71.0353341,Massachusetts,"17,025.62",-4.47,40991
+87,022027,2015-07-24,08:18:02,7.2,"North East East","Motion Start",1,42.0702485,-71.0349457,Massachusetts,"17,218.21",38.03,42015
+321,"MB033 - 051073",2015-07-24,08:18:07,8.1,"South South West","Motion Start",1.4,42.4156293,-71.0478899,Massachusetts,0.00,62.63,9247
+101,022051,2015-07-24,08:18:10,26.7,"South South East",Standard,1.2,42.0671466,-71.0341572,Massachusetts,"17,025.62",,40991
+47,022081,2015-07-24,08:18:12,7.2,"North North West","Motion Start",0.2,42.0682907,-71.04523,"Brockton High","19,167.80",29.08,42015
+93,022041,2015-07-24,08:18:21,7,"North North West","Motion Start",0.3,42.0681519,-71.0451918,"Brockton High","17,056.27",26.84,42015
+87,022027,2015-07-24,08:18:25,31,"North East East",Standard,1.2,42.0708774,-71.0314844,Massachusetts,"17,218.21",-4.47,40991
+48,022062,2015-07-24,08:18:28,3,"North North West","Motion Start",0.3,42.0679702,-71.0451243,"Brockton High","17,307.50",6.71,42015
+101,022051,2015-07-24,08:18:28,18,"North East East",Standard,1.3,42.0660087,-71.0330908,Massachusetts,"17,025.62",29.08,40991
+47,022081,2015-07-24,08:18:30,23.7,"North West",Standard,0.3,42.0694777,-71.0459481,"Brockton High","19,167.80",-6.71,40991
+321,"MB033 - 051073",2015-07-24,08:18:33,20.8,"South South West",Standard,1.5,42.4140593,-71.0491688,Massachusetts,0.00,,8223
+87,022027,2015-07-24,08:18:33,0,"North East East","Motion Stop",1.2,42.0710034,-71.0307753,Massachusetts,"17,218.21",-26.84,42015
+93,022041,2015-07-24,08:18:39,25.5,"North West",Standard,0.4,42.069383,-71.0458237,"Brockton High","17,056.27",4.47,40991
+47,022081,2015-07-24,08:18:41,0,"North North West","Motion Stop",0.4,42.0699293,-71.0464223,"BROCKTON HIGH SCHOOL","19,167.80",-13.42,42015
+47,022081,2015-07-24,08:18:45,4,"North North West","Motion Start",0.4,42.069938,-71.0464203,"BROCKTON HIGH SCHOOL","19,167.80",13.42,42015
+101,022051,2015-07-24,08:18:46,31,"North East East",Standard,1.4,42.0667186,-71.030683,Massachusetts,"17,025.62",4.47,40991
+87,022027,2015-07-24,08:18:51,8.5,East,"Motion Start",1.2,42.0710049,-71.0307637,Massachusetts,"17,218.21",44.74,42015
+48,022062,2015-07-24,08:18:54,19.2,"North West",Standard,0.4,42.069125,-71.0455584,"Brockton High","17,307.50",4.47,40991
+321,"MB033 - 051073",2015-07-24,08:18:56,14,"South West",Standard,1.6,42.4125163,-71.0505024,Massachusetts,0.00,-4.47,8223
+93,022041,2015-07-24,08:18:57,24.7,"North East",Standard,0.5,42.0702865,-71.0458971,"BROCKTON HIGH SCHOOL","17,056.27",15.66,40991
+321,"MB033 - 051073",2015-07-24,08:19:02,0,"South South West","Motion Stop",1.7,42.4123849,-71.0506215,Massachusetts,0.00,-20.13,9247
+47,022081,2015-07-24,08:19:03,21.7,"North East East",Standard,0.5,42.0706232,-71.0450276,"BROCKTON HIGH SCHOOL","19,167.80",15.66,40991
+47,022081,2015-07-24,08:19:09,0,"North East East","Motion Stop",0.5,42.0707494,-71.0445673,"BROCKTON HIGH SCHOOL","19,167.80",-44.74,42015
+87,022027,2015-07-24,08:19:10,30.2,"North East East",Standard,1.4,42.0714755,-71.0281024,Massachusetts,"17,218.21",-2.24,40991
+48,022062,2015-07-24,08:19:11,0,"North West","Motion Stop",0.4,42.0698884,-71.0463782,"BROCKTON HIGH SCHOOL","17,307.50",-24.61,42015
+93,022041,2015-07-24,08:19:11,0,"North East East","Motion Stop",0.5,42.0707023,-71.0447338,"BROCKTON HIGH SCHOOL","17,056.27",-29.08,42015
+47,022081,2015-07-24,08:19:15,6,"North East East","Motion Start",0.5,42.0707598,-71.0445441,"BROCKTON HIGH SCHOOL","19,167.80",24.61,42015
+93,022041,2015-07-24,08:19:16,4.7,"North East East","Motion Start",0.5,42.0707066,-71.0447213,"BROCKTON HIGH SCHOOL","17,056.27",22.37,42015
+101,022051,2015-07-24,08:19:23,23,"North East East",Standard,1.8,42.0684642,-71.0247873,Massachusetts,"17,025.62",-15.66,40991
+321,"MB033 - 051073",2015-07-24,08:19:25,8.2,"South West","Motion Start",1.7,42.4123496,-71.0506554,Massachusetts,0.00,53.69,9247
+101,022051,2015-07-24,08:19:32,0,East,"Motion Stop",1.8,42.0685839,-71.024231,Massachusetts,"17,025.62",-2.24,42015
+48,022062,2015-07-24,08:19:34,5.2,"North North West","Motion Start",0.4,42.069914,-71.0463997,"BROCKTON HIGH SCHOOL","17,307.50",26.84,42015
+93,022041,2015-07-24,08:19:34,10.7,"North East East",Standard,0.6,42.0711581,-71.0432766,"BROCKTON HIGH SCHOOL","17,056.27",-17.90,40991
+101,022051,2015-07-24,08:19:38,4.2,East,"Motion Start",1.8,42.0685839,-71.024231,Massachusetts,"17,025.62",15.66,42015
+47,022081,2015-07-24,08:19:38,7.2,"North East East",Standard,0.6,42.071266,-71.0429249,"BROCKTON HIGH SCHOOL","19,167.80",11.18,40991
+93,022041,2015-07-24,08:19:52,26.7,"South East East",Standard,0.7,42.0710891,-71.0422164,"BROCKTON HIGH SCHOOL","17,056.27",15.66,40991
+48,022062,2015-07-24,08:19:52,5.5,"North East",Standard,0.5,42.070538,-71.0453924,"BROCKTON HIGH SCHOOL","17,307.50",-29.08,40991
+87,022027,2015-07-24,08:19:52,20.2,"North East East",Standard,1.7,42.0726883,-71.0216114,Massachusetts,"17,218.21",-29.08,40991
+321,"MB033 - 051073",2015-07-24,08:19:52,21.3,"South West",Standard,1.8,42.410726,-71.0521611,Massachusetts,0.00,-2.24,8223
+48,022062,2015-07-24,08:19:54,0,"North East","Motion Stop",0.5,42.0705463,-71.0453667,"BROCKTON HIGH SCHOOL","17,307.50",-33.55,42015
+101,022051,2015-07-24,08:19:56,29,"North East East",Standard,1.9,42.0689236,-71.0229436,Massachusetts,"17,025.62",13.42,40991
+47,022081,2015-07-24,08:19:56,29.5,"South East East",Standard,0.7,42.070586,-71.0410071,"BROCKTON HIGH SCHOOL","19,167.80",2.24,40991
+48,022062,2015-07-24,08:19:58,6.7,"North East East","Motion Start",0.5,42.0705557,-71.0453274,"BROCKTON HIGH SCHOOL","17,307.50",29.08,42015
+87,022027,2015-07-24,08:20:10,35.5,South,Standard,1.8,42.0714265,-71.0210691,Massachusetts,"17,218.21",8.95,40991
+101,022051,2015-07-24,08:20:14,7,"South East East",Standard,2,42.0694049,-71.0207802,Massachusetts,"17,025.62",22.37,40991
+47,022081,2015-07-24,08:20:14,30.7,East,Standard,0.8,42.0696792,-71.0383472,Massachusetts,"19,167.80",6.71,40991
+93,022041,2015-07-24,08:20:15,30.7,"South East East",Standard,0.9,42.0697806,-71.0389178,"BROCKTON HIGH SCHOOL","17,056.53",-2.24,40991
+48,022062,2015-07-24,08:20:16,19.7,"North East East",Standard,0.6,42.0710064,-71.0437088,"BROCKTON HIGH SCHOOL","17,307.50",-2.24,40991
+48,022062,2015-07-24,08:20:27,0,"North East East","Motion Stop",0.6,42.0712599,-71.0429431,"BROCKTON HIGH SCHOOL","17,307.50",-33.55,42015
+48,022062,2015-07-24,08:20:28,3,"North East East","Motion Start",0.6,42.0712652,-71.042929,"BROCKTON HIGH SCHOOL","17,307.50",-11.18,42015
+101,022051,2015-07-24,08:20:32,36.5,South,Standard,2.1,42.0675711,-71.0202873,Massachusetts,"17,025.62",-2.24,40991
+47,022081,2015-07-24,08:20:32,29,"North East East",Standard,1,42.0702133,-71.0351566,Massachusetts,"19,167.80",-11.18,40991
+93,022041,2015-07-24,08:20:33,32.2,"North East East",Standard,1,42.0700544,-71.035921,Massachusetts,"17,056.53",-8.95,40991
+87,022027,2015-07-24,08:20:34,33.2,"South South East",Standard,2,42.0682891,-71.0204841,Massachusetts,"17,218.21",6.71,40991
+321,"MB033 - 051073",2015-07-24,08:20:39,11.6,"South West",Standard,2.1,42.4073365,-71.055314,Massachusetts,0.00,-31.32,8223
+321,"MB033 - 051073",2015-07-24,08:20:43,0,"South West","Motion Stop",2.1,42.4072801,-71.055375,Massachusetts,0.00,-24.61,9247
+48,022062,2015-07-24,08:20:46,21,"South East East",Standard,0.7,42.0708454,-71.0416388,"BROCKTON HIGH SCHOOL","17,307.76",4.47,40991
+47,022081,2015-07-24,08:20:55,21.2,"North East East",Standard,1.2,42.0708866,-71.0315054,Massachusetts,"19,167.80",-17.90,40991
+101,022051,2015-07-24,08:20:58,29.2,"South South East",Standard,2.4,42.0641074,-71.0194562,Massachusetts,"17,025.62",-6.71,40991
+93,022041,2015-07-24,08:20:59,23,"North East East",Standard,1.2,42.0708165,-71.0317268,Massachusetts,"17,056.53",,40991
+48,022062,2015-07-24,08:21:12,21.7,"South East East",Standard,0.9,42.0697683,-71.0388721,"BROCKTON HIGH SCHOOL","17,307.76",-2.24,40991
+87,022027,2015-07-24,08:21:12,26.5,South,Standard,2.4,42.0633502,-71.0192993,Massachusetts,"17,218.21",-13.42,40991
+101,022051,2015-07-24,08:21:16,19.5,"South South East",Standard,2.5,42.0626259,-71.0190441,Massachusetts,"17,025.62",11.18,40991
+47,022081,2015-07-24,08:21:24,28.5,"North East East",Standard,1.3,42.0713926,-71.028739,Massachusetts,"19,167.80",8.95,40991
+87,022027,2015-07-24,08:21:30,27,"South South East",Standard,2.5,42.0618673,-71.0186038,Massachusetts,"17,218.21",13.42,40991
+48,022062,2015-07-24,08:21:30,28.2,"North East East",Standard,1,42.0699579,-71.0364819,Massachusetts,"17,307.76",2.24,40991
+93,022041,2015-07-24,08:21:32,29.7,"North East East",Standard,1.4,42.0714911,-71.027956,Massachusetts,"17,056.53",-2.24,40991
+101,022051,2015-07-24,08:21:34,28.7,"North East East",Standard,2.6,42.0624251,-71.0174256,Massachusetts,"17,025.62",4.47,40991
+321,"MB033 - 051073",2015-07-24,08:21:34,7.9,"South South West","Motion Start",2.1,42.4072466,-71.0554027,Massachusetts,0.00,42.50,9247
+47,022081,2015-07-24,08:21:42,29.7,"North East East",Standard,1.5,42.0719122,-71.0258833,Massachusetts,"19,167.80",-2.24,40991
+87,022027,2015-07-24,08:21:48,11.2,"South South East",Standard,2.6,42.0598099,-71.0175068,Massachusetts,"17,218.21",-51.45,40991
+101,022051,2015-07-24,08:21:52,5.7,"South East East",Standard,2.7,42.0628175,-71.0152631,Massachusetts,"17,025.62",13.42,40991
+321,"MB033 - 051073",2015-07-24,08:21:55,17.2,"South West",Standard,2.2,42.4060106,-71.0565234,Massachusetts,0.00,-2.24,8223
+47,022081,2015-07-24,08:22:05,23,"North East East",Standard,1.7,42.0725417,-71.0222697,Massachusetts,"19,167.80",-15.66,40991
+93,022041,2015-07-24,08:22:06,25.7,East,Standard,1.7,42.0724185,-71.0227531,Massachusetts,"17,056.53",-8.95,40991
+87,022027,2015-07-24,08:22:06,30,"North East East",Standard,2.7,42.0599698,-71.0156055,Massachusetts,"17,218.47",-2.24,40991
+48,022062,2015-07-24,08:22:06,20.7,"North East East",Standard,1.3,42.0708772,-71.0313121,Massachusetts,"17,307.76",-29.08,40991
+101,022051,2015-07-24,08:22:10,20,"South South East",Standard,2.8,42.0612841,-71.0146471,Massachusetts,"17,025.62",-33.55,40991
+321,"MB033 - 051073",2015-07-24,08:22:14,0,"North West West","Motion Stop",2.2,42.405426,-71.0572807,Massachusetts,0.00,-15.66,9247
+87,022027,2015-07-24,08:22:16,0,"North East East","Motion Stop",2.8,42.0601219,-71.0147109,Massachusetts,"17,218.47",-26.84,42015
+47,022081,2015-07-24,08:22:19,0,East,"Motion Stop",1.7,42.0726585,-71.0213654,Massachusetts,"19,167.80",-15.66,42015
+47,022081,2015-07-24,08:22:20,4.7,East,"Motion Start",1.7,42.0726572,-71.0213497,Massachusetts,"19,167.80",-2.24,42015
+101,022051,2015-07-24,08:22:22,0,"South South East","Motion Stop",2.8,42.0609291,-71.0145224,Massachusetts,"17,025.62",-8.95,42015
+87,022027,2015-07-24,08:22:23,3.2,"North East East","Motion Start",2.8,42.0601296,-71.0147029,Massachusetts,"17,218.47",13.42,42015
+93,022041,2015-07-24,08:22:24,9.7,East,Standard,1.8,42.0726449,-71.0214809,Massachusetts,"17,056.53",8.95,40991
+101,022051,2015-07-24,08:22:29,8.2,"South East","Motion Start",2.8,42.0608956,-71.0144786,Massachusetts,"17,025.62",29.08,42015
+321,"MB033 - 051073",2015-07-24,08:22:31,9.6,"North West West","Motion Start",2.3,42.405463,-71.0573581,Massachusetts,0.00,78.29,9247
+47,022081,2015-07-24,08:22:38,28.7,South,Standard,1.8,42.0714348,-71.0210412,Massachusetts,"19,168.06",4.47,40991
+93,022041,2015-07-24,08:22:43,27.5,South,Standard,1.9,42.0718028,-71.0211504,Massachusetts,"17,056.53",13.42,40991
+101,022051,2015-07-24,08:22:47,26.5,"South East East",Standard,2.9,42.0605444,-71.0133889,Massachusetts,"17,025.62",26.84,40991
+321,"MB033 - 051073",2015-07-24,08:22:49,19.9,"North North West",Standard,2.3,42.4063057,-71.0577965,Massachusetts,0.00,,8223
+87,022027,2015-07-24,08:22:57,15.5,"South East East",Standard,2.9,42.0607708,-71.0139049,Massachusetts,"17,218.47",2.24,40991
+47,022081,2015-07-24,08:23:05,30.2,"South South East",Standard,2,42.0681954,-71.0204313,Massachusetts,"19,168.06",-4.47,40991
+321,"MB033 - 051073",2015-07-24,08:23:06,0,North,"Motion Stop",2.4,42.4073562,-71.0580451,Massachusetts,0.00,-26.84,9247
+93,022041,2015-07-24,08:23:07,29.2,"South South East",Standard,2.1,42.0688717,-71.0206357,Massachusetts,"17,056.53",-4.47,40991
+321,"MB033 - 051073",2015-07-24,08:23:09,4.5,"North North West","Motion Start",2.4,42.4073828,-71.0580555,Massachusetts,0.00,33.55,9247
+101,022051,2015-07-24,08:23:11,30.7,"South East East",Standard,3.1,42.0587518,-71.0098836,Massachusetts,"17,025.62",4.47,40991
+48,022062,2015-07-24,08:23:23,27.5,"North East East",Standard,1.7,42.0724795,-71.0227143,Massachusetts,"17,307.76",6.71,40991
+47,022081,2015-07-24,08:23:27,26.5,South,Standard,2.2,42.0656167,-71.0198623,Massachusetts,"19,168.06",-2.24,40991
+87,022027,2015-07-24,08:23:28,40,"South East East",Standard,3.1,42.0587494,-71.0098034,Massachusetts,"17,218.47",-2.24,40991
+101,022051,2015-07-24,08:23:29,38,"South East",Standard,3.3,42.0573166,-71.0072968,Massachusetts,"17,025.62",,40991
+321,"MB033 - 051073",2015-07-24,08:23:30,11.2,North,Standard,2.5,42.4084596,-71.0591786,Massachusetts,0.00,-38.03,8223
+321,"MB033 - 051073",2015-07-24,08:23:34,0,North,"Motion Stop",2.5,42.4085374,-71.0592026,Massachusetts,0.00,-15.66,9247
+48,022062,2015-07-24,08:23:35,0,East,"Motion Stop",1.8,42.0727011,-71.0214414,Massachusetts,"17,307.76",-40.26,42015
+321,"MB033 - 051073",2015-07-24,08:23:46,9.3,"North North West","Motion Start",2.5,42.4085987,-71.0592272,Massachusetts,0.00,60.40,9247
+47,022081,2015-07-24,08:23:46,25.7,"South South East",Standard,2.3,42.0637347,-71.0193933,Massachusetts,"19,168.06",2.24,40991
+87,022027,2015-07-24,08:23:46,36,"South East",Standard,3.3,42.057205,-71.0070794,Massachusetts,"17,218.47",-2.24,40991
+101,022051,2015-07-24,08:23:47,15.5,"South West",Standard,3.4,42.0561944,-71.0055868,Massachusetts,"17,025.89",8.95,40991
+93,022041,2015-07-24,08:23:54,21.2,South,Standard,2.5,42.0632461,-71.0192974,Massachusetts,"17,056.53",-15.66,40991
+48,022062,2015-07-24,08:24:01,4,East,"Motion Start",1.8,42.0727087,-71.021442,Massachusetts,"17,307.76",13.42,42015
+47,022081,2015-07-24,08:24:04,15.7,"South South East",Standard,2.4,42.0625646,-71.0190839,Massachusetts,"19,168.06",22.37,40991
+321,"MB033 - 051073",2015-07-24,08:24:04,24.2,"North North West",Standard,2.6,42.4100003,-71.059688,Massachusetts,0.00,4.47,8223
+87,022027,2015-07-24,08:24:04,21.7,"South West West",Standard,3.4,42.0560625,-71.0058302,Massachusetts,"17,218.47",8.95,40991
+101,022051,2015-07-24,08:24:06,0,"South West West","Motion Stop",3.5,42.0554534,-71.0071003,Massachusetts,"17,025.89",4.47,42015
+101,022051,2015-07-24,08:24:07,3.7,"South West","Motion Start",3.5,42.0554442,-71.0071168,Massachusetts,"17,025.89",6.71,42015
+48,022062,2015-07-24,08:24:19,23.2,South,Standard,1.9,42.0717768,-71.0211505,Massachusetts,"17,307.76",4.47,40991
+321,"MB033 - 051073",2015-07-24,08:24:22,22.7,"North East",Standard,2.7,42.4108363,-71.058978,Massachusetts,0.00,,8223
+87,022027,2015-07-24,08:24:22,8.5,"South West",Standard,3.5,42.0553897,-71.0071126,Massachusetts,"17,218.47",22.37,40991
+47,022081,2015-07-24,08:24:22,23.5,"North East East",Standard,2.5,42.0624311,-71.0177974,Massachusetts,"19,168.06",,40991
+101,022051,2015-07-24,08:24:25,16.7,"South South East",Standard,3.6,42.054483,-71.0065473,Massachusetts,"17,025.89",-13.42,40991
+93,022041,2015-07-24,08:24:26,22.5,"North East East",Standard,2.6,42.0622868,-71.0183324,Massachusetts,"17,056.53",24.61,40991
+101,022051,2015-07-24,08:24:32,0,"South South East","Motion Stop",3.6,42.054227,-71.0063677,Massachusetts,"17,025.89",-11.18,42015
+101,022051,2015-07-24,08:24:36,7.2,"South South East","Motion Start",3.6,42.0542236,-71.0063625,Massachusetts,"17,025.89",29.08,42015
+47,022081,2015-07-24,08:24:40,14,"North East East",Standard,2.6,42.0628405,-71.0155513,Massachusetts,"19,168.06",-15.66,40991
+321,"MB033 - 051073",2015-07-24,08:24:40,18.6,"North East",Standard,2.8,42.4120909,-71.0572904,Massachusetts,0.00,-8.95,8223
+87,022027,2015-07-24,08:24:40,10.7,"South South East",Standard,3.6,42.0543067,-71.0064091,Massachusetts,"17,218.47",,40991
+93,022041,2015-07-24,08:24:45,13.5,East,Standard,2.7,42.0627704,-71.0157147,Massachusetts,"17,056.53",-33.55,40991
+47,022081,2015-07-24,08:24:45,0,East,"Motion Stop",2.6,42.0628669,-71.0153556,Massachusetts,"19,168.06",-8.95,42015
+47,022081,2015-07-24,08:24:51,4.2,East,"Motion Start",2.6,42.0628691,-71.015349,Massachusetts,"19,168.06",13.42,42015
+321,"MB033 - 051073",2015-07-24,08:25:01,13.5,"North East",Standard,2.9,42.4132653,-71.055762,Massachusetts,0.00,-17.90,8223
+101,022051,2015-07-24,08:25:03,28.7,"South South East",Standard,3.8,42.0519562,-71.0047338,Massachusetts,"17,025.89",-24.61,40991
+321,"MB033 - 051073",2015-07-24,08:25:05,0,"North East East","Motion Stop",2.9,42.4133164,-71.0556556,Massachusetts,0.00,-51.45,9247
+321,"MB033 - 051073",2015-07-24,08:25:08,6,East,"Motion Start",2.9,42.4133192,-71.0556177,Massachusetts,0.00,31.32,9247
+93,022041,2015-07-24,08:25:09,27.2,"South South East",Standard,2.8,42.0622681,-71.0150306,Massachusetts,"17,056.53",11.18,40991
+48,022062,2015-07-24,08:25:09,29,"South South East",Standard,2.2,42.066577,-71.0200874,Massachusetts,"17,307.76",,40991
+47,022081,2015-07-24,08:25:09,26.5,"South South East",Standard,2.7,42.061581,-71.0147744,Massachusetts,"19,168.06",-6.71,40991
+87,022027,2015-07-24,08:25:11,24,"South South East",Standard,3.8,42.0519481,-71.0047273,Massachusetts,"17,218.47",-6.71,40991
+321,"MB033 - 051073",2015-07-24,08:25:26,13.1,"North East",Standard,3,42.4130872,-71.0547357,Massachusetts,0.00,8.95,8223
+47,022081,2015-07-24,08:25:27,22,"South East",Standard,2.8,42.0606967,-71.0137254,Massachusetts,"19,168.06",20.13,40991
+93,022041,2015-07-24,08:25:27,21.5,"South East East",Standard,2.9,42.0608462,-71.0140837,Massachusetts,"17,056.53",6.71,40991
+48,022062,2015-07-24,08:25:36,25.2,"South South East",Standard,2.4,42.0636424,-71.0193371,Massachusetts,"17,307.76",-2.24,40991
+101,022051,2015-07-24,08:25:41,6.7,"North East East",Standard,3.9,42.0519187,-71.0032208,"Brockton Yard","17,025.89",2.24,40991
+87,022027,2015-07-24,08:25:42,0,"North East East","Motion Stop",3.8,42.0517855,-71.0035593,"Brockton Yard","17,218.47",-15.66,42015
+321,"MB033 - 051073",2015-07-24,08:25:44,19.3,"North East",Standard,3.1,42.4140076,-71.0534963,Massachusetts,0.00,-6.71,8223
+93,022041,2015-07-24,08:25:45,34,"South East",Standard,3,42.0596351,-71.0116722,Massachusetts,"17,056.53",4.47,40991
+87,022027,2015-07-24,08:25:46,3.2,"North East East","Motion Start",3.8,42.0517884,-71.0035474,"Brockton Yard","17,218.47",6.71,42015
+47,022081,2015-07-24,08:25:52,34.7,"South East East",Standard,3,42.0588985,-71.0101699,Massachusetts,"19,168.06",-2.24,40991
+321,"MB033 - 051073",2015-07-24,08:25:54,0,"North East","Motion Stop",3.1,42.414319,-71.0530458,Massachusetts,0.00,-17.90,9247
+321,"MB033 - 051073",2015-07-24,08:25:58,9.4,"North East","Motion Start",3.1,42.4143773,-71.0529633,Massachusetts,0.00,69.35,9247
+93,022041,2015-07-24,08:26:03,31,"South East East",Standard,3.2,42.0584153,-71.0088423,Massachusetts,"17,056.53",-4.47,40991
+87,022027,2015-07-24,08:26:04,8.5,"South East",Standard,3.9,42.0518329,-71.002985,"Brockton Yard","17,218.47",11.18,40991
+47,022081,2015-07-24,08:26:10,34.7,"South East",Standard,3.2,42.0575944,-71.0076521,Massachusetts,"19,168.06",8.95,40991
+48,022062,2015-07-24,08:26:14,17.5,"South South East",Standard,2.7,42.0599458,-71.0175507,Massachusetts,"17,307.76",-29.08,40991
+321,"MB033 - 051073",2015-07-24,08:26:19,16.4,"North East",Standard,3.2,42.4156218,-71.0513798,Massachusetts,0.00,-42.50,8223
+48,022062,2015-07-24,08:26:20,0,"South South East","Motion Stop",2.7,42.0597831,-71.0174621,Massachusetts,"17,307.76",2.24,42015
+101,022051,2015-07-24,08:26:20,0,"North West","Motion Stop",3.9,42.0513639,-71.0036075,"Brockton Yard","17,025.89",,42015
+48,022062,2015-07-24,08:26:21,6,"South South East","Motion Start",2.7,42.0597831,-71.0174621,Massachusetts,"17,307.76",15.66,42015
+93,022041,2015-07-24,08:26:21,35,"South East East",Standard,3.4,42.0568587,-71.0064093,Massachusetts,"17,056.53",-2.24,40991
+87,022027,2015-07-24,08:26:25,0,"South West West","Motion Stop",3.9,42.0513879,-71.003271,"Brockton Yard","17,218.47",-15.66,42015
+47,022081,2015-07-24,08:26:28,13.2,"South South West",Standard,3.3,42.0562673,-71.0054904,Massachusetts,"19,168.06",6.71,40991
+321,"MB033 - 051073",2015-07-24,08:26:31,0,"North East","Motion Stop",3.3,42.4160376,-71.0507436,Massachusetts,0.00,-38.03,9247
+321,"MB033 - 051073",2015-07-24,08:26:32,0,"North East","Door Open/Close",3.3,42.416041,-71.0507286,Massachusetts,0.00,-15.66,8254
+48,022062,2015-07-24,08:26:39,22.5,"North East East",Standard,2.8,42.0599246,-71.0158065,Massachusetts,"17,307.76",-4.47,40991
+93,022041,2015-07-24,08:26:39,20.7,"South West",Standard,3.5,42.0560174,-71.005935,Massachusetts,"17,056.80",11.18,40991
+321,"MB033 - 051073",2015-07-24,08:26:46,0,"North East","Door Open/Close",3.3,42.416041,-71.0507286,Massachusetts,0.00,,8255
+47,022081,2015-07-24,08:26:46,12.7,"South West",Standard,3.4,42.0554446,-71.0070668,Massachusetts,"19,168.06",-15.66,40991
+321,"MB033 - 051073",2015-07-24,08:26:51,9.4,"North East","Motion Start",3.3,42.4160944,-71.0506684,Massachusetts,0.00,53.69,9247
+48,022062,2015-07-24,08:26:57,8.2,"South East",Standard,2.9,42.060119,-71.0143344,Massachusetts,"17,307.76",11.18,40991
+93,022041,2015-07-24,08:26:58,23,"South South East",Standard,3.6,42.0549981,-71.0069353,Massachusetts,"17,056.80",24.61,40991
+87,022027,2015-07-24,08:27:00,4.5,"South West West","Motion Start",3.9,42.0513845,-71.0032851,"Brockton Yard","17,218.47",13.42,42015
+47,022081,2015-07-24,08:27:04,27.5,"South South East",Standard,3.5,42.0540397,-71.0062674,Massachusetts,"19,168.06",-2.24,40991
+101,022051,2015-07-24,08:27:12,0,"South East East","Power Off",3.9,42.0513556,-71.0035586,"Brockton Yard","17,025.89",,32799
+48,022062,2015-07-24,08:27:15,28,"South South East",Standard,3,42.0586465,-71.0138087,Massachusetts,"17,307.76",,40991
+321,"MB033 - 051073",2015-07-24,08:27:17,4.6,"North East","Motion Start",3.4,42.4170178,-71.0494488,Massachusetts,0.00,31.32,9247
+47,022081,2015-07-24,08:27:25,20.5,"South South East",Standard,3.7,42.0519946,-71.0048161,Massachusetts,"19,168.06",-13.42,40991
+93,022041,2015-07-24,08:27:30,16.2,"South South East",Standard,3.8,42.0518576,-71.0046975,Massachusetts,"17,056.80",-11.18,40991
+48,022062,2015-07-24,08:27:33,0,"South South East","Motion Stop",3.1,42.0573036,-71.0133731,Massachusetts,"17,307.76",-20.13,42015
+321,"MB033 - 051073",2015-07-24,08:27:35,20.9,"North West West",Standard,3.5,42.4180248,-71.0506026,Massachusetts,0.00,-6.71,8223
+48,022062,2015-07-24,08:27:39,6.2,"South South East","Motion Start",3.1,42.057303,-71.0133719,Massachusetts,"17,307.76",31.32,42015
+93,022041,2015-07-24,08:27:41,0,"South East East","Motion Stop",3.8,42.0515708,-71.0044548,Massachusetts,"17,056.80",-13.42,42015
+47,022081,2015-07-24,08:27:43,0,"North East East","Motion Stop",3.8,42.0513967,-71.0042069,"Brockton Yard","19,168.06",-11.18,42015
+93,022041,2015-07-24,08:27:45,5.5,"South East East","Motion Start",3.8,42.051567,-71.0044376,Massachusetts,"17,056.80",17.90,42015
+47,022081,2015-07-24,08:27:53,0,"North East East","Power Off",3.8,42.0514,-71.0041997,"Brockton Yard","19,168.06",,32799
+87,022027,2015-07-24,08:27:55,0,East,"Power Off",4,42.0513088,-71.0036945,"Brockton Yard","17,218.47",,32799
+93,022041,2015-07-24,08:28:03,5.7,"North East East",Standard,3.9,42.0517061,-71.0038032,"Brockton Yard","17,056.80",-2.24,40991
+48,022062,2015-07-24,08:28:04,31,"South South East",Standard,3.3,42.0551508,-71.0125765,Massachusetts,"17,307.76",6.71,40991
+321,"MB033 - 051073",2015-07-24,08:28:05,20.5,"North West",Standard,3.6,42.4194421,-71.0534706,Massachusetts,0.00,6.71,8223
+48,022062,2015-07-24,08:28:22,9.5,"South South East",Standard,3.4,42.0533441,-71.011817,Massachusetts,"17,307.76",-35.79,40991
+321,"MB033 - 051073",2015-07-24,08:28:23,25.3,"North West West",Standard,3.8,42.4204236,-71.0554826,Massachusetts,0.00,,8223
+321,"MB033 - 051073",2015-07-24,08:28:41,25.6,"North West",Standard,3.9,42.4212946,-71.0579727,Massachusetts,0.00,-13.42,8223
+48,022062,2015-07-24,08:28:41,22.7,"North East East",Standard,3.5,42.0533259,-71.0106604,Massachusetts,"17,307.76",,40991
+321,"MB033 - 051073",2015-07-24,08:28:52,0,"North West","Motion Stop",3.9,42.4217195,-71.0585709,Massachusetts,0.00,-26.84,9247
+48,022062,2015-07-24,08:28:59,25,"North East",Standard,3.6,42.0543868,-71.008794,Massachusetts,"17,307.76",-4.47,40991
+93,022041,2015-07-24,08:29:05,0,"South West West","Motion Stop",3.9,42.0514775,-71.0030698,"Brockton Yard","17,056.80",-2.24,42015
+93,022041,2015-07-24,08:29:06,3,"South West West","Motion Start",3.9,42.0514762,-71.0030876,"Brockton Yard","17,056.80",2.24,42015
+321,"MB033 - 051073",2015-07-24,08:29:16,6.4,"North West","Motion Start",3.9,42.4217436,-71.0585964,Massachusetts,0.00,31.32,9247
+48,022062,2015-07-24,08:29:17,10.7,"South East East",Standard,3.7,42.0552188,-71.0071168,Massachusetts,"17,308.02",,40991
+87,022027,2015-07-24,08:29:20,0,East,"Power On",4,42.0513088,-71.0036945,"Brockton Yard","17,218.47",,40991
+87,022027,2015-07-24,08:29:25,4.2,"North North West","Motion Start",4,42.0513122,-71.0036967,"Brockton Yard","17,218.47",17.90,42015
+321,"MB033 - 051073",2015-07-24,08:29:34,33.4,"North East",Standard,4.1,42.4229395,-71.0571927,Massachusetts,0.00,4.47,8223
+48,022062,2015-07-24,08:29:35,24.2,"South South East",Standard,3.8,42.0539098,-71.0061384,Massachusetts,"17,308.02",,40991
+321,"MB033 - 051073",2015-07-24,08:29:52,28.5,"North North East",Standard,4.2,42.4246407,-71.055535,Massachusetts,0.00,64.87,8223
+48,022062,2015-07-24,08:29:59,21,"South South East",Standard,4,42.0518213,-71.0046459,Massachusetts,"17,308.02",-6.71,40991
