@@ -21,7 +21,7 @@ button {
 
   &:hover,
   &:focus {
-    background-color: darken($color-action, 15%);
+    background-color: $color-action-hover;
     color: $base-background-color;
   }
 
@@ -51,6 +51,43 @@ button {
   }
 }
 
+.btn--close {
+  margin-bottom: $modal-padding;
+  float: right;
+}
+
+.btn--close--icon {
+  @extend %icon-circle;
+  position: absolute;
+  top: rem(4);
+  right: rem(10);
+  width: rem(30);
+  height: rem(30);
+  transform: rotate(45deg);
+  border-radius: rem(15);
+
+  &:before,
+  &:after {
+    color: $base-font-invert-color;
+  }
+
+  &:before {
+    width: rem(16);
+    height: rem(2);
+    margin-left: rem(-7);
+  }
+
+  &:after {
+    width: rem(2);
+    height: rem(16);
+    margin-top: rem(-7);
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 .btn--minus {
   @extend %icon-circle;
 
@@ -71,7 +108,21 @@ button {
 }
 
 .btn--add-student {
-  margin-top: rem(10);
+  margin-bottom: $section-spacing;
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+
+  &:hover,
+  &:focus {
+    .btn--plus,
+    .btn--minus {
+      background-color: $color-action-hover;
+    }
+  }
+}
+
+.btn--add-student__text {
+  vertical-align: middle;
 }
 
 .btn--profile:hover {

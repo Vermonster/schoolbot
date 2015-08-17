@@ -44,13 +44,9 @@
 }
 
 .modal__section-heading {
-  display: inline-block;
+  margin-bottom: 0;
   font-family: $heading-font-family;
   text-transform: uppercase;
-}
-
-.modal__section__cta {
-  float: right;
 }
 
 .modal fieldset {

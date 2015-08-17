@@ -19,7 +19,7 @@ feature 'User signs in' do
     fill_in 'Password', with: 'secretpass'
     click_on 'SIGN IN'
 
-    expect(page).to have_content 'Signed into district'
+    expect(page).to have_css 'button.btn--profile'
   end
 
   scenario 'unsuccessfully due to invalid credentials' do
