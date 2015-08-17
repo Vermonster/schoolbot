@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817142733) do
+ActiveRecord::Schema.define(version: 20150817151947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20150817142733) do
     t.integer  "bus_id",       null: false
     t.float    "latitude",     null: false
     t.float    "longitude",    null: false
-    t.string   "heading",      null: false
+    t.text     "heading",      null: false
     t.datetime "recorded_at",  null: false
     t.float    "distance"
     t.float    "speed"
     t.float    "acceleration"
-    t.string   "reason"
-    t.string   "zone"
+    t.text     "reason"
+    t.text     "zone"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
