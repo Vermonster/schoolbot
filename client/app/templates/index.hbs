@@ -7,6 +7,17 @@
       <button class='btn--close--icon' {{action 'toggleProfile'}} aria-label='Close'></button>
       <div class='modal__body'>
         <section class='modal__section'>
+          <h3 class='modal__section-heading'>My Information</h3>
+          <p>Name: {{currentUser.name}}</p>
+          <p>Email: {{currentUser.email}}</p>
+          <p>Password: ••••••••</p>
+          <p>Street: {{currentUser.street}}</p>
+          <p>City: {{currentUser.city}}</p>
+          <p>State: {{currentUser.state}}</p>
+          <p>ZIP Code: {{currentUser.zipCode}}</p>
+        </section>
+
+        <section class='modal__section'>
           <h3 class='modal__section-heading'>My Students</h3>
           {{#unless showingAddStudentForm}}
             <div class='btn--add-student' {{action 'toggleAddStudent'}}>

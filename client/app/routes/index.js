@@ -16,11 +16,13 @@ export default Ember.Route.extend(AuthenticatedRoute, {
 
   afterModel() {
     this.students = this.store.findAll('student');
-    return this.students;
+    this.currentUser = this.store.find('user', 'current');
+    return Ember.RSVP.all([this.students, this.currentUser]);
   },
 
   setupController(controller) {
     controller.set('students', this.students);
+    controller.set('currentUser', this.currentUser);
   },
 
   pollTask: null,

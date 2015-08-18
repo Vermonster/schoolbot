@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     devise_scope :user do
       post 'users/sign_in', to: 'sessions#create', as: :user_session
     end
+    get 'users/current', to: 'users#show', as: :current_user
     get 'districts/current', to: 'districts#show', as: :current_district
     resources :students, only: :index
     resource :translations, only: :show
