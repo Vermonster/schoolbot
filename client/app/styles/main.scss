@@ -21,7 +21,7 @@
   @include media($background-landscape) {
     background-image: image-path('background_sun.svg'),
       image-path('background_cloud.svg'),
-      image-path('background_grass.svg'),
+      image-path('background_landscape_wide.svg'),
       repeating-linear-gradient(
         to right,
         $color-primary,
@@ -30,8 +30,8 @@
         rgba($color-primary, .9) rem(3)
       );
     background-repeat: no-repeat, repeat-x, repeat-x;
-    background-position: left top, left top, left bottom;
-    background-size: auto, auto, rem(1) rem(108);
+    background-position: left top, left top, center bottom;
+    background-size: auto, auto, rem(1243);
   }
 }
 
@@ -43,6 +43,10 @@
   background-image: image-path('background_landscape.svg');
   background-repeat: no-repeat;
   background-position: center bottom;
+
+  @include media($background-landscape) {
+    background-image: none;
+  }
 }
 
 .logo {
