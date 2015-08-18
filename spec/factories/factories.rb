@@ -57,7 +57,12 @@ FactoryGirl.define do
 
   factory :user do
     district
+    sequence(:name) { |n| "Test User #{n}" }
     sequence(:email) { |n| "user#{n}@example.org" }
     password "TestPassword"
+    sequence(:street) { |n| "#{n} Guardian St" }
+    city "Anytown"
+    state "USA"
+    zip_code "12345"
   end
 end

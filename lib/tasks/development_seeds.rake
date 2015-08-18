@@ -34,7 +34,14 @@ if Rails.env.development? || Rails.env.test?
       user = create(:user,
         district: boston,
         email: 'test@test.com',
-        password: 'testtest'
+        password: 'testtest',
+        name: 'Test User',
+        street: '75 Broad St',
+        city: 'Boston',
+        state: 'MA',
+        zip_code: '02109',
+        latitude: 42.357859,
+        longitude: -71.053574
       )
 
       bobby_label = create(:student_label,

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Geocoded
+
   belongs_to :district
   has_many :student_labels
   has_many :students, through: :student_labels
@@ -12,7 +14,13 @@ class User < ActiveRecord::Base
     :lockable,
     request_keys: [:subdomains]
 
+  validates :name, :street, :city, :state, :zip_code, presence: true
+
   before_save :ensure_authentication_token
+
+  def address
+    [street, city, state, zip_code].join(', ')
+  end
 
   def self.find_for_authentication(conditions)
     district = District.find_by!(slug: conditions.delete(:subdomains).first)
