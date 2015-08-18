@@ -1,10 +1,10 @@
 {{bus-map students=students}}
 
-{{#if showingProfile}}
+{{#if showingSettings}}
   <div class='modal modal__overlay'>
     <div class='modal__inner'>
       <h2 class='modal__title'>Settings</h2>
-      <button class='btn--close--icon' {{action 'toggleProfile'}} aria-label='Close'></button>
+      <button class='btn--close--icon' {{action 'toggleSettings'}} aria-label='Close'></button>
       <div class='modal__body'>
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Information</h3>
@@ -44,7 +44,7 @@
             {{/each}}
           </ul>
         </section>
-        <button class='btn--close' {{action 'toggleProfile'}}>Close</button>
+        <button class='btn--close' {{action 'toggleSettings'}}>Close</button>
       </div>
       <button class='btn--sign-out' {{action 'signOut'}}>Sign Out</button>
     </div>
@@ -52,7 +52,7 @@
 {{/if}}
 
 <div class='menu'>
-  <button class='btn--profile' {{action 'toggleProfile'}} aria-label='Settings'>
+  <button class='btn--profile' {{action 'toggleSettings'}} aria-label='Settings'>
     <span class='icon--profile'></span>
   </button>
 </div>
