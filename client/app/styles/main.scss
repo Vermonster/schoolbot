@@ -52,12 +52,19 @@
 .logo {
   @include hide-text;
   position: absolute;
-  top: rem(20);
-  right: rem(20);
-  width: rem(160);
-  height: rem(60);
-  background-image: image-path('schoolbot_logo.svg');
+  top: rem(14);
+  right: rem(10);
+  width: rem(150);
+  height: rem(100);
+  background-image: image-path('schoolbot_logo_cloud.svg');
   background-repeat: no-repeat;
+
+  @include media($background-landscape) {
+    top: rem(25);
+    right: rem(0);
+    width: rem(190);
+    height: rem(110);
+  }
 }
 
 .main__content {
