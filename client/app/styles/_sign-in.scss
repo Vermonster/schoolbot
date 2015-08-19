@@ -32,3 +32,11 @@
   color: $color-error;
   line-height: 1.4;
 }
+// TODO: will have a mixin for these once the readability/style is confirmed
+.sign-in__cta a {
+  color: $base-font-invert-color;
+
+  &:hover {
+    color: rgba($base-font-invert-color, .8);
+  }
+}

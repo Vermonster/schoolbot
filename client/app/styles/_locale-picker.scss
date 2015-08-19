@@ -1,3 +1,11 @@
 .locale-picker {
   margin-bottom: $section-spacing;
+
+  a {
+    color: $base-font-invert-color;
+
+    &:hover {
+      color: rgba($base-font-invert-color, .8);
+    }
+  }
 }
