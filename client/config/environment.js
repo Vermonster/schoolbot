@@ -12,7 +12,7 @@ module.exports = function(environment) {
       authenticationRoute: 'sign-in'
     },
     'simple-auth-devise': {
-      serverTokenEndpoint: '/api/users/sign_in'
+      serverTokenEndpoint: '/api/sessions'
     },
     EmberENV: {
       FEATURES: {

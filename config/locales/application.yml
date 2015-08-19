@@ -26,6 +26,8 @@ en:
       taken: You've already added a student with that nickname.
     school:
       blank: Please select a school.
+    session:
+      invalid: Invalid email address or password.
 
 es:
   <<: *common

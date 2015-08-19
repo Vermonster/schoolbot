@@ -1,18 +1,10 @@
 class User < ActiveRecord::Base
   include Geocoded
+  has_secure_password
 
   belongs_to :district
   has_many :student_labels
   has_many :students, through: :student_labels
-
-  devise :database_authenticatable,
-    :registerable,
-    :recoverable,
-    :rememberable,
-    :trackable,
-    :validatable,
-    :lockable,
-    request_keys: [:subdomains]
 
   validates :name, :street, :city, :state, :zip_code, presence: true
 
@@ -20,11 +12,6 @@ class User < ActiveRecord::Base
 
   def address
     [street, city, state, zip_code].join(', ')
-  end
-
-  def self.find_for_authentication(conditions)
-    district = District.find_by!(slug: conditions.delete(:subdomains).first)
-    find_first_by_auth_conditions(conditions, district_id: district.id)
   end
 
   private
@@ -37,7 +24,7 @@ class User < ActiveRecord::Base
 
   def generate_authentication_token
     loop do
-      token = Devise.friendly_token
+      token = SecureRandom.hex
       break token unless User.find_by(authentication_token: token)
     end
   end

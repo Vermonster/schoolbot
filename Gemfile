@@ -4,10 +4,10 @@ ruby File.read(".ruby-version").strip
 
 gem "active_model_serializers"
 gem "airbrake"
+gem "bcrypt"
 gem "clockwork"
 gem "delayed-plugins-airbrake"
 gem "delayed_job_active_record"
-gem "devise"
 gem "email_validator"
 gem "geocoder"
 gem "newrelic_rpm"

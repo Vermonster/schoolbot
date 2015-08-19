@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817205328) do
+ActiveRecord::Schema.define(version: 20150819141055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,36 +125,26 @@ ActiveRecord::Schema.define(version: 20150817205328) do
   add_index "students", ["district_id"], name: "index_students_on_district_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.integer  "district_id",                         null: false
-    t.text     "email",                  default: "", null: false
-    t.text     "encrypted_password",     default: "", null: false
-    t.text     "authentication_token",                null: false
+    t.integer  "district_id",            null: false
+    t.text     "email",                  null: false
+    t.text     "password_digest",        null: false
+    t.text     "authentication_token",   null: false
     t.text     "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.integer  "failed_attempts",        default: 0,  null: false
-    t.text     "unlock_token"
-    t.datetime "locked_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.text     "name",                                null: false
-    t.text     "street",                              null: false
-    t.text     "city",                                null: false
-    t.text     "state",                               null: false
-    t.text     "zip_code",                            null: false
-    t.float    "latitude",                            null: false
-    t.float    "longitude",                           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.text     "name",                   null: false
+    t.text     "street",                 null: false
+    t.text     "city",                   null: false
+    t.text     "state",                  null: false
+    t.text     "zip_code",               null: false
+    t.float    "latitude",               null: false
+    t.float    "longitude",              null: false
   end
 
   add_index "users", ["district_id"], name: "index_users_on_district_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
   add_foreign_key "bus_assignments", "buses", on_delete: :restrict
   add_foreign_key "bus_assignments", "students", on_delete: :cascade

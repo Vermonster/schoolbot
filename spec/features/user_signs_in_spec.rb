@@ -29,7 +29,7 @@ feature 'User signs in' do
     fill_in 'Password', with: ''
     click_on 'SIGN IN'
 
-    expect(page).to have_content 'Invalid email or password'
+    expect(page).to have_content t('errors.session.invalid')
   end
 
   scenario 'unsuccessfully due to using the wrong subdomain' do
@@ -41,6 +41,6 @@ feature 'User signs in' do
     fill_in 'Password', with: 'secretpass'
     click_on 'SIGN IN'
 
-    expect(page).to have_content 'Invalid email or password'
+    expect(page).to have_content t('errors.session.invalid')
   end
 end

@@ -115,7 +115,7 @@ describe 'Students API' do
       )
 
       payload = { student: { digest: '12345', nickname: 'Dobby' } }
-      post api_students_path(subdomain: 'foo'), payload, auth_headers(user)
+      post api_students_url(subdomain: 'foo'), payload, auth_headers(user)
 
       expect(response.status).to be 422
       expect(response_json[:errors]).to eq(
