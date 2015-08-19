@@ -30,6 +30,7 @@
 
 .modal__title {
   @include border-top-radius($modal-radius);
+  position: relative;
   margin-bottom: 0;
   padding-top: $modal-item-padding;
   padding-bottom: $modal-item-padding - rem(5);
@@ -66,6 +67,7 @@
 
 .modal__close--title {
   @extend %btn--close--icon;
+  position: absolute;
 }
 
 .modal__close {
