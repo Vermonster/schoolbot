@@ -4,11 +4,11 @@ button {
   display: inline-block;
   padding: .5em 1em;
   border: 0;
-  border-radius: $base-border-radius;
+  border-radius: rem(15%);
   background-color: $color-action;
   color: $base-background-color;
   font-family: $heading-font-family;
-  font-size: rem(18);
+  font-size: rem(14);
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
@@ -35,7 +35,7 @@ button {
   cursor: pointer;
 }
 
-.btn--plus {
+%btn--plus {
   @extend %icon-circle;
 
   &:before {
@@ -51,12 +51,7 @@ button {
   }
 }
 
-.btn--close {
-  margin-bottom: $modal-padding;
-  float: right;
-}
-
-.btn--close--icon {
+%btn--close--icon {
   @extend %icon-circle;
   position: absolute;
   top: rem(4);
@@ -64,7 +59,8 @@ button {
   width: rem(30);
   height: rem(30);
   transform: rotate(45deg);
-  border-radius: rem(15);
+  border-radius: rem(2);
+  background-color: transparent;
 
   &:before,
   &:after {
@@ -88,7 +84,7 @@ button {
   }
 }
 
-.btn--minus {
+%btn--minus {
   @extend %icon-circle;
 
   &:before {
@@ -107,25 +103,7 @@ button {
   margin-bottom: rem(3);
 }
 
-.btn--add-student {
-  margin-bottom: $section-spacing;
-  padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
-
-  &:hover,
-  &:focus {
-    .btn--plus,
-    .btn--minus {
-      background-color: $color-action-hover;
-    }
-  }
-}
-
-.btn--add-student__text {
-  vertical-align: middle;
-}
-
-.btn--profile:hover {
+.btn--settings:hover {
   background-color: transparent;
 
   [class*='icon--'],
@@ -134,10 +112,10 @@ button {
   }
 }
 
-.btn--sign-in {
+%btn--sign-in {
   @include full-width-button('true');
 }
 
-.btn--sign-out {
+%btn--sign-out {
   @include full-width-button('false');
 }

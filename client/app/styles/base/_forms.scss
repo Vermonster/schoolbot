@@ -85,3 +85,8 @@ select {
   max-width: 100%;
   margin-bottom: $base-spacing;
 }
+
+.form__cta--save,
+.form__cta--cancel {
+  padding: $button-padding;
+}

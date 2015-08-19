@@ -27,11 +27,16 @@
   }
 }
 
-.msg--error {
+.sign-in__msg--error {
   background-color: rgba($color-error, .1);
   color: $color-error;
   line-height: 1.4;
 }
+
+.sign-in__submit {
+  @extend %btn--sign-in;
+}
+
 // TODO: will have a mixin for these once the readability/style is confirmed
 .sign-in__cta a {
   color: $base-font-invert-color;

@@ -36,7 +36,7 @@
   padding-left: rem(30);
   background-color: $color-secondary;
   color: $base-font-invert-color;
-  font-size: rem(20);
+  font-size: rem(18);
   text-align: left;
   text-transform: uppercase;
 }
@@ -48,6 +48,7 @@
 .modal__section-heading {
   margin-bottom: 0;
   font-family: $heading-font-family;
+  font-size: rem(14);
   text-transform: uppercase;
 }
 
@@ -61,4 +62,19 @@
 
 .modal form {
   font-size: .9em;
+}
+
+.modal__close--title {
+  @extend %btn--close--icon;
+}
+
+.modal__close {
+  margin-bottom: $modal-padding;
+  padding: $button-padding;
+  float: right;
+  border-radius: rem(35);
+}
+
+.modal__sign-out {
+  @extend %btn--sign-out;
 }

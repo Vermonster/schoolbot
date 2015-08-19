@@ -4,7 +4,7 @@
   <div class='modal modal__overlay'>
     <div class='modal__inner'>
       <h2 class='modal__title'>Settings</h2>
-      <button class='btn--close--icon' {{action 'toggleSettings'}} aria-label='Close'></button>
+      <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
       <div class='modal__body'>
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Information</h3>
@@ -20,9 +20,9 @@
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Students</h3>
           {{#unless showingAddStudentForm}}
-            <div class='btn--add-student' {{action 'toggleAddStudent'}}>
-              <span class='btn--plus'></span>
-              <span class='btn--add-student__text'>add student</span>
+            <div class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
+              <span class='add-student-cta__icon'></span>
+              <span class='add-student-cta__text'>add student</span>
             </div>
           {{/unless}}
           {{#if showingAddStudentForm}}
@@ -44,15 +44,15 @@
             {{/each}}
           </ul>
         </section>
-        <button class='btn--close' {{action 'toggleSettings'}}>Close</button>
+        <button class='modal__close' {{action 'toggleSettings'}}>Close</button>
       </div>
-      <button class='btn--sign-out' {{action 'signOut'}}>Sign Out</button>
+      <button class='modal__sign-out' {{action 'signOut'}}>Sign Out</button>
     </div>
   </div>
 {{/if}}
 
 <div class='menu'>
-  <button class='btn--profile' {{action 'toggleSettings'}} aria-label='Settings'>
-    <span class='icon--profile'></span>
+  <button class='btn--settings' {{action 'toggleSettings'}} aria-label='Settings'>
+    <span class='icon--settings'></span>
   </button>
 </div>

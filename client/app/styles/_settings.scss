@@ -1,0 +1,22 @@
+.settings--add-student-cta {
+  margin-bottom: $section-spacing;
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    .add-student-cta__icon {
+      background-color: $color-action-hover;
+    }
+  }
+}
+
+.add-student-cta__icon {
+  @extend %btn--plus;
+}
+
+.add-student-cta__text {
+  vertical-align: middle;
+}
