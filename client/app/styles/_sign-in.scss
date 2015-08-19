@@ -1,6 +1,7 @@
 .form--sign-in {
   @extend %wrapper;
   margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
   padding-top: 0;
   border: 0;
   border-radius: $form-radius;
@@ -37,11 +38,6 @@
   @extend %btn--sign-in;
 }
 
-// TODO: will have a mixin for these once the readability/style is confirmed
-.sign-in__cta a {
-  color: $base-font-invert-color;
-
-  &:hover {
-    color: rgba($base-font-invert-color, .8);
-  }
+.sign-in__register-cta a {
+  @extend %page-view-link;
 }

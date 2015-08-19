@@ -14,7 +14,6 @@ feature 'User signs in' do
     use_subdomain('boston')
 
     visit root_path
-    click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
     click_on 'SIGN IN'
@@ -26,7 +25,6 @@ feature 'User signs in' do
     use_subdomain('boston')
 
     visit root_path
-    click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: ''
     click_on 'SIGN IN'
@@ -39,7 +37,6 @@ feature 'User signs in' do
     use_subdomain('district13')
 
     visit root_path
-    click_on 'Sign In'
     fill_in 'Your email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
     click_on 'SIGN IN'

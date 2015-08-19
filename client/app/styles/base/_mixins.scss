@@ -7,6 +7,15 @@
   background: image-path('line_gradient-yellow.jpg') repeat-x, $color-secondary;
 }
 
+// Link style when it is on the illustration background
+%page-view-link {
+  color: $base-font-invert-color;
+
+  &:hover {
+    color: rgba($base-font-invert-color, .8);
+  }
+}
+
 // Buttons
 @mixin full-width-button($bg-image: true) {
   @if $bg-image == 'true' {
