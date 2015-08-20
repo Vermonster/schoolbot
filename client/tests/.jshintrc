@@ -3,6 +3,7 @@
     "$",
     "andThen",
     "click",
+    "select",
     "console",
     "currentPath",
     "currentRouteName",

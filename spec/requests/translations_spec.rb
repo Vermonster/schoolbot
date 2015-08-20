@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe 'Translations API' do
-  it 'exposes translations for all available locales' do
+  it 'exposes translations for all locales except the "api" pseudo-locale' do
     # TODO: Find a way to stub the translation data itself
-    allow(I18n).to receive(:available_locales).and_return([:en, :es])
+    allow(I18n).to receive(:available_locales).and_return([:en, :es, :api])
     allow(I18n).to receive(:t).with('.', locale: :en).and_return(hello: 'Hello')
     allow(I18n).to receive(:t).with('.', locale: :es).and_return(hello: 'Hola')
 

@@ -1,6 +1,7 @@
 module API
   class BaseController < ActionController::Base
     respond_to :json
+    self.responder = BaseResponder
 
     rescue_from ActiveRecord::RecordNotFound do
       head :not_found

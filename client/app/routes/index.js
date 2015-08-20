@@ -21,7 +21,7 @@ export default Ember.Route.extend(AuthenticatedRoute, {
   },
 
   setupController(controller) {
-    controller.set('students', this.students);
+    controller.set('allStudents', this.students);
     controller.set('currentUser', this.currentUser);
   },
 

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
     get 'users/current', to: 'users#show', as: :current_user
     get 'districts/current', to: 'districts#show', as: :current_district
-    resources :students, only: :index
+    resources :students, only: [:index, :create]
     resource :translations, only: :show
 
     namespace :v0 do

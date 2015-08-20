@@ -1,0 +1,50 @@
+<fieldset>
+  <legend class='modal__section-heading'>Add Student</legend>
+
+  <label>
+    Last Name
+    {{input value=lastName}}
+  </label>
+
+  <label>
+    Student ID
+    {{input value=identifier}}
+  </label>
+
+  <label>
+    Birthdate
+    {{input value=birthdate placeholder='MM/DD/YYYY' focus-out='validateBirthdate'}}
+  </label>
+
+  {{#unless birthdateIsValid}}
+    {{t 'errors.birthdate.invalid'}}
+  {{/unless}}
+
+  {{#if errors.digest}}
+    {{t-error errors.digest.firstObject}}
+  {{/if}}
+
+  <label>
+    Nickname
+    {{input value=nickname}}
+    <span>This will be used to identify your student on the map.</span>
+  </label>
+
+  {{#if errors.nickname}}
+    {{t-error errors.nickname.firstObject}}
+  {{/if}}
+
+  <label>
+    School
+    {{#x-select action='selectSchool'}}
+      <option value=''></option>
+      {{#each schools as |school|}}
+        {{#x-option value=school}}{{school.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+  </label>
+
+  {{#if errors.school}}
+    {{t-error errors.school.firstObject}}
+  {{/if}}
+</fieldset>

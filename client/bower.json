@@ -17,6 +17,9 @@
     "normalize.css": "~3.0.3",
     "ember-simple-auth": "0.8.0",
     "leaflet": "~0.7.3",
-    "leaflet.markercluster": "~0.4.0"
+    "leaflet.markercluster": "~0.4.0",
+    "jsSHA": "2.0.1",
+    "moment": "~2.10.6",
+    "moment-timezone": "~0.4.0"
   }
 }

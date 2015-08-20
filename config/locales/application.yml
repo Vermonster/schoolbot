@@ -1,3 +1,9 @@
+api:
+  errors:
+    messages:
+      blank: blank
+      taken: taken
+
 en: &common
   locales:
     en: English
@@ -8,6 +14,18 @@ en: &common
 en:
   <<: *common
   example: Example text!
+  errors:
+    birthdate:
+      invalid: Please enter a valid date in MM/DD/YYYY format.
+    digest:
+      blank: |
+        We couldn't find a matching student. Ensure you've entered the
+        information exactly as it appears in your school district's records.
+    nickname:
+      blank: Please enter a nickname.
+      taken: You've already added a student with that nickname.
+    school:
+      blank: Please select a school.
 
 es:
   <<: *common

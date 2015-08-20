@@ -19,14 +19,14 @@
 
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Students</h3>
-          {{#unless showingAddStudentForm}}
-            <div class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
+          {{#unless showingStudentForm}}
+            <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
               <span class='add-student-cta__icon'></span>
-              <span class='add-student-cta__text'>add student</span>
-            </div>
+              <span class='add-student-cta__text'>Add student</span>
+            </a>
           {{/unless}}
-          {{#if showingAddStudentForm}}
-            {{render 'add-student-form'}}
+          {{#if showingStudentForm}}
+            {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
           {{/if}}
           <ul>
             {{#each students as |student|}}
