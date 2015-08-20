@@ -11,3 +11,29 @@
   height: calc(100% - #{$menu-height});
   font: inherit;
 }
+
+.bus-marker {
+  margin-top: rem(-53);
+  margin-left: rem(-17);
+  padding: 5px 10px;
+  border-radius: rem(5);
+  background-color: $color-secondary-darken-4;
+  color: $base-font-invert-color;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+
+  &:after {
+    position: absolute;
+    top: 100%;
+    left: rem(17);
+    width: 0;
+    height: 0;
+    margin-left: rem(-6);
+    border: solid transparent;
+    border-width: rem(6);
+    border-top-width: rem(24);
+    border-top-color: $color-secondary-darken-4;
+    content: ' ';
+  }
+}
