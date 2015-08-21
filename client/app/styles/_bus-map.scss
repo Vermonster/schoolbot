@@ -37,3 +37,9 @@
     content: ' ';
   }
 }
+
+.leaflet-overlay-pane path {
+  stroke: $bus-path-color;
+  stroke-width: rem(4);
+  stroke-dasharray: rem(9);
+}
