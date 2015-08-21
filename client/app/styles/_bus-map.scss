@@ -15,15 +15,16 @@
 .bus-marker {
   margin-top: rem(-53);
   margin-left: rem(-17);
-  padding: 5px 10px;
+  padding: rem(5) rem(10);
   border-radius: rem(5);
   background-color: $color-secondary-darken-4;
   color: $base-font-invert-color;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
+  filter: drop-shadow(rem(2) rem(3) rem(3) rgba(0, 0, 0, .5));
 
-  &:after {
+  &:before {
     position: absolute;
     top: 100%;
     left: rem(17);
