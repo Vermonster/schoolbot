@@ -47,7 +47,7 @@ feature 'User views map' do
       create(:bus_location, bus: @first_bus)
 
       expect(page).to_not have_css(
-        %(.bus-marker[style="#{first_bus_style}"]), wait: 3
+        %(.bus-marker[style="#{first_bus_style}"]), wait: 5
       )
       expect(page).to have_css(%(.bus-marker[style="#{second_bus_style}"]))
     end
