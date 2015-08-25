@@ -87,5 +87,6 @@ $background-landscape: new-breakpoint(min-width $background-landscape-width);
 // NOTE: map-controls should not be less than the Leaflet default of 1000
 $z-layers: (
   'map-controls': 1000,
-  'modal-overlay': 2000
+  'modal-overlay': 2000,
+  'district-heading': 5
 );

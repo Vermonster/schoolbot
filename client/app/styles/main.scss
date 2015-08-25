@@ -71,3 +71,8 @@
   @extend %wrapper;
   padding-top: rem(120);
 }
+
+.district-heading {
+  position: relative;
+  z-index: z('district-heading');
+}

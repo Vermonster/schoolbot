@@ -8,14 +8,15 @@
   <div class='main__outer--page-view'>
     <div class='main__inner--page-view'>
 
-      {{locale-picker}}
 
       <div class='main__content'>
         <div class='logo'>Schoolbot</div>
 
         {{#if districts.current}}
-          <h2>Welcome to {{districts.current.name}}</h2>
+          <h2 class='district-heading'>Welcome to {{districts.current.name}}</h2>
         {{/if}}
+
+        {{locale-picker}}
 
         {{outlet}}
 
