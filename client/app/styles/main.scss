@@ -45,6 +45,7 @@
   background-position: center bottom;
 
   @include media($background-landscape) {
+    max-width: rem(600);
     background-image: none;
   }
 }

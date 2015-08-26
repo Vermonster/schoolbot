@@ -2,7 +2,7 @@
 button {
   @include appearance(none);
   display: inline-block;
-  padding: .5em 1em;
+  padding: .5em 1.5em;
   border: 0;
   border-radius: rem(15%);
   background-color: $color-action;

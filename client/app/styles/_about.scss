@@ -1,0 +1,111 @@
+.about__intro,
+.about__district,
+.about__parent,
+.about__faq {
+  min-height: 100vh;
+}
+
+.about__district {
+  @include bg-gradient-with-lines(
+    $color-tertiary, $color-tertiary, $color-tertiary-darken);
+  //Temporary fix for the strange 1px blue line from the sibling div
+  position: relative;
+  margin-top: rem(-1);
+  z-index: z('about-content-wrapper');
+}
+
+.about__parent {
+  @include bg-gradient-with-lines(
+    $color-secondary-darken-4, $color-secondary-darken-3, $color-secondary-darken-4);
+}
+
+.about__faq {
+  @include bg-gradient-with-lines(
+    $color-secondary, $color-secondary, $color-secondary-darken-2);
+  min-height: calc(100vh - #{$footer-height});
+  padding-bottom: rem(50);
+}
+
+.about__content {
+  @extend %wrapper;
+
+  padding-top: rem(50);
+  padding-right: rem(35);
+  padding-bottom: rem(20);
+  padding-left: rem(35);
+  color: $base-font-invert-color;
+  font-size: rem(15);
+
+  @include media($small-screen) {
+    width: rem(500);
+  }
+
+  @include media($medium-screen) {
+    width: rem(600);
+    font-size: rem(16);
+
+    h1 {
+      font-size: rem(45);
+    }
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size: rem(35);
+    text-transform: uppercase;
+  }
+}
+
+.about__content--intro {
+  padding-top: rem(120);
+
+  @include media($small-screen) {
+    padding-top: rem(180);
+  }
+
+  @include media($large-screen) {
+    padding-top: rem(230);
+  }
+}
+
+.about__faq__share {
+  margin-top: rem(30);
+  padding-top: rem(30);
+  border-top: rem(1) $base-font-invert-color solid;
+}
+
+.about__input {
+  color: $base-font-color;
+
+  @include placeholder {
+    color: lighten($color-tertiary-darkest, 40%);
+  }
+}
+
+.about__footer {
+  @include black-gradient-with-lines;
+  height: $footer-height;
+}
+
+.about__cta--submit {
+  font-size: rem(18);
+}
+
+.about__district__cta,
+.about__parent__cta {
+  @include bg-gradient-with-lines(
+    $color-secondary, $color-secondary, $color-secondary-darken-2, rem(2), rem(1));
+
+  &:hover {
+    background: $color-action-hover;
+  }
+}
+
+.about__faq__cta {
+  @include bg-gradient-with-lines(
+    $color-tertiary-darkest, $color-tertiary-darkest, lighten($color-tertiary-darkest, 12%), rem(2), rem(1));
+
+  &:hover {
+    background: darken($color-tertiary-darkest, 10%);
+  }
+}

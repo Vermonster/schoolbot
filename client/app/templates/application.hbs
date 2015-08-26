@@ -4,7 +4,8 @@
     {{outlet}}
 
   </div>
-{{else}}
+
+{{else if districts.current}}
   <div class='main__outer--page-view'>
     <div class='main__inner--page-view'>
 
@@ -23,4 +24,9 @@
       </div>
     </div>
   </div>
+
+{{else}}
+
+  {{outlet}}
+
 {{/if}}

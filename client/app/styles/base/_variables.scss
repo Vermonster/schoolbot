@@ -33,7 +33,9 @@ $color-secondary-darken-2: #f89a3b;
 $color-secondary-darken-3: #e66366;
 $color-secondary-darken-4: #ef4558;
 $color-secondary-darken-5: #b9276e;
-$color-grass: #78c273;
+$color-tertiary: #b3d15d;
+$color-tertiary-darken: #78c273;
+$color-tertiary-darkest: #5a5a5a;
 
 // Font Colors
 $base-background-color: #fff;
@@ -70,6 +72,9 @@ $icon-color: lighten($color-secondary, 30%);
 // Buttons
 $button-padding: rem(5) rem(16);
 
+// Footer
+$footer-height: $menu-height;
+
 // Nickname Abbreviations
 $nickname-abbrev-odd-color: $color-primary;
 $nickname-abbrev-even-color: $color-secondary-darken-3;
@@ -88,5 +93,6 @@ $background-landscape: new-breakpoint(min-width $background-landscape-width);
 $z-layers: (
   'map-controls': 1000,
   'modal-overlay': 2000,
-  'district-heading': 5
+  'district-heading': 5,
+  'about-content-wrapper': 1
 );
