@@ -11,8 +11,8 @@ FactoryGirl.define do
 
   factory :bus_location do
     bus
-    sequence(:latitude) { |n| 42 + (n * 0.001) }
-    sequence(:longitude) { |n| -71 + (n * 0.001) }
+    sequence(:latitude) { |n| 42 + (n * 0.001) + rand(-0.001..0.001) }
+    sequence(:longitude) { |n| -71 + (n * 0.001) + rand(-0.001..0.001) }
     heading { %w(North South East West).sample }
     recorded_at { Time.zone.now }
   end
