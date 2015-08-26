@@ -50,6 +50,77 @@
 }
 
 // Buttons
+@mixin btn--plus {
+  @extend %icon-circle;
+
+  &:before {
+    width: rem(9);
+    height: rem(1);
+    margin-left: rem(-4);
+  }
+
+  &:after {
+    width: rem(1);
+    height: rem(9);
+    margin-top: rem(-4);
+  }
+}
+
+@mixin btn--minus {
+  @extend %icon-circle;
+
+  &:before {
+    width: rem(9);
+    height: rem(1);
+    margin-left: rem(-4);
+  }
+
+  &:after {
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin btn--sign-in {
+  @include full-width-button('true');
+}
+
+@mixin btn--sign-out {
+  @include full-width-button('false');
+}
+
+@mixin close-icon {
+  @extend %icon-circle;
+  top: rem(4);
+  right: rem(10);
+  width: rem(30);
+  height: rem(30);
+  transform: rotate(45deg);
+  border-radius: rem(2);
+  background-color: transparent;
+
+  &:before,
+  &:after {
+    color: $base-font-invert-color;
+  }
+
+  &:before {
+    width: rem(16);
+    height: rem(2);
+    margin-left: rem(-7);
+  }
+
+  &:after {
+    width: rem(2);
+    height: rem(16);
+    margin-top: rem(-7);
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 @mixin full-width-button($bg-image: true) {
   @if $bg-image == 'true' {
     @extend %form-border-decor;

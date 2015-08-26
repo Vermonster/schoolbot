@@ -2,9 +2,9 @@
 button {
   @include appearance(none);
   display: inline-block;
-  padding: .5em 1.5em;
+  padding: rem(11) rem(27);
   border: 0;
-  border-radius: rem(15%);
+  border-radius: $base-border-radius;
   background-color: $color-action;
   color: $base-background-color;
   font-family: $heading-font-family;
@@ -35,86 +35,19 @@ button {
   cursor: pointer;
 }
 
-%btn--plus {
-  @extend %icon-circle;
-
-  &:before {
-    width: rem(9);
-    height: rem(1);
-    margin-left: rem(-4);
-  }
-
-  &:after {
-    width: rem(1);
-    height: rem(9);
-    margin-top: rem(-4);
-  }
-}
-
-%btn--close--icon {
-  @extend %icon-circle;
-  top: rem(4);
-  right: rem(10);
-  width: rem(30);
-  height: rem(30);
-  transform: rotate(45deg);
-  border-radius: rem(2);
-  background-color: transparent;
-
-  &:before,
-  &:after {
-    color: $base-font-invert-color;
-  }
-
-  &:before {
-    width: rem(16);
-    height: rem(2);
-    margin-left: rem(-7);
-  }
-
-  &:after {
-    width: rem(2);
-    height: rem(16);
-    margin-top: rem(-7);
-  }
-
-  &:hover {
-    background-color: transparent;
-  }
-}
-
-%btn--minus {
-  @extend %icon-circle;
-
-  &:before {
-    width: rem(9);
-    height: rem(1);
-    margin-left: rem(-4);
-  }
-
-  &:after {
-    width: 0;
-    height: 0;
-  }
-}
-
-.button-group [class*= 'btn-'] {
+.button-group [class*='btn-'] {
   margin-bottom: rem(3);
 }
 
-.btn--settings:hover {
-  background-color: transparent;
+.btn--settings {
+  padding: rem(7) rem(15);
 
-  [class*='icon--'],
-  [class*='icon--']:before {
-    background-color: $color-menu-hover;
+  &:hover {
+    background-color: transparent;
+
+    [class*='icon--'],
+    [class*='icon--']:before {
+      background-color: $color-menu-hover;
+    }
   }
-}
-
-%btn--sign-in {
-  @include full-width-button('true');
-}
-
-%btn--sign-out {
-  @include full-width-button('false');
 }

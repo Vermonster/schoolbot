@@ -35,7 +35,7 @@
 }
 
 .sign-in__submit {
-  @extend %btn--sign-in;
+  @include btn--sign-in;
 }
 
 .sign-in__register-cta a {

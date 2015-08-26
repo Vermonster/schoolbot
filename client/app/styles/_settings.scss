@@ -15,7 +15,7 @@
 }
 
 .add-student-cta__icon {
-  @extend %btn--plus;
+  @include btn--plus;
 }
 
 .add-student-cta__text {
