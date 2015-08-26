@@ -13,5 +13,11 @@ module API
     rescue_from ActionController::UnpermittedParameters do
       head :unprocessable_entity
     end
+
+    private
+
+    def current_district
+      @_current_district ||= District.find_by!(slug: request.subdomains.first)
+    end
   end
 end

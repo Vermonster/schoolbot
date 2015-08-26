@@ -7,4 +7,8 @@ class StudentLabel < ActiveRecord::Base
 
   validates :nickname, presence: true, uniqueness: { scope: :user_id }
   validates :digest, :school, presence: true
+
+  def digest=(value)
+    self.student = Student.find_by(digest: value)
+  end
 end

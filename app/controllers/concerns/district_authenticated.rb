@@ -8,12 +8,12 @@ module DistrictAuthenticated
   private
 
   def authenticate_district!
-    head :unauthorized unless current_district.present?
+    head :unauthorized unless authenticated_district.present?
   end
 
-  def current_district
-    @_current_district ||= authenticate_with_http_basic do |username, password|
-      District.find_by(slug: username, api_secret: password)
+  def authenticated_district
+    @_authenticated_district ||= authenticate_with_http_basic do |user, pass|
+      District.find_by(slug: user, api_secret: pass)
     end
   end
 end

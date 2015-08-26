@@ -9,7 +9,7 @@ module API
 
       def create
         ImportAssignmentsJob.perform_later(
-          district: current_district,
+          district: authenticated_district,
           assignments: assignments_params
         )
         head :accepted

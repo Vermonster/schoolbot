@@ -3,7 +3,7 @@ module Geocoded
 
   included do
     geocoded_by :address
-    after_validation :geocode, unless: :skip_geocode?
+    before_validation :geocode, unless: :skip_geocode?
   end
 
   private

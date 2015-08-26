@@ -35,15 +35,28 @@ en:
   example: Example text!
   errors:
     <<: *errors
+    accepted: You must accept the terms to register.
+    blank: This field is required.
+    address:
+      invalid: |
+        We couldn't locate this address.
+        Please check that you've typed it in correctly.
     birthdate:
       invalid: Please enter a valid date in MM/DD/YYYY format.
     digest:
       blank: |
         We couldn't find a matching student. Ensure you've entered the
         information exactly as it appears in your school district's records.
+    email:
+      invalid: Please enter a valid email address.
+      taken: There is already an account associated with this address.
     nickname:
       blank: Please enter a nickname.
       taken: You've already added a student with that nickname.
+    password:
+      too_short: This must be at least 8 characters.
+    passwordConfirmation:
+      confirmation: Entered passwords do not match.
     school:
       blank: Please select a school.
     session:

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :sessions, only: :create
+    resources :registrations, only: :create
     get 'users/current', to: 'users#show', as: :current_user
     get 'districts/current', to: 'districts#show', as: :current_district
     resources :students, only: [:index, :create]

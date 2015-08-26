@@ -75,6 +75,12 @@ if Rails.env.development? || Rails.env.test?
 
       create(:bus_assignment, student: bobby_label.student, bus: bus1)
       create(:bus_assignment, student: jenny_label.student, bus: bus2)
+
+      not_added_student = create(:student,
+        district: boston,
+        digest: Digest::SHA256.hexdigest('abc123:smith:2000-01-01')
+      )
+      create(:bus_assignment, student: not_added_student, bus: bus1)
     end
   end
 end
