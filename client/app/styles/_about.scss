@@ -1,3 +1,8 @@
+%about-content-block-padding {
+  padding-top: rem(50);
+  padding-bottom: rem(20);
+}
+
 .about__intro,
 .about__district,
 .about__parent,
@@ -6,6 +11,7 @@
 }
 
 .about__district {
+  @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-tertiary, $color-tertiary, $color-tertiary-darken);
   //Temporary fix for the strange 1px blue line from the sibling div
@@ -15,23 +21,23 @@
 }
 
 .about__parent {
+  @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-secondary-darken-4, $color-secondary-darken-3, $color-secondary-darken-4);
 }
 
 .about__faq {
+  @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2);
   min-height: calc(100vh - #{$footer-height});
-  padding-bottom: rem(50);
+  padding-bottom: rem(100);
 }
 
 .about__content {
   @extend %wrapper;
 
-  padding-top: rem(50);
   padding-right: rem(35);
-  padding-bottom: rem(20);
   padding-left: rem(35);
   color: $base-font-invert-color;
   font-size: rem(15);
@@ -82,9 +88,22 @@
   }
 }
 
+.about__content--footer {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
 .about__footer {
   @include black-gradient-with-lines;
   height: $footer-height;
+}
+
+.about__footer__logo {
+  @include hide-text;
+  height: 45%;
+  background-image: image-path('logo_footer_vermonster.svg');
+  background-repeat: no-repeat;
 }
 
 .about__cta--submit {
@@ -108,4 +127,22 @@
   &:hover {
     background: darken($color-tertiary-darkest, 10%);
   }
+}
+
+.about__content--footer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.about__footer {
+  @include black-gradient-with-lines;
+  height: $footer-height;
+}
+
+.about__footer__logo {
+  @include hide-text;
+  height: 45%;
+  background-image: image-path('logo_footer_vermonster.svg');
+  background-repeat: no-repeat;
 }
