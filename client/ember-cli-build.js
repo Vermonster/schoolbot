@@ -13,7 +13,8 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
       enabled: isProductionLikeBuild,
-      prepend: process.env.ASSET_URL_BASE
+      prepend: process.env.ASSET_URL_BASE,
+      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg', 'eot', 'ttf', 'woff', 'woff2']
     },
     sourcemaps: {
       enabled: !isProductionLikeBuild,
