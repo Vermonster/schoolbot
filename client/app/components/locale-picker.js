@@ -6,11 +6,8 @@ export default Ember.Component.extend({
 
   classNames: ['locale-picker'],
 
-  // FIXME: https://github.com/jamesarosen/ember-i18n/issues/281
-  availableLocales: ['en', 'es'],
-
-  locales: Ember.computed('i18n.locale', function() {
-    return this.get('availableLocales').map((locale) => {
+  locales: Ember.computed('i18n.locale', 'i18n.locales', function() {
+    return this.get('i18n.locales').map((locale) => {
       return { id: locale, label: this.get('i18n').t('locales.' + locale) };
     });
   }),
