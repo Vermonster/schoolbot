@@ -28,5 +28,8 @@ Style/AlignParameters:
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
+Style/Send:
+  Enabled: true
+
 Lint/EndAlignment:
   AlignWith: variable
