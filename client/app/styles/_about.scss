@@ -3,14 +3,11 @@
   padding-bottom: rem(20);
 }
 
-.about__intro,
-.about__district,
-.about__parent,
-.about__faq {
+.about__content-wrapper {
   min-height: 100vh;
 }
 
-.about__district {
+.about__content-wrapper--district {
   @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-tertiary, $color-tertiary, $color-tertiary-darken);
@@ -20,13 +17,13 @@
   z-index: z('about-content-wrapper');
 }
 
-.about__parent {
+.about__content-wrapper--parent {
   @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-secondary-darken-4, $color-secondary-darken-3, $color-secondary-darken-4);
 }
 
-.about__faq {
+.about__content-wrapper--faq {
   @extend %about-content-block-padding;
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2);
@@ -74,7 +71,7 @@
   }
 }
 
-.about__faq__share {
+.about__content--faq__share {
   margin-top: rem(30);
   padding-top: rem(30);
   border-top: rem(1) $base-font-invert-color solid;
@@ -88,30 +85,12 @@
   }
 }
 
-.about__content--footer {
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-
-.about__footer {
-  @include black-gradient-with-lines;
-  height: $footer-height;
-}
-
-.about__footer__logo {
-  @include hide-text;
-  height: 45%;
-  background-image: image-path('logo_footer_vermonster.svg');
-  background-repeat: no-repeat;
-}
-
-.about__cta--submit {
+.about__cta {
   font-size: rem(18);
 }
 
-.about__district__cta,
-.about__parent__cta {
+.about__cta--district,
+.about__cta--parent {
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2, rem(2), rem(1));
 
@@ -120,7 +99,7 @@
   }
 }
 
-.about__faq__cta {
+.about__cta--faq {
   @include bg-gradient-with-lines(
     $color-tertiary-darkest, $color-tertiary-darkest, lighten($color-tertiary-darkest, 12%), rem(2), rem(1));
 
