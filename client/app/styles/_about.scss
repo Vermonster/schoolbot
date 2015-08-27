@@ -1,14 +1,9 @@
-%about-content-block-padding {
-  padding-top: rem(50);
-  padding-bottom: rem(20);
-}
-
 .about__content-wrapper {
   min-height: 100vh;
 }
 
 .about__content-wrapper--district {
-  @extend %about-content-block-padding;
+  @include v-center-content-block;
   @include bg-gradient-with-lines(
     $color-tertiary, $color-tertiary, $color-tertiary-darken);
   //Temporary fix for the strange 1px blue line from the sibling div
@@ -18,17 +13,16 @@
 }
 
 .about__content-wrapper--parent {
-  @extend %about-content-block-padding;
+  @include v-center-content-block;
   @include bg-gradient-with-lines(
     $color-secondary-darken-4, $color-secondary-darken-3, $color-secondary-darken-4);
 }
 
 .about__content-wrapper--faq {
-  @extend %about-content-block-padding;
+  @include v-center-content-block;
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2);
   min-height: calc(100vh - #{$footer-height});
-  padding-bottom: rem(100);
 }
 
 .about__content {
@@ -85,6 +79,18 @@
   }
 }
 
+input[type='text'] {
+
+  &.about__input--district,
+  &.about__input--parent {
+    @include media($medium-screen) {
+      width: calc(100% - #{rem(120)});
+      margin-right: rem(5);
+      float: left;
+    }
+  }
+}
+
 .about__cta {
   font-size: rem(18);
 }
@@ -93,6 +99,10 @@
 .about__cta--parent {
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2, rem(2), rem(1));
+
+  @include media($medium-screen) {
+    float: left;
+  }
 
   &:hover {
     background: $color-action-hover;

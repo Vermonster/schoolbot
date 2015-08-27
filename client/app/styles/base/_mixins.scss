@@ -7,6 +7,14 @@
   background: image-path('line_gradient-yellow.jpg') repeat-x, $color-secondary;
 }
 
+// Positioning
+@mixin v-center-content-block {
+  display: flex;
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  align-items: center;
+}
+
 // Link style when it is on the illustration background
 %page-view-link {
   color: $base-font-invert-color;
