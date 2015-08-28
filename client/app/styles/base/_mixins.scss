@@ -27,34 +27,43 @@
 
 // Background
 @mixin bg-gradient-with-lines($space-color, $line-top-color, $line-bottom-color, $space-width: rem(3), $line-width: rem(1)) {
-  background: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent $line-width,
-      $space-color $line-width,
-      $space-color $space-width
-    ),
-    linear-gradient(
-      to bottom,
-      $line-top-color,
-      $line-bottom-color
-    );
+  background-color: $space-color;
+
+  .cssgradients & {
+    background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent $line-width,
+        $space-color $line-width,
+        $space-color $space-width
+      ),
+      linear-gradient(
+        to bottom,
+        $line-top-color,
+        $line-bottom-color
+      );
+    background-color: transparent;
+  }
 }
 
 @mixin black-gradient-with-lines {
-  background: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent rem(1),
-      $color-tertiary-darkest rem(1),
-      $color-tertiary-darkest rem(4)
-    ),
-    linear-gradient(
-      to bottom,
-      $color-tertiary-darkest,
-      lighten($color-tertiary-darkest, 12%),
-      $color-tertiary-darkest
-    );
+  background-color: $color-tertiary-darkest;
+
+  .cssgradients & {
+    background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent rem(1),
+        $color-tertiary-darkest rem(1),
+        $color-tertiary-darkest rem(4)
+      ),
+      linear-gradient(
+        to bottom,
+        $color-tertiary-darkest,
+        lighten($color-tertiary-darkest, 12%),
+        $color-tertiary-darkest
+      );
+  }
 }
 
 // Buttons

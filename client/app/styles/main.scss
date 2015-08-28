@@ -5,22 +5,18 @@
 }
 
 .main__outer--page-view {
+  background-color: $color-primary;
   background-image: image-path('background_sun.svg'),
-    image-path('background_cloud.svg'),
-    repeating-linear-gradient(
-      to right,
-      $color-primary,
-      $color-primary rem(2),
-      rgba($color-primary, .9) rem(2),
-      rgba($color-primary, .9) rem(3)
-    );
-  background-repeat: no-repeat, repeat-x;
-  background-position: left top, left top;
-  background-size: auto;
+    image-path('background_clouds.svg'),
+    image-path('background_landscape_wide.svg');
+  background-repeat: no-repeat, repeat-x, repeat-x;
+  background-position: 5% 5%, 0% 2%, center bottom;
+  background-size: rem(100) rem(100), rem(1495) rem(167), rem(960) rem(170);
 
-  @include media($background-landscape) {
+  .cssgradients & {
+    background-color: transparent;
     background-image: image-path('background_sun.svg'),
-      image-path('background_cloud.svg'),
+      image-path('background_clouds.svg'),
       image-path('background_landscape_wide.svg'),
       repeating-linear-gradient(
         to right,
@@ -29,25 +25,16 @@
         rgba($color-primary, .9) rem(2),
         rgba($color-primary, .9) rem(3)
       );
-    background-repeat: no-repeat, repeat-x, repeat-x;
-    background-position: left top, left top, center bottom;
-    background-size: auto, auto, rem(1243);
+    background-repeat: no-repeat, repeat-x, repeat-x, repeat-x;
+    background-position: 5% 5%, 0% 2%, center bottom, left top;
+    background-size: rem(100) rem(100), rem(1495) rem(167), rem(960) rem(170), 100% 100%;
   }
 }
 
 .main__inner--page-view {
   position: relative;
   max-width: $background-landscape-width;
-  height: 100vh;
   margin: auto;
-  background-image: image-path('background_landscape.svg');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-
-  @include media($background-landscape) {
-    max-width: rem(600);
-    background-image: none;
-  }
 }
 
 .logo {
