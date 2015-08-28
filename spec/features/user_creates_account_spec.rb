@@ -15,25 +15,23 @@ feature 'User creates account' do
 
     visit root_path
     click_on 'Create one now'
-    fill_form(:registration,
-      'Full name' => 'Guy Test',
-      'Email address' => 'guy@example.com',
-      'Password' => 'secretpass',
-      'Confirm password' => 'secretpass',
-      'Street' => '123 Main St',
-      'City' => 'Someplace',
-      'State' => 'MA',
-      'ZIP code' => '12345',
-      'Last Name' => 'Test',
-      'Student ID' => 'ABC123',
-      'Birthdate' => '3/21/2002',
-      'Nickname' => 'Johnny',
-      'School' => 'Springfield High',
-      'I accept the terms and conditions' => true
-    )
+    fill_in 'Full name', with: 'Guy Test'
+    fill_in 'Email address', with: 'guy@example.com'
+    fill_in 'Password', with: 'secretpass'
+    fill_in 'Confirm password', with: 'secretpass'
+    fill_in 'Street', with: '123 Main St'
+    fill_in 'City', with: 'Someplace'
+    fill_in 'State', with: 'MA'
+    fill_in 'ZIP code', with: '12345'
+    fill_in 'Last Name', with: 'Test'
+    fill_in 'Student ID', with: 'ABC123'
+    fill_in 'Birthdate', with: '3/21/2002'
+    fill_in 'Nickname', with: 'Johnny'
+    select 'Springfield High', from: 'School'
+    check 'I accept the terms and conditions'
     click_on 'Register'
 
-    expect(page).to have_css 'button.btn--settings', wait: 5
+    expect(page).to have_css 'button.btn--settings'
     within('.leaflet-container') do
       expect(page).to have_css('.bus-marker', text: 'JO')
     end
@@ -46,14 +44,12 @@ feature 'User creates account' do
 
     visit root_path
     click_on 'Create one now'
-    fill_form(:registration,
-      'Email address' => 'guy@example.com',
-      'Password' => 'secret',
-      'Confirm password' => 'sorcret',
-      'Last Name' => 'Test',
-      'Student ID' => 'ABC123',
-      'Birthdate' => '2002-03-21'
-    )
+    fill_in 'Email address', with: 'guy@example.com'
+    fill_in 'Password', with: 'secret'
+    fill_in 'Confirm password', with: 'sorcret'
+    fill_in 'Last Name', with: 'Test'
+    fill_in 'Student ID', with: 'ABC123'
+    fill_in 'Birthdate', with: '2002-03-21'
     click_on 'Register'
 
     expect(page).to have_content t('errors.blank'), count: 5
@@ -73,12 +69,10 @@ feature 'User creates account' do
 
     visit root_path
     click_on 'Create one now'
-    fill_form(:registration,
-      'Street' => '123 Main St',
-      'City' => 'Someplace',
-      'State' => 'MA',
-      'ZIP code' => '12345'
-    )
+    fill_in 'Street', with: '123 Main St'
+    fill_in 'City', with: 'Someplace'
+    fill_in 'State', with: 'MA'
+    fill_in 'ZIP code', with: '12345'
     click_on 'Register'
 
     expect(page).to have_content t('errors.address.invalid')

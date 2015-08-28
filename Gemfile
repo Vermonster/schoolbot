@@ -39,7 +39,6 @@ end
 
 group :test do
   gem "database_cleaner"
-  gem "formulaic"
   gem "launchy"
   gem "poltergeist"
   gem "rspec-collection_matchers"
