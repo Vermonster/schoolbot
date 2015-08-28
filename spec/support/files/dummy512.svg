@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <rect width="100%" height="100%" fill="crimson"/>
+  <line x1="0" x2="512" y1="0" y2="512" stroke="gainsboro"/>
+  <line x1="512" x2="0" y1="0" y2="512" stroke="gainsboro"/>
+  <text x="256" y="261" font-size="20" font="sans-serif" fill="white" text-anchor="middle">
+    512 x 512
+  </text>
+</svg>

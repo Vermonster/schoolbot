@@ -1,3 +1,6 @@
+# Allows `rake dev:prime` to work in the test environment
+require Rails.root.join('spec', 'support', 'aws')
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

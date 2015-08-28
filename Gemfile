@@ -4,6 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem "active_model_serializers"
 gem "airbrake"
+gem "aws-sdk", "~> 1.6" # TODO: Remove constraint once Paperclip supports 2.0
 gem "bcrypt"
 gem "clockwork"
 gem "delayed-plugins-airbrake"
@@ -11,6 +12,7 @@ gem "delayed_job_active_record"
 gem "email_validator"
 gem "geocoder"
 gem "newrelic_rpm"
+gem "paperclip"
 gem "pg"
 gem "puma"
 gem "rack-ssl-enforcer"

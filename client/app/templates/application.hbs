@@ -13,9 +13,8 @@
       <div class='main__content'>
         <div class='logo'>Schoolbot</div>
 
-        {{#if districts.current}}
-          <h2 class='district-heading'>Welcome to {{districts.current.name}}</h2>
-        {{/if}}
+        <img src={{districts.current.logoUrl}} alt={{districts.current.name}}>
+        <h2 class='district-heading'>Presented by {{districts.current.name}}</h2>
 
         {{locale-picker}}
 

@@ -9,14 +9,15 @@ feature 'Landing page' do
     expect(page).to have_content 'WELCOME'
   end
 
-  scenario 'shows the district name when accessed at a district subdomain' do
+  scenario 'shows the district name and logo when accessed at a subdomain' do
     create(:district, name: 'District Foo')
-    create(:district, name: 'District Qux', slug: 'qux')
+    district = create(:district, name: 'District Qux', slug: 'qux')
     use_subdomain 'qux'
 
     visit root_path
 
     expect(page).to have_content 'District Qux'
+    expect(page).to have_css "img[src='#{district.logo.url}']"
     expect(page).to_not have_content 'District Foo'
   end
 end

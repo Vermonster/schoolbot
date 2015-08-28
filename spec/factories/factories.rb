@@ -25,6 +25,7 @@ FactoryGirl.define do
     sequence(:zonar_customer) { |n| "abc000#{n}" }
     zonar_username "TestUsername"
     zonar_password "TestPassword"
+    logo File.open(Rails.root.join('spec', 'support', 'files', 'dummy512.svg'))
   end
 
   factory :school do

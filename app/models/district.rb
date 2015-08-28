@@ -5,6 +5,12 @@ class District < ActiveRecord::Base
   has_many :students
   has_many :users
 
+  has_attached_file :logo
+  validates_attachment :logo,
+    presence: true,
+    file_name: { matches: /svg\Z/ },
+    content_type: { content_type: 'image/svg+xml' }
+
   after_initialize :assign_api_secret, if: :new_record?
 
   validates :name,
