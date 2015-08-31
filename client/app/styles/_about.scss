@@ -122,6 +122,10 @@ input[type='text'] {
   display: flex;
   align-items: center;
   height: 100%;
+
+  .no-flexbox & {
+    padding-top: rem(12);
+  }
 }
 
 .about__footer {
@@ -131,7 +135,9 @@ input[type='text'] {
 
 .about__footer__logo {
   @include hide-text;
-  height: 45%;
+  max-width: rem(80);
+  max-height: rem(23);
   background-image: image-path('logo_footer_vermonster.svg');
   background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
