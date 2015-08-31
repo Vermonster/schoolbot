@@ -2,6 +2,8 @@
 
 import env from 'client/config/environment';
 import Ember from 'ember';
+import moment from 'moment';
+
 import LeafletMap from 'ember-leaflet/components/leaflet-map';
 import TileLayer from 'ember-leaflet/layers/tile';
 import MarkerLayer from 'ember-leaflet/layers/marker';
@@ -17,9 +19,12 @@ const ATTRIBUTION = [
   '<a href="https://www.mapbox.com/map-feedback/">Improve this map</a>'
 ].join(' | ');
 
+const currentLocalePath = 'controller.i18n.locale';
 const busLocationsPath = 'controller.uniqueBuses.@each.busLocations';
 
 export default LeafletMap.extend({
+  i18n: Ember.inject.service(),
+
   students: [],
   assignedStudents: Ember.computed.filterBy('students', 'isAssigned', true),
   buses: Ember.computed.mapBy('assignedStudents', 'bus'),
@@ -51,10 +56,15 @@ export default LeafletMap.extend({
     CollectionLayer.extend(CollectionBoundsMixin, {
       itemLayerClass: MarkerLayer.extend({
         icon: leafletComputed.optionProperty(),
-        options: Ember.computed('content.labels', function() {
+        options: Ember.computed('content', function() {
+          let html = this.get('content.labels').join(' | ');
+          if (Ember.isPresent(this.get('content.timeAgo'))) {
+            html += '<br>' + this.get('content.timeAgo');
+          }
+
           return {
             icon: L.divIcon({
-              html: this.get('content.labels').join(' | '),
+              html: html,
               iconSize: null,
               className: 'bus-marker'
             })
@@ -71,15 +81,24 @@ export default LeafletMap.extend({
         }
       },
 
-      content: Ember.computed(busLocationsPath, function() {
+      content: Ember.computed(currentLocalePath, busLocationsPath, function() {
+        // FIXME: This doesn't actually recompute when the locale changes, not
+        // sure why (probably okay for now since it will update in a few seconds
+        // anyway when the next location update comes in)
         return this.get('controller.uniqueBuses').map((bus) => {
           const latLng = bus
             .get('busLocations.firstObject')
             .getProperties('latitude', 'longitude');
+          const lastRecordedAt = bus.get('busLocations.firstObject.recordedAt');
+          let timeAgo = null;
+          if (lastRecordedAt < moment().subtract(45, 'seconds')) {
+            timeAgo = moment(lastRecordedAt).fromNow();
+          }
 
           return {
             location: L.latLng(latLng.latitude, latLng.longitude),
-            labels: bus.get('students').mapBy('nicknameAbbrev').sort()
+            labels: bus.get('students').mapBy('nicknameAbbrev').sort(),
+            timeAgo: timeAgo
           };
         });
       })

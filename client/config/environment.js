@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     i18n: { defaultLocale: 'en' },
+    moment: { includeLocales: true },
     'simple-auth': {
       authorizer: 'simple-auth-authorizer:devise',
       authenticationRoute: 'sign-in'

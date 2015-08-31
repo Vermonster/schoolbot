@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
@@ -24,6 +25,7 @@ export default Ember.Component.extend({
     toggle() { this.toggleProperty('isOpen'); },
 
     setLocale(locale) {
+      moment.locale(locale);
       this.get('i18n').set('locale', locale);
       this.get('localStorage').set('locale', locale);
       this.send('toggle');

@@ -85,4 +85,24 @@ feature 'User views map' do
 
     expect(page).to have_css('.bus-marker', count: 1, text: 'SE')
   end
+
+  scenario 'with time information displayed for outdated bus positions' do
+    bus = create(:bus, district: @district)
+    create(:bus_location, bus: bus, recorded_at: 1.minute.ago)
+    create(:bus_assignment, student: @first_label.student, bus: bus)
+
+    sign_in_as @user
+
+    expect(page).to have_css('.bus-marker', text: 'a minute ago')
+  end
+
+  scenario 'with no time information displayed for up-to-date bus positions' do
+    bus = create(:bus, district: @district)
+    create(:bus_location, bus: bus, recorded_at: 30.seconds.ago)
+    create(:bus_assignment, student: @first_label.student, bus: bus)
+
+    sign_in_as @user
+
+    expect(page).to_not have_css('.bus-marker', text: 'ago')
+  end
 end
