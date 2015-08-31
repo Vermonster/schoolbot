@@ -44,7 +44,7 @@
   right: rem(10);
   width: rem(150);
   height: rem(100);
-  background-image: image-path('schoolbot_logo_cloud.svg');
+  background-image: image-path('logo_schoolbot_cloud.svg');
   background-repeat: no-repeat;
 
   @include media($background-landscape) {
