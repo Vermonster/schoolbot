@@ -2,63 +2,7 @@
   <fieldset>
     <legend>My Information</legend>
 
-    <label>
-      Full name
-      {{input value=registration.name}}
-    </label>
-    {{#if registration.errors.name}}
-      {{t-error registration.errors.name.firstObject}}
-    {{/if}}
-
-    <label>
-      Email address
-      {{input value=registration.email}}
-    </label>
-    {{#if registration.errors.email}}
-      {{t-error registration.errors.email.firstObject}}
-    {{/if}}
-
-    <label>
-      Password
-      {{input type='password' value=registration.password}}
-    </label>
-    {{#if registration.errors.password}}
-      {{t-error registration.errors.password.firstObject}}
-    {{/if}}
-
-    <label>
-      Confirm password
-      {{input type='password' value=registration.passwordConfirmation}}
-    </label>
-    {{#if registration.errors.passwordConfirmation}}
-      {{t-error registration.errors.passwordConfirmation.firstObject}}
-    {{/if}}
-
-    <label>Address</label>
-
-    {{input value=registration.street placeholder='Street'}}
-    {{#if registration.errors.street}}
-      {{t-error registration.errors.street.firstObject}}
-    {{/if}}
-
-    {{input value=registration.city placeholder='City'}}
-    {{#if registration.errors.city}}
-      {{t-error registration.errors.city.firstObject}}
-    {{/if}}
-
-    {{input value=registration.state placeholder='State'}}
-    {{#if registration.errors.state}}
-      {{t-error registration.errors.state.firstObject}}
-    {{/if}}
-
-    {{input value=registration.zipCode placeholder='ZIP code'}}
-    {{#if registration.errors.zipCode}}
-      {{t-error registration.errors.zipCode.firstObject}}
-    {{/if}}
-
-    {{#if registration.errors.address}}
-      {{t-error registration.errors.address.firstObject}}
-    {{/if}}
+    {{profile-fields model=registration}}
   </fieldset>
 
   <fieldset>

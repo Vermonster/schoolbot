@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Geocoded
-  has_secure_password
+  has_secure_password validate: false
 
   belongs_to :district
   has_many :student_labels
@@ -8,13 +8,18 @@ class User < ActiveRecord::Base
 
   validates :email, :name, :street, :city, :state, :zip_code, presence: true
   validates :email, uniqueness: true, format: { with: /.+@.+\..+/ }
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, allow_blank: true
   validate :address_must_geocode
 
   before_save :ensure_authentication_token
 
   def address
     [street, city, state, zip_code].join(', ')
+  end
+
+  # Don't unset the password digest if a blank password is sent
+  def password=(value)
+    super if value.present?
   end
 
   private

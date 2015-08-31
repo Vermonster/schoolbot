@@ -15,9 +15,11 @@ export default Ember.Route.extend(AuthenticatedRoute, {
   },
 
   afterModel() {
-    this.students = this.store.findAll('student');
-    this.currentUser = this.store.find('user', 'current');
-    return Ember.RSVP.all([this.students, this.currentUser]);
+    const store = this.store;
+    return Ember.RSVP.all([
+      store.findAll('student').then((students) => this.students = students),
+      store.find('user', 'current').then((user) => this.currentUser = user)
+    ]);
   },
 
   setupController(controller) {

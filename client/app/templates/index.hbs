@@ -8,13 +8,17 @@
       <div class='modal__body'>
         <section class='modal__section'>
           <h3 class='modal__section-heading'>My Information</h3>
-          <p>Name: {{currentUser.name}}</p>
-          <p>Email: {{currentUser.email}}</p>
-          <p>Password: ••••••••</p>
-          <p>Street: {{currentUser.street}}</p>
-          <p>City: {{currentUser.city}}</p>
-          <p>State: {{currentUser.state}}</p>
-          <p>ZIP Code: {{currentUser.zipCode}}</p>
+          {{#if showingProfileForm}}
+            {{profile-fields model=currentUser}}
+            <button {{action 'updateProfile'}}>Save</button>
+            <button {{action 'toggleEditProfile'}}>Cancel</button>
+          {{else}}
+            <a href='#' {{action 'toggleEditProfile'}}>Edit</a>
+            <p>{{currentUser.name}}</p>
+            <p>{{currentUser.email}}</p>
+            <p>{{currentUser.street}}</p>
+            <p>{{currentUser.city}}, {{currentUser.state}}, {{currentUser.zipCode}}</p>
+          {{/if}}
         </section>
 
         <section class='modal__section'>
