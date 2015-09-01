@@ -38,10 +38,6 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    selectSchool(school) {
-      this.set('school', school);
-    },
-
     validateBirthdate() {
       if (Ember.isPresent(this.get('birthdate'))) {
         const parsedDate = moment(this.get('birthdate'), inputDateFormat);
