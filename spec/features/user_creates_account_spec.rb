@@ -31,7 +31,7 @@ feature 'User creates account' do
     check 'I accept the terms and conditions'
     click_on 'Register'
 
-    expect(page).to have_css 'button.btn--settings'
+    expect(page).to have_css 'button.btn--settings', wait: 5
     within('.leaflet-container') do
       expect(page).to have_css('.bus-marker', text: 'JO')
     end
