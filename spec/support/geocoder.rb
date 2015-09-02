@@ -13,3 +13,9 @@ Geocoder::Lookup::Test.set_default_stub(
     }
   ]
 )
+
+RSpec.configure do |config|
+  config.before(:each) do
+    Geocoder::Lookup::Test.stubs.clear
+  end
+end
