@@ -9,62 +9,76 @@ if Rails.env.development? || Rails.env.test?
       boston = create(:district, name: 'Boston Public Schools', slug: 'boston')
       brockton = create(:district, name: 'Brockton Schools', slug: 'brockton')
 
-      adams_elementary = create(:school,
+      create(:school,
         district: boston,
         name: 'Samuel Adams Elementary',
         address: '165 East Webster St, East Boston, MA',
         latitude: 42.365727789474,
         longitude: -71.034763052632
       )
-      burke_high = create(:school,
+      create(:school,
         district: boston,
         name: 'Jeremiah E. Burke High',
         address: '60 Washington St, Dorchester, MA',
         latitude: 42.246033,
         longitude: -71.1199965
       )
-      create(:school,
+      brockton_high = create(:school,
         district: brockton,
         name: 'Brockton High School',
         address: '470 Forest Avenue, Brockton, MA',
         latitude: 42.070156,
         longitude: -71.039912
       )
+      ashfield_middle = create(:school,
+        district: brockton,
+        name: 'Ashfield Middle School',
+        address: '225 Coe Road, Brockton, MA',
+        latitude: 42.103252,
+        longitude: -70.997137
+      )
+      baker_elementary = create(:school,
+        district: brockton,
+        name: 'Baker Elementary School',
+        address: '45 Quincy Street, Brockton, MA',
+        latitude: 42.093800,
+        longitude: -70.989331
+      )
 
       user = create(:user,
-        district: boston,
+        district: brockton,
         email: 'test@test.com',
         password: 'testtest',
         name: 'Test User',
-        street: '75 Broad St',
-        city: 'Boston',
+        street: '1 Ash St',
+        city: 'West Bridgewater',
         state: 'MA',
-        zip_code: '02109',
-        latitude: 42.357859,
-        longitude: -71.053574
+        zip_code: '02379',
+        latitude: 42.016633,
+        longitude: -71.001635
       )
 
       bobby_label = create(:student_label,
         nickname: 'Bobby',
         user: user,
-        school: adams_elementary,
-        student: create(:student, district: boston)
+        school: baker_elementary,
+        student: create(:student, district: brockton)
       )
       jenny_label = create(:student_label,
         nickname: 'Jenny',
         user: user,
-        school: burke_high,
-        student: create(:student, district: boston)
+        school: brockton_high,
+        student: create(:student, district: brockton)
       )
       create(:student_label,
         nickname: 'Davie',
         user: user,
-        school: adams_elementary,
-        student: create(:student, district: boston)
+        school: ashfield_middle,
+        student: create(:student, district: brockton)
       )
 
-      bus1 = create(:bus, district: boston, identifier: 'BUS001')
-      bus2 = create(:bus, district: boston, identifier: 'BUS002')
+      bus1 = create(:bus, district: brockton, identifier: 'BUS001')
+      bus2 = create(:bus, district: brockton, identifier: 'BUS002')
 
       10.times do |n|
         create(:bus_location, bus: bus1, recorded_at: n.minutes.ago)
@@ -77,7 +91,7 @@ if Rails.env.development? || Rails.env.test?
       create(:bus_assignment, student: jenny_label.student, bus: bus2)
 
       not_added_student = create(:student,
-        district: boston,
+        district: brockton,
         digest: Digest::SHA256.hexdigest('abc123:smith:2000-01-01')
       )
       create(:bus_assignment, student: not_added_student, bus: bus1)
