@@ -1,7 +1,7 @@
 .main__outer--map-view,
 .main__outer--page-view {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main__outer--page-view {
@@ -60,7 +60,12 @@
   padding-top: rem(120);
 }
 
-.district-heading {
+.heading--district {
   position: relative;
   z-index: z('district-heading');
+}
+
+.intro__district-logo {
+  width: rem(100);
+  margin: auto;
 }
