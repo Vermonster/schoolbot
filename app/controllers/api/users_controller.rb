@@ -14,9 +14,7 @@ module API
     private
 
     def user_params
-      params.require(:user)
-        .except(:latitude, :longitude)
-        .permit(Registration::USER_ATTRIBUTES)
+      params.require(:user).permit(Registration::USER_ATTRIBUTES)
     end
   end
 end

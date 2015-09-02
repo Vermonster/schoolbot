@@ -19,7 +19,11 @@ module API
 
       def assignments_params
         params.require(:assignments)
-        params.permit(assignments: [:sha, :bus_identifier])[:assignments]
+        permitted_params = params.permit(assignments: [:sha, :bus_identifier])
+        if params[:assignments] != permitted_params[:assignments]
+          fail ActionController::UnpermittedParameters, []
+        end
+        permitted_params[:assignments]
       end
     end
   end

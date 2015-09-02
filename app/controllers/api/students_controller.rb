@@ -19,9 +19,7 @@ module API
     private
 
     def student_params
-      params.require(:student)
-        .except(:bus_id)
-        .permit(:digest, :nickname, :school_id)
+      params.require(:student).permit(:digest, :nickname, :school_id)
     end
   end
 end
