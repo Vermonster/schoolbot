@@ -25,11 +25,17 @@ const busLocationsPath = 'controller.uniqueBuses.@each.busLocations';
 export default LeafletMap.extend({
   i18n: Ember.inject.service(),
 
+  user: null,
   students: [],
+
   assignedStudents: Ember.computed.filterBy('students', 'isAssigned', true),
+
   buses: Ember.computed.mapBy('assignedStudents', 'bus'),
   locatedBuses: Ember.computed.filterBy('buses', 'hasLocations', true),
   uniqueBuses: Ember.computed.uniq('locatedBuses'),
+
+  schools: Ember.computed.mapBy('assignedStudents', 'school'),
+  uniqueSchools: Ember.computed.uniq('schools'),
 
   options: {
     attributionControl: false
@@ -37,9 +43,17 @@ export default LeafletMap.extend({
 
   didCreateLayer() {
     this._super();
+
     L.control.attribution({ prefix: false })
       .addAttribution(ATTRIBUTION)
       .addTo(this.get('layer'));
+
+    const bounds = L.latLngBounds([]);
+    this.get('childLayers').forEach((layer) => {
+      if (layer.get('location')) { bounds.extend(layer.get('location')); }
+      if (layer.get('bounds')) { bounds.extend(layer.get('bounds')); }
+    });
+    this.get('layer').fitBounds(bounds);
   },
 
   childLayers: [
@@ -51,6 +65,42 @@ export default LeafletMap.extend({
         mapId: env.mapbox.mapId,
         accessToken: env.mapbox.accessToken
       }
+    }),
+
+    MarkerLayer.extend({
+      content: Ember.computed('controller.user.latitude', function() {
+        const user = this.get('controller.user');
+        return {
+          location: L.latLng(user.get('latitude'), user.get('longitude'))
+        };
+      }),
+
+      options: {
+        icon: L.divIcon({
+          html: 'Home!', // TODO: Replace with home marker
+          iconSize: null,
+          className: 'home-marker'
+        })
+      }
+    }),
+
+    CollectionLayer.extend({
+      itemLayerClass: MarkerLayer.extend({
+        options: {
+          icon: L.divIcon({
+            html: 'School!', // TODO: Replace with school marker
+            iconSize: null,
+            className: 'school-marker'
+          })
+        }
+      }),
+
+      content: Ember.computed('controller.uniqueSchools', function() {
+        return this.get('controller.uniqueSchools').map((school) => {
+          const latLng = school.getProperties('latitude', 'longitude');
+          return { location: L.latLng(latLng.latitude, latLng.longitude) };
+        });
+      })
     }),
 
     CollectionLayer.extend(CollectionBoundsMixin, {
@@ -71,15 +121,6 @@ export default LeafletMap.extend({
           };
         })
       }),
-
-      didCreateLayer() {
-        this._super();
-        // TODO: Higher-level default bound that takes the user's home address
-        // and school addresses into account
-        if (this.get('bounds')) {
-          this.get('parentLayer').get('layer').fitBounds(this.get('bounds'));
-        }
-      },
 
       content: Ember.computed(currentLocalePath, busLocationsPath, function() {
         // FIXME: This doesn't actually recompute when the locale changes, not

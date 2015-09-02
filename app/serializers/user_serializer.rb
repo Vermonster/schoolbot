@@ -5,5 +5,7 @@ class UserSerializer < ActiveModel::Serializer
     :street,
     :city,
     :state,
-    :zip_code
+    :zip_code,
+    :latitude,
+    :longitude
 end

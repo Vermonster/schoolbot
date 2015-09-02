@@ -105,4 +105,29 @@ feature 'User views map' do
 
     expect(page).to_not have_css('.bus-marker', text: 'ago')
   end
+
+  scenario 'with a marker displayed at their home location' do
+    sign_in_as @user
+
+    expect(page).to have_css('.home-marker')
+  end
+
+  scenario 'with markers displayed at the school locations of their students' do
+    bus = create(:bus, district: @district)
+    create(:bus_assignment, student: @first_label.student, bus: bus)
+    create(:bus_assignment, student: @second_label.student, bus: bus)
+
+    sign_in_as @user
+
+    expect(page).to have_css('.school-marker', count: 2)
+  end
+
+  scenario 'with school markers not displayed for unassigned students' do
+    bus = create(:bus, district: @district)
+    create(:bus_assignment, student: @first_label.student, bus: bus)
+
+    sign_in_as @user
+
+    expect(page).to have_css('.school-marker', count: 1)
+  end
 end

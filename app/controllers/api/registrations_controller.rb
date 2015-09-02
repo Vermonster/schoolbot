@@ -13,7 +13,9 @@ module API
     private
 
     def registration_params
-      params.require(:registration).permit(Registration::ATTRIBUTES)
+      params.require(:registration)
+        .except(:latitude, :longitude)
+        .permit(Registration::ATTRIBUTES)
     end
   end
 end
