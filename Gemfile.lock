@@ -146,7 +146,6 @@ GEM
       pry (>= 0.9.10)
     puma (2.13.4)
     rack (1.6.4)
-    rack-ssl-enforcer (0.2.9)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.2.4)
@@ -277,7 +276,6 @@ DEPENDENCIES
   poltergeist
   pry-rails
   puma
-  rack-ssl-enforcer
   rack-timeout
   rails (= 4.2.4)
   rails_stdout_logging

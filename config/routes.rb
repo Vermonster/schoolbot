@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  default_url_options host: ENV.fetch('HOST')
+  default_url_options host: ENV.fetch('APPLICATION_HOST')
 
   namespace :api do
     resources :sessions, only: :create
