@@ -6,11 +6,11 @@ feature 'User updates profile' do
 
     find('[aria-label="Settings"]').click
     click_on 'Edit'
-    fill_in 'Full name', with: 'Guy Test'
-    fill_in 'Email address', with: 'guy@example.com'
+    fill_in 'Name', with: 'Guy Test'
+    fill_in 'Email', with: 'guy@example.com'
     click_on 'Change password'
     fill_in 'Password', with: 'secretpass'
-    fill_in 'Confirm password', with: 'secretpass'
+    fill_in 'Confirm Password', with: 'secretpass'
     fill_in 'Street', with: '123 Main St'
     fill_in 'City', with: 'Someplace'
     fill_in 'State', with: 'MA'
@@ -33,14 +33,13 @@ feature 'User updates profile' do
 
     find('[aria-label="Settings"]').click
     click_on 'Edit'
-    fill_in 'Email address', with: 'guy@example.com'
+    fill_in 'Email', with: 'guy@example.com'
     click_on 'Change password'
     fill_in 'Password', with: 'secret'
-    fill_in 'Confirm password', with: 'sorcret'
+    fill_in 'Confirm Password', with: 'sorcret'
     fill_in 'Street', with: ''
     click_on 'Save'
 
-    expect(page).to have_content t('errors.blank'), count: 1
     expect(page).to have_content t('errors.email.taken')
     expect(page).to have_content t('errors.password.too_short')
     expect(page).to have_content t('errors.passwordConfirmation.confirmation')

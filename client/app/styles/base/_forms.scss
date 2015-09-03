@@ -1,18 +1,25 @@
 form {
-  margin-top: $section-spacing;
   margin-bottom: $section-spacing;
-  padding-top: rem(15);
-  border-top: 1px solid $base-border-color;
+  padding-top: rem(10);
   border-bottom: 1px solid $base-border-color;
   color: $base-font-color;
-  font-size: rem(14);
+  font-size: rem(12);
+}
+
+.form--register {
+  @include form-wrapper;
+}
+
+.form--add-student {
+  padding-bottom: $section-spacing * 2;
 }
 
 fieldset {
-  margin: 0 0 $small-spacing;
-  padding: $base-spacing;
-  border: $base-border;
-  background-color: lighten($base-border-color, 10%);
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+  background-color: $base-background-color;
 }
 
 input,
@@ -20,11 +27,12 @@ label,
 select {
   display: block;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: rem(12);
 }
 
 label {
   margin-bottom: $small-spacing / 2;
+  font-size: rem(12);
 
   &.required::after {
     content: '*';
@@ -39,14 +47,13 @@ label {
 select[multiple=multiple],
 textarea {
   width: 100%;
-  margin-bottom: $base-spacing / 2;
-  padding: rem(10) rem(20);
+  padding: rem(5) rem(10);
   transition: border-color;
   border: $base-border;
   border-radius: $base-border-radius;
   background-color: $base-background-color;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: rem(12);
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
 
@@ -83,10 +90,119 @@ input[type="file"] {
 select {
   width: auto;
   max-width: 100%;
-  margin-bottom: $base-spacing;
+  // Add border to trigger the style update in Chrome
+  // more details: https://css-tricks.com/dropdown-default-styling
+  border: 1px $base-border-color solid;
+}
+
+.form__item {
+  margin-bottom: $section-spacing;
+}
+
+.form__item--error {
+  input,
+  select {
+    @include error-field;
+  }
+}
+
+.form__item--state {
+  display: inline-block;
+  width: rem(60);
+  margin-right: $section-spacing;
+}
+
+.form__item--zip-code {
+  display: inline-block;
+  width: rem(120);
 }
 
 .form__cta--save,
 .form__cta--cancel {
   padding: $button-padding;
+}
+
+.form__title {
+  @include form-title;
+}
+
+.form__title--register {
+  @include bg-gradient-with-lines(
+    $color-secondary, $color-secondary-darken-2, $color-secondary);
+}
+
+.form__section {
+  padding: $form-section-padding;
+
+  &:first-of-type {
+    .form__section-heading {
+      border: 0;
+    }
+  }
+}
+
+.form__section-heading {
+  @include clearfix;
+  @include form-section-heading;
+  width: 100%;
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+  border-top: 1px $base-border-color solid;
+}
+
+.form__fieldset--add-student {
+  margin-top: $section-spacing;
+  padding-top: $section-spacing;
+  padding-right: rem(20);
+  padding-bottom: $section-spacing;
+  padding-left: rem(20);
+  background-color: rgba($color-secondary, .2);
+
+}
+
+.form__section-heading--secondary {
+  @include form-section-heading;
+}
+
+.form__section-heading--encrypted {
+  padding-bottom: $section-spacing;
+  line-height: 1.5;
+}
+
+.form__note {
+  font-size: rem(10);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.form__select--school {
+  width: 100%;
+}
+
+.form__section--bottom {
+  padding-bottom: rem(30);
+  text-align: center;
+}
+
+.form__link {
+  @include form-link;
+}
+
+.form__link--cancel {
+  @include form-link;
+  font-size: rem(12);
+}
+
+.form__error--field {
+  @include error-msg;
+  margin-bottom: $section-spacing;
+}
+
+.form__error--global {
+  @include error-msg;
+  margin-bottom: $section-spacing;
+}
+
+.form__submit-cta {
+  margin-bottom: $item-spacing;
 }

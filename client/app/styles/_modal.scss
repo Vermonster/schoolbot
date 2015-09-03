@@ -29,36 +29,14 @@
 }
 
 .modal__title {
-  @include border-top-radius($modal-radius);
-  position: relative;
-  margin-bottom: 0;
-  padding-top: $modal-item-padding;
-  padding-bottom: $modal-item-padding - rem(5);
+  @include form-title;
   padding-left: rem(30);
-  background-color: $color-secondary;
-  color: $base-font-invert-color;
   font-size: rem(18);
   text-align: left;
-  text-transform: uppercase;
 }
 
 .modal__section {
-  padding: $modal-section-padding;
-}
-
-.modal__section-heading {
-  margin-bottom: 0;
-  font-family: $heading-font-family;
-  font-size: rem(14);
-  text-transform: uppercase;
-}
-
-.modal fieldset {
-  margin-bottom: 0;
-  padding-right: 0;
-  padding-left: 0;
-  border: 0;
-  background-color: $base-background-color;
+  padding: $form-section-padding;
 }
 
 .modal form {

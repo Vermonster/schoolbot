@@ -58,6 +58,7 @@
 .main__content {
   @extend %wrapper;
   padding-top: rem(120);
+  padding-bottom: rem(50);
 }
 
 .heading--district {

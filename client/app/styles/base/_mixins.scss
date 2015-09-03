@@ -155,3 +155,54 @@
     background: $color-action-hover;
   }
 }
+
+// Modal (include the modal like style)
+@mixin form-title {
+  @include border-top-radius($modal-radius);
+  position: relative;
+  margin-bottom: 0;
+  padding-top: $modal-item-padding;
+  padding-bottom: $modal-item-padding - rem(5);
+  background-color: $color-secondary;
+  color: $base-font-invert-color;
+  font-size: rem(16);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin form-section-heading {
+  margin-bottom: rem(-10);
+  font-family: $heading-font-family;
+  font-size: rem(16);
+  text-transform: uppercase;
+}
+
+@mixin form-wrapper {
+  @extend %wrapper;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
+  padding-top: 0;
+  border: 0;
+  border-radius: $form-radius;
+  background-color: $base-background-color;
+}
+
+@mixin error-msg {
+  display: block;
+  font-size: rem(12);
+  color: $color-error;
+  line-height: 1.4;
+}
+
+@mixin error-field {
+  background-color: rgba($color-error, .1);
+}
+
+@mixin form-link {
+  color: $base-font-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-action;
+  }
+}

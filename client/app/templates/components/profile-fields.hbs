@@ -1,61 +1,87 @@
-<label>
-  Full name
-  {{input value=model.name}}
-</label>
-{{#if model.errors.name}}
-  {{t-error model.errors.name.firstObject}}
-{{/if}}
+<div class='form__item {{if model.errors.name 'form__item--error'}}'>
+  <label>
+    Full Name
+    {{input value=model.name}}
+  </label>
+  {{#if model.errors.name}}
+    <span class='form__error--field'>
+      {{t-error model.errors.name.firstObject}}
+    </span>
+  {{/if}}
+</div>
 
-<label>
-  Email address
-  {{input value=model.email}}
-</label>
-{{#if model.errors.email}}
-  {{t-error model.errors.email.firstObject}}
-{{/if}}
+<div class='form__item {{if model.errors.email 'form__item--error'}}'>
+  <label>
+    Email
+    {{input value=model.email}}
+  </label>
+  {{#if model.errors.email}}
+    <span class='form__error--field'>
+      {{t-error model.errors.email.firstObject}}
+    </span>
+  {{/if}}
+</div>
 
 {{#if showingPasswordFields}}
-  <label>
-    Password
-    {{input type='password' value=model.password}}
-  </label>
-  {{#if model.errors.password}}
-    {{t-error model.errors.password.firstObject}}
-  {{/if}}
+  <div class='form__item {{if model.errors.password 'form__item--error'}}'>
+    <label>
+      Password
+      {{input type='password' value=model.password}}
+    </label>
+    {{#if model.errors.password}}
+      <span class='form__error--field'>
+        {{t-error model.errors.password.firstObject}}
+      </span>
+    {{/if}}
+  </div>
 
-  <label>
-    Confirm password
-    {{input type='password' value=model.passwordConfirmation}}
-  </label>
-  {{#if model.errors.passwordConfirmation}}
-    {{t-error model.errors.passwordConfirmation.firstObject}}
-  {{/if}}
+  <div class='form__item {{if model.errors.passwordConfirmation 'form__item--error'}}'>
+    <label>
+      Confirm Password
+      {{input type='password' value=model.passwordConfirmation}}
+    </label>
+    {{#if model.errors.passwordConfirmation}}
+      <span class='form__error--field'>
+        {{t-error model.errors.passwordConfirmation.firstObject}}
+      </span>
+    {{/if}}
+  </div>
 {{else}}
-  <a href='#' {{action 'togglePasswordFields'}}>Change password...</a>
+  <a class='form__link' href='#' {{action 'togglePasswordFields'}}>Change password...</a>
 {{/if}}
 
 <label>Address</label>
 
-{{input value=model.street placeholder='Street'}}
-{{#if model.errors.street}}
-  {{t-error model.errors.street.firstObject}}
-{{/if}}
+<div class='form__item {{if model.errors.street 'form__item--error'}}'>
+  <label class='form__label--street'>
+    Street
+    {{input value=model.street}}
+  </label>
+</div>
 
-{{input value=model.city placeholder='City'}}
-{{#if model.errors.city}}
-  {{t-error model.errors.city.firstObject}}
-{{/if}}
+<div class='form__item {{if model.errors.city 'form__item--error'}}'>
+  <label>
+    City
+    {{input value=model.city}}
+  </label>
+</div>
 
-{{input value=model.state placeholder='State'}}
-{{#if model.errors.state}}
-  {{t-error model.errors.state.firstObject}}
-{{/if}}
+<div class='form__item form__item--state {{if model.errors.name 'form__item--error'}}'>
+  <label>
+    State
+    {{input value=model.state}}
+  </label>
+</div>
 
-{{input value=model.zipCode placeholder='ZIP code'}}
-{{#if model.errors.zipCode}}
-  {{t-error model.errors.zipCode.firstObject}}
-{{/if}}
+<div class='form__item form__item--zip-code {{if model.errors.name 'form__item--error'}}'>
+  <label>
+    ZIP Code
+    {{input value=model.zipCode}}
+  </label>
+</div>
 
 {{#if model.errors.address}}
-  {{t-error model.errors.address.firstObject}}
+  <span class='form__error--global'>
+    {{t-error model.errors.address.firstObject}}
+  </span>
 {{/if}}

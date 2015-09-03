@@ -6,8 +6,8 @@
       <h2 class='modal__title'>Settings</h2>
       <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
       <div class='modal__body'>
-        <section class='modal__section'>
-          <h3 class='modal__section-heading'>My Information</h3>
+        <section class='modal__section form__section'>
+          <h3 class='form__section-heading'>My Information</h3>
           {{#if showingProfileForm}}
             {{profile-fields model=currentUser}}
             <button {{action 'updateProfile'}}>Save</button>
@@ -21,8 +21,8 @@
           {{/if}}
         </section>
 
-        <section class='modal__section'>
-          <h3 class='modal__section-heading'>My Students</h3>
+        <section class='modal__section form__section'>
+          <h3 class='form__section-heading'>My Students</h3>
           {{#unless showingStudentForm}}
             <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
               <span class='add-student-cta__icon'></span>
