@@ -1,17 +1,5 @@
 .form--sign-in {
-  @extend %wrapper;
-  margin-top: $section-spacing;
-  margin-bottom: $section-spacing;
-  padding-top: 0;
-  border: 0;
-  border-radius: $form-radius;
-  background-color: $base-background-color;
-
-  .msg--error {
-    padding: rem(10) rem(20);
-    border-top-left-radius: $form-radius;
-    border-top-right-radius: $form-radius;
-  }
+  @include form-wrapper;
 
   input[type] {
     margin-bottom: 0;
@@ -29,9 +17,8 @@
 }
 
 .sign-in__msg--error {
-  background-color: rgba($color-error, .1);
-  color: $color-error;
-  line-height: 1.4;
+  @include error-msg;
+  @include error-field;
 }
 
 .sign-in__submit {

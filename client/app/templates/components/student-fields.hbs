@@ -1,50 +1,67 @@
 <fieldset>
-  <legend class='modal__section-heading'>Add Student</legend>
-
-  <label>
-    Last Name
-    {{input value=lastName}}
-  </label>
-
-  <label>
-    Student ID
-    {{input value=identifier}}
-  </label>
-
-  <label>
-    Birthdate
-    {{input value=birthdate placeholder='MM/DD/YYYY' focus-out='validateBirthdate'}}
-  </label>
-
-  {{#unless birthdateIsValid}}
-    {{t 'errors.birthdate.invalid'}}
-  {{/unless}}
-
   {{#if errors.digest}}
-    {{t-error errors.digest.firstObject}}
+    <span class='form__error--global'>
+      {{t-error errors.digest.firstObject}}
+    </span>
   {{/if}}
 
-  <label>
-    Nickname
-    {{input value=nickname}}
-    <span>This will be used to identify your student on the map.</span>
-  </label>
+  <legend class='form__section-heading--secondary'>Add Student</legend>
 
-  {{#if errors.nickname}}
-    {{t-error errors.nickname.firstObject}}
-  {{/if}}
+  <div class='form__item {{if errors.digest 'form__item--error'}}'>
+    <label>
+      Last Name
+      {{input value=lastName}}
+    </label>
+  </div>
 
-  <label>
-    School
-    {{#x-select value=school}}
-      <option value=''></option>
-      {{#each schools as |school|}}
-        {{#x-option value=school}}{{school.name}}{{/x-option}}
-      {{/each}}
-    {{/x-select}}
-  </label>
+  <div class='form__item {{if errors.digest 'form__item--error'}}'>
+    <label>
+      Student ID Number
+      {{input value=identifier}}
+    </label>
+    <div class='form__note'>You should have received this number from your school district.</div>
+  </div>
 
-  {{#if errors.school}}
-    {{t-error errors.school.firstObject}}
-  {{/if}}
+
+  <div class='form__item {{if birthdateIsValid '' 'form__item--error'}}'>
+    <label>
+      Birthdate (MM/DD/YYYY)
+      {{input value=birthdate focus-out='validateBirthdate'}}
+      {{#unless birthdateIsValid}}
+        <span class='form__error--field'>
+          {{t 'errors.birthdate.invalid'}}
+        </span>
+      {{/unless}}
+    </label>
+  </div>
+
+  <div class='form__item'>
+    <label>
+      Nickname
+      {{input class='form__nickname' value=nickname}}
+    </label>
+    <div class='form__note'>Your student’s position will be marked on the map with their nickname.</div>
+    {{#if errors.school}}
+      <span class='form__error--field'>
+        {{t-error errors.nickname.firstObject}}
+      </span>
+    {{/if}}
+  </div>
+
+  <div class='form__item {{if errors.school 'form__item--error'}}'>
+    <label>
+      School
+      {{#x-select class='form__select--school' value=school}}
+        <option value=''></option>
+        {{#each schools as |school|}}
+          {{#x-option value=school}}{{school.name}}{{/x-option}}
+        {{/each}}
+      {{/x-select}}
+    </label>
+    {{#if errors.school}}
+      <span class='form__error--field'>
+        {{t-error errors.school.firstObject}}
+      </span>
+    {{/if}}
+  </div>
 </fieldset>

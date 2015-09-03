@@ -1,25 +1,32 @@
-<form {{action 'register' on='submit'}}>
-  <fieldset>
-    <legend>My Information</legend>
+<form class='form--register' {{action 'register' on='submit'}}>
+  <div class='form__title form__title--register'>Registration</div>
+  <fieldset class='form__section form__section--my-info'>
+    <legend class='form__section-heading'>My Information</legend>
 
     {{profile-fields model=registration}}
   </fieldset>
 
-  <fieldset>
-    <legend>Student Information</legend>
+  <fieldset class='form__section'>
+    <legend class='form__section-heading'>Student Information</legend>
 
     <p>To register for SchoolBot, you must be the legal guardian of at least one student in this school district.</p>
 
     {{student-fields errors=registration.errors schools=schools update='updateStudent'}}
   </fieldset>
 
-  <label>
-    {{input type='checkbox' checked=registration.termsAccepted}}
-    I accept the terms and conditions
-  </label>
-  {{#if registration.errors.termsAccepted}}
-    {{t-error registration.errors.termsAccepted.firstObject}}
-  {{/if}}
+  <section class='form__section form__section--bottom'>
+    <div class='form__item {{if registration.errors.termsAccepted 'form_item--error'}}'>
+      <label class='form__agreement'>
+        {{input type='checkbox' checked=registration.termsAccepted}}
+        I agree to the <a class='form__link' href='#'>terms & conditions</a>
+      </label>
 
-  <button type="submit">Register</button>
+      <button class='form__submit-cta' type="submit">Create account and login</button>
+      {{#if registration.errors.termsAccepted}}
+        <span class='form__error--field'>
+          {{t-error registration.errors.termsAccepted.firstObject}}
+        </span>
+      {{/if}}
+    </div>
+  </section>
 </form>

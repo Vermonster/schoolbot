@@ -57,13 +57,14 @@ $menu-height: rem(50);
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
 $form-radius: rem(10);
+$form-section-padding: rem(10) rem(15);
 
 // Modals
 $modal-font-color: $base-font-color;
 $modal-radius: $form-radius;
 $modal-padding: rem(10);
 $modal-item-padding: $section-spacing;
-$modal-section-padding: rem(10) rem(15);
+$modal-section-padding: $form-section-padding;
 
 // Icons
 $icon-circle-radius: rem(10);
