@@ -22,8 +22,8 @@ feature 'User views map' do
     before do
       @first_bus = create(:bus, district: @district)
       second_bus = create(:bus, district: @district)
-      create(:bus_location, bus: @first_bus)
-      create(:bus_location, bus: second_bus)
+      create(:bus_location, bus: @first_bus, latitude: 42.01)
+      create(:bus_location, bus: second_bus, latitude: 42.02)
       create(:bus_assignment, student: @first_label.student, bus: @first_bus)
       create(:bus_assignment, student: @second_label.student, bus: second_bus)
     end
@@ -44,7 +44,7 @@ feature 'User views map' do
       first_bus_style = page.find('.bus-marker', text: 'FI')[:style]
       second_bus_style = page.find('.bus-marker', text: 'SE')[:style]
 
-      create(:bus_location, bus: @first_bus)
+      create(:bus_location, bus: @first_bus, latitude: 42.03)
 
       expect(page).to_not have_css(
         %(.bus-marker[style="#{first_bus_style}"]), wait: 5
