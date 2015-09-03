@@ -41,6 +41,10 @@ export default LeafletMap.extend({
     attributionControl: false
   },
 
+  didInitAttrs() {
+    this.get('i18n'); // https://github.com/jamesarosen/ember-i18n/issues/299
+  },
+
   didCreateLayer() {
     this._super();
 
@@ -123,9 +127,6 @@ export default LeafletMap.extend({
       }),
 
       content: Ember.computed(currentLocalePath, busLocationsPath, function() {
-        // FIXME: This doesn't actually recompute when the locale changes, not
-        // sure why (probably okay for now since it will update in a few seconds
-        // anyway when the next location update comes in)
         return this.get('controller.uniqueBuses').map((bus) => {
           const latLng = bus
             .get('busLocations.firstObject')
