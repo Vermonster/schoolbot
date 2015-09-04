@@ -16,10 +16,10 @@ feature 'User adds student' do
 
     find('[aria-label="Settings"]').click
     click_on 'Add student'
+    fill_in 'First Name', with: 'Danny'
     fill_in 'Last Name', with: 'Smith'
     fill_in 'Student ID', with: 'A1234'
     fill_in 'Birthdate', with: '5/27/2003'
-    fill_in 'Nickname', with: 'Danny'
     select 'Springfield Elementary', from: 'School'
     click_on 'Save'
 
@@ -45,10 +45,10 @@ feature 'User adds student' do
 
     find('[aria-label="Settings"]').click
     click_on 'Add student'
+    fill_in 'First Name', with: 'Danny'
     fill_in 'Last Name', with: 'Smith'
     fill_in 'Student ID', with: 'A1234'
     fill_in 'Birthdate', with: '5/27/2003'
-    fill_in 'Nickname', with: 'Danny'
     click_on 'Save'
 
     expect(page).to have_button 'Save'

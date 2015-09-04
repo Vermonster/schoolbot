@@ -53,7 +53,7 @@ FactoryGirl.define do
     school
     student
     user
-    sequence(:nickname) { |n| "Nickname #{n}" }
+    sequence(:nickname) { |n| "Student#{n}" }
   end
 
   factory :user do

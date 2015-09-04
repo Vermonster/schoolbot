@@ -5,19 +5,19 @@
   margin-bottom: $item-spacing * 2;
 
   &:nth-child(odd) {
-    .student__nickname--abbrev {
-      background-color: $nickname-abbrev-odd-color;
+    .student__abbreviation {
+      background-color: $abbreviation-odd-color;
     }
   }
 
   &:nth-child(even) {
-    .student__nickname--abbrev {
-      background-color: $nickname-abbrev-even-color;
+    .student__abbreviation {
+      background-color: $abbreviation-even-color;
     }
   }
 }
 
-.student__nickname--abbrev {
+.student__abbreviation {
   width: rem(42);
   height: rem(42);
   margin-right: $item-spacing * 2;

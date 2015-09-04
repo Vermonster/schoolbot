@@ -139,7 +139,7 @@ export default LeafletMap.extend({
 
           return {
             location: L.latLng(latLng.latitude, latLng.longitude),
-            labels: bus.get('students').mapBy('nicknameAbbrev').sort(),
+            labels: bus.get('students').mapBy('abbreviation').sort(),
             timeAgo: timeAgo
           };
         });

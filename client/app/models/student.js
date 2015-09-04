@@ -11,7 +11,7 @@ export default DS.Model.extend({
   isAssigned: Ember.computed.notEmpty('bus'),
 
   // TODO: Calculate the shortest distinct abbreviation among all nicknames?
-  nicknameAbbrev: Ember.computed('nickname', function() {
+  abbreviation: Ember.computed('nickname', function() {
     return this.get('nickname').substr(0, 2).toUpperCase();
   })
 });
