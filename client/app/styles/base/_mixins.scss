@@ -197,3 +197,12 @@
 @mixin error-field {
   background-color: rgba($color-error, .1);
 }
+
+@mixin form-link {
+  color: $base-font-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-action;
+  }
+}

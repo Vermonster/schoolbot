@@ -175,12 +175,12 @@ select {
 }
 
 .form__link {
-  color: $base-font-color;
-  text-decoration: underline;
+  @include form-link;
+}
 
-  &:hover {
-    color: $color-action;
-  }
+.form__link--cancel {
+  @include form-link;
+  font-size: rem(12);
 }
 
 .form__error--field {
