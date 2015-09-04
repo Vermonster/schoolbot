@@ -33,7 +33,7 @@
             {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
           {{/if}}
           <ul>
-            {{#each students as |student|}}
+            {{#each orderedStudents as |student|}}
               <li class='student'>
                 <span class='student__abbreviation'>{{student.abbreviation}}</span>
                 <div>
