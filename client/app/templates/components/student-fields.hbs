@@ -5,7 +5,7 @@
     School
     {{#x-select value=school}}
       <option value=''></option>
-      {{#each schools as |school|}}
+      {{#each orderedSchools as |school|}}
         {{#x-option value=school}}{{school.name}}{{/x-option}}
       {{/each}}
     {{/x-select}}

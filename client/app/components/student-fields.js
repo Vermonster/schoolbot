@@ -13,6 +13,8 @@ export default Ember.Component.extend({
   school: null,
 
   schools: [],
+  schoolOrdering: ['name'],
+  orderedSchools: Ember.computed.sort('schools', 'schoolOrdering'),
 
   digester: Ember.observer('birthdate', 'identifier', 'lastName', function() {
     const digestTarget = [
