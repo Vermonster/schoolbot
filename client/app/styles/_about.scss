@@ -51,6 +51,27 @@
     font-size: rem(35);
     text-transform: uppercase;
   }
+
+  ul {
+    padding-top: rem(20);
+    padding-left: rem(30);
+    padding-bottom: rem(30);
+  }
+
+  li {
+    padding-top: $item-spacing;
+    padding-bottom: $item-spacing;
+    list-style-type: disc;
+  }
+}
+
+.about__content__link {
+  color: $base-font-invert-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-secondary-darken-2;
+  }
 }
 
 .about__content--intro {
