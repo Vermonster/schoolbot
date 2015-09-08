@@ -1,7 +1,8 @@
 .main__outer--map-view,
 .main__outer--page-view {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: rem(480);
 }
 
 .main__outer--page-view {
@@ -10,7 +11,7 @@
     image-path('background_clouds.svg'),
     image-path('background_landscape_wide.svg');
   background-repeat: no-repeat, repeat-x, repeat-x;
-  background-position: 5% 5%, 0% 2%, center bottom;
+  background-position: rem(15) rem(10), 0 rem(5), center bottom;
   background-size: rem(100) rem(100), rem(1495) rem(167), rem(960) rem(170);
 
   .cssgradients & {
@@ -26,7 +27,7 @@
         rgba($color-primary, .9) rem(3)
       );
     background-repeat: no-repeat, repeat-x, repeat-x, repeat-x;
-    background-position: 5% 5%, 0% 2%, center bottom, left top;
+    background-position: rem(15) rem(10), 0 0, center bottom, left top;
     background-size: rem(100) rem(100), rem(1495) rem(167), rem(960) rem(170), 100% 100%;
   }
 }

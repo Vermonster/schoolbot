@@ -206,3 +206,38 @@
     color: $color-action;
   }
 }
+
+@mixin list-item-number {
+  position: relative;
+  padding-top: $item-spacing;
+  padding-left: rem(40);
+  padding-bottom: $item-spacing;
+  counter-increment: itemNum;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: rem(6);
+    left: 0;
+  }
+
+  &:before {
+    padding-top: rem(2);
+    padding-left: rem(10);
+    color: $color-secondary;
+    font-size: rem(20);
+    line-height: rem(20);
+    content: counters(itemNum, '.');
+    z-index: z('about-content-list-number');
+    counter-increment: list-item;
+  }
+
+  &:after {
+    width: rem(30);
+    height: rem(30);
+    border-radius: 50%;
+    background-color: rgba($base-background-color, .9);
+    content: '';
+    z-index: z('about-content-list-number-circle');
+  }
+}

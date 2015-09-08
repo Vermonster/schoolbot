@@ -1,5 +1,5 @@
 .about__content-wrapper {
-  min-height: 100vh;
+  min-height: rem(480);
 }
 
 .about__content-wrapper--district {
@@ -51,18 +51,33 @@
     font-size: rem(35);
     text-transform: uppercase;
   }
+}
 
-  ul {
-    padding-top: rem(20);
-    padding-left: rem(30);
-    padding-bottom: rem(30);
-  }
+.about__content__list {
+  padding-top: rem(20);
+  padding-bottom: rem(30);
+  counter-reset: itemNum;
+}
 
-  li {
-    padding-top: $item-spacing;
-    padding-bottom: $item-spacing;
-    list-style-type: disc;
+.about__content__list-item--district {
+  @include list-item-number;
+
+  &:before {
+    color: $color-tertiary;
   }
+}
+
+.about__content__list-item--parent {
+  @include list-item-number;
+
+  &:before {
+    color: $color-secondary-darken-4;
+  }
+}
+
+.about__content__copy--district,
+.about__content__copy--parent {
+  font-size: rem(17);
 }
 
 .about__content__link {
@@ -75,7 +90,7 @@
 }
 
 .about__content--intro {
-  padding-top: rem(120);
+  padding-top: rem(140);
 
   @include media($small-screen) {
     padding-top: rem(180);
@@ -89,7 +104,6 @@
 .about__content--faq__share {
   margin-top: rem(30);
   padding-top: rem(30);
-  border-top: rem(1) $base-font-invert-color solid;
 }
 
 .about__input {
@@ -156,6 +170,7 @@ input[type='text'] {
 
 .about__footer__logo {
   @include hide-text;
+  display: block;
   max-width: rem(80);
   max-height: rem(23);
   background-image: image-path('logo_vermonster_footer.svg');
