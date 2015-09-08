@@ -171,10 +171,6 @@ select {
   text-align: center;
 }
 
-.form__agreement {
-  padding-bottom: $item-spacing;
-}
-
 .form__link {
   @include form-link;
 }

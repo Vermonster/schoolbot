@@ -20,13 +20,13 @@
         {{input type='checkbox' checked=registration.termsAccepted}}
         I agree to the <a class='form__link' href='#'>terms & conditions</a>
       </label>
-
-      <button class='form__submit-cta' type="submit">Create account and login</button>
       {{#if registration.errors.termsAccepted}}
         <span class='form__error--field'>
           {{t-error registration.errors.termsAccepted.firstObject}}
         </span>
       {{/if}}
+
+      <button class='form__submit-cta' type="submit">Create account and login</button>
     </div>
     {{#link-to 'sign-in' class='form__link--cancel'}}Cancel{{/link-to}}
   </section>
