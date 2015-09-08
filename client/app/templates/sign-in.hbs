@@ -1,15 +1,17 @@
-<form class='form--sign-in' {{action 'signIn' on='submit'}}>
+{{#page-layout}}
+  <form class='form--sign-in' {{action 'signIn' on='submit'}}>
 
-  {{#if errorMessage}}
-    <div class="sign-in__msg--error">
-      {{errorMessage}}
-    </div>
-  {{/if}}
+    {{#if errorMessage}}
+      <div class="sign-in__msg--error">
+        {{errorMessage}}
+      </div>
+    {{/if}}
 
-  {{input class='sign-in__form-field' placeholder='Your email' value=identification}}
-  {{input class='sign-in__form-field' placeholder='Password' type='password' value=password}}
+    {{input class='sign-in__form-field' placeholder='Your email' value=identification}}
+    {{input class='sign-in__form-field' placeholder='Password' type='password' value=password}}
 
-  <button class='sign-in__submit' type="submit">SIGN IN</button>
-</form>
+    <button class='sign-in__submit' type="submit">SIGN IN</button>
+  </form>
 
-<div class='sign-in__register-cta'>Don't have an account? {{#link-to 'register'}}Create one now{{/link-to}}</div>
+  <div class='sign-in__register-cta'>Don't have an account? {{#link-to 'register'}}Create one now{{/link-to}}</div>
+{{/page-layout}}

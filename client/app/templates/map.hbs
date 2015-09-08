@@ -1,0 +1,64 @@
+<div class='main__outer--map-view'>
+  {{bus-map students=students user=currentUser}}
+
+  {{#if showingSettings}}
+    <div class='modal modal__overlay'>
+      <div class='modal__inner'>
+        <h2 class='modal__title'>Settings</h2>
+        <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
+        <div class='modal__body'>
+          <section class='modal__section form__section'>
+            <h3 class='form__section-heading'>My Information</h3>
+            {{#if showingProfileForm}}
+              {{profile-fields model=currentUser}}
+              <button {{action 'updateProfile'}}>Save</button>
+              <button {{action 'toggleEditProfile'}}>Cancel</button>
+            {{else}}
+              <a href='#' {{action 'toggleEditProfile'}}>Edit</a>
+              <p>{{currentUser.name}}</p>
+              <p>{{currentUser.email}}</p>
+              <p>{{currentUser.street}}</p>
+              <p>{{currentUser.city}}, {{currentUser.state}}, {{currentUser.zipCode}}</p>
+            {{/if}}
+          </section>
+
+          <section class='modal__section form__section'>
+            <h3 class='form__section-heading'>My Students</h3>
+            {{#unless showingStudentForm}}
+              <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
+                <span class='add-student-cta__icon'></span>
+                <span class='add-student-cta__text'>Add student</span>
+              </a>
+            {{/unless}}
+            {{#if showingStudentForm}}
+              {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
+            {{/if}}
+            <ul>
+              {{#each orderedStudents as |student|}}
+                <li class='student'>
+                  <span class='student__abbreviation'>{{student.abbreviation}}</span>
+                  <div>
+                    <div class='student__nickname'>
+                      {{student.nickname}}
+                    </div>
+                    <div class='student__school'>
+                      {{student.school.name}}
+                    </div>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+          <button class='modal__close' {{action 'toggleSettings'}}>Close</button>
+        </div>
+        <button class='modal__sign-out' {{action 'signOut'}}>Sign Out</button>
+      </div>
+    </div>
+  {{/if}}
+
+  <div class='menu'>
+    <button class='btn--settings' {{action 'toggleSettings'}} aria-label='Settings'>
+      <span class='icon--settings'></span>
+    </button>
+  </div>
+</div>

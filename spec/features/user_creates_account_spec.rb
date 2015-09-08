@@ -14,7 +14,7 @@ feature 'User creates account' do
     use_subdomain(district.slug)
 
     visit root_path
-    click_on 'Create one now'
+    click_on 'Register'
     fill_in 'Full Name', with: 'Guy Test'
     fill_in 'Email', with: 'guy@example.com'
     fill_in 'Password', with: 'secretpass'
@@ -43,7 +43,7 @@ feature 'User creates account' do
     use_subdomain(district.slug)
 
     visit root_path
-    click_on 'Create one now'
+    click_on 'Register'
     fill_in 'Email', with: 'guy@example.com'
     fill_in 'Password', with: 'secret'
     fill_in 'Confirm Password', with: 'sorcret'
@@ -68,7 +68,7 @@ feature 'User creates account' do
     use_subdomain(create(:district).slug)
 
     visit root_path
-    click_on 'Create one now'
+    click_on 'Register'
     fill_in 'Street', with: '123 Main St'
     fill_in 'City', with: 'Someplace'
     fill_in 'State', with: 'MA'

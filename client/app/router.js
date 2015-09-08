@@ -6,7 +6,7 @@ let Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('about');
+  this.route('map');
   this.route('register');
   this.route('sign-in');
 });
