@@ -85,6 +85,7 @@ select {
   width: auto;
   max-width: 100%;
   // Add border to trigger the style update in Chrome
+  // more details: https://css-tricks.com/dropdown-default-styling
   border: 1px $base-border-color solid;
 }
 
