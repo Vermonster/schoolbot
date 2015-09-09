@@ -12,8 +12,17 @@
   <div class='about__content about__content--district'>
     <h1>District</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere mi quis libero hendrerit, eget pulvinar felis sagittis. Suspendisse ac nisi tempus, vehicula felis id, bibendum est. Nullam ac urna in justo convallis consectetur vel in lorem. Donec at ipsum id orci commodo ultricies at in felis. Phasellus eget sapien nibh. Praesent ac lacus nec ligula aliquet eleifend in nec tellus. Quisque mollis sed dui at efficitur. Suspendisse luctus mattis velit, sit amet blandit sapien fringilla vitae. Fusce faucibus ante sem, at mattis ex vestibulum ut.</p>
-    {{input class='about__input about__input--district' placeholder='email here'}}
-    <button class='about__cta about__cta--district' type='submit'>Submit</button>
+    {{#if districtContactSubmitted}}
+      <p>Thanks for your interest – we'll be in touch soon!</p>
+    {{else}}
+      <form {{action 'submitDistrictContact' on='submit'}}>
+        {{input value=districtContactEmail class='about__input about__input--district' placeholder='Enter your email address'}}
+        <button class='about__cta about__cta--district' type='submit' disabled={{districtContactInFlight}}>Submit</button>
+      </form>
+      {{#if districtContactErrored}}
+        <p>There was a problem submitting your email. Check your network connection and try again, or <a href="mailto:schoolbot-contact@vermonster.com?subject=SchoolBot information request">email us directly</a>.</p>
+      {{/if}}
+    {{/if}}
   </div>
 </section>
 
