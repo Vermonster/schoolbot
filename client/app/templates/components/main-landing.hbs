@@ -1,3 +1,15 @@
+{{! Facebook button setup }}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{{! Twitter button setup }}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 <section class='main__outer--page-view about__content-wrapper about__content-wrapper--intro'>
   <div class='main__inner--page-view'>
     <div class='logo'>Schoolbot</div>
@@ -52,6 +64,10 @@
     <div class='about__content--faq__share'>
       <h1>Share</h1>
       <p>If SchoolBot seems interesting or useful, please spread the word on your networks!</p>
+
+      <a href="mailto:?subject=SchoolBot: a secure school bus tracking app&body=Check out SchoolBot: https://schoolbot.io">Email</a>
+      <div class="fb-share-button" data-href="https://schoolbot.io" data-layout="button" style="transform: scale(1.3)"></div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://schoolbot.io" data-text="SchoolBot: a secure school bus tracking app" data-size="large" data-count="none">Tweet</a>
     </div>
   </div>
 </section>
