@@ -54,6 +54,7 @@
     "ember-leaflet": "git://github.com/gabesmed/ember-leaflet.git#c80b3234801f971a64c2e633303114ded6b7fbaf",
     "ember-moment": "3.6.2",
     "ember-normalize": "0.0.9",
+    "ember-scroll-to": "0.2.0",
     "ember-watson": "0.6.4",
     "emberx-select": "2.0.0"
   }

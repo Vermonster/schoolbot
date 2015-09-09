@@ -130,6 +130,7 @@ input[type='text'] {
   font-size: rem(18);
 }
 
+.about__cta--learn,
 .about__cta--district,
 .about__cta--parent {
   @include bg-gradient-with-lines(
@@ -142,6 +143,12 @@ input[type='text'] {
   &:hover {
     background: $color-action-hover;
   }
+}
+
+.about__cta--learn {
+  display: block;
+  margin: auto;
+  float: none;
 }
 
 .about__cta--faq {
