@@ -223,10 +223,11 @@
 
   &:before {
     padding-top: rem(2);
-    padding-left: rem(10);
+    padding-left: rem(11);
     color: $color-secondary;
+    font-family: $heading-font-family;
     font-size: rem(20);
-    line-height: rem(20);
+    line-height: rem(29);
     content: counters(itemNum, '.');
     z-index: z('about-content-list-number');
     counter-increment: list-item;

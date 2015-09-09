@@ -154,8 +154,6 @@ input[type='text'] {
 }
 
 .about__content--footer {
-  display: flex;
-  align-items: center;
   height: 100%;
 
   .no-flexbox & {
@@ -168,11 +166,19 @@ input[type='text'] {
   height: $footer-height;
 }
 
+.about__footer__copyright {
+  display: inline-block;
+  margin-top: rem(12);
+  font-family: $heading-font-family;
+  font-size: rem(10);
+}
+
 .about__footer__logo {
   @include hide-text;
   display: block;
   max-width: rem(80);
   max-height: rem(23);
+  margin-top: rem(-10);
   background-image: image-path('logo_vermonster_footer.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
