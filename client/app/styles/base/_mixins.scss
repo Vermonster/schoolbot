@@ -10,8 +10,6 @@
 // Positioning
 @mixin v-center-content-block {
   display: flex;
-  padding-top: rem(50);
-  padding-bottom: rem(50);
   align-items: center;
 }
 
@@ -240,5 +238,13 @@
     background-color: rgba($base-background-color, .9);
     content: '';
     z-index: z('about-content-list-number-circle');
+  }
+}
+
+@mixin about-cta-font-size {
+  font-size: $about-cta-font-size-small;
+
+  @include media($medium-screen) {
+    font-size: $about-cta-font-size-large;
   }
 }

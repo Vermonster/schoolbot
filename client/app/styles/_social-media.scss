@@ -1,0 +1,24 @@
+.social-media__cta {
+  display: inline-block;
+  margin-right: rem(10);
+  vertical-align: top;
+}
+
+.social-media__cta--email {
+  @extend %button;
+  @include about-cta-font-size;
+  @include bg-gradient-with-lines(
+    $color-tertiary-darkest, $color-tertiary-darkest, lighten($color-tertiary-darkest, 12%), rem(2), rem(1));
+  height: rem(26);
+  margin-top: rem(2);
+  line-height: rem(17);
+
+  &:hover {
+    background: darken($color-tertiary-darkest, 10%);
+  }
+}
+
+.social-media__cta--fb {
+  margin-top: rem(3);
+  transform: scale(1.3);
+}

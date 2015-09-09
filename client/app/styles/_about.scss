@@ -1,45 +1,46 @@
-.about__content-wrapper {
-  min-height: $background-min-height;
+%about-content-wrapper-padding {
+  padding-top: rem(50);
+  padding-bottom: rem(50);
 }
 
 .about__content-wrapper--district {
-  @include v-center-content-block;
+  @extend %about-content-wrapper-padding;
   @include bg-gradient-with-lines(
     $color-tertiary, $color-tertiary, $color-tertiary-darken);
-  //Temporary fix for the strange 1px blue line from the sibling div
   position: relative;
-  margin-top: rem(-1);
   z-index: z('about-content-wrapper');
 }
 
 .about__content-wrapper--parent {
-  @include v-center-content-block;
+  @extend %about-content-wrapper-padding;
   @include bg-gradient-with-lines(
     $color-secondary-darken-4, $color-secondary-darken-3, $color-secondary-darken-4);
 }
 
-.about__content-wrapper--faq {
-  @include v-center-content-block;
+.about__content-wrapper--share {
+  @extend %about-content-wrapper-padding;
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, $color-secondary-darken-2);
-  min-height: calc(100vh - #{$footer-height});
+  min-height: auto;
 }
 
 .about__content {
   @extend %wrapper;
 
-  padding-right: rem(35);
-  padding-left: rem(35);
+  padding-right: rem(20);
+  padding-left: rem(20);
   color: $base-font-invert-color;
-  font-size: rem(15);
+  font-size: rem(14);
 
   @include media($small-screen) {
     width: rem(500);
+    padding-right: rem(35);
+    padding-left: rem(35);
   }
 
   @include media($medium-screen) {
     width: rem(600);
-    font-size: rem(17);
+    font-size: rem(16);
 
     h1 {
       font-size: rem(45);
@@ -101,12 +102,12 @@
   }
 }
 
-.about__content--faq__share {
-  margin-top: rem(30);
-  padding-top: rem(30);
+.about__form {
+  @include clearfix;
 }
 
 .about__input {
+  margin-bottom: $item-spacing;
   color: $base-font-color;
 
   @include placeholder {
@@ -127,7 +128,7 @@ input[type='text'] {
 }
 
 .about__cta {
-  font-size: rem(18);
+  @include about-cta-font-size;
 }
 
 .about__cta--learn,
@@ -142,21 +143,6 @@ input[type='text'] {
 
   &:hover {
     background: $color-action-hover;
-  }
-}
-
-.about__cta--learn {
-  display: block;
-  margin: auto;
-  float: none;
-}
-
-.about__cta--faq {
-  @include bg-gradient-with-lines(
-    $color-tertiary-darkest, $color-tertiary-darkest, lighten($color-tertiary-darkest, 12%), rem(2), rem(1));
-
-  &:hover {
-    background: darken($color-tertiary-darkest, 10%);
   }
 }
 

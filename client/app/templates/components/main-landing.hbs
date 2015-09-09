@@ -10,18 +10,18 @@
 {{! Twitter button setup }}
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<section class='main__outer--page-view about__content-wrapper about__content-wrapper--intro'>
+<section class='main__outer--page-view about__content-wrapper--intro'>
   <div class='main__inner--page-view'>
     <div class='logo'>Schoolbot</div>
     <div class='about__content about__content--intro'>
       <h1>Welcome!</h1>
       <p>SchoolBot is an application that maps the locations of school buses. It is available to parents of students in participating school districts, and works on a wide variety of devices.</p>
-      {{#scroll-to href='#districts' tagName='button' class='about__cta about__cta--learn'}}⬇ Learn more{{/scroll-to}}
+      {{#scroll-to href='#districts' tagName='button' class='about__cta about__cta--learn'}}Learn more{{/scroll-to}}
     </div>
   </div>
 </section>
 
-<section id='districts' class='about__content-wrapper about__content-wrapper--district'>
+<section id='districts' class='about__content-wrapper--district'>
   <div class='about__content about__content--district'>
     <h1>For School Districts</h1>
     <p>If you work for a school district, you should know:</p>
@@ -35,7 +35,7 @@
     {{#if districtContactSubmitted}}
       <p>Thanks for your interest – we'll contact you soon!</p>
     {{else}}
-      <form {{action 'submitDistrictContact' on='submit'}}>
+      <form class='about__form' {{action 'submitDistrictContact' on='submit'}}>
         {{input class='about__input about__input--district' placeholder='Enter your email address' value=districtContactEmail}}
         <button class='about__cta about__cta--district' type='submit' disabled={{districtContactInFlight}}>Submit</button>
       </form>
@@ -46,7 +46,7 @@
   </div>
 </section>
 
-<section class='about__content-wrapper about__content-wrapper--parent'>
+<section class='about__content-wrapper--parent'>
   <div class='about__content about__content--parent'>
     <h1>For Parents and Guardians</h1>
     <p>If you are a parent or guardian of a student, you should know:</p>
@@ -59,15 +59,15 @@
   </div>
 </section>
 
-<section class='about__content-wrapper about__content-wrapper--faq'>
+<section class='about__content-wrapper--share'>
   <div class='about__content'>
-    <div class='about__content--faq__share'>
-      <h1>Share</h1>
-      <p>If SchoolBot seems interesting or useful, please spread the word on your networks!</p>
+    <h1>Share</h1>
+    <p>If SchoolBot seems interesting or useful, please spread the word on your networks!</p>
 
-      <a href="mailto:?subject=SchoolBot: a secure school bus tracking app&body=Check out SchoolBot: https://schoolbot.io">Email</a>
-      <div class="fb-share-button" data-href="https://schoolbot.io" data-layout="button" style="transform: scale(1.3)"></div>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://schoolbot.io" data-text="SchoolBot: a secure school bus tracking app" data-size="large" data-count="none">Tweet</a>
+    <div class='social-media'>
+      <a class='social-media__cta social-media__cta--email' href="mailto:?subject=SchoolBot: a secure school bus tracking app&body=Check out SchoolBot: https://schoolbot.io">Email</a>
+      <div class="fb-share-button social-media__cta social-media__cta--fb" data-href="https://schoolbot.io" data-layout="button"></div>
+      <a href="https://twitter.com/share" class="twitter-share-button social-media__cta social-media__cta--twitter" data-url="https://schoolbot.io" data-text="SchoolBot: a secure school bus tracking app" data-size="large" data-count="none">Tweet</a>
     </div>
   </div>
 </section>

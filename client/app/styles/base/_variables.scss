@@ -6,6 +6,8 @@ $heading-font-family: 'Print-Bold', $helvetica;
 
 // Font Sizes
 $base-font-size: rem(14);
+$about-cta-font-size-small: rem(16);
+$about-cta-font-size-large: rem(18);
 
 // Line height
 $base-line-height: 1.5;
@@ -19,7 +21,7 @@ $base-z-index: 0;
 $item-spacing: rem(5);
 $section-spacing: rem(10);
 $background-landscape-width: rem(500);
-$background-min-height: rem(600);
+$background-min-height: rem(500);
 
 // Colors
 $blue: #477dca;
