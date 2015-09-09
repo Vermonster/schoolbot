@@ -39,7 +39,7 @@
 
   @include media($medium-screen) {
     width: rem(600);
-    font-size: rem(16);
+    font-size: rem(17);
 
     h1 {
       font-size: rem(45);
@@ -47,16 +47,21 @@
   }
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: rem(10);
     font-size: rem(35);
     text-transform: uppercase;
   }
 }
 
 .about__content__list {
-  padding-top: rem(20);
+  padding-top: rem(10);
   padding-bottom: rem(30);
+  font-size: rem(12);
   counter-reset: itemNum;
+
+  @include media($medium-screen) {
+    font-size: rem(14);
+  }
 }
 
 .about__content__list-item--district {
@@ -73,11 +78,6 @@
   &:before {
     color: $color-secondary-darken-4;
   }
-}
-
-.about__content__copy--district,
-.about__content__copy--parent {
-  font-size: rem(17);
 }
 
 .about__content__link {
