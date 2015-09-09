@@ -2,7 +2,7 @@
 .main__outer--page-view {
   position: relative;
   height: 100vh;
-  min-height: rem(480);
+  min-height: $background-min-height;
 }
 
 .main__outer--page-view {
