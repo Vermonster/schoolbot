@@ -1,3 +1,4 @@
+require_relative 'redis'
 require 'expiring_redis_cache'
 
 Geocoder.configure(
@@ -5,5 +6,5 @@ Geocoder.configure(
   lookup: :geocodio,
   use_https: true,
   api_key: ENV.fetch('GEOCODER_KEY'),
-  cache: ExpiringRedisCache.new(Redis.new(url: ENV.fetch('REDIS_URL')))
+  cache: ExpiringRedisCache.new($redis)
 )

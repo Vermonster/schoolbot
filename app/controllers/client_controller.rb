@@ -6,10 +6,6 @@ class ClientController < ActionController::Base
   private
 
   def client_html
-    redis.get(redis.get('client:current'))
-  end
-
-  def redis
-    @redis ||= Redis.new(url: ENV.fetch('REDIS_URL'))
+    $redis.get($redis.get('client:current'))
   end
 end
