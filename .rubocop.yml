@@ -28,6 +28,9 @@ Style/AlignParameters:
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
+Style/GlobalVars:
+  Enabled: false
+
 Style/Send:
   Enabled: true
 
