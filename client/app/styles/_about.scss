@@ -24,33 +24,36 @@
   min-height: auto;
 }
 
-.about__content {
-  @extend %wrapper;
+.about__content-wrapper {
+  @include global-content-width;
+  position: relative;
+}
 
+.about__content {
+  @include global-content-width;
   padding-right: rem(20);
   padding-left: rem(20);
   color: $base-font-invert-color;
   font-size: rem(14);
 
   @include media($small-screen) {
-    width: rem(500);
     padding-right: rem(35);
     padding-left: rem(35);
   }
 
   @include media($medium-screen) {
-    width: rem(600);
     font-size: rem(16);
-
-    h1 {
-      font-size: rem(45);
-    }
   }
+}
 
-  h1 {
-    margin-bottom: rem(10);
-    font-size: rem(35);
-    text-transform: uppercase;
+.about__heading {
+  margin-bottom: rem(10);
+  font-size: rem(35);
+  line-height: rem(35);
+  text-transform: uppercase;
+
+  @include media($medium-screen) {
+    font-size: rem(40);
   }
 }
 

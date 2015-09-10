@@ -32,12 +32,6 @@
   }
 }
 
-.main__inner--page-view {
-  position: relative;
-  max-width: $background-landscape-width;
-  margin: auto;
-}
-
 .logo {
   @include hide-text;
   position: absolute;
@@ -57,7 +51,8 @@
 }
 
 .main__content {
-  @extend %wrapper;
+  @include global-content-width;
+  position: relative;
   padding-top: rem(120);
   padding-bottom: rem(50);
 }

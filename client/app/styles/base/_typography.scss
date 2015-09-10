@@ -28,6 +28,7 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
 }
