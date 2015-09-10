@@ -1,6 +1,7 @@
 .social-media__cta {
   display: inline-block;
   margin-right: rem(10);
+  font-size: rem(14);
   vertical-align: top;
 }
 
@@ -9,8 +10,7 @@
   @include about-cta-font-size;
   @include bg-gradient-with-lines(
     $color-tertiary-darkest, $color-tertiary-darkest, lighten($color-tertiary-darkest, 12%), rem(2), rem(1));
-  height: rem(26);
-  margin-top: rem(2);
+  margin-top: rem(1);
   line-height: rem(17);
 
   &:hover {
@@ -19,5 +19,6 @@
 }
 
 .social-media__cta--fb {
+  margin-top: rem(3);
   transform: scale(1.3);
 }
