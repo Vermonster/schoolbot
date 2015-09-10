@@ -260,3 +260,11 @@
     font-size: $about-cta-font-size-large;
   }
 }
+
+@mixin about-content-font-size {
+  font-size: $about-content-font-size-small;
+
+  @include media($medium-screen) {
+    font-size: $about-content-font-size-large;
+  }
+}

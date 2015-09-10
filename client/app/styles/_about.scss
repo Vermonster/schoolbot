@@ -31,10 +31,10 @@
 
 .about__content {
   @include global-content-width;
-  padding-right: rem(20);
-  padding-left: rem(20);
+  padding-right: rem(15);
+  padding-left: rem(15);
   color: $base-font-invert-color;
-  font-size: rem(14);
+  font-size: rem(15);
 
   @include media($small-screen) {
     padding-right: rem(35);
@@ -42,7 +42,7 @@
   }
 
   @include media($medium-screen) {
-    font-size: rem(16);
+    font-size: rem(17);
   }
 }
 
@@ -60,11 +60,11 @@
 .about__content__list {
   padding-top: rem(10);
   padding-bottom: rem(30);
-  font-size: rem(12);
+  font-size: rem(14);
   counter-reset: itemNum;
 
   @include media($medium-screen) {
-    font-size: rem(14);
+    font-size: rem(16);
   }
 }
 
@@ -178,4 +178,13 @@ input[type='text'] {
   background-image: image-path('logo_vermonster_footer.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.about__form__feedback {
+  font-size: rem(13);
+  font-style: italic;
+}
+
+.about__form__feedback--success {
+  @include about-content-font-size;
 }

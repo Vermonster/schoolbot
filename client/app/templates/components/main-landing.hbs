@@ -33,14 +33,14 @@
     </ul>
     <p>To learn more about SchoolBot and how you can offer it in your district, enter your email address below and we'll get in touch!</p>
     {{#if districtContactSubmitted}}
-      <p>Thanks for your interest – we'll contact you soon!</p>
+      <p class='about__form__feedback about__form__feedback--success'>Thanks for your interest – we'll contact you soon!</p>
     {{else}}
       <form class='about__form' {{action 'submitDistrictContact' on='submit'}}>
         {{input class='about__input about__input--district' placeholder='Enter your email address' value=districtContactEmail}}
         <button class='about__cta about__cta--district' type='submit' disabled={{districtContactInFlight}}>Submit</button>
       </form>
       {{#if districtContactErrored}}
-        <p>There was a problem submitting your email. Check your network connection and try again, or <a href="mailto:schoolbot-contact@vermonster.com?subject=SchoolBot information request">email us directly</a>.</p>
+        <p class='about__form__feedback'>There was a problem submitting your email. Check your network connection and try again, or <a class='about__content__link' href="mailto:schoolbot-contact@vermonster.com?subject=SchoolBot information request">email us directly</a>.</p>
       {{/if}}
     {{/if}}
   </div>
