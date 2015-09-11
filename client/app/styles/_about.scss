@@ -137,15 +137,10 @@ input[type='text'] {
 .about__cta--learn,
 .about__cta--district,
 .about__cta--parent {
-  @include bg-gradient-with-lines(
-    $color-secondary, $color-secondary, $color-secondary-darken-2, rem(2), rem(1));
+  @include button-with-yellow-stripes-bg;
 
   @include media($medium-screen) {
     float: left;
-  }
-
-  &:hover {
-    background: $color-action-hover;
   }
 }
 

@@ -16,8 +16,8 @@ feature 'Landing page' do
 
     visit root_path
 
-    expect(page).to have_content 'District Qux'
+    expect(page).to have_content 'DISTRICT QUX'
     expect(page).to have_css "img[src='#{district.logo.url}']"
-    expect(page).to_not have_content 'District Foo'
+    expect(page).to_not have_content 'DISTRICT FOO'
   end
 end

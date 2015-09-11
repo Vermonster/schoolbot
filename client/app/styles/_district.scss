@@ -1,0 +1,39 @@
+.district {
+  @include msg-box__wrapper;
+}
+
+.district__title--main {
+  margin-bottom: 0;
+  font-size: $title-font-size;
+}
+
+.district__title--sub {
+  margin-bottom: 0;
+  font-size: $sub-title-font-size;
+}
+
+.district__logo {
+  width: rem(100);
+  margin: auto;
+}
+
+.district__title {
+  @include msg-box-title;
+}
+
+.district__content {
+  padding: rem(10) rem(25) rem(25);
+}
+
+.district__cta--sign-in,
+.district__cta--register {
+  @extend %button;
+  @include button-with-yellow-stripes-bg;
+  a {
+    color: $base-font-invert-color;
+  }
+}
+
+.district__cta--sign-in {
+  margin-right: rem(3);
+}

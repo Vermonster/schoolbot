@@ -39,8 +39,17 @@ button {
   cursor: pointer;
 }
 
-.button-group [class*='btn-'] {
-  margin-bottom: rem(3);
+.button-group {
+  padding-bottom: $section-spacing * 2;
+  text-align: center;
+
+  [class*='btn-'] {
+    margin-bottom: rem(3);
+  }
+
+  &--district {
+    padding-bottom: 0;
+  }
 }
 
 .btn--settings {

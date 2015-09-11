@@ -1,3 +1,32 @@
 {{#page-layout}}
-  {{#link-to 'sign-in'}}Sign In{{/link-to}} or {{#link-to 'register'}}Register{{/link-to}}
+  <div class='district'>
+    <div class='district__title'>
+      <h1 class='district__title--main'>Welcome to Schoolbot</h1>
+      <h2 class='district__title--sub'>Presented by {{districts.current.name}}</h2>
+    </div>
+    <section class='district__content'>
+      <div class='district__logo'>
+        <img src={{districts.current.logoUrl}} alt={{districts.current.name}}>
+      </div>
+
+      {{locale-picker}}
+
+      <p class='district__welcome-msg'>
+        Welcome!
+        SchoolBot is an application that tells you when your child’s school bus is nearby.
+      </p>
+
+      <p>
+        In order to use SchoolBot, you must be the parent or guardian of at least one child enrolled in the {{districts.current.name}}. You also need to have a unique ID number issued by your school district.
+      </p>
+      <div class='button-group button-group--district'>
+        <span class='district__cta--sign-in'>
+          {{#link-to 'sign-in'}}Sign In{{/link-to}}
+        </span>
+        <span class='district__cta--register'>
+          {{#link-to 'register'}}Register{{/link-to}}
+        </span>
+      </div>
+    </section>
+  </div>
 {{/page-layout}}

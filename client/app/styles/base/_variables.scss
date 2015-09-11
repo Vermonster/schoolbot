@@ -6,6 +6,8 @@ $heading-font-family: 'Print-Bold', $helvetica;
 
 // Font Sizes
 $base-font-size: rem(14);
+$title-font-size: rem(20);
+$sub-title-font-size: $base-font-size;
 $about-cta-font-size-small: rem(16);
 $about-cta-font-size-large: rem(18);
 $about-content-font-size-small: rem(15);
@@ -58,15 +60,14 @@ $base-border: 1px solid $base-border-color;
 // Menu
 $menu-height: rem(50);
 
-// Forms
+// Msg-box and Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
-$form-radius: rem(10);
+$msg-box-radius: rem(10);
 $form-section-padding: rem(10) rem(15);
 
 // Modals
 $modal-font-color: $base-font-color;
-$modal-radius: $form-radius;
 $modal-padding: rem(10);
 $modal-item-padding: $section-spacing;
 $modal-section-padding: $form-section-padding;

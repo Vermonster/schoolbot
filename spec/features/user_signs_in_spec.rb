@@ -15,9 +15,9 @@ feature 'User signs in' do
 
     visit root_path
     click_on 'Sign In'
-    fill_in 'Your email', with: 'bob@example.com'
+    fill_in 'Your Email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
-    click_on 'SIGN IN'
+    click_on 'Sign In'
 
     expect(page).to have_css 'button.btn--settings'
   end
@@ -27,9 +27,9 @@ feature 'User signs in' do
 
     visit root_path
     click_on 'Sign In'
-    fill_in 'Your email', with: 'bob@example.com'
+    fill_in 'Your Email', with: 'bob@example.com'
     fill_in 'Password', with: ''
-    click_on 'SIGN IN'
+    click_on 'Sign In'
 
     expect(page).to have_content t('errors.session.invalid')
   end
@@ -40,9 +40,9 @@ feature 'User signs in' do
 
     visit root_path
     click_on 'Sign In'
-    fill_in 'Your email', with: 'bob@example.com'
+    fill_in 'Your Email', with: 'bob@example.com'
     fill_in 'Password', with: 'secretpass'
-    click_on 'SIGN IN'
+    click_on 'Sign In'
 
     expect(page).to have_content t('errors.session.invalid')
   end

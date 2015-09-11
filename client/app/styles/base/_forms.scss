@@ -6,11 +6,10 @@ form {
 }
 
 .form--register {
-  @include form-wrapper;
+  @include msg-box__wrapper;
 }
 
 .form--add-student {
-  padding-bottom: $section-spacing * 2;
   border-bottom: 1px solid $base-border-color;
 }
 
@@ -123,12 +122,7 @@ select {
 }
 
 .form__title {
-  @include form-title;
-}
-
-.form__title--register {
-  @include bg-gradient-with-lines(
-    $color-secondary, $color-secondary-darken-2, $color-secondary);
+  @include msg-box-title;
 }
 
 .form__section {

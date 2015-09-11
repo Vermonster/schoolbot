@@ -12,6 +12,7 @@ feature 'User signs out' do
       click_on 'Sign Out'
     end
 
-    expect(page).to have_content 'Sign In or Register'
+    expect(page).to have_content 'SIGN IN'
+    expect(page).to have_content 'REGISTER'
   end
 end

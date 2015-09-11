@@ -1,5 +1,5 @@
 .form--sign-in {
-  @include form-wrapper;
+  @include msg-box__wrapper;
 
   input[type] {
     margin-bottom: 0;
@@ -10,8 +10,8 @@
 
     &:first-child {
       border-top: 0;
-      border-top-left-radius: $form-radius;
-      border-top-right-radius: $form-radius;
+      border-top-left-radius: $msg-box-radius;
+      border-top-right-radius: $msg-box-radius;
     }
   }
 }
@@ -25,6 +25,6 @@
   @include btn--sign-in;
 }
 
-.sign-in__register-cta a {
-  @extend %page-view-link;
+.sign-in__register-cta {
+  display: block;
 }

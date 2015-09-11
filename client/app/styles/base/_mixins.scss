@@ -156,8 +156,8 @@
   width: 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-left-radius: $form-radius;
-  border-bottom-right-radius: $form-radius;
+  border-bottom-left-radius: $msg-box-radius;
+  border-bottom-right-radius: $msg-box-radius;
   font-size: rem(16);
   text-align: center;
 
@@ -166,16 +166,27 @@
   }
 }
 
-// Modal (include the modal like style)
-@mixin form-title {
-  @include border-top-radius($modal-radius);
+@mixin button-with-yellow-stripes-bg {
+  @include bg-gradient-with-lines(
+    $color-secondary, $color-secondary, rgba($color-secondary-darken-2, .8), rem(2), rem(1));
+
+  &:hover {
+    background: $color-action-hover;
+  }
+}
+
+// Msg-box (the modal like style)
+@mixin msg-box-title {
+  @include border-top-radius($msg-box-radius);
+  @include bg-gradient-with-lines(
+    $color-secondary, rgba($color-secondary-darken-2, .8), $color-secondary);
   position: relative;
   margin-bottom: 0;
-  padding-top: $modal-item-padding;
-  padding-bottom: $modal-item-padding - rem(5);
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
   background-color: $color-secondary;
   color: $base-font-invert-color;
-  font-size: rem(16);
+  font-size: $title-font-size;
   text-align: center;
   text-transform: uppercase;
 }
@@ -187,13 +198,13 @@
   text-transform: uppercase;
 }
 
-@mixin form-wrapper {
+@mixin msg-box__wrapper {
   @extend %wrapper;
   margin-top: $section-spacing;
   margin-bottom: $section-spacing;
   padding-top: 0;
   border: 0;
-  border-radius: $form-radius;
+  border-radius: $msg-box-radius;
   background-color: $base-background-color;
 }
 

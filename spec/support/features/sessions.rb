@@ -3,8 +3,8 @@ module Sessions
     use_subdomain(user.district.slug)
     visit root_path
     click_on 'Sign In'
-    fill_in 'Your email', with: user.email
+    fill_in 'Your Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'SIGN IN'
+    click_on 'Sign In'
   end
 end
