@@ -1,7 +1,5 @@
 .social-media__cta {
   display: inline-block;
-  margin-right: rem(10);
-  font-size: rem(14);
   vertical-align: top;
 }
 
@@ -18,7 +16,20 @@
   }
 }
 
-.social-media__cta--fb {
-  margin-top: rem(3);
+// scss-lint:disable SelectorFormat
+.fb_iframe_widget iframe {
   transform: scale(1.3);
+  transform-origin: top left;
+}
+// scss-lint:enable SelectorFormat
+
+// scss-lint:disable ImportantRule
+.social-media__cta--fb span {
+  margin-top: rem(1);
+  vertical-align: top !important;
+}
+// scss-lint:enable ImportantRule
+
+.social-media__cta--twitter {
+  margin-left: rem(17);
 }
