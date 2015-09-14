@@ -14,7 +14,7 @@
     {{student-fields errors=registration.errors schools=schools update='updateStudent'}}
   </fieldset>
 
-  <section class='form__section form__section--bottom'>
+  <section class='form__section form__section--bottom form__section--bottom--register'>
     <div class='form__item {{if registration.errors.termsAccepted 'form_item--error'}}'>
       <label class='form__agreement'>
         {{input type='checkbox' checked=registration.termsAccepted}}
@@ -28,6 +28,6 @@
 
       <button class='form__submit-cta' type="submit">Create account and login</button>
     </div>
-    {{#link-to 'sign-in' class='form__link--cancel'}}Cancel{{/link-to}}
+    {{#link-to 'index' class='form__link--cancel'}}Cancel{{/link-to}}
   </section>
 </form>

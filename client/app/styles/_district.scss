@@ -1,24 +1,22 @@
 .district {
-  @include msg-box__wrapper;
+  @include msg-box-wrapper;
+}
+
+.district__title {
+  @include msg-box-title;
 }
 
 .district__title--main {
-  margin-bottom: 0;
-  font-size: $title-font-size;
+  @include msg-box-main-title;
 }
 
 .district__title--sub {
-  margin-bottom: 0;
-  font-size: $sub-title-font-size;
+  @include msg-box-sub-title;
 }
 
 .district__logo {
   width: rem(100);
   margin: auto;
-}
-
-.district__title {
-  @include msg-box-title;
 }
 
 .district__content {

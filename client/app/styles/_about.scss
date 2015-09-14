@@ -85,12 +85,7 @@
 }
 
 .about__content__link {
-  color: $base-font-invert-color;
-  text-decoration: underline;
-
-  &:hover {
-    color: $color-secondary-darken-2;
-  }
+  @extend %page-view-link;
 }
 
 .about__content--intro {

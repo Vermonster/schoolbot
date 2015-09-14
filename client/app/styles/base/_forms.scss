@@ -6,7 +6,7 @@ form {
 }
 
 .form--register {
-  @include msg-box__wrapper;
+  @include msg-box-wrapper;
 }
 
 .form--add-student {
@@ -18,7 +18,7 @@ fieldset {
   padding-right: 0;
   padding-left: 0;
   border: 0;
-  background-color: $base-background-color;
+  background-color: transparent;
 }
 
 input,
@@ -125,6 +125,14 @@ select {
   @include msg-box-title;
 }
 
+.form__title--main {
+  @include msg-box-main-title;
+}
+
+.form__title--sub {
+  @include msg-box-sub-title;
+}
+
 .form__section {
   padding: $form-section-padding;
 
@@ -174,8 +182,19 @@ select {
 }
 
 .form__section--bottom {
-  padding-bottom: rem(30);
   text-align: center;
+}
+
+.form__section--bottom--register {
+  padding-bottom: rem(30);
+}
+
+.form__section--bottom__note {
+  text-align: center;
+
+  a {
+    @include form-link;
+  }
 }
 
 .form__link {
@@ -184,6 +203,7 @@ select {
 
 .form__link--cancel {
   @include form-link;
+  display: block;
   font-size: rem(12);
 }
 
@@ -199,4 +219,8 @@ select {
 
 .form__submit-cta {
   margin-bottom: $item-spacing;
+}
+
+.form__submit-cta--sign-in {
+  margin-bottom: $section-spacing;
 }

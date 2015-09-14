@@ -1,19 +1,5 @@
 .form--sign-in {
-  @include msg-box__wrapper;
-
-  input[type] {
-    margin-bottom: 0;
-    border: 0;
-    border-top: 1px solid $base-border-color;
-    border-radius: 0;
-    box-shadow: none;
-
-    &:first-child {
-      border-top: 0;
-      border-top-left-radius: $msg-box-radius;
-      border-top-right-radius: $msg-box-radius;
-    }
-  }
+  @include msg-box-wrapper;
 }
 
 .sign-in__msg--error {

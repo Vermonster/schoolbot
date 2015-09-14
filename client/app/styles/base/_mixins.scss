@@ -1,5 +1,5 @@
 %wrapper {
-  width: rem(300);
+  width: rem(310);
   margin: auto;
 }
 
@@ -28,10 +28,11 @@
 // Link style when it is on the illustration background
 %page-view-link {
   color: $base-font-invert-color;
+  text-decoration: underline;
 
   &:hover,
   &:focus {
-    color: rgba($base-font-invert-color, .8);
+    color: $color-secondary-darken-2;
   }
 }
 
@@ -176,6 +177,16 @@
 }
 
 // Msg-box (the modal like style)
+@mixin msg-box-wrapper {
+  @extend %wrapper;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
+  padding-top: 0;
+  border: 0;
+  border-radius: $msg-box-radius;
+  background-color: rgba($base-background-color, .9);
+}
+
 @mixin msg-box-title {
   @include border-top-radius($msg-box-radius);
   @include bg-gradient-with-lines(
@@ -191,21 +202,21 @@
   text-transform: uppercase;
 }
 
+@mixin msg-box-main-title {
+  margin-bottom: 0;
+  font-size: $title-font-size;
+}
+
+@mixin msg-box-sub-title {
+  margin-bottom: 0;
+  font-size: $sub-title-font-size;
+}
+
 @mixin form-section-heading {
   margin-bottom: rem(-10);
   font-family: $heading-font-family;
   font-size: rem(16);
   text-transform: uppercase;
-}
-
-@mixin msg-box__wrapper {
-  @extend %wrapper;
-  margin-top: $section-spacing;
-  margin-bottom: $section-spacing;
-  padding-top: 0;
-  border: 0;
-  border-radius: $msg-box-radius;
-  background-color: $base-background-color;
 }
 
 @mixin error-msg {

@@ -1,5 +1,9 @@
 {{#page-layout}}
   <form class='form--sign-in' {{action 'signIn' on='submit'}}>
+    <div class='form__title'>
+      <h1 class='form__title--main'>Welcome Back!</h1>
+      <h2 class='form__title--sub'>Sign in to Schoolbot</h2>
+    </div>
 
     {{#if errorMessage}}
       <div class="sign-in__msg--error">
@@ -41,8 +45,5 @@
       </section>
     </div>
 
-    <button class='sign-in__submit' type="submit">SIGN IN</button>
   </form>
-
-  <div class='sign-in__register-cta'>Don't have an account? {{#link-to 'register'}}Create one now{{/link-to}}</div>
 {{/page-layout}}
