@@ -17,6 +17,11 @@
 .district__logo {
   width: rem(100);
   margin: auto;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .district__content {

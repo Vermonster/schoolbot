@@ -24,11 +24,6 @@
   min-height: auto;
 }
 
-.about__content-wrapper {
-  @include global-content-width;
-  position: relative;
-}
-
 .about__content {
   @include global-content-width;
   padding-right: rem(15);
@@ -88,8 +83,45 @@
   @extend %page-view-link;
 }
 
+.about__content-wrapper--intro {
+  @include global-content-width;
+  position: relative;
+
+  @media screen and (min-height: $background-min-height) {
+    .flexbox & {
+      @include v-center-content-block;
+      height: 100vh;
+    }
+  }
+}
+
 .about__content--intro {
+  // min-height = height of the text +
+  //              logo height + landscape bg image height
+  // to leave enough space for the text between sky and landscape
+  min-height: rem(500);
   padding-top: rem(140);
+
+  @media screen and (min-height: $background-min-height) {
+    .flexbox & {
+      height: auto;
+      min-height: auto;
+      margin: 0 auto;
+      padding-top: 0;
+    }
+  }
+
+  @media screen and (min-height: $background-min-height) and (min-width: $small-screen) {
+    .flexbox & {
+      min-height: rem(200);
+    }
+  }
+
+  @media screen and (min-height: $background-min-height) and (min-width: $large-screen) {
+    .flexbox & {
+      min-height: rem(250);
+    }
+  }
 
   @include media($small-screen) {
     padding-top: rem(180);
@@ -98,6 +130,7 @@
   @include media($large-screen) {
     padding-top: rem(230);
   }
+
 }
 
 .about__form {
@@ -137,6 +170,11 @@ input[type='text'] {
   @include media($medium-screen) {
     float: left;
   }
+}
+
+.about__cta--learn {
+  display: block;
+  margin-top: $section-spacing;
 }
 
 .about__content--footer {

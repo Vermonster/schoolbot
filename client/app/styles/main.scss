@@ -1,8 +1,10 @@
 .main__outer--map-view,
 .main__outer--page-view {
   position: relative;
-  height: 100vh;
-  min-height: $background-min-height;
+  //height: 100vh;
+  //min-height: $background-min-height;
+  height: auto;
+  min-height: 100vh;
 }
 
 .main__outer--page-view {
