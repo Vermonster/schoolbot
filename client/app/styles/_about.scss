@@ -177,35 +177,34 @@ input[type='text'] {
   margin-top: $section-spacing;
 }
 
-.about__content--footer {
-  height: 100%;
-
-  .no-flexbox & {
-    padding-top: rem(12);
-  }
-}
-
 .about__footer {
   @include black-gradient-with-lines;
   height: $footer-height;
+
+  .flexbox & {
+    @include v-center-content-block;
+  }
+}
+
+.about__content--footer {
+  height: rem(27);
 }
 
 .about__footer__copyright {
-  display: inline-block;
-  margin-top: rem(12);
+  display: block;
   font-family: $heading-font-family;
   font-size: rem(10);
+
+  .no-flexbox & {
+    padding-top: rem(10);
+  }
 }
 
-.about__footer__logo {
-  @include hide-text;
+.about__footer__link {
   display: block;
-  max-width: rem(80);
-  max-height: rem(23);
-  margin-top: rem(-10);
-  background-image: image-path('logo_vermonster_footer.svg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  width: rem(80);
+  height: rem(15);
+  margin-top: rem(-11);
 }
 
 .about__form__feedback {
