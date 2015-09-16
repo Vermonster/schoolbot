@@ -15,20 +15,11 @@ export default Ember.Component.extend({
     });
   }),
 
-  currentLabel: Ember.computed('i18n.locale', function() {
-    return this.get('i18n').t('locales.' + this.get('i18n.locale'));
-  }),
-
-  isOpen: false,
-
   actions: {
-    toggle() { this.toggleProperty('isOpen'); },
-
     setLocale(locale) {
       moment.locale(locale);
       this.get('i18n').set('locale', locale);
       this.get('localStorage').set('locale', locale);
-      this.send('toggle');
     }
   }
 });

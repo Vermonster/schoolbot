@@ -1,7 +1,9 @@
-.locale-picker {
-  margin-bottom: $section-spacing;
+.locale-picker__label {
+  margin-bottom: rem(20);
+  text-align: center;
+}
 
-  a {
-    @extend %page-view-link;
-  }
+.locale-picker__select {
+  display: inline-block;
+  color: $base-font-color;
 }

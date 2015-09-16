@@ -1,7 +1,8 @@
-Language: <a href="#" {{action 'toggle'}}>{{currentLabel}}</a>
-
-{{#if isOpen}}
-  {{#each locales as |locale|}}
-    <a href="#" {{action 'setLocale' locale.id}}>{{locale.label}}</a>
-  {{/each}}
-{{/if}}
+<label class='locale-picker__label'>
+  Language:
+  {{#x-select class='locale-picker__select' action='setLocale' value=i18n.locale}}
+    {{#each locales as |locale|}}
+      {{#x-option value=locale.id}}{{locale.label}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+</label>

@@ -61,7 +61,17 @@ en:
       blank: Please select a school.
     session:
       invalid: Invalid email address or password.
+  district:
+    title:
+      main: Welcome to Schoolbot
+    welcome:
+      heading: Welcome!
 
 es:
   <<: *common
   example: ¡Texto de ejemplo!
+  district:
+    title:
+      main: Bienvenida a Schoolbot
+    welcome:
+      heading: Bienvenida!
