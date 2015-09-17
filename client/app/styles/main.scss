@@ -1,13 +1,12 @@
-.main__outer--map-view,
-.main__outer--page-view {
+.main__outer--map-view {
   position: relative;
-  //height: 100vh;
-  //min-height: $background-min-height;
-  height: auto;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .main__outer--page-view {
+  position: relative;
+  height: auto;
+  min-height: 100vh;
   background-color: $color-primary;
   background-image: image-path('background_sun.svg'),
     image-path('background_clouds.svg'),
