@@ -148,8 +148,11 @@
 
 input[type='text'] {
 
-  &.about__input--district,
-  &.about__input--parent {
+  &.about__input--district {
+    padding-top: rem(8);
+    padding-bottom: rem(8);
+    font-size: $about-content-font-size-small;
+
     @include media($medium-screen) {
       width: calc(100% - #{rem(120)});
       margin-right: rem(5);
@@ -163,8 +166,7 @@ input[type='text'] {
 }
 
 .about__cta--learn,
-.about__cta--district,
-.about__cta--parent {
+.about__cta--district {
   @include button-with-yellow-stripes-bg;
 
   @include media($medium-screen) {
