@@ -24,7 +24,7 @@ version 0.78.0 or higher.
 
 To access the app in development, use the `lvh.me` domain. This resolves to
 127.0.0.1, but allows arbitrary subdomains to be used. For instance, with the
-development seed data, try <http://boston.lvh.me:5000>.
+development seed data, try <http://boston.lvh.me:3000>.
 
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
