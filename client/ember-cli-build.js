@@ -40,7 +40,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/jsSHA/src/sha256.js');
-  app.import('bower_components/modernizr/modernizr.js');
+  app.import('bower_components/modernizr/src/Modernizr.js');
 
   return app.toTree();
 };
