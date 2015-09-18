@@ -15,7 +15,7 @@
     "leaflet": "0.7.5",
     "leaflet.markercluster": "~0.4.0",
     "loader.js": "3.3.0",
-    "modernizr": "3.0.0",
+    "modernizr": "2.8.3",
     "moment": "~2.10.6",
     "moment-timezone": "~0.4.0",
     "neat": "~1.7.2",
