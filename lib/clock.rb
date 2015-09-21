@@ -6,7 +6,7 @@ module Clockwork
     Airbrake.notify(error)
   end
 
-  every(20.seconds, 'UpdateBusLocations') do
+  every(Zonar::REQUEST_INTERVAL, 'UpdateBusLocations') do
     District.find_each do |district|
       UpdateBusLocationsJob.perform_later(district)
     end

@@ -6,6 +6,7 @@ gem "active_model_serializers"
 gem "airbrake"
 gem "aws-sdk", "~> 1.6" # TODO: Remove constraint once Paperclip supports 2.0
 gem "bcrypt"
+gem "cb2"
 gem "clockwork"
 gem "delayed-plugins-airbrake"
 gem "delayed_job_active_record"

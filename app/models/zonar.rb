@@ -1,6 +1,4 @@
 class Zonar
-  READ_TIMEOUT = 5
-
   STATIC_PARAMS = {
     action: 'showposition',
     operation: 'path',
@@ -23,9 +21,12 @@ class Zonar
     zone: 'Zone'
   }
 
-  MAX_REQUEST_WINDOW = 5.minutes
-
   TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/
+
+  READ_TIMEOUT = 5.seconds
+  REQUEST_INTERVAL = 20.seconds
+  MAX_REQUEST_WINDOW = 2.minutes
+  CIRCUIT_RETRY_INTERVAL = 1.minute
 
   def initialize(customer:, username:, password:)
     @credentials = {
@@ -38,10 +39,28 @@ class Zonar
   def bus_events_since(start_time)
     clamped_start_time = [start_time, MAX_REQUEST_WINDOW.ago].compact.max
 
-    csv_to_attributes(csv_events_between(clamped_start_time, Time.zone.now))
+    csv_events = begin
+      breaker.run do
+        csv_events_between(clamped_start_time, Time.zone.now)
+      end
+    rescue CB2::BreakerOpen
+      raise CB2::BreakerOpen, "Zonar customer: #{@credentials[:customer]}"
+    end
+
+    csv_to_attributes(csv_events)
   end
 
   private
+
+  def breaker
+    @_breaker ||= CB2::Breaker.new(
+      service: "zonar-#{@credentials[:customer]}",
+      duration: MAX_REQUEST_WINDOW.to_i,
+      threshold: 100,
+      reenable_after: CIRCUIT_RETRY_INTERVAL.to_i,
+      redis: $redis
+    )
+  end
 
   # https://docs.zonarsystems.net/manuals/OMI/en/exportpath.html
   def csv_events_between(start_time, end_time)
@@ -53,7 +72,7 @@ class Zonar
         STATIC_PARAMS.merge(starttime: start_time.to_i, endtime: end_time.to_i)
       },
       cookies: authentication_params,
-      timeout: READ_TIMEOUT
+      timeout: READ_TIMEOUT.to_i
     )
   end
 
