@@ -81,7 +81,6 @@ export default LeafletMap.extend({
 
       options: {
         icon: L.divIcon({
-          html: 'Home!', // TODO: Replace with home marker
           iconSize: null,
           className: 'home-marker'
         })
@@ -92,7 +91,6 @@ export default LeafletMap.extend({
       itemLayerClass: MarkerLayer.extend({
         options: {
           icon: L.divIcon({
-            html: 'School!', // TODO: Replace with school marker
             iconSize: null,
             className: 'school-marker'
           })

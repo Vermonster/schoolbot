@@ -12,6 +12,20 @@
   font: inherit;
 }
 
+.home-marker {
+  width: rem(30);
+  height: rem(30);
+  background-image: image-path('home.svg');
+  background-repeat: no-repeat;
+}
+
+.school-marker {
+  width: rem(30);
+  height: rem(30);
+  background-image: image-path('school.svg');
+  background-repeat: no-repeat;
+}
+
 .bus-marker {
   margin-top: rem(-53);
   margin-left: rem(-17);
