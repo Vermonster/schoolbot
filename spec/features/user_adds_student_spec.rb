@@ -15,15 +15,14 @@ feature 'User adds student' do
     sign_in_as user
 
     find('[aria-label="Settings"]').click
-    click_on 'Add student'
-    fill_in 'First Name', with: 'Danny'
-    fill_in 'Last Name', with: 'Smith'
-    fill_in 'Student ID', with: 'A1234'
-    fill_in 'Birthdate', with: '5/27/2003'
-    select 'Springfield Elementary', from: 'School'
+    click_on t('actions.add')
+
+    fill_in_student_information
+
+    select 'Springfield Elementary', from: t('labels.school')
     click_on 'Save'
 
-    expect(page).to_not have_button 'Save'
+    expect(page).to_not have_button t('actions.save')
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'Danny') do
         expect(page).to have_content 'DA'
@@ -44,14 +43,13 @@ feature 'User adds student' do
     sign_in_as user
 
     find('[aria-label="Settings"]').click
-    click_on 'Add student'
-    fill_in 'First Name', with: 'Danny'
-    fill_in 'Last Name', with: 'Smith'
-    fill_in 'Student ID', with: 'A1234'
-    fill_in 'Birthdate', with: '5/27/2003'
-    click_on 'Save'
+    click_on t('actions.add')
 
-    expect(page).to have_button 'Save'
+    fill_in_student_information
+
+    click_on t('actions.save')
+
+    expect(page).to have_button t('actions.save')
     expect(page).to have_content t('errors.digest.blank')
     expect(page).to have_content t('errors.nickname.taken')
     expect(page).to have_content t('errors.school.blank')
@@ -62,9 +60,16 @@ feature 'User adds student' do
     sign_in_as create(:user)
 
     find('[aria-label="Settings"]').click
-    click_on 'Add student'
-    fill_in 'Birthdate', with: '2003-05-27'
+    click_on t('actions.add')
+    fill_in t('labels.birthdate'), with: '2003-05-27'
 
     expect(page).to have_content t('errors.birthdate.invalid')
+  end
+
+  def fill_in_student_information
+    fill_in t('labels.nickname'), with: 'Danny'
+    fill_in t('labels.lastName'), with: 'Smith'
+    fill_in t('labels.identifier'), with: 'A1234'
+    fill_in t('labels.birthdate'), with: '5/27/2003'
   end
 end

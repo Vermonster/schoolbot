@@ -14,10 +14,10 @@ feature 'User signs in' do
     use_subdomain('boston')
 
     visit root_path
-    click_on 'Sign In'
-    fill_in 'Your Email', with: 'bob@example.com'
-    fill_in 'Password', with: 'secretpass'
-    click_on 'Sign In'
+    click_on t('actions.signIn')
+    fill_in t('labels.email'), with: 'bob@example.com'
+    fill_in t('labels.password'), with: 'secretpass'
+    click_on t('actions.signIn')
 
     expect(page).to have_css 'button.btn--settings'
   end
@@ -26,10 +26,10 @@ feature 'User signs in' do
     use_subdomain('boston')
 
     visit root_path
-    click_on 'Sign In'
-    fill_in 'Your Email', with: 'bob@example.com'
-    fill_in 'Password', with: ''
-    click_on 'Sign In'
+    click_on t('actions.signIn')
+    fill_in t('labels.email'), with: 'bob@example.com'
+    fill_in t('labels.password'), with: ''
+    click_on t('actions.signIn')
 
     expect(page).to have_content t('errors.session.invalid')
   end
@@ -39,10 +39,10 @@ feature 'User signs in' do
     use_subdomain('district13')
 
     visit root_path
-    click_on 'Sign In'
-    fill_in 'Your Email', with: 'bob@example.com'
-    fill_in 'Password', with: 'secretpass'
-    click_on 'Sign In'
+    click_on t('actions.signIn')
+    fill_in t('labels.email'), with: 'bob@example.com'
+    fill_in t('labels.password'), with: 'secretpass'
+    click_on t('actions.signIn')
 
     expect(page).to have_content t('errors.session.invalid')
   end

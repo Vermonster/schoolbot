@@ -7,8 +7,8 @@ feature 'Locale picker' do
     select t('locales.en'), from: 'Language'
     select t('locales.es'), from: 'Language'
 
-    expect(page).to have_content t('district.title.main', locale: :es).upcase
-    expect(page).to_not have_content t('district.title.main', locale: :en).upcase
+    expect(page).to have_content t('district.title', locale: :es).upcase
+    expect(page).to_not have_content t('district.title', locale: :en).upcase
   end
 
   scenario 'remembers the selected locale across site visits' do
@@ -18,6 +18,6 @@ feature 'Locale picker' do
     select t('locales.es'), from: 'Language'
     visit root_path
 
-    expect(page).to have_content t('district.title.main', locale: :es).upcase
+    expect(page).to have_content t('district.title', locale: :es).upcase
   end
 end

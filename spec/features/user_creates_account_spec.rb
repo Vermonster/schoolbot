@@ -14,22 +14,22 @@ feature 'User creates account' do
     use_subdomain(district.slug)
 
     visit root_path
-    click_on 'Register'
-    fill_in 'Full Name', with: 'Guy Test'
-    fill_in 'Email', with: 'guy@example.com'
-    fill_in 'Password', with: 'secretpass'
-    fill_in 'Confirm Password', with: 'secretpass'
-    fill_in 'Street', with: '123 Main St'
-    fill_in 'City', with: 'Someplace'
-    fill_in 'State', with: 'MA'
-    fill_in 'ZIP Code', with: '12345'
-    fill_in 'First Name', with: 'Johnny'
-    fill_in 'Last Name', with: 'Test'
-    fill_in 'Student ID', with: 'ABC123'
-    fill_in 'Birthdate', with: '3/21/2002'
-    select 'Springfield High', from: 'School'
-    check 'I agree to the terms & conditions'
-    click_on 'Create account and login'
+    click_on t('actions.register')
+    fill_in t('labels.name'), with: 'Guy Test'
+    fill_in t('labels.email'), with: 'guy@example.com'
+    fill_in t('labels.password'), with: 'secretpass'
+    fill_in t('labels.confirmPassword'), with: 'secretpass'
+    fill_in t('labels.street'), with: '123 Main St'
+    fill_in t('labels.city'), with: 'Someplace'
+    fill_in t('labels.state'), with: 'MA'
+    fill_in t('labels.zip'), with: '12345'
+    fill_in t('labels.nickname'), with: 'Johnny'
+    fill_in t('labels.lastName'), with: 'Test'
+    fill_in t('labels.identifier'), with: 'ABC123'
+    fill_in t('labels.birthdate'), with: '3/21/2002'
+    select 'Springfield High', from: t('labels.school')
+    check t('labels.termsAndConditions')
+    click_on t('createAccount.cta')
 
     expect(page).to have_css 'button.btn--settings', wait: 5
     within('.leaflet-container') do
@@ -43,14 +43,14 @@ feature 'User creates account' do
     use_subdomain(district.slug)
 
     visit root_path
-    click_on 'Register'
-    fill_in 'Email', with: 'guy@example.com'
-    fill_in 'Password', with: 'secret'
-    fill_in 'Confirm Password', with: 'sorcret'
-    fill_in 'Last Name', with: 'Test'
-    fill_in 'Student ID', with: 'ABC123'
-    fill_in 'Birthdate', with: '2002-03-21'
-    click_on 'Create account and login'
+    click_on t('actions.register')
+    fill_in t('labels.email'), with: 'guy@example.com'
+    fill_in t('labels.password'), with: 'secret'
+    fill_in t('labels.confirmPassword'), with: 'sorcret'
+    fill_in t('labels.lastName'), with: 'Test'
+    fill_in t('labels.identifier'), with: 'ABC123'
+    fill_in t('labels.birthdate'), with: '2002-03-2'
+    click_on t('createAccount.cta')
 
     expect(page).to have_content t('errors.blank'), count: 1
     expect(page).to have_content t('errors.email.taken')
@@ -68,12 +68,12 @@ feature 'User creates account' do
     use_subdomain(create(:district).slug)
 
     visit root_path
-    click_on 'Register'
-    fill_in 'Street', with: '123 Main St'
-    fill_in 'City', with: 'Someplace'
-    fill_in 'State', with: 'MA'
-    fill_in 'ZIP Code', with: '12345'
-    click_on 'Create account and login'
+    click_on t('actions.register')
+    fill_in t('labels.street'), with: '123 Main St'
+    fill_in t('labels.city'), with: 'Someplace'
+    fill_in t('labels.state'), with: 'MA'
+    fill_in t('labels.zip'), with: '12345'
+    click_on t('createAccount.cta')
 
     expect(page).to have_content t('errors.address.invalid')
   end

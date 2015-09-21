@@ -4,16 +4,16 @@
   {{#if showingSettings}}
     <div class='modal modal__overlay'>
       <div class='modal__inner'>
-        <h2 class='modal__title'>Settings</h2>
+        <h2 class='modal__title'>{{ t 'map.settings' }}</h2>
         <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
         <div class='modal__body'>
           <section class='form__section'>
-            <h3 class='form__section-heading'>My Information</h3>
+            <h3 class='form__section-heading'>{{ t 'map.information' }}</h3>
             {{#if showingProfileForm}}
               {{profile-fields model=currentUser}}
               <div class='button-group button-group--edit-profile'>
-                <button class='form__cta--save' {{action 'updateProfile'}}>Save</button>
-                <button class='form__cta--cancel' {{action 'toggleEditProfile'}}>Cancel</button>
+                <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
+                <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
               </div>
             {{else}}
               <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
@@ -30,11 +30,11 @@
           </section>
 
           <section class='form__section'>
-            <h3 class='form__section-heading'>My Students</h3>
+            <h3 class='form__section-heading'>{{ t 'map.students' }}</h3>
             {{#unless showingStudentForm}}
               <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
                 <span class='add-student-cta__icon'></span>
-                <span class='add-student-cta__text'>Add student</span>
+                <span class='add-student-cta__text'>{{ t 'actions.add' }}</span>
               </a>
             {{/unless}}
             {{#if showingStudentForm}}
@@ -61,9 +61,9 @@
             {{locale-picker}}
           </section>
 
-          <button class='modal__close' {{action 'toggleSettings'}}>Close</button>
+          <button class='modal__close' {{action 'toggleSettings'}}>{{ t 'actions.close' }}</button>
         </div>
-        <button class='modal__sign-out' {{action 'signOut'}}>Sign Out</button>
+        <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
       </div>
     </div>
   {{/if}}

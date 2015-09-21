@@ -1,7 +1,7 @@
 <fieldset>
   <div class='form__item {{if errors.school 'form__item--error'}}'>
     <label>
-      School
+      {{ t 'labels.school' }}
       {{#x-select  class='form__select--school' value=school}}
         <option value=''></option>
         {{#each orderedSchools as |school|}}
@@ -18,10 +18,10 @@
 
   <div class='form__item'>
     <label>
-      First Name
+      {{ t 'labels.nickname' }}
       {{input class='form__nickname' value=nickname}}
     </label>
-    <div class='form__note'>Your student’s position will be marked on the map with their nickname.</div>
+    <div class='form__note'>{{ t 'addStudent.nickname.note' }}</div>
     {{#if errors.school}}
       <span class='form__error--field'>
         {{t-error errors.nickname.firstObject}}
@@ -30,7 +30,7 @@
   </div>
 
   <fieldset class='form__fieldset--add-student'>
-    <div class='form__section-heading--encrypted'>This information is encrypted and used to look up your student with the school district. SchoolBot does not store it.</div>
+    <div class='form__section-heading--encrypted'>{{ t 'addStudent.encrypted' }}</div>
 
     {{#if errors.digest}}
       <span class='form__error--global'>
@@ -40,22 +40,22 @@
 
     <div class='form__item {{if errors.digest 'form__item--error'}}'>
       <label>
-        Last Name
+        {{ t 'labels.lastName' }}
         {{input value=lastName}}
       </label>
     </div>
 
     <div class='form__item {{if errors.digest 'form__item--error'}}'>
       <label>
-        Student ID Number
+        {{ t 'labels.identifier' }}
         {{input value=identifier}}
       </label>
-      <div class='form__note'>You should have received this number from your school district.</div>
+      <div class='form__note'>{{ t 'addStudent.identifier.note' }}</div>
     </div>
 
     <div class='form__item {{if birthdateIsValid '' 'form__item--error'}}'>
       <label>
-        Birthdate (MM/DD/YYYY)
+        {{ t 'labels.birthdate' }}
         {{input value=birthdate focus-out='validateBirthdate'}}
         {{#unless birthdateIsValid}}
           <span class='form__error--field'>

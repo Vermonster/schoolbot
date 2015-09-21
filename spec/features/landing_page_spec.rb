@@ -6,7 +6,7 @@ feature 'Landing page' do
 
     visit root_path
 
-    expect(page).to have_content 'WELCOME'
+    expect(page).to have_content t('district.welcome.heading').upcase
   end
 
   scenario 'shows the district name and logo when accessed at a subdomain' do

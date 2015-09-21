@@ -4,8 +4,8 @@
       {{#link-to 'index' class='form__title__back-cta' title='Back to district landing page'}}
         {{fa-icon 'chevron-left'}}
       {{/link-to}}
-      <h1 class='form__title--main'>Welcome Back!</h1>
-      <h2 class='form__title--sub'>Sign in to Schoolbot</h2>
+      <h1 class='form__title--main'>{{ t 'signIn.title.main' }}</h1>
+      <h2 class='form__title--sub'>{{ t 'signIn.title.sub' }}</h2>
     </div>
 
     {{#if errorMessage}}
@@ -17,14 +17,14 @@
     <div class='form__section'>
       <div class='form__item'>
         <label>
-          Your Email
+          {{ t 'labels.email' }}
           {{input class='sign-in__form-field' value=identification}}
         </label>
       </div>
 
       <div class='form__item'>
         <label>
-          Password
+          {{ t 'labels.password' }}
           {{input class='sign-in__form-field' type='password' value=password}}
         </label>
       </div>
@@ -32,18 +32,18 @@
       <div class='form__item'>
         <label class='form__remember-password'>
           {{input type='checkbox'}}
-          Remember me on this device
+          {{ t 'signIn.remember' }}
         </label>
       </div>
 
       <section class='form__section form__section--bottom'>
         <div class='form__item'>
-          <button class='form__submit-cta form__submit-cta--sign-in' type="submit">Sign In</button>
+          <button class='form__submit-cta form__submit-cta--sign-in' type="submit">{{ t 'actions.signIn' }}</button>
         </div>
 
         <div class='form__section--bottom__note'>
-          <a class='sign-in__forgot-password' href='#'>Forgot your username or password?</a>
-          {{#link-to 'register' class='sign-in__register-cta'}}Need to register an account?{{/link-to}}
+          <a class='sign-in__forgot-password' href='#'>{{ t 'signIn.forgot' }}</a>
+          {{#link-to 'register' class='sign-in__register-cta'}} {{ t 'signIn.needToRegister' }} {{/link-to}}
         </div>
       </section>
     </div>

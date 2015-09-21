@@ -3,18 +3,18 @@
     {{#link-to 'index' class='form__title__back-cta' title='Back to district landing page'}}
       {{fa-icon 'chevron-left'}}
     {{/link-to}}
-    <h1 class='form__title--main'>Registration</h1>
+    <h1 class='form__title--main'>{{ t 'createAccount.title' }}</h1>
   </div>
   <fieldset class='form__section'>
-    <legend class='form__section-heading'>My Information</legend>
+    <legend class='form__section-heading'>{{ t 'createAccount.heading' }}</legend>
 
     {{profile-fields model=registration}}
   </fieldset>
 
   <fieldset class='form__section'>
-    <legend class='form__section-heading'>Student Information</legend>
+    <legend class='form__section-heading'>{{ t 'createAccount.studentInformation.heading' }}</legend>
 
-    <p>To register for SchoolBot, you must be the legal guardian of at least one student in this school district.</p>
+    <p>{{ t 'createAccount.studentInformation.copy' }}</p>
 
     {{student-fields errors=registration.errors schools=schools update='updateStudent'}}
   </fieldset>
@@ -31,8 +31,8 @@
         </span>
       {{/if}}
 
-      <button class='form__submit-cta' type="submit">Create account and login</button>
+      <button class='form__submit-cta' type="submit">{{ t 'createAccount.cta' }}</button>
     </div>
-    {{#link-to 'index' class='form__link--cancel'}}Cancel{{/link-to}}
+    {{#link-to 'index' class='form__link--cancel'}} {{ t 'actions.cancel' }} {{/link-to}}
   </section>
 </form>

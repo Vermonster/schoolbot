@@ -9,10 +9,10 @@ feature 'User signs out' do
     end
 
     within('.modal') do
-      click_on 'Sign Out'
+      click_on t('actions.signOut')
     end
 
-    expect(page).to have_content 'SIGN IN'
-    expect(page).to have_content 'REGISTER'
+    expect(page).to have_content t('actions.signIn').upcase
+    expect(page).to have_content t('actions.register').upcase
   end
 end

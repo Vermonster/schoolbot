@@ -1,8 +1,8 @@
 {{#page-layout}}
   <div class='district'>
     <div class='district__title'>
-      <h1 class='district__title--main'>{{t 'district.title.main'}}</h1>
-      <h2 class='district__title--sub'>Presented by {{districts.current.name}}</h2>
+      <h1 class='district__title--main'>{{ t 'district.title' }}</h1>
+      <h2 class='district__title--sub'>{{districts.current.name}}</h2>
     </div>
     <section class='district__content'>
       <div class='district__logo'>
@@ -12,16 +12,16 @@
       {{locale-picker}}
 
       <p class='district__welcome-msg'>
-        {{t 'district.welcome.heading'}}
-        SchoolBot is an application that tells you when your child’s school bus is nearby.
+        {{ t 'district.welcome.heading' }}
+        {{ t 'district.welcome.message' }}
       </p>
 
       <p>
-        In order to use SchoolBot, you must be the parent or guardian of at least one child enrolled in the {{districts.current.name}}. You also need to have a unique ID number issued by your school district.
+        {{ t 'district.welcome.use' cityName=districts.current.name}}
       </p>
       <div class='button-group button-group--district'>
-        {{#link-to 'sign-in' class='district__cta--sign-in'}}Sign In{{/link-to}}
-        {{#link-to 'register' class='district__cta--register'}}Register{{/link-to}}
+        {{#link-to 'sign-in' class='district__cta--sign-in'}} {{ t 'actions.signIn' }} {{/link-to}}
+        {{#link-to 'register' class='district__cta--register'}} {{ t 'actions.register' }} {{/link-to}}
       </div>
     </section>
   </div>

@@ -5,18 +5,18 @@ feature 'User updates profile' do
     sign_in_as create(:user)
 
     find('[aria-label="Settings"]').click
-    click_on 'Edit'
-    fill_in 'Name', with: 'Guy Test'
-    fill_in 'Email', with: 'guy@example.com'
-    click_on 'Change Password'
-    fill_in 'Password', with: 'secretpass'
-    fill_in 'Confirm Password', with: 'secretpass'
-    fill_in 'Street', with: '123 Main St'
-    fill_in 'City', with: 'Someplace'
-    fill_in 'State', with: 'MA'
-    click_on 'Save'
+    click_on t('actions.edit')
+    fill_in t('labels.name'), with: 'Guy Test'
+    fill_in t('labels.email'), with: 'guy@example.com'
+    click_on t('actions.changePassword')
+    fill_in t('labels.password'), with: 'secretpass'
+    fill_in t('labels.confirmPassword'), with: 'secretpass'
+    fill_in t('labels.street'), with: '123 Main St'
+    fill_in t('labels.city'), with: 'Someplace'
+    fill_in t('labels.state'), with: 'MA'
+    click_on t('actions.save')
 
-    expect(page).to_not have_button 'Save'
+    expect(page).to_not have_button t('actions.save')
     within('section', text: 'MY INFORMATION') do
       expect(page).to have_content 'Guy Test'
       expect(page).to have_content 'guy@example.com'
@@ -32,13 +32,13 @@ feature 'User updates profile' do
     sign_in_as create(:user, district: district)
 
     find('[aria-label="Settings"]').click
-    click_on 'Edit'
-    fill_in 'Email', with: 'guy@example.com'
-    click_on 'Change Password'
-    fill_in 'Password', with: 'secret'
-    fill_in 'Confirm Password', with: 'sorcret'
-    fill_in 'Street', with: ''
-    click_on 'Save'
+    click_on t('actions.edit')
+    fill_in t('labels.email'), with: 'guy@example.com'
+    click_on t('actions.changePassword')
+    fill_in t('labels.password'), with: 'secret'
+    fill_in t('labels.confirmPassword'), with: 'sorcret'
+    fill_in t('labels.street'), with: ''
+    click_on t('actions.save')
 
     expect(page).to have_content t('errors.email.taken')
     expect(page).to have_content t('errors.password.too_short')
