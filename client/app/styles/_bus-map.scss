@@ -13,27 +13,29 @@
 }
 
 .home-marker {
-  width: rem(30);
-  height: rem(30);
+  width: rem(40);
+  height: rem(40);
   background-image: image-path('home.svg');
   background-repeat: no-repeat;
 }
 
 .school-marker {
-  width: rem(30);
-  height: rem(30);
+  width: rem(40);
+  height: rem(40);
   background-image: image-path('school.svg');
   background-repeat: no-repeat;
 }
 
 .bus-marker {
-  margin-top: rem(-53);
+  margin-top: rem(-65);
   margin-left: rem(-17);
   padding: rem(5) rem(10);
   border-radius: rem(5);
-  background-color: $color-secondary-darken-4;
-  color: $base-font-invert-color;
-  font-weight: bold;
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: rem(11);
+  font-style: italic;
   text-align: center;
   white-space: nowrap;
   filter: drop-shadow(rem(2) rem(3) rem(3) rgba(0, 0, 0, .5));
@@ -48,9 +50,14 @@
     border: solid transparent;
     border-width: rem(6);
     border-top-width: rem(24);
-    border-top-color: $color-secondary-darken-4;
+    border-top-color: $base-background-color;
     content: ' ';
   }
+}
+
+.bus-marker--time-ago {
+  margin-top: rem(-81);
+  margin-left: rem(-17);
 }
 
 .leaflet-overlay-pane path {

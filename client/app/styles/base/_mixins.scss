@@ -291,3 +291,19 @@
     font-size: $about-content-font-size-large;
   }
 }
+
+// Map makers
+@mixin student-abbrev {
+  display: inline-block;
+  width: rem(40);
+  height: rem(40);
+  margin-right: $item-spacing * 2;
+  padding: rem(5);
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $base-font-invert-color;
+  font-family: $heading-font-family;
+  font-size: rem(18);
+  text-align: center;
+  line-height: rem(30);
+}

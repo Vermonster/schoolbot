@@ -83,8 +83,9 @@ $button-padding: rem(10) rem(25);
 $footer-height: $menu-height;
 
 // Abbreviations
-$abbreviation-odd-color: $color-primary;
-$abbreviation-even-color: $color-secondary-darken-3;
+$abbreviation-first-color: $color-secondary-darken-3;
+$abbreviation-second-color: $color-primary;
+$abbreviation-third-color: $color-secondary-darken-1;
 
 // Map
 $bus-path-color: $dark-gray;

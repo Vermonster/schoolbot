@@ -109,16 +109,24 @@ export default LeafletMap.extend({
       itemLayerClass: MarkerLayer.extend({
         icon: leafletComputed.optionProperty(),
         options: Ember.computed('content', function() {
-          let html = this.get('content.labels').join(' | ');
+          let html = '';
+          let className = '';
+
+          this.get('content.labels').forEach(label =>
+            html = html + '<span class="student__abbreviation--bus-marker">' +
+                   label + '</span>'
+          );
+
           if (Ember.isPresent(this.get('content.timeAgo'))) {
             html += '<br>' + this.get('content.timeAgo');
+            className = 'bus-marker--time-ago';
           }
 
           return {
             icon: L.divIcon({
               html: html,
               iconSize: null,
-              className: 'bus-marker'
+              className: 'bus-marker ' + className
             })
           };
         })
