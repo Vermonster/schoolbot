@@ -24,6 +24,9 @@ module.exports = function(defaults) {
 
     tests: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
     hinting: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
+
+    // https://github.com/martndemus/ember-cli-font-awesome/issues/33
+    emberCliFontAwesome: { includeFontAwesomeAssets: false }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -39,8 +42,14 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('bower_components/jsSHA/src/sha256.js');
-  app.import('bower_components/modernizr/modernizr.js');
+  app.import(app.bowerDirectory + '/jsSHA/src/sha256.js');
+  app.import(app.bowerDirectory + '/modernizr/modernizr.js');
+  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.eot', { destDir: 'assets/fonts' });
+  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.svg', { destDir: 'assets/fonts' });
+  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
+  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.woff', { destDir: 'assets/fonts' });
+  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
+  app.import(app.bowerDirectory + '/font-awesome/fonts/FontAwesome.otf', { destDir: 'assets/fonts' });
 
   return app.toTree();
 };
