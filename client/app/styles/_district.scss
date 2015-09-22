@@ -31,7 +31,7 @@
 .district__cta--sign-in,
 .district__cta--register {
   @extend %button;
-  @include button-with-yellow-stripes-bg;
+  @include button-with-yellow-stripes-bg-bottom;
   a {
     color: $base-font-invert-color;
   }

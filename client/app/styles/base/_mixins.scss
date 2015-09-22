@@ -167,9 +167,18 @@
   }
 }
 
-@mixin button-with-yellow-stripes-bg {
+@mixin button-with-yellow-stripes-bg-bottom {
   @include bg-gradient-with-lines(
     $color-secondary, $color-secondary, rgba($color-secondary-darken-2, .8), rem(2), rem(1));
+
+  &:hover {
+    background: $color-action-hover;
+  }
+}
+
+@mixin button-with-yellow-stripes-bg-top {
+  @include bg-gradient-with-lines(
+    $color-secondary, rgba($color-secondary-darken-2, .8), $color-secondary, rem(2), rem(1));
 
   &:hover {
     background: $color-action-hover;

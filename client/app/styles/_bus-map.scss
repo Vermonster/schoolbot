@@ -65,3 +65,27 @@
   stroke-width: rem(4);
   stroke-dasharray: rem(9);
 }
+
+.leaflet-touch .leaflet-bar {
+  border: 0;
+}
+
+.leaflet-control a {
+
+  &.leaflet-control-zoom-in,
+  &.leaflet-control-zoom-out {
+    color: $base-font-invert-color;
+
+    &:hover {
+      color: $base-font-invert-color;
+    }
+  }
+
+  &.leaflet-control-zoom-in {
+    @include button-with-yellow-stripes-bg-top;
+  }
+
+  &.leaflet-control-zoom-out {
+    @include button-with-yellow-stripes-bg-bottom;
+  }
+}

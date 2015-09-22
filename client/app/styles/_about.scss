@@ -166,8 +166,9 @@ input[type='text'] {
 }
 
 .about__cta--learn,
-.about__cta--district {
-  @include button-with-yellow-stripes-bg;
+.about__cta--district,
+.about__cta--parent {
+  @include button-with-yellow-stripes-bg-bottom;
 
   @include media($medium-screen) {
     float: left;
