@@ -54,14 +54,23 @@ button {
 }
 
 .btn--settings {
-  padding: rem(7) rem(15);
+  background-color: transparent;
+  padding-top: rem(4);
 
   &:hover {
     background-color: transparent;
 
-    [class*='icon--'],
-    [class*='icon--']:before {
-      background-color: $color-menu-hover;
+    .fa-user,
+    .btn--settings__text {
+      color: $icon-color-hover;
     }
   }
+}
+
+.fa-user {
+  font-size: rem(30);
+}
+
+.btn--settings__text {
+  display: block;
 }

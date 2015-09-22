@@ -74,7 +74,8 @@ $modal-section-padding: $form-section-padding;
 
 // Icons
 $icon-circle-radius: rem(10);
-$icon-color: lighten($color-secondary, 30%);
+$icon-color: $base-background-color;
+$icon-color-hover: lighten($color-secondary, 30%);
 
 // Buttons
 $button-padding: rem(10) rem(25);
