@@ -47,7 +47,10 @@
     {{/if}}
   </div>
 {{else}}
-  <a class='form__link' href='#' {{action 'togglePasswordFields'}}>Change password...</a>
+  <a href='#' class='settings__change-password-cta' {{action 'togglePasswordFields'}}>
+    {{fa-icon 'pencil'}}
+    Change Password
+  </a>
 {{/if}}
 
 <label>Address</label>

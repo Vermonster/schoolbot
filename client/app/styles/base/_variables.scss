@@ -92,7 +92,8 @@ $abbreviation-third-color: $color-secondary-darken-1;
 $bus-path-color: $dark-gray;
 
 // Transition
-$base-transition-speed: .15s;
+$base-transition-speed: .1s;
+$base-transition-ease: ease;
 
 // Media Queries
 $background-landscape: new-breakpoint(min-width $background-landscape-width);

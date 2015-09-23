@@ -1,7 +1,6 @@
 .settings--add-student-cta {
   display: block;
   margin-bottom: $section-spacing;
-  padding-top: $section-spacing;
   padding-bottom: $section-spacing;
   cursor: pointer;
   vertical-align: middle;
@@ -12,6 +11,15 @@
       background-color: $color-action-hover;
     }
   }
+}
+
+.settings__edit-profile-cta {
+  float: right;
+}
+
+.settings__change-password-cta {
+  display: block;
+  margin-bottom: rem(10);
 }
 
 .add-student-cta__icon {

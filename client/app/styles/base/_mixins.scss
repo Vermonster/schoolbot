@@ -222,7 +222,6 @@
 }
 
 @mixin form-section-heading {
-  margin-bottom: rem(-10);
   font-family: $heading-font-family;
   font-size: rem(16);
   text-transform: uppercase;
@@ -315,4 +314,9 @@
   font-size: rem(18);
   text-align: center;
   line-height: rem(30);
+}
+
+// Transition
+@mixin transition($property) {
+  transition: $property $base-transition-speed $base-transition-ease;
 }

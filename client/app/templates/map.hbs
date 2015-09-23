@@ -7,22 +7,29 @@
         <h2 class='modal__title'>Settings</h2>
         <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
         <div class='modal__body'>
-          <section class='modal__section form__section'>
+          <section class='form__section'>
             <h3 class='form__section-heading'>My Information</h3>
             {{#if showingProfileForm}}
               {{profile-fields model=currentUser}}
-              <button {{action 'updateProfile'}}>Save</button>
-              <button {{action 'toggleEditProfile'}}>Cancel</button>
+              <div class='button-group button-group--edit-profile'>
+                <button class='form__cta--save' {{action 'updateProfile'}}>Save</button>
+                <button class='form__cta--cancel' {{action 'toggleEditProfile'}}>Cancel</button>
+              </div>
             {{else}}
-              <a href='#' {{action 'toggleEditProfile'}}>Edit</a>
-              <p>{{currentUser.name}}</p>
-              <p>{{currentUser.email}}</p>
-              <p>{{currentUser.street}}</p>
-              <p>{{currentUser.city}}, {{currentUser.state}}, {{currentUser.zipCode}}</p>
+              <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
+                {{fa-icon 'pencil'}}
+                Edit
+              </a>
+              <div class='settings__my-info-content'>
+                <div>{{currentUser.name}}</div>
+                <div>{{currentUser.email}}</div>
+                <div>{{currentUser.street}}</div>
+                <div>{{currentUser.city}} {{currentUser.state}} {{currentUser.zipCode}}</div>
+              </div>
             {{/if}}
           </section>
 
-          <section class='modal__section form__section'>
+          <section class='form__section'>
             <h3 class='form__section-heading'>My Students</h3>
             {{#unless showingStudentForm}}
               <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>

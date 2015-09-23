@@ -5,6 +5,7 @@
 .sign-in__msg--error {
   @include error-msg;
   @include error-field;
+  padding: $form-section-padding;
 }
 
 .sign-in__submit {

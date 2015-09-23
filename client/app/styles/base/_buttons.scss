@@ -51,26 +51,32 @@ button {
     padding-top: rem(10);
     padding-bottom: 0;
   }
+
+  &--edit-profile {
+    padding-bottom: 0;
+  }
 }
 
 .btn--settings {
-  background-color: transparent;
   padding-top: rem(4);
+  background-color: transparent;
 
   &:hover {
     background-color: transparent;
 
-    .fa-user,
+    i,
     .btn--settings__text {
       color: $icon-color-hover;
     }
   }
-}
 
-.fa-user {
-  font-size: rem(30);
+  i {
+    @include transition(color);
+    font-size: rem(30);
+  }
 }
 
 .btn--settings__text {
+  @include transition(color);
   display: block;
 }

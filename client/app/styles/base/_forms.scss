@@ -3,6 +3,10 @@ form {
   padding-top: rem(10);
   color: $base-font-color;
   font-size: rem(12);
+
+  &.form--add-student {
+    padding-top: 0;
+  }
 }
 
 .form--register {
@@ -148,8 +152,8 @@ select {
   @include form-section-heading;
   width: 100%;
   padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
   border-top: 1px $base-border-color solid;
+  font-weight: normal;
 }
 
 .form__fieldset--add-student {

@@ -8,7 +8,7 @@ feature 'User updates profile' do
     click_on 'Edit'
     fill_in 'Name', with: 'Guy Test'
     fill_in 'Email', with: 'guy@example.com'
-    click_on 'Change password'
+    click_on 'Change Password'
     fill_in 'Password', with: 'secretpass'
     fill_in 'Confirm Password', with: 'secretpass'
     fill_in 'Street', with: '123 Main St'
@@ -34,7 +34,7 @@ feature 'User updates profile' do
     find('[aria-label="Settings"]').click
     click_on 'Edit'
     fill_in 'Email', with: 'guy@example.com'
-    click_on 'Change password'
+    click_on 'Change Password'
     fill_in 'Password', with: 'secret'
     fill_in 'Confirm Password', with: 'sorcret'
     fill_in 'Street', with: ''
