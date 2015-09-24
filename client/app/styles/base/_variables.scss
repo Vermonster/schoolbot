@@ -50,7 +50,6 @@ $base-font-color: $dark-gray;
 $base-font-invert-color: #fff;
 $color-action: $color-secondary;
 $color-action-hover: darken($color-action, 10%);
-$color-menu-hover: $base-font-invert-color;
 $color-error: $color-secondary-darken-4;
 
 // Border
@@ -74,7 +73,7 @@ $modal-section-padding: $form-section-padding;
 
 // Icons
 $icon-circle-radius: rem(10);
-$icon-color: $base-background-color;
+$icon-color: $base-font-invert-color;
 $icon-color-hover: lighten($color-secondary, 30%);
 
 // Buttons

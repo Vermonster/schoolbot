@@ -1,5 +1,10 @@
 <form class='form--register' {{action 'register' on='submit'}}>
-  <h1 class='form__title'>Registration</h1>
+  <div class='form__title'>
+    {{#link-to 'index' class='form__title__back-cta' title='Back to district landing page'}}
+      {{fa-icon 'chevron-left'}}
+    {{/link-to}}
+    <h1 class='form__title--main'>Registration</h1>
+  </div>
   <fieldset class='form__section'>
     <legend class='form__section-heading'>My Information</legend>
 

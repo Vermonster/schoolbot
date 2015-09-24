@@ -209,6 +209,14 @@
   font-size: $title-font-size;
   text-align: center;
   text-transform: uppercase;
+
+  a {
+    color: $icon-color;
+
+    &:hover {
+      color: $icon-color-hover;
+    }
+  }
 }
 
 @mixin msg-box-main-title {

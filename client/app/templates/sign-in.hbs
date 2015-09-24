@@ -1,6 +1,9 @@
 {{#page-layout}}
   <form class='form--sign-in' {{action 'signIn' on='submit'}}>
     <div class='form__title'>
+      {{#link-to 'index' class='form__title__back-cta' title='Back to district landing page'}}
+        {{fa-icon 'chevron-left'}}
+      {{/link-to}}
       <h1 class='form__title--main'>Welcome Back!</h1>
       <h2 class='form__title--sub'>Sign in to Schoolbot</h2>
     </div>
