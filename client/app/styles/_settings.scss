@@ -22,6 +22,21 @@
   margin-bottom: rem(10);
 }
 
+.settings__locale-picker {
+  label {
+    @include form-section-heading;
+    margin-bottom: 0;
+    padding-top: $section-spacing;
+    border-top: 1px $base-border-color solid;
+    text-align: left;
+  }
+
+  select {
+    display: block;
+    margin-top: rem(12);
+  }
+}
+
 .add-student-cta__icon {
   @include btn--plus;
 }

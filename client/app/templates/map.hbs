@@ -56,6 +56,11 @@
               {{/each}}
             </ul>
           </section>
+
+          <section class='form__section settings__locale-picker'>
+            {{locale-picker}}
+          </section>
+
           <button class='modal__close' {{action 'toggleSettings'}}>Close</button>
         </div>
         <button class='modal__sign-out' {{action 'signOut'}}>Sign Out</button>
