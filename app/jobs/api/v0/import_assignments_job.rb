@@ -3,10 +3,10 @@ module API
     class ImportAssignmentsJob < ActiveJob::Base
       queue_as :import
 
-      def perform(district:, assignments:)
+      def perform(district:, data:)
         @district = district
-        @assignments = assignments
-        return if assignments.empty?
+        @assignments = JSON.parse(data, symbolize_names: true)[:assignments]
+        return if @assignments.empty?
 
         ActiveRecord::Base.transaction do
           update_student_assignments!

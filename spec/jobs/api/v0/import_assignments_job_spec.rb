@@ -1,15 +1,21 @@
 require 'rails_helper'
 
 describe API::V0::ImportAssignmentsJob do
+  def perform(district, assignments)
+    described_class.perform_later(
+      district: district,
+      data: { assignments: assignments }.to_json
+    )
+  end
+
   it 'creates student and bus records for the specified district' do
     district = create(:district)
-    assignments = [
+
+    perform(district, [
       { sha: '123', bus_identifier: 'ABC' },
       { sha: '456', bus_identifier: 'DEF' },
       { sha: '789', bus_identifier: 'ABC' }
-    ]
-
-    described_class.perform_later(district: district, assignments: assignments)
+    ])
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 3
@@ -25,11 +31,8 @@ describe API::V0::ImportAssignmentsJob do
       digest: '123',
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
-    assignments = [
-      { sha: '123', bus_identifier: 'DEF' }
-    ]
 
-    described_class.perform_later(district: district, assignments: assignments)
+    perform(district, [{ sha: '123', bus_identifier: 'DEF' }])
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 1
@@ -47,12 +50,11 @@ describe API::V0::ImportAssignmentsJob do
       digest: '123',
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
-    assignments = [
+
+    perform(district, [
       { sha: '123', bus_identifier: '' },
       { sha: '456', bus_identifier: nil }
-    ]
-
-    described_class.perform_later(district: district, assignments: assignments)
+    ])
 
     expect(Bus.count).to be 1
     expect(Student.count).to be 2
@@ -75,11 +77,8 @@ describe API::V0::ImportAssignmentsJob do
       digest: '456',
       current_bus: create(:bus, district: district, identifier: 'DEF')
     )
-    assignments = [
-      { sha: '123', bus_identifier: 'ABC' }
-    ]
 
-    described_class.perform_later(district: district, assignments: assignments)
+    perform(district, [{ sha: '123', bus_identifier: 'ABC' }])
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 2
@@ -97,13 +96,12 @@ describe API::V0::ImportAssignmentsJob do
       digest: '123',
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
-    assignments = [
+
+    perform(district, [
       { sha: '', bus_identifier: 'ABC' },
       { sha: nil, bus_identifier: 'ABC' },
       { sha: '123', bus_identifier: 'ABC' }
-    ]
-
-    described_class.perform_later(district: district, assignments: assignments)
+    ])
 
     expect(Student.count).to be 1
     expect(BusAssignment.count).to be 1
@@ -113,7 +111,7 @@ describe API::V0::ImportAssignmentsJob do
   it 'does not unassign students if the input is empty' do
     student = create(:student, digest: '123', current_bus: create(:bus))
 
-    described_class.perform_later(district: student.district, assignments: [])
+    perform(student.district, [])
 
     expect(student.bus_assignments.count).to be 1
     expect(student.current_bus_assignment.bus).to_not be nil
@@ -126,12 +124,11 @@ describe API::V0::ImportAssignmentsJob do
       digest: '123',
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
-    assignments = [
+
+    perform(district, [
       { sha: '123', bus_identifier: 'DEF' },
       { sha: '123', bus_identifier: 'XYZ' }
-    ]
-
-    described_class.perform_later(district: district, assignments: assignments)
+    ])
 
     expect(Bus.count).to be 3
     expect(Student.count).to be 1

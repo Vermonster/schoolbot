@@ -8,22 +8,39 @@ module API
       end
 
       def create
+        validate_assignments_params!
         ImportAssignmentsJob.perform_later(
           district: authenticated_district,
-          assignments: assignments_params
+          data: request.raw_post
         )
         head :accepted
       end
 
       private
 
-      def assignments_params
-        params.require(:assignments)
-        permitted_params = params.permit(assignments: [:sha, :bus_identifier])
-        if params[:assignments] != permitted_params[:assignments]
-          fail ActionController::UnpermittedParameters, []
+      ASSIGNMENT_KEYS = %w(sha bus_identifier)
+
+      def validate_assignments_params!
+        unless params[:assignments].is_a?(Array)
+          fail ActionController::ParameterMissing, :assignments
         end
-        permitted_params[:assignments]
+
+        params[:assignments].each do |assignment_params|
+          validate_assignment_params!(assignment_params)
+        end
+      end
+
+      def validate_assignment_params!(assignment_params)
+        unless assignment_params.keys == ASSIGNMENT_KEYS
+          fail ActionController::UnpermittedParameters, assignment_params.keys
+        end
+
+        ASSIGNMENT_KEYS.each do |key|
+          value = assignment_params[key]
+          unless value.nil? || value.is_a?(String)
+            fail ActionController::UnpermittedParameters, [value.inspect]
+          end
+        end
       end
     end
   end
