@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
-  localStorage: Ember.inject.service(),
+  sessionStorage: Ember.inject.service(),
 
   classNames: ['locale-picker'],
 
@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     setLocale(locale) {
       moment.locale(locale);
       this.get('i18n').set('locale', locale);
-      this.get('localStorage').set('locale', locale);
+      this.get('sessionStorage').set('locale', locale);
     }
   }
 });

@@ -9,6 +9,7 @@ module.exports = function(environment) {
     i18n: { defaultLocale: 'en' },
     moment: { includeLocales: true },
     'simple-auth': {
+      store: 'store:simple-auth-session',
       authorizer: 'simple-auth-authorizer:devise',
       authenticationRoute: 'sign-in'
     },
