@@ -38,16 +38,7 @@ class Zonar
 
   def bus_events_since(start_time)
     clamped_start_time = [start_time, MAX_REQUEST_WINDOW.ago].compact.max
-
-    csv_events = begin
-      breaker.run do
-        csv_events_between(clamped_start_time, Time.zone.now)
-      end
-    rescue CB2::BreakerOpen
-      raise CB2::BreakerOpen, "Zonar customer: #{@credentials[:customer]}"
-    end
-
-    csv_to_attributes(csv_events)
+    bus_events_between(clamped_start_time, Time.zone.now)
   end
 
   private
@@ -60,6 +51,18 @@ class Zonar
       reenable_after: CIRCUIT_RETRY_INTERVAL.to_i,
       redis: $redis
     )
+  end
+
+  def bus_events_between(start_time, end_time)
+    events_csv = begin
+      breaker.run { csv_events_between(start_time, end_time) }
+    rescue CB2::BreakerOpen
+      raise CB2::BreakerOpen, "Zonar breaker open: #{@credentials[:customer]}"
+    rescue => error
+      Rails.logger.warn "Zonar error for #{@credentials[:customer]}: #{error}"
+      ''
+    end
+    csv_to_bus_events(events_csv)
   end
 
   # https://docs.zonarsystems.net/manuals/OMI/en/exportpath.html
@@ -83,7 +86,7 @@ class Zonar
     }
   end
 
-  def csv_to_attributes(csv_string)
+  def csv_to_bus_events(csv_string)
     csv_rows = CSV.parse(csv_string, headers: true)
 
     if csv_rows.any?
