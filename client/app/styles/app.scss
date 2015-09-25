@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
-// https://github.com/martndemus/ember-cli-font-awesome/issues/33
-$fa-font-path: 'fonts';
+@import 'bower_components/font-awesome/scss/variables';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/#{$fa-version}/fonts';
 
 @import 'bower_components/normalize.css/normalize';
 @import 'bower_components/font-awesome/scss/font-awesome';

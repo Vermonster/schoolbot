@@ -14,7 +14,7 @@ module.exports = function(defaults) {
     fingerprint: {
       enabled: isProductionLikeBuild,
       prepend: process.env.ASSET_URL_BASE,
-      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg', 'eot', 'ttf', 'woff', 'woff2']
+      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg', 'eot', 'otf', 'ttf', 'woff', 'woff2']
     },
     sourcemaps: {
       enabled: !isProductionLikeBuild,
@@ -44,12 +44,6 @@ module.exports = function(defaults) {
 
   app.import(app.bowerDirectory + '/jsSHA/src/sha256.js');
   app.import(app.bowerDirectory + '/modernizr/modernizr.js');
-  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.eot', { destDir: 'assets/fonts' });
-  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.svg', { destDir: 'assets/fonts' });
-  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
-  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.woff', { destDir: 'assets/fonts' });
-  app.import(app.bowerDirectory + '/font-awesome/fonts/fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
-  app.import(app.bowerDirectory + '/font-awesome/fonts/FontAwesome.otf', { destDir: 'assets/fonts' });
 
   return app.toTree();
 };
