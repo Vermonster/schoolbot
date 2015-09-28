@@ -63,7 +63,10 @@ $menu-height: rem(50);
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
 $msg-box-radius: rem(10);
+$form-bottom-spacing: rem(25);
 $form-section-padding: rem(10) rem(15);
+$form-side-padding-large-screen: rem(50);
+$form-width-large-screen: rem(420);
 
 // Modals
 $modal-font-color: $base-font-color;

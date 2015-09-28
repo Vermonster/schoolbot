@@ -20,9 +20,10 @@
 
 .modal__inner {
   position: relative;
-  max-width: rem(270);
   margin: auto;
   margin-bottom: $modal-item-padding;
+  width: 95%;
+  max-width: $form-width-large-screen;
   border-radius: $msg-box-radius;
   background-color: $base-background-color;
   color: $modal-font-color;

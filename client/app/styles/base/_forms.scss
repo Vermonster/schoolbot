@@ -11,6 +11,12 @@ form {
 
 .form--register {
   @include msg-box-wrapper;
+  max-width: $form-width-large-screen;
+  margin: auto;
+
+  @include media($small-screen) {
+    width: 70%;
+  }
 }
 
 .form--add-student {
@@ -157,6 +163,14 @@ select {
   }
 }
 
+.form__section--register {
+
+  @include media($medium-screen) {
+    padding-right: $form-side-padding-large-screen;
+    padding-left: $form-side-padding-large-screen;
+  }
+}
+
 .form__section-heading {
   @include clearfix;
   @include form-section-heading;
@@ -176,13 +190,13 @@ select {
 
 }
 
-.form__section-heading--secondary {
-  @include form-section-heading;
-}
-
 .form__section-heading--encrypted {
   padding-bottom: $section-spacing;
   line-height: 1.5;
+}
+
+.form__label--address {
+  @include form-section-heading;
 }
 
 .form__note {
@@ -193,6 +207,7 @@ select {
 
 .form__select--school {
   width: 100%;
+  height: rem(28);
 }
 
 .form__section--bottom {
@@ -200,7 +215,7 @@ select {
 }
 
 .form__section--bottom--register {
-  padding-bottom: rem(30);
+  padding-bottom: $form-bottom-spacing;
 }
 
 .form__section--bottom__note {

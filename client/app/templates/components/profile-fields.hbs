@@ -53,10 +53,10 @@
   </a>
 {{/if}}
 
-<label>{{ t 'labels.address' }}</label>
+<label class='form__label--address'>{{ t 'labels.address' }}</label>
 
 <div class='form__item {{if model.errors.street 'form__item--error'}}'>
-  <label class='form__label--street'>
+  <label>
     {{ t 'labels.street' }}
     {{input value=model.street}}
   </label>
