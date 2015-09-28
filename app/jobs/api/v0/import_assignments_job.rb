@@ -1,7 +1,7 @@
 module API
   module V0
     class ImportAssignmentsJob < ActiveJob::Base
-      queue_as :import
+      queue_as :imports
 
       def perform(district:, data:)
         @district = district
