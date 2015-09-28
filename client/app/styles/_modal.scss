@@ -8,8 +8,12 @@
   overflow-y: scroll;
 
   @include media($large-screen) {
-    padding-top: rem(160);
-    padding-bottom: rem(160);
+    @include v-center-content-block;
+
+    .no-flexbox {
+      padding-top: rem(160);
+      padding-bottom: rem(160);
+    }
   }
 }
 
@@ -20,10 +24,9 @@
 
 .modal__inner {
   position: relative;
-  margin: auto;
-  margin-bottom: $modal-item-padding;
   width: 95%;
   max-width: $form-width-large-screen;
+  margin: 0 auto $modal-item-padding;
   border-radius: $msg-box-radius;
   background-color: $base-background-color;
   color: $modal-font-color;
@@ -51,7 +54,7 @@
 }
 
 .modal__close {
-  margin-bottom: $modal-padding;
+  margin-bottom: $form-bottom-spacing;
   padding: $button-padding;
   float: right;
 }
