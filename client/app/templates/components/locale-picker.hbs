@@ -1,5 +1,5 @@
 <label class='locale-picker__label'>
-  Language
+  {{t 'labels.locale'}}
   {{#x-select class='locale-picker__select' action='setLocale' value=i18n.locale}}
     {{#each locales as |locale|}}
       {{#x-option value=locale.id}}{{locale.label}}{{/x-option}}

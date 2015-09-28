@@ -19,11 +19,11 @@
     {{student-fields errors=registration.errors schools=schools update='updateStudent'}}
   </fieldset>
 
-  <section class='form__section form__section--bottom form__section--bottom--register'>
+  <section class='form__section form__section--bottom'>
     <div class='form__item {{if registration.errors.termsAccepted 'form_item--error'}}'>
       <label class='form__agreement'>
         {{input type='checkbox' checked=registration.termsAccepted}}
-        I agree to the <a class='form__link' href='#'>terms & conditions</a>
+        {{t 'labels.termsAccepted'}}
       </label>
       {{#if registration.errors.termsAccepted}}
         <span class='form__error--field'>
@@ -33,6 +33,5 @@
 
       <button class='form__submit-cta' type="submit">{{ t 'createAccount.cta' }}</button>
     </div>
-    {{#link-to 'index' class='form__link--cancel'}} {{ t 'actions.cancel' }} {{/link-to}}
   </section>
 </form>

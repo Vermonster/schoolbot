@@ -12,12 +12,11 @@
       {{locale-picker}}
 
       <p class='district__welcome-msg'>
-        {{ t 'district.welcome.heading' }}
         {{ t 'district.welcome.message' }}
       </p>
 
       <p>
-        {{ t 'district.welcome.use' cityName=districts.current.name}}
+        {{ t 'district.welcome.use' districtName=districts.current.name }}
       </p>
       <div class='button-group button-group--district'>
         {{#link-to 'sign-in' class='district__cta--sign-in'}} {{ t 'actions.signIn' }} {{/link-to}}

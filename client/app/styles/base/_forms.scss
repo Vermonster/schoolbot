@@ -214,10 +214,6 @@ select {
   text-align: center;
 }
 
-.form__section--bottom--register {
-  padding-bottom: $form-bottom-spacing;
-}
-
 .form__section--bottom__note {
   text-align: center;
 
@@ -228,12 +224,6 @@ select {
 
 .form__link {
   @include form-link;
-}
-
-.form__link--cancel {
-  @include form-link;
-  display: block;
-  font-size: rem(12);
 }
 
 .form__error--field {

@@ -6,7 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    i18n: { defaultLocale: 'en' },
+    i18n: {
+      defaultLocale: 'en',
+      allowLocaleOverride: true
+    },
     moment: { includeLocales: true },
     'simple-auth': {
       store: 'store:simple-auth-session',

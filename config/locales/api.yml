@@ -1,0 +1,26 @@
+api:
+  errors:
+    # "Translate" ActiveModel errors to the keys themselves, allowing the
+    # frontend to do the actual translation based on the user's current locale
+    messages:
+      accepted: accepted
+      blank: blank
+      confirmation: confirmation
+      equal_to: equal_to
+      even: even
+      exclusion: exclusion
+      greater_than: greater_than
+      greater_than_or_equal_to: greater_than_or_equal_to
+      inclusion: inclusion
+      invalid: invalid
+      less_than: less_than
+      less_than_or_equal_to: less_than_or_equal_to
+      not_a_number: not_a_number
+      not_an_integer: not_an_integer
+      odd: odd
+      other_than: other_than
+      present: present
+      taken: taken
+      too_long: too_long
+      too_short: too_short
+      wrong_length: wrong_length

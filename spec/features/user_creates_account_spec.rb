@@ -28,7 +28,7 @@ feature 'User creates account' do
     fill_in t('labels.identifier'), with: 'ABC123'
     fill_in t('labels.birthdate'), with: '3/21/2002'
     select 'Springfield High', from: t('labels.school')
-    check t('labels.termsAndConditions')
+    check t('labels.termsAccepted')
     click_on t('createAccount.cta')
 
     expect(page).to have_css 'button.btn--settings', wait: 5

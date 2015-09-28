@@ -1,0 +1,94 @@
+en:
+  localeName: English
+  titles:
+    application: SchoolBot
+  errors:
+    accepted: You must accept the terms to register.
+    blank: This field is required.
+    address:
+      invalid: |
+        We couldn't locate this address.
+        Please check that you've typed it in correctly.
+    birthdate:
+      invalid: Please enter a valid date in MM/DD/YYYY format.
+    digest:
+      blank: |
+        We couldn't find a matching student. Ensure you've entered the
+        information exactly as it appears in your school district's records.
+    email:
+      invalid: Please enter a valid email address.
+      taken: There is already an account associated with this address.
+    nickname:
+      blank: Please enter your student's first name.
+      taken: You've already added a student with that name.
+    password:
+      too_short: This must be at least 8 characters.
+    passwordConfirmation:
+      confirmation: Entered passwords do not match.
+    school:
+      blank: Please select a school.
+    session:
+      invalid: Invalid email address or password.
+  labels:
+    locale: Language
+    name: Full Name
+    email: Email
+    password: Password
+    confirmPassword: Confirm Password
+    address: Address
+    street: Street
+    city: City
+    state: State
+    zip: ZIP Code
+    nickname: First Name
+    lastName: Last Name
+    identifier: Student ID Number
+    birthdate: Birthdate (MM/DD/YYYY)
+    school: School
+    termsAccepted: I agree to the Terms of Service
+  actions:
+    signIn: Sign In
+    register: Register
+    save: Save
+    cancel: Cancel
+    edit: Edit
+    close: Close
+    signOut: Sign Out
+    add: Add student
+    changePassword: Change Password
+  district:
+    title: Welcome to SchoolBot
+    welcome:
+      message: |
+        SchoolBot is an application that tells you when your child's school bus
+        is nearby.
+      use: |
+        In order to use SchoolBot, you must be the parent or guardian of at
+        least one child enrolled in {{districtName}}. You will need the child's
+        unique ID number issued by your school district.
+  createAccount:
+    title: Registration
+    heading: My Information
+    studentInformation:
+      heading: Student Information
+      copy: |
+        To register for SchoolBot, you must be the legal guardian of a student
+        in this school district.
+    cta: Create account and sign in
+  addStudent:
+    encrypted: |
+      This information is encrypted and used to look up your student with the
+      school district. SchoolBot does not store it.
+    identifier:
+      note: You should have received this number from your school district.
+  map:
+    settings: Settings
+    information: My Information
+    students: My Students
+  signIn:
+    title:
+      main: Welcome Back!
+      sub: Sign in to SchoolBot
+    remember: Remember me on this device
+    forgot: Forgot your username or password?
+    needToRegister: Need to register an account?

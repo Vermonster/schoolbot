@@ -17,6 +17,7 @@ end
 
 module Features
   # Extend this module in spec/support/features/*.rb
+  include DefaultLocale
   include Sessions
   include Subdomains
 end
