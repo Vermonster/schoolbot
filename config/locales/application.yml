@@ -104,7 +104,7 @@ en:
     cta: Create account and login
   addStudent:
     nickname:
-      note: Your student’s position will be marked on the map with their nickname.
+      note: Your student’s position will be marked on the map with their first name.
     encrypted: |
       This information is encrypted and used to look up your student with the school district.
       SchoolBot does not store it.
