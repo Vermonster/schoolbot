@@ -19,6 +19,10 @@ form {
   }
 }
 
+.form--sign-in {
+  @include msg-box-wrapper;
+}
+
 .form--add-student {
   border-bottom: 1px solid $base-border-color;
 }
@@ -199,6 +203,16 @@ select {
   @include form-section-heading;
 }
 
+.form__label--agreement {
+  @include media($medium-screen) {
+    padding: $form-section-padding;
+  }
+}
+
+.form__input--agreement {
+  margin-left: rem(-20);
+}
+
 .form__note {
   font-size: rem(10);
   font-style: italic;
@@ -222,8 +236,10 @@ select {
   }
 }
 
-.form__link {
+.form__link--cancel {
   @include form-link;
+  display: block;
+  font-size: rem(12);
 }
 
 .form__error--field {
@@ -237,6 +253,7 @@ select {
 }
 
 .form__submit-cta {
+  margin-top: $item-spacing;
   margin-bottom: $item-spacing;
 }
 

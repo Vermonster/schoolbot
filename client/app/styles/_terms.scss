@@ -1,0 +1,94 @@
+.terms {
+  width: 95%;
+  margin: auto auto rem(115);
+  padding-top: rem(40);
+  padding-right: rem(10);
+  padding-bottom: rem(40);
+  padding-left: rem(10);
+  border-radius: $msg-box-radius;
+  background-color: rgba($base-background-color, .8);
+  color: $base-font-color;
+  opacity: .8;
+
+  @include media($medium-screen) {
+    width: 100%;
+    padding-right: rem(20);
+    padding-left: rem(20);
+  }
+
+  @include media($large-screen) {
+    padding-right: $form-side-padding-large-screen;
+    padding-left: $form-side-padding-large-screen;
+  }
+
+  h1 {
+    font-size: $terms-title-font-size;
+  }
+
+  h2 {
+    font-size: $terms-title-font-size - rem(2);
+  }
+
+  h3 {
+    font-size: $terms-title-font-size - rem(4);
+  }
+}
+
+.terms__title {
+  text-transform: uppercase;
+}
+
+.terms__content {
+  margin-bottom: rem(30);
+  font-size: $terms-content-font-size;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.terms-links {
+  position: absolute;
+  right: rem(20);
+  bottom: rem(5);
+  color: $base-font-invert-color;
+  font-size: rem(11);
+
+  .terms-link {
+    @include page-view-link-bottom;
+  }
+
+  .form__label--agreement & {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    color: $base-font-color;
+    font-size: inherit;
+
+    .terms-link {
+      @include form-link;
+      display: inline-block;
+      font-size: rem(12);
+    }
+  }
+}
+
+.terms-links__wrapper--map {
+  .terms-link {
+    &:hover,
+    &:focus {
+      color: $icon-color-hover;
+    }
+  }
+}
+
+.terms-links__wrapper--main-landing {
+  .terms-links {
+    bottom: rem(12);
+  }
+}
+
+.terms-link--register {
+  @include form-link;
+  display: inline-block;
+}

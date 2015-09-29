@@ -1,7 +1,3 @@
-.form--sign-in {
-  @include msg-box-wrapper;
-}
-
 .sign-in__msg--error {
   @include error-msg;
   @include error-field;

@@ -80,7 +80,7 @@
 }
 
 .about__content__link {
-  @extend %page-view-link;
+  @include page-view-link;
 }
 
 .about__content-wrapper--intro {
@@ -182,6 +182,7 @@ input[type='text'] {
 
 .about__footer {
   @include black-gradient-with-lines;
+  position: relative;
   height: $footer-height;
 
   .flexbox & {
@@ -207,7 +208,7 @@ input[type='text'] {
   display: block;
   width: rem(80);
   height: rem(15);
-  margin-top: rem(-11);
+  margin-top: rem(-8);
 }
 
 .about__form__feedback {

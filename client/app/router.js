@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('map');
   this.route('register');
   this.route('sign-in');
+  this.route('privacy');
+  this.route('terms');
 });
 
 export default Router;

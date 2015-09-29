@@ -43,7 +43,7 @@ en:
     identifier: Student ID Number
     birthdate: Birthdate (MM/DD/YYYY)
     school: School
-    termsAccepted: I agree to the Terms of Service
+    termsAccepted: 'I have read and agree to the following:'
   actions:
     signIn: Sign In
     register: Register
@@ -90,3 +90,6 @@ en:
     remember: Remember me on this device
     forgot: Forgot your username or password?
     needToRegister: Need to register an account?
+  links:
+    terms: Terms of Service
+    privacy: Privacy Policy

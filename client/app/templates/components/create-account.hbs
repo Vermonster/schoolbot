@@ -21,16 +21,16 @@
 
   <section class='form__section form__section--bottom'>
     <div class='form__item {{if registration.errors.termsAccepted 'form_item--error'}}'>
-      <label class='form__agreement'>
-        {{input type='checkbox' checked=registration.termsAccepted}}
+      <label class='form__label--agreement'>
+        {{input class='form__input--agreement' type='checkbox' checked=registration.termsAccepted}}
         {{t 'labels.termsAccepted'}}
+        {{terms-privacy-links}}
       </label>
       {{#if registration.errors.termsAccepted}}
         <span class='form__error--field'>
           {{t-error registration.errors.termsAccepted.firstObject}}
         </span>
       {{/if}}
-
       <button class='form__submit-cta' type="submit">{{ t 'createAccount.cta' }}</button>
     </div>
   </section>
