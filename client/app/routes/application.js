@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
-import { translationMacro as t } from 'ember-i18n';
 import moment from 'moment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
@@ -8,8 +7,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   i18n: Ember.inject.service(),
   sessionStorage: Ember.inject.service(),
   translations: Ember.inject.service(),
-
-  title: t('titles.application'),
 
   beforeModel() {
     this._super(...arguments);

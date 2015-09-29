@@ -1,7 +1,5 @@
 en:
   localeName: English
-  titles:
-    application: SchoolBot
   errors:
     accepted: You must accept the terms to register.
     blank: This field is required.
