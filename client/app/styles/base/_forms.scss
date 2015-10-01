@@ -133,6 +133,10 @@ select {
 .form__cta--save,
 .form__cta--cancel {
   padding: $button-padding;
+
+  .button-group & {
+    margin-bottom: $item-spacing;
+  }
 }
 
 .form__title {

@@ -215,8 +215,7 @@
     $color-secondary, rgba($color-secondary-darken-2, .8), $color-secondary);
   position: relative;
   margin-bottom: 0;
-  padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
+  padding: $section-spacing;
   background-color: $color-secondary;
   color: $base-font-invert-color;
   font-size: $title-font-size;

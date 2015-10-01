@@ -32,9 +32,7 @@
 .district__cta--register {
   @extend %button;
   @include button-with-yellow-stripes-bg-bottom;
-  a {
-    color: $base-font-invert-color;
-  }
+  margin-bottom: $item-spacing;
 }
 
 .district__cta--sign-in {

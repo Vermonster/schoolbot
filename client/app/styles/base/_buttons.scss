@@ -43,10 +43,6 @@ button {
   padding-bottom: $section-spacing * 2;
   text-align: center;
 
-  [class*='btn-'] {
-    margin-bottom: rem(3);
-  }
-
   &--district {
     padding-top: rem(10);
     padding-bottom: 0;

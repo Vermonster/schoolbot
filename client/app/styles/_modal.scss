@@ -35,6 +35,7 @@
 
 .modal__title {
   @include msg-box-title;
+  padding-right: rem(45);
   padding-left: rem(30);
   font-size: rem(18);
   text-align: left;
