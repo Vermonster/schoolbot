@@ -46,8 +46,11 @@ keep `bin/serve` running.
 
 ## Deploying
 
-If you have previously run the `bin/setup` script, you can deploy to staging and
-production with:
+Deploy to staging and production with:
 
     $ bin/deploy staging
     $ bin/deploy production
+
+This requires that you have previously run `bin/setup`, and that all values in
+`client/.env` are present and set correctly. The values can be found in a pinned
+item in the project's Slack channel.
