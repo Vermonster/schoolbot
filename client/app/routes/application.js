@@ -17,9 +17,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('i18n').set('locale', storedLocale);
     }
 
-    return Ember.RSVP.all([
-      this.get('districts').setup(),
-      this.get('translations').setup()
-    ]);
+    return this.get('districts').setup().then((district) => {
+      if (district) { return this.get('translations').setup(); }
+    });
   }
 });
