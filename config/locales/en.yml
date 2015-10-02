@@ -80,7 +80,7 @@ en:
     identifier:
       note: You should have received this number from your school district.
   map:
-    settings: Settings
+    settings: My Settings
     information: My Information
     students: My Students
   signIn:

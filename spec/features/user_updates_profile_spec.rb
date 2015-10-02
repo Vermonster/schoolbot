@@ -4,7 +4,7 @@ feature 'User updates profile' do
   scenario 'and sees the updated information' do
     sign_in_as create(:user)
 
-    find('[aria-label="Settings"]').click
+    click_on t('map.settings')
     click_on t('actions.edit')
     fill_in t('labels.name'), with: 'Guy Test'
     fill_in t('labels.email'), with: 'guy@example.com'
@@ -31,7 +31,7 @@ feature 'User updates profile' do
     create(:user, district: district, email: 'guy@example.com')
     sign_in_as create(:user, district: district)
 
-    find('[aria-label="Settings"]').click
+    click_on t('map.settings')
     click_on t('actions.edit')
     fill_in t('labels.email'), with: 'guy@example.com'
     click_on t('actions.changePassword')

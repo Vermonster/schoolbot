@@ -1,78 +1,13 @@
 <div class='main__outer--map-view'>
   {{bus-map students=students user=currentUser}}
 
-  {{#if showingSettings}}
-    <div class='modal modal__overlay'>
-      <div class='modal__inner'>
-        <h2 class='modal__title'>{{ t 'map.settings' }}</h2>
-        <button class='modal__close--title' {{action 'toggleSettings'}} aria-label='Close'></button>
-        <div class='modal__body'>
-          <section class='form__section'>
-            <h3 class='form__section-heading'>{{ t 'map.information' }}</h3>
-            {{#if showingProfileForm}}
-              {{profile-fields model=currentUser}}
-              <div class='button-group button-group--edit-profile'>
-                <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
-                <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
-              </div>
-            {{else}}
-              <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
-                {{fa-icon 'pencil'}}
-                Edit
-              </a>
-              <div class='settings__my-info-content'>
-                <div>{{currentUser.name}}</div>
-                <div>{{currentUser.email}}</div>
-                <div>{{currentUser.street}}</div>
-                <div>{{currentUser.city}} {{currentUser.state}} {{currentUser.zipCode}}</div>
-              </div>
-            {{/if}}
-          </section>
-
-          <section class='form__section'>
-            <h3 class='form__section-heading'>{{ t 'map.students' }}</h3>
-            {{#unless showingStudentForm}}
-              <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
-                <span class='add-student-cta__icon'></span>
-                <span class='add-student-cta__text'>{{ t 'actions.add' }}</span>
-              </a>
-            {{/unless}}
-            {{#if showingStudentForm}}
-              {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
-            {{/if}}
-            <ul>
-              {{#each orderedStudents as |student|}}
-                <li class='student'>
-                  <span class='student__abbreviation'>{{student.abbreviation}}</span>
-                  <div>
-                    <div class='student__nickname'>
-                      {{student.nickname}}
-                    </div>
-                    <div class='student__school'>
-                      {{student.school.name}}
-                    </div>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
-          </section>
-
-          <section class='form__section settings__locale-picker'>
-            {{locale-picker}}
-          </section>
-
-          <button class='modal__close' {{action 'toggleSettings'}}>{{ t 'actions.close' }}</button>
-        </div>
-        <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
-      </div>
-    </div>
-  {{/if}}
+  {{outlet}}
 
   <div class='menu'>
-    <button class='btn--settings' {{action 'toggleSettings'}} aria-label='Settings'>
+    {{#link-to 'map.settings' replace=true tagName='button' class='btn--settings'}}
       {{fa-icon 'user'}}
       <span class='btn--settings__text'>My Settings</span>
-    </button>
+    {{/link-to}}
     <div class='terms-links__wrapper--map'>
       {{terms-privacy-links}}
     </div>

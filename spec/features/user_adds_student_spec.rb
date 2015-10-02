@@ -14,7 +14,7 @@ feature 'User adds student' do
 
     sign_in_as user
 
-    find('[aria-label="Settings"]').click
+    click_on t('map.settings')
     click_on t('actions.add')
 
     fill_in_student_information
@@ -42,7 +42,7 @@ feature 'User adds student' do
     )
     sign_in_as user
 
-    find('[aria-label="Settings"]').click
+    click_on t('map.settings')
     click_on t('actions.add')
 
     fill_in_student_information
@@ -59,7 +59,7 @@ feature 'User adds student' do
   scenario 'and sees an error message if the birthdate is invalid' do
     sign_in_as create(:user)
 
-    find('[aria-label="Settings"]').click
+    click_on t('map.settings')
     click_on t('actions.add')
     fill_in t('labels.birthdate'), with: '2003-05-27'
 

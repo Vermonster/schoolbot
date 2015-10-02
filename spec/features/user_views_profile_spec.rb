@@ -13,7 +13,7 @@ feature 'User views profile' do
     sign_in_as user
 
     within('.menu') do
-      find('[aria-label="Settings"]').click
+      click_on t('map.settings')
     end
 
     within('section', text: 'MY INFORMATION') do

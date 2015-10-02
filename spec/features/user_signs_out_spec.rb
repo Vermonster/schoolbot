@@ -5,7 +5,7 @@ feature 'User signs out' do
     sign_in_as create(:user)
 
     within('.menu') do
-      find('[aria-label="Settings"]').click
+      click_on t('map.settings')
     end
 
     within('.modal') do
