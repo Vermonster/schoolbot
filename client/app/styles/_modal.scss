@@ -6,6 +6,12 @@
   text-align: center;
   z-index: z('modal-overlay');
   overflow-y: scroll;
+}
+
+.modal__outer {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
 
   @include media($large-screen) {
     @include v-center-content-block;
