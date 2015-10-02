@@ -1,66 +1,68 @@
 <div class='modal modal__overlay'>
-  <div class='modal__inner'>
-    <h2 class='modal__title'>{{ t 'map.settings' }}</h2>
-    {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
-    <div class='modal__body'>
-      <section class='form__section'>
-        <h3 class='form__section-heading'>{{ t 'map.information' }}</h3>
-        {{#if showingProfileForm}}
-          {{profile-fields model=user}}
-          <div class='button-group button-group--edit-profile'>
-            <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
-            <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
-          </div>
-        {{else}}
-          <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
-            {{fa-icon 'pencil'}}
-            {{t 'actions.edit'}}
-          </a>
-          <div class='settings__my-info-content'>
-            <div>{{user.name}}</div>
-            <div>{{user.email}}</div>
-            <div>{{user.street}}</div>
-            <div>{{user.city}} {{user.state}} {{user.zipCode}}</div>
-          </div>
-        {{/if}}
-      </section>
+  <div class='modal__outer'>
+    <div class='modal__inner'>
+      <h2 class='modal__title'>{{ t 'map.settings' }}</h2>
+      {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
+      <div class='modal__body'>
+        <section class='form__section'>
+          <h3 class='form__section-heading'>{{ t 'map.information' }}</h3>
+          {{#if showingProfileForm}}
+            {{profile-fields model=user}}
+            <div class='button-group button-group--edit-profile'>
+              <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
+              <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
+            </div>
+          {{else}}
+            <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
+              {{fa-icon 'pencil'}}
+              {{t 'actions.edit'}}
+            </a>
+            <div class='settings__my-info-content'>
+              <div>{{user.name}}</div>
+              <div>{{user.email}}</div>
+              <div>{{user.street}}</div>
+              <div>{{user.city}} {{user.state}} {{user.zipCode}}</div>
+            </div>
+          {{/if}}
+        </section>
 
-      <section class='form__section'>
-        <h3 class='form__section-heading'>{{ t 'map.students' }}</h3>
-        {{#unless showingStudentForm}}
-          <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
-            <span class='add-student-cta__icon'></span>
-            <span class='add-student-cta__text'>{{ t 'actions.add' }}</span>
-          </a>
-        {{/unless}}
-        {{#if showingStudentForm}}
-          {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
-        {{/if}}
-        <ul>
-          {{#each students as |student|}}
-            <li class='student'>
-              <span class='student__abbreviation'>{{student.abbreviation}}</span>
-              <div>
-                <div class='student__nickname'>
-                  {{student.nickname}}
+        <section class='form__section'>
+          <h3 class='form__section-heading'>{{ t 'map.students' }}</h3>
+          {{#unless showingStudentForm}}
+            <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
+              <span class='add-student-cta__icon'></span>
+              <span class='add-student-cta__text'>{{ t 'actions.add' }}</span>
+            </a>
+          {{/unless}}
+          {{#if showingStudentForm}}
+            {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
+          {{/if}}
+          <ul>
+            {{#each students as |student|}}
+              <li class='student'>
+                <span class='student__abbreviation'>{{student.abbreviation}}</span>
+                <div>
+                  <div class='student__nickname'>
+                    {{student.nickname}}
+                  </div>
+                  <div class='student__school'>
+                    {{student.school.name}}
+                  </div>
                 </div>
-                <div class='student__school'>
-                  {{student.school.name}}
-                </div>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
 
-      <section class='form__section settings__locale-picker'>
-        {{locale-picker}}
-      </section>
+        <section class='form__section settings__locale-picker'>
+          {{locale-picker}}
+        </section>
 
-      {{#link-to 'map' replace=true tagName='button' class='modal__close'}}
-        {{ t 'actions.close' }}
-      {{/link-to}}
+        {{#link-to 'map' replace=true tagName='button' class='modal__close'}}
+          {{ t 'actions.close' }}
+        {{/link-to}}
+      </div>
+      <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
     </div>
-    <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
   </div>
 </div>
