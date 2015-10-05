@@ -6,10 +6,12 @@
   <div class='menu'>
     {{#link-to 'map.settings' replace=true tagName='button' class='btn--settings'}}
       {{fa-icon 'user'}}
-      <span class='btn--settings__text'>My Settings</span>
+      <span class='btn--settings__text'>{{ t 'map.settings' }}</span>
     {{/link-to}}
-    <div class='terms-links__wrapper--map'>
-      {{terms-privacy-links}}
-    </div>
+
+    {{#link-to 'map.help' replace=true tagName='button' class='btn--help'}}
+      {{fa-icon 'question-circle'}}
+      <span class='btn--help__text'>{{ t 'map.help.title' }}</span>
+    {{/link-to}}
   </div>
 </div>

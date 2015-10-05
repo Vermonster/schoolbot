@@ -73,12 +73,18 @@
   }
 }
 
-.terms-links__wrapper--map {
+// TODO: Refactor global hover state
+.terms-links__wrapper--help {
+  .terms-links {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    color: $base-font-color;
+    text-align: center;
+  }
+
   .terms-link {
-    &:hover,
-    &:focus {
-      color: $icon-color-hover;
-    }
+    color: $base-font-color;
   }
 }
 

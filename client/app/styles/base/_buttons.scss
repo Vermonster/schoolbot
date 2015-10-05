@@ -53,15 +53,19 @@ button {
   }
 }
 
-.btn--settings {
+.btn--settings,
+.btn--help {
   padding-top: rem(4);
+  padding-right: rem(20);
+  padding-left: rem(20);
   background-color: transparent;
 
   &:hover {
     background-color: transparent;
 
     i,
-    .btn--settings__text {
+    .btn--settings__text,
+    .btn--help__text {
       color: $icon-color-hover;
     }
   }
@@ -72,7 +76,12 @@ button {
   }
 }
 
-.btn--settings__text {
+.btn--settings {
+  padding-right: 0;
+}
+
+.btn--settings__text,
+.btn--help__text {
   @include transition(color);
   display: block;
 }

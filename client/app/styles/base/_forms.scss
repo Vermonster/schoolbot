@@ -186,7 +186,12 @@ select {
   padding-top: $section-spacing;
   border-top: 1px $base-border-color solid;
   font-weight: normal;
+
+  &--help {
+    border-top: 0;
+  }
 }
+
 
 .form__fieldset--add-student {
   margin-top: $section-spacing;

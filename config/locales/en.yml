@@ -83,6 +83,10 @@ en:
     settings: My Settings
     information: My Information
     students: My Students
+    help:
+      title: Help
+      phone: 'Need help? To report a problem with SchoolBot, you can call your school district at:'
+      email: 'You can also send your school district an email at:'
   signIn:
     title:
       main: Welcome Back!

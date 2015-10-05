@@ -24,6 +24,7 @@
 }
 
 .modal__body {
+  @include clearfix;
   padding: $modal-section-padding;
   padding-top: 0;
 }
@@ -55,15 +56,25 @@
   font-size: .9em;
 }
 
-.modal__close--title {
-  @include close-icon;
-  position: absolute;
-}
-
 .modal__close {
   margin-bottom: $form-bottom-spacing;
   padding: $button-padding;
   float: right;
+
+  &--title {
+    @include close-icon;
+    position: absolute;
+  }
+
+  &--help {
+    margin-top: rem(40);
+    margin-bottom: rem(10);
+    float: none;
+  }
+}
+
+.modal__close__wrapper--help {
+  text-align: center;
 }
 
 .modal__sign-out {
