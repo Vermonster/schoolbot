@@ -91,6 +91,9 @@ en:
       title: Help
       phone: 'Need help? To report a problem with SchoolBot, you can call your school district at:'
       email: 'You can also send your school district an email at:'
+    messages:
+      error: It looks like something went wrong. Please refresh the page or try again.
+      map: Bus data is not up-to-date due to some possible reasons.
   signIn:
     title:
       main: Welcome Back!

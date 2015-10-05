@@ -141,7 +141,7 @@
   @include full-width-button('false');
 }
 
-@mixin close-icon {
+@mixin close-icon($color:$base-font-color) {
   @extend %icon-circle;
   top: rem(4);
   right: rem(10);
@@ -149,11 +149,11 @@
   height: rem(30);
   transform: rotate(45deg);
   border-radius: rem(2);
-  background-color: transparent;
+  background: none;
 
   &:before,
   &:after {
-    color: $base-font-color;
+    color: $color;
   }
 
   &:before {
@@ -189,6 +189,11 @@
   &:hover {
     background: $base-color-action-hover;
   }
+}
+
+@mixin purple-stripes-bg {
+  @include bg-gradient-with-lines(
+    $color-secondary-darken-2, $color-secondary-darken-2, darken($color-secondary-darken-2, 10%), rem(2), rem(1));
 }
 
 @mixin button-with-purple-stripes-bg {
@@ -285,7 +290,7 @@
 }
 
 @mixin error-field {
-  background-color: rgba($color-error, .1);
+  background-color: $color-error-bg;
 }
 
 @mixin form-link {

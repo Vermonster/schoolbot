@@ -1,0 +1,57 @@
+.msg {
+  background-color: rgba($base-background-color, .9);
+}
+
+.msg--map {
+  position: absolute;
+  bottom: $menu-height;
+  width: 100%;
+  padding: $item-spacing $section-spacing $map-credit-height;
+
+  @include media($medium-screen) {
+    padding: rem(8) $button-padding-side + rem(25) $map-credit-height;
+  }
+}
+
+.msg--flash {
+  position: absolute;
+  width: 100%;
+  padding: rem(8) $button-padding-side + rem(25);
+  z-index: z('flash-msg');
+  filter: drop-shadow(rem(2) rem(3) rem(3) rgba($color-secondary-darkest, .5));
+}
+
+.msg__content {
+  display: inline;
+  margin-bottom: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: normal;
+}
+
+.msg__close {
+  @include close-icon($base-font-color);
+  position: absolute;
+}
+
+.msg__close:before,
+.msg__close:after {
+
+  .msg--error & {
+    color: $color-error;
+  }
+
+  .msg--success & {
+    color: $base-font-invert-color;
+  }
+}
+
+.msg--error {
+  @include error-msg;
+  @include error-field;
+}
+
+.msg--success {
+  @include purple-stripes-bg;
+  color: $base-font-invert-color;
+}

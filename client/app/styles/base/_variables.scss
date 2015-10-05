@@ -45,6 +45,8 @@ $color-secondary: #66cce8;
 $color-secondary-darken-1: #b56ba5;
 $color-secondary-darken-2: #864685;
 $color-secondary-darken-3: #b9276e;
+$color-secondary-darken-4: #ef4558;
+$color-secondary-darken-5: #b9276e;
 $color-secondary-darkest: #1c1836;
 $color-tertiary: #b3d15d;
 $color-tertiary-darken: #78c273;
@@ -57,6 +59,7 @@ $base-font-invert-color: #fff;
 $base-color-action: $color-secondary-darkest;
 $base-color-action-hover: $color-secondary-darken-2;
 $color-error: $color-primary-darken-5;
+$color-error-bg: lighten($color-primary-darken-5, 55%);
 
 // Border
 $base-border-color: $light-gray;
@@ -86,7 +89,8 @@ $icon-color: $base-color-action;
 $icon-color-hover: lighten($base-color-action, 10%);
 
 // Buttons
-$button-padding: rem(10) rem(25);
+$button-padding-side: rem(25);
+$button-padding: rem(10) $button-padding-side;
 $button-color: $color-secondary-darken-2;
 
 // Footer
@@ -99,6 +103,7 @@ $abbreviation-third-color: $color-primary-darken-1;
 
 // Map
 $bus-path-color: $dark-gray;
+$map-credit-height: rem(25);
 
 // Transition
 $base-transition-speed: .1s;
@@ -110,8 +115,9 @@ $background-landscape: new-breakpoint(min-width $background-landscape-width);
 // Z-index
 // NOTE: map-controls should not be less than the Leaflet default of 1000
 $z-layers: (
-  'map-controls': 1000,
+  'flash-msg': 2001,
   'modal-overlay': 2000,
+  'map-controls': 1000,
   'district-heading': 5,
   'about-content-list-number': 4,
   'about-content-list-number-circle': 3,
