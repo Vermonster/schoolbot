@@ -36,6 +36,8 @@ $medium-gray: #999;
 $light-gray: #ddd;
 
 $color-primary: #66cce8;
+$color-primary-darken-1: #8a2f77;
+$color-primary-darkest: #1c1836;
 $color-secondary: #f5c738;
 $color-secondary-darken-1: #f8b558;
 $color-secondary-darken-2: #f89a3b;
@@ -48,7 +50,7 @@ $color-tertiary-darkest: #5a5a5a;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $dark-gray;
+$base-font-color: $color-primary-darkest;
 $base-font-invert-color: #fff;
 $color-action: $color-secondary;
 $color-action-hover: darken($color-action, 10%);

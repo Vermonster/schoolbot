@@ -51,12 +51,8 @@
   position: absolute;
   right: rem(20);
   bottom: rem(5);
-  color: $base-font-invert-color;
+  color: $base-font-color;
   font-size: rem(11);
-
-  .terms-link {
-    @include page-view-link-bottom;
-  }
 
   .form__label--agreement & {
     position: relative;
@@ -88,13 +84,17 @@
   }
 }
 
+.terms-link {
+  @include page-view-link-bottom;
+}
+
 .terms-links__wrapper--main-landing {
   .terms-links {
     bottom: rem(12);
+    color: $base-font-invert-color;
   }
-}
 
-.terms-link--register {
-  @include form-link;
-  display: inline-block;
+  .terms-link {
+    @include page-view-link-bottom-invert;
+  }
 }

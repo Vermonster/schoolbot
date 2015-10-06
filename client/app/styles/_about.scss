@@ -28,7 +28,6 @@
   @include global-content-width;
   padding-right: rem(15);
   padding-left: rem(15);
-  color: $base-font-invert-color;
   font-size: rem(15);
 
   @include media($small-screen) {

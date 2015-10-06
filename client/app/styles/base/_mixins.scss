@@ -38,12 +38,24 @@
 }
 
 @mixin page-view-link-bottom {
+  color: $base-font-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $base-font-color;
+    text-decoration: none;
+  }
+}
+
+// TODO: fine tune this(all the links hover style) once we improve the color theme
+@mixin page-view-link-bottom-invert {
   color: $base-font-invert-color;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $color-secondary-darken-2;
+    color: $base-font-invert-color;
     text-decoration: none;
   }
 }
