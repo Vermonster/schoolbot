@@ -1,5 +1,8 @@
 en:
   localeName: English
+  notImplemented: |
+    Sorry, this feature is not implemented yet! For assistance, contact your
+    school district at this email address:
   errors:
     accepted: You must accept the terms to register.
     blank: This field is required.
@@ -94,3 +97,5 @@ en:
     remember: Remember me on this device
     forgot: Forgot your username or password?
     needToRegister: Need to register an account?
+  resetPassword:
+    title: Reset Password

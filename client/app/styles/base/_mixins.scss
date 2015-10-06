@@ -241,6 +241,16 @@
   font-size: $sub-title-font-size;
 }
 
+@mixin msg-box-back-cta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: rem(8);
+  padding-right: rem(15);
+  padding-bottom: rem(6);
+  padding-left: rem(15);
+}
+
 @mixin form-section-heading {
   font-family: $heading-font-family;
   font-size: rem(16);

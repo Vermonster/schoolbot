@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('settings');
   });
   this.route('register');
+  this.route('reset-password');
   this.route('sign-in');
   this.route('privacy');
   this.route('terms');

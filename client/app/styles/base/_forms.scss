@@ -144,13 +144,7 @@ select {
 }
 
 .form__title__back-cta {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: rem(8);
-  padding-right: rem(15);
-  padding-bottom: rem(6);
-  padding-left: rem(15);
+  @include msg-box-back-cta;
 }
 
 .form__title--main {

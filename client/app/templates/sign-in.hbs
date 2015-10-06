@@ -35,8 +35,12 @@
         </div>
 
         <div class='form__section--bottom__note'>
-          <a class='sign-in__forgot-password' href='#'>{{ t 'signIn.forgot' }}</a>
-          {{#link-to 'register' class='sign-in__register-cta'}} {{ t 'signIn.needToRegister' }} {{/link-to}}
+          {{#link-to 'reset-password' class='sign-in__forgot-password'}}
+            {{ t 'signIn.forgot' }}
+          {{/link-to}}
+          {{#link-to 'register' class='sign-in__register-cta'}}
+            {{ t 'signIn.needToRegister' }}
+          {{/link-to}}
         </div>
       </section>
     </div>
