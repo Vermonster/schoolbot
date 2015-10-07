@@ -59,6 +59,7 @@ en:
     changePassword: Change Password
   district:
     title: Welcome to SchoolBot
+    backTo: Back to welcome
     welcome:
       message: |
         SchoolBot is an application that tells you when your child's school bus
@@ -94,6 +95,7 @@ en:
     title:
       main: Welcome Back!
       sub: Sign in to SchoolBot
+    backTo: Back to sign in
     remember: Remember me on this device
     forgot: Forgot your username or password?
     needToRegister: Need to register an account?
