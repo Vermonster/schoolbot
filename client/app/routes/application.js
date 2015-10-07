@@ -3,7 +3,7 @@ import ApplicationRouteMixin from
   'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  districts: Ember.inject.service(),
+  dataPreload: Ember.inject.service(),
   i18n: Ember.inject.service(),
   moment: Ember.inject.service(),
   onError: Ember.inject.service(),
@@ -12,6 +12,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   beforeModel() {
     this.get('onError').setup();
+    this.get('dataPreload').setup();
 
     const storedLocale = this.get('sessionStorage.locale');
     if (Ember.isPresent(storedLocale)) {
@@ -19,8 +20,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('i18n').set('locale', storedLocale);
     }
 
-    return this.get('districts').setup().then((district) => {
-      if (district) { return this.get('translations').setup(); }
-    });
+    if (this.get('currentDistrict.isPresent')) {
+      return this.get('translations').setup();
+    }
   }
 });

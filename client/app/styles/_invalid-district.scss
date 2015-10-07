@@ -1,0 +1,15 @@
+.invalid-district {
+  @include msg-box-wrapper;
+}
+
+.invalid-district__title {
+  @include msg-box-title;
+}
+
+.invalid-district__title--main {
+  @include msg-box-main-title;
+}
+
+.invalid-district__content {
+  padding: rem(10) $form-bottom-spacing $form-bottom-spacing;
+}

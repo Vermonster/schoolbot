@@ -2,11 +2,11 @@
   <div class='district'>
     <div class='district__title'>
       <h1 class='district__title--main'>{{ t 'district.title' }}</h1>
-      <h2 class='district__title--sub'>{{districts.current.name}}</h2>
+      <h2 class='district__title--sub'>{{currentDistrict.model.name}}</h2>
     </div>
     <section class='district__content'>
       <div class='district__logo'>
-        <img src={{districts.current.logoUrl}} alt={{districts.current.name}}>
+        <img src={{currentDistrict.model.logoUrl}} alt={{currentDistrict.model.name}}>
       </div>
 
       {{locale-picker}}
@@ -16,7 +16,7 @@
       </p>
 
       <p>
-        {{ t 'district.welcome.use' districtName=districts.current.name }}
+        {{ t 'district.welcome.use' districtName=currentDistrict.model.name }}
       </p>
       <div class='button-group button-group--district'>
         {{#link-to 'sign-in' class='district__cta--sign-in'}} {{ t 'actions.signIn' }} {{/link-to}}

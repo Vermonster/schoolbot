@@ -1,5 +1,7 @@
-{{#if districts.current}}
+{{#if currentDistrict.isPresent}}
   {{district-landing}}
-{{else}}
+{{else if currentDistrict.isNone}}
   {{main-landing}}
+{{else}}
+  {{invalid-district}}
 {{/if}}

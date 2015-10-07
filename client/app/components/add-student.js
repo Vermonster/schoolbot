@@ -2,8 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
-  districts: Ember.inject.service(),
-  schools: Ember.computed.alias('districts.current.schools'),
+  schools: Ember.computed.alias('currentDistrict.model.schools'),
 
   student: null,
   setup: Ember.on('init', function() {

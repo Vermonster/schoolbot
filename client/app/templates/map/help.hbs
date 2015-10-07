@@ -6,12 +6,16 @@
       <div class='modal__body'>
         <section class='form__section'>
           <h2 class='form__section-heading form__section-heading--help'>{{ t 'help.phone' }}</h2>
-          <div>{{districts.current.contactPhone}}</div>
+          <div>{{currentDistrict.model.contactPhone}}</div>
         </section>
 
         <section class='form__section'>
           <h2 class='form__section-heading form__section-heading--help'>{{ t 'help.email' }}</h2>
-          <div><a href='mailto:{{districts.current.contactEmail}}'>{{districts.current.contactEmail}}</a></div>
+          <div>
+            <a href='mailto:{{currentDistrict.model.contactEmail}}'>
+              {{currentDistrict.model.contactEmail}}
+            </a>
+          </div>
         </section>
 
         <div class='modal__close__wrapper--help'>

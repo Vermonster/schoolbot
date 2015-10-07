@@ -3,9 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   session: Ember.inject.service(),
   store: Ember.inject.service(),
-  districts: Ember.inject.service(),
-  districtName: Ember.computed.alias('districts.current.name'),
-  schools: Ember.computed.alias('districts.current.schools'),
+  schools: Ember.computed.alias('currentDistrict.model.schools'),
 
   registration: null,
   setup: Ember.on('init', function() {

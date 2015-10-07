@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  districts: Ember.inject.service(),
   session: Ember.inject.service(),
 
   beforeModel() {
-    if (this.get('districts.current') && this.get('session.isAuthenticated')) {
+    if (
+      this.get('currentDistrict.isPresent') &&
+      this.get('session.isAuthenticated')
+    ) {
       this.transitionTo('map');
     }
   }
