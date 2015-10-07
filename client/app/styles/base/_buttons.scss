@@ -21,7 +21,7 @@
 
   &:hover,
   &:focus {
-    background-color: $color-action-hover;
+    background-color: $base-color-action-hover;
     color: $base-background-color;
   }
 
@@ -59,6 +59,7 @@ button {
   padding-right: rem(20);
   padding-left: rem(20);
   background-color: transparent;
+  color: $base-color-action;
 
   &:hover {
     background-color: transparent;

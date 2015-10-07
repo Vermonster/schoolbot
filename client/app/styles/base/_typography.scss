@@ -51,13 +51,14 @@ p {
 
 a {
   transition: color .1s linear;
-  color: $color-action;
-  text-decoration: none;
+  color: $base-color-action;
+  text-decoration: underline;
 
   &:active,
   &:focus,
   &:hover {
-    color: $color-action-hover;
+    color: $base-color-action-hover;
+    text-decoration: none;
   }
 
   &:active,

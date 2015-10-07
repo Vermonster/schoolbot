@@ -10,10 +10,10 @@ $title-font-size: rem(20);
 $sub-title-font-size: $base-font-size;
 $terms-title-font-size: rem(22);
 $terms-content-font-size: rem(14);
-$about-cta-font-size-small: rem(16);
-$about-cta-font-size-large: rem(18);
-$about-content-font-size-small: rem(15);
-$about-content-font-size-large: rem(17);
+$about-cta-font-size-small: rem(14);
+$about-cta-font-size-large: rem(16);
+$about-content-font-size-small: rem(14);
+$about-content-font-size-large: rem(16);
 
 // Line height
 $base-line-height: 1.5;
@@ -35,26 +35,28 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
-$color-primary: #66cce8;
-$color-primary-darken-1: #8a2f77;
-$color-primary-darkest: #1c1836;
-$color-secondary: #f5c738;
-$color-secondary-darken-1: #f8b558;
-$color-secondary-darken-2: #f89a3b;
-$color-secondary-darken-3: #e66366;
-$color-secondary-darken-4: #ef4558;
-$color-secondary-darken-5: #b9276e;
+$color-primary: #f5c738;
+$color-primary-darken-1: #f8b558;
+$color-primary-darken-2: #f89a3b;
+$color-primary-darken-3: #e66366;
+$color-primary-darken-4: #ef4558;
+$color-primary-darken-5: #d60000;
+$color-secondary: #66cce8;
+$color-secondary-darken-1: #b56ba5;
+$color-secondary-darken-2: #864685;
+$color-secondary-darken-3: #b9276e;
+$color-secondary-darkest: #1c1836;
 $color-tertiary: #b3d15d;
 $color-tertiary-darken: #78c273;
 $color-tertiary-darkest: #5a5a5a;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $color-primary-darkest;
+$base-font-color: $color-secondary-darkest;
 $base-font-invert-color: #fff;
-$color-action: $color-secondary;
-$color-action-hover: darken($color-action, 10%);
-$color-error: $color-secondary-darken-4;
+$base-color-action: $color-secondary-darkest;
+$base-color-action-hover: $color-secondary-darken-2;
+$color-error: $color-primary-darken-5;
 
 // Border
 $base-border-color: $light-gray;
@@ -65,7 +67,7 @@ $menu-height: rem(50);
 
 // Msg-box and Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, .06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($color-action, $lightness: -5%, $alpha: -.3);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($base-color-action, $lightness: -5%, $alpha: -.3);
 $msg-box-radius: rem(10);
 $form-bottom-spacing: rem(20);
 $form-section-padding: rem(10) rem(15);
@@ -80,19 +82,20 @@ $modal-section-padding: $form-section-padding;
 
 // Icons
 $icon-circle-radius: rem(10);
-$icon-color: $base-font-invert-color;
-$icon-color-hover: lighten($color-secondary, 30%);
+$icon-color: $base-color-action;
+$icon-color-hover: lighten($base-color-action, 10%);
 
 // Buttons
 $button-padding: rem(10) rem(25);
+$button-color: $color-secondary-darken-2;
 
 // Footer
 $footer-height: $menu-height;
 
 // Abbreviations
-$abbreviation-first-color: $color-secondary-darken-3;
-$abbreviation-second-color: $color-primary;
-$abbreviation-third-color: $color-secondary-darken-1;
+$abbreviation-first-color: $color-primary-darken-3;
+$abbreviation-second-color: $color-secondary;
+$abbreviation-third-color: $color-primary-darken-1;
 
 // Map
 $bus-path-color: $dark-gray;

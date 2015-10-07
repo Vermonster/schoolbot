@@ -4,7 +4,7 @@
 }
 
 %form-border-decor {
-  background: image-path('line_gradient-yellow.jpg') repeat-x, $color-secondary;
+  background: image-path('line_gradient-yellow.jpg') repeat-x, $color-primary;
 }
 
 @mixin global-content-width {
@@ -27,7 +27,7 @@
 
 // Link style when it is on the illustration background
 @mixin page-view-link {
-  color: $base-font-invert-color;
+  color: $base-font-color;
   text-decoration: underline;
 
   &:hover,
@@ -154,7 +154,7 @@
 
   &:before,
   &:after {
-    color: $base-font-invert-color;
+    color: $base-font-color;
   }
 
   &:before {
@@ -188,25 +188,34 @@
   text-align: center;
 
   &:hover {
-    background: $color-action-hover;
+    background: $base-color-action-hover;
+  }
+}
+
+@mixin button-with-purple-stripes-bg {
+  @include bg-gradient-with-lines(
+    $color-secondary-darken-2, $color-secondary-darken-2, $color-secondary-darken-1, rem(2), rem(1));
+
+  &:hover {
+    background: $color-secondary-darken-2;
   }
 }
 
 @mixin button-with-yellow-stripes-bg-bottom {
   @include bg-gradient-with-lines(
-    $color-secondary, $color-secondary, rgba($color-secondary-darken-2, .8), rem(2), rem(1));
+    $color-primary, $color-primary, rgba($color-primary-darken-2, .8), rem(2), rem(1));
 
   &:hover {
-    background: $color-action-hover;
+    background: $color-primary;
   }
 }
 
 @mixin button-with-yellow-stripes-bg-top {
   @include bg-gradient-with-lines(
-    $color-secondary, rgba($color-secondary-darken-2, .8), $color-secondary, rem(2), rem(1));
+    $color-primary, rgba($color-primary-darken-2, .8), $color-primary, rem(2), rem(1));
 
   &:hover {
-    background: $color-action-hover;
+    background: $color-primary;
   }
 }
 
@@ -224,21 +233,21 @@
 @mixin msg-box-title {
   @include border-top-radius($msg-box-radius);
   @include bg-gradient-with-lines(
-    $color-secondary, rgba($color-secondary-darken-2, .8), $color-secondary);
+    $color-primary, rgba($color-primary-darken-2, .8), $color-primary);
   position: relative;
   margin-bottom: 0;
   padding: $section-spacing;
-  background-color: $color-secondary;
-  color: $base-font-invert-color;
+  background-color: $color-primary;
+  color: $color-secondary-darkest;
   font-size: $title-font-size;
   text-align: center;
   text-transform: uppercase;
 
   a {
-    color: $icon-color;
+    color: $base-color-action;
 
     &:hover {
-      color: $icon-color-hover;
+      color: $base-color-action;
     }
   }
 }
@@ -281,20 +290,21 @@
 }
 
 @mixin form-link {
-  color: $base-font-color;
+  color: $base-color-action;
   text-decoration: underline;
 
   &:hover {
-    color: $color-action;
+    color: $base-color-action-hover;
     text-decoration: none;
   }
 }
 
-@mixin list-item-number {
+@mixin list-item-number($background-color) {
   position: relative;
   padding-top: $item-spacing;
   padding-left: rem(40);
   padding-bottom: $item-spacing;
+  text-decoration: none;
   counter-increment: itemNum;
 
   &:before,
@@ -308,9 +318,10 @@
     top: rem(5);
     padding-top: rem(2);
     padding-left: rem(11);
-    color: $color-secondary;
+    color: $base-font-color;
     font-family: $heading-font-family;
-    font-size: rem(20);
+    font-size: rem(18);
+    font-weight: bold;
     content: counters(itemNum, '.');
     z-index: z('about-content-list-number');
     counter-increment: list-item;
@@ -320,7 +331,7 @@
     width: rem(30);
     height: rem(30);
     border-radius: 50%;
-    background-color: rgba($base-background-color, .9);
+    background-color: darken($background-color, 10%);
     content: '';
     z-index: z('about-content-list-number-circle');
   }

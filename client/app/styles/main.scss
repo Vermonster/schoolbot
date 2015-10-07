@@ -22,10 +22,10 @@
       image-path('background_landscape_wide.svg'),
       repeating-linear-gradient(
         to right,
-        $color-primary,
-        $color-primary rem(2),
-        rgba($color-primary, .9) rem(2),
-        rgba($color-primary, .9) rem(3)
+        $color-secondary,
+        $color-secondary rem(2),
+        rgba($color-secondary, .9) rem(2),
+        rgba($color-secondary, .9) rem(3)
       );
     background-repeat: no-repeat, repeat-x, repeat-x, repeat-x;
     background-position: rem(15) rem(10), 0 0, center bottom, left top;

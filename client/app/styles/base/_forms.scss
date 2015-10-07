@@ -75,7 +75,7 @@ textarea {
   }
 
   &:focus {
-    border-color: $color-action;
+    border-color: $base-color-action;
     outline: none;
     box-shadow: $form-box-shadow-focus;
   }
@@ -145,6 +145,14 @@ select {
 
 .form__title__back-cta {
   @include msg-box-back-cta;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: rem(8);
+  padding-right: rem(15);
+  padding-bottom: rem(6);
+  padding-left: rem(15);
+  color: $color-secondary-darkest;
 }
 
 .form__title--main {
@@ -193,9 +201,7 @@ select {
   padding-right: rem(20);
   padding-bottom: $section-spacing;
   padding-left: rem(20);
-  background-color: rgba($color-secondary, .2);
-
-}
+  background-color: rgba($color-primary, .2);
 
 .form__section-heading--encrypted {
   padding-bottom: $section-spacing;
