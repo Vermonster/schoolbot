@@ -58,11 +58,14 @@
           {{locale-picker}}
         </section>
 
-        {{#link-to 'map' replace=true tagName='button' class='modal__close'}}
-          {{ t 'actions.close' }}
-        {{/link-to}}
+        <div class="form__section form__section--bottom">
+          <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
+          {{#link-to 'map' replace=true class='modal__close'}}
+            {{ t 'actions.close' }}
+          {{/link-to}}
+        </div>
+
       </div>
-      <button class='modal__sign-out' {{action 'signOut'}}>{{ t 'actions.signOut' }}</button>
     </div>
   </div>
 </div>
