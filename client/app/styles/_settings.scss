@@ -1,20 +1,20 @@
-.settings--add-student-cta {
-  display: block;
-  margin-bottom: $section-spacing;
-  padding-bottom: $section-spacing;
-  cursor: pointer;
-  vertical-align: middle;
+.settings__edit-cta {
+  position: absolute;
+  top: rem(20);
+  right: rem(20);
+  font-size: rem(13);
+  text-decoration: none;
 
   &:hover,
   &:focus {
-    .add-student-cta__icon {
-      background-color: $color-action-hover;
+    .settings__edit-cta__text {
+      text-decoration: none;
     }
   }
 }
 
-.settings__edit-profile-cta {
-  float: right;
+.settings__edit-cta__text {
+  text-decoration: underline;
 }
 
 .settings__change-password-cta {
@@ -35,12 +35,4 @@
     display: block;
     margin-top: rem(12);
   }
-}
-
-.add-student-cta__icon {
-  @include btn--plus;
-}
-
-.add-student-cta__text {
-  vertical-align: middle;
 }

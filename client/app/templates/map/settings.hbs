@@ -4,20 +4,22 @@
       <h2 class='modal__title'>{{ t 'map.settings' }}</h2>
       {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
       <div class='modal__body'>
-        <section class='form__section'>
+        <section class='form__section form__section--settings'>
           <h3 class='form__section-heading'>{{ t 'map.information' }}</h3>
           {{#if showingProfileForm}}
-            {{profile-fields model=user}}
+            <div>
+              {{profile-fields model=user}}
+            </div>
             <div class='button-group button-group--edit-profile'>
               <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
               <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
             </div>
           {{else}}
-            <a href='#' class='settings__edit-profile-cta' {{action 'toggleEditProfile'}}>
+            <a href='#' class='settings__edit-cta' {{action 'toggleEditProfile'}}>
               {{fa-icon 'pencil'}}
-              {{t 'actions.edit'}}
+              <span class="settings__edit-cta__text">{{t 'actions.edit'}}</span>
             </a>
-            <div class='settings__my-info-content'>
+            <div>
               <div>{{user.name}}</div>
               <div>{{user.email}}</div>
               <div>{{user.street}}</div>
@@ -26,12 +28,12 @@
           {{/if}}
         </section>
 
-        <section class='form__section'>
+        <section class='form__section form__section--settings'>
           <h3 class='form__section-heading'>{{ t 'map.students' }}</h3>
           {{#unless showingStudentForm}}
-            <a href='#' class='settings--add-student-cta' {{action 'toggleAddStudent'}}>
-              <span class='add-student-cta__icon'></span>
-              <span class='add-student-cta__text'>{{ t 'actions.add' }}</span>
+            <a href='#' class='settings__edit-cta' {{action 'toggleAddStudent'}}>
+              {{fa-icon 'plus'}}
+              <span class='settings__edit-cta__text'>{{ t 'actions.add' }}</span>
             </a>
           {{/unless}}
           {{#if showingStudentForm}}

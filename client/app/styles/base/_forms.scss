@@ -181,6 +181,10 @@ select {
   }
 }
 
+.form__section--settings {
+  position: relative;
+}
+
 .form__section-heading {
   @include clearfix;
   @include form-section-heading;
@@ -194,6 +198,10 @@ select {
   }
 }
 
+.form__section-heading--encrypted {
+  padding-bottom: $section-spacing;
+  line-height: 1.5;
+}
 
 .form__fieldset--add-student {
   margin-top: $section-spacing;
@@ -203,9 +211,6 @@ select {
   padding-left: rem(20);
   background-color: rgba($color-primary, .2);
 
-.form__section-heading--encrypted {
-  padding-bottom: $section-spacing;
-  line-height: 1.5;
 }
 
 .form__label--address {
