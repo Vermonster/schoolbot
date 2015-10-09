@@ -74,10 +74,10 @@
 
   &.leaflet-control-zoom-in,
   &.leaflet-control-zoom-out {
-    color: $base-font-invert-color;
+    color: $base-font-color;
 
     &:hover {
-      color: $base-font-invert-color;
+      color: $base-font-color;
     }
   }
 

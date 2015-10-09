@@ -1,11 +1,11 @@
 #{$all-button-inputs},
 %button {
   @include appearance(none);
+  @include button-with-purple-stripes-bg;
   display: inline-block;
   padding: $button-padding;
   border: 0;
   border-radius: $base-border-radius;
-  background-color: $color-action;
   color: $base-background-color;
   font-family: $heading-font-family;
   font-size: rem(14);
@@ -55,13 +55,15 @@ button {
 
 .btn--settings,
 .btn--help {
+  @include button-with-yellow-stripes-bg-bottom;
   padding-top: rem(4);
   padding-right: rem(20);
   padding-left: rem(20);
   background-color: transparent;
   color: $base-color-action;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: transparent;
 
     i,

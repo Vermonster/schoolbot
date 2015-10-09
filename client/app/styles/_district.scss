@@ -31,7 +31,7 @@
 .district__cta--sign-in,
 .district__cta--register {
   @extend %button;
-  @include button-with-yellow-stripes-bg-bottom;
+  @include button-with-purple-stripes-bg;
   margin-bottom: $item-spacing;
 }
 
