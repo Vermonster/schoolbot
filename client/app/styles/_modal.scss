@@ -57,21 +57,18 @@
 }
 
 .modal__close {
-  @include form-link;
   display: block;
-  margin-bottom: $form-bottom-spacing;
-  padding: $button-padding;
-  float: right;
 
   &--title {
+    @include form-link;
     @include close-icon;
     position: absolute;
   }
 
   &--help {
+    display: inline-block;
     margin-top: rem(40);
     margin-bottom: rem(10);
-    float: none;
   }
 }
 
