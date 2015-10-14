@@ -5,6 +5,9 @@ describe Zonar do
     it 'logs errors as warnings if the breaker is closed' do
       allow(Rails.logger).to receive(:warn)
       allow(RestClient::Request).to receive(:execute).and_raise('bluh!')
+      allow(CB2::Breaker).to receive(:new).and_return(
+        CB2::Breaker.new(strategy: 'stub', allow: true)
+      )
 
       zonar = Zonar.new(customer: 'test1234', username: 'a', password: 'b')
       events = zonar.bus_events_since(1.minute.ago)
