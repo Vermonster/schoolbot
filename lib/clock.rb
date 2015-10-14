@@ -11,4 +11,8 @@ module Clockwork
       UpdateBusLocationsJob.perform_later(district)
     end
   end
+
+  every(1.day, 'CleanBusLocations') do
+    BusLocation.where('created_at < ?', 1.week.ago).delete_all
+  end
 end
