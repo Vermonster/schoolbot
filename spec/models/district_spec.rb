@@ -15,4 +15,14 @@ describe District do
       expect(district.api_secret).to eq api_secret
     end
   end
+
+  describe 'validation' do
+    it 'downcases and removes all whitespace from the contact email address' do
+      district = build(:district, contact_email: ' Test @Example.com  ')
+
+      district.validate!
+
+      expect(district.contact_email).to eq 'test@example.com'
+    end
+  end
 end

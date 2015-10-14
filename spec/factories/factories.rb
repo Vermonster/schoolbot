@@ -36,7 +36,7 @@ FactoryGirl.define do
 
   factory :student do
     district
-    sequence(:digest) { |n| "student-digest-#{n}" }
+    sequence(:digest) { |n| ("0" * (8 - n.to_s.length) + n.to_s) * 8 }
 
     transient do
       current_bus nil

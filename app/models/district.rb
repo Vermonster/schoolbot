@@ -12,6 +12,7 @@ class District < ActiveRecord::Base
     content_type: { content_type: 'image/svg+xml' }
 
   after_initialize :assign_api_secret, if: :new_record?
+  before_validation -> { contact_email.downcase! }
 
   validates :name,
     :slug,
@@ -26,6 +27,9 @@ class District < ActiveRecord::Base
   validates :slug,
     length: { minimum: 1, maximum: 63 },
     format: { with: /\A[0-9a-z-]*\z/ }
+
+  auto_strip_attributes :name, :contact_phone, squish: true
+  auto_strip_attributes :contact_email, delete_whitespaces: true
 
   private
 

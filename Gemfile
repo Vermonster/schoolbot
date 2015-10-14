@@ -4,6 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem "active_model_serializers"
 gem "airbrake"
+gem "auto_strip_attributes"
 gem "aws-sdk", "~> 1.6" # TODO: Remove constraint once Paperclip supports 2.0
 gem "bcrypt"
 gem "cb2"

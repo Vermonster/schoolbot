@@ -5,8 +5,12 @@ class StudentLabel < ActiveRecord::Base
 
   delegate :digest, to: :student, allow_nil: true
 
-  validates :nickname, presence: true, uniqueness: { scope: :user_id }
   validates :digest, :school, presence: true
+  validates :nickname,
+    presence: true,
+    uniqueness: { scope: :user_id, case_sensitive: false }
+
+  auto_strip_attributes :nickname, squish: true
 
   def digest=(value)
     self.student = Student.find_by(digest: value)

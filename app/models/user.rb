@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 8 }, allow_blank: true
   validate :address_must_geocode
 
+  auto_strip_attributes :email, delete_whitespaces: true
+  auto_strip_attributes :name, :street, :city, :state, :zip_code, squish: true
+
+  before_validation -> { email.downcase! }
   before_save :ensure_authentication_token
 
   def address
