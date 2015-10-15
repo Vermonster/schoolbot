@@ -1,16 +1,32 @@
 module API
   class SessionsController < BaseController
     def create
-      user = current_district.users.find_by(email: params[:user][:email])
-
-      if user.try(:authenticate, params[:user][:password])
+      if authenticated_user
         render json: {
-          token: user.authentication_token,
-          email: user.email
+          token: authenticated_user.authentication_token,
+          email: authenticated_user.email
         }, status: 201
       else
         render json: { error: 'errors.session.invalid' }, status: 401
       end
+    end
+
+    private
+
+    def authenticated_user
+      @_authenticated_user ||= authenticating_user.try(:authenticate, password)
+    end
+
+    def authenticating_user
+      current_district.users.find_by(email: email)
+    end
+
+    def email
+      params.require(:user).fetch(:email).downcase.strip
+    end
+
+    def password
+      params.require(:user).fetch(:password)
     end
   end
 end

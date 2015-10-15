@@ -13,7 +13,7 @@
 <div class='form__item {{if model.errors.email 'form__item--error'}}'>
   <label>
     {{ t 'labels.email' }}
-    {{input value=model.email}}
+    {{input type='email' value=model.email}}
   </label>
   {{#if model.errors.email}}
     <span class='form__error--field'>
