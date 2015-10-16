@@ -14,7 +14,7 @@
 }
 
 .msg--flash {
-  position: absolute;
+  position: fixed;
   width: 100%;
   padding: rem(8) $button-padding-side + rem(25);
   z-index: z('flash-msg');

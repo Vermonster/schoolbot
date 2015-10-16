@@ -57,6 +57,11 @@ en:
     signOut: Sign Out
     add: Add student
     changePassword: Change Password
+  flashes:
+    error:
+      generic: |
+        Oops! Something went wrong and we couldn't process that action. You
+        might want to try it again, or if that doesn't work, refresh the page.
   district:
     title: Welcome to SchoolBot
     backTo: Back to welcome
@@ -92,8 +97,8 @@ en:
       phone: 'Need help? To report a problem with SchoolBot, you can call your school district at:'
       email: 'You can also send your school district an email at:'
     messages:
-      error: It looks like something went wrong. Please refresh the page or try again.
-      map: Bus data is not up-to-date due to some possible reasons.
+      connection: |
+        Connection interrupted. Trying to reconnect...
   signIn:
     title:
       main: Welcome Back!

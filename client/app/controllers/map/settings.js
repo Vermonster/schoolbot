@@ -27,8 +27,7 @@ export default Ember.Controller.extend({
         this.send('toggleEditProfile');
       }).catch((error) => {
         if (this.get('user.isValid')) {
-          // TODO: Handle non-validation errors
-          throw new Error(error);
+          Ember.onerror(error);
         }
       });
     },

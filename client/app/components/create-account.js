@@ -25,8 +25,8 @@ export default Ember.Component.extend({
           });
       }).catch((error) => {
         if (this.get('registration.isValid')) {
-          // TODO: Handle non-validation or sign-in errors
-          throw new Error(error);
+          // TODO: Handle errors with the sign-in rather than the registration
+          Ember.onerror(error);
         }
       });
     }

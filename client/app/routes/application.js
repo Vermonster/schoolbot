@@ -5,10 +5,12 @@ import moment from 'moment';
 export default Ember.Route.extend(ApplicationRouteMixin, {
   districts: Ember.inject.service(),
   i18n: Ember.inject.service(),
+  onError: Ember.inject.service(),
   sessionStorage: Ember.inject.service(),
   translations: Ember.inject.service(),
 
   beforeModel() {
+    this.get('onError').setup();
     this._super(...arguments);
 
     const storedLocale = this.get('sessionStorage.locale');

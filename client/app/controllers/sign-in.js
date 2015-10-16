@@ -9,7 +9,11 @@ export default Ember.Controller.extend({
       this.get('session')
         .authenticate('simple-auth-authenticator:devise', credentials)
         .catch((response) => {
-          this.set('errorMessage', this.get('i18n').t(response.error));
+          if (response.error) {
+            this.set('errorMessage', this.get('i18n').t(response.error));
+          } else {
+            Ember.onerror(response);
+          }
         });
     }
   }

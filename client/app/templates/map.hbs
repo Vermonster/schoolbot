@@ -1,12 +1,4 @@
 <div class='main__outer--map-view'>
-  {{#if showingFlashMsg}}
-    <div class='msg msg--flash msg--error'>
-      <button class='msg__close' {{action 'toggleFlashMsg'}}>{{ t 'actions.close' }}</button>
-      {{fa-icon 'warning'}}
-      <h3 class='msg__content' role='alert'>{{ t 'map.messages.error' }}</h3>
-    </div>
-  {{/if}}
-
   {{bus-map students=students user=currentUser}}
 
   {{outlet}}

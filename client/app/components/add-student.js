@@ -20,8 +20,7 @@ export default Ember.Component.extend({
         this.sendAction('saved');
       }).catch((error) => {
         if (this.get('student.isValid')) {
-          // TODO: Handle non-validation errors
-          throw new Error(error);
+          Ember.onerror(error);
         }
       });
     },

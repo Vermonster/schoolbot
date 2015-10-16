@@ -1,1 +1,9 @@
+{{#each flashMessages.arrangedQueue as |flash|}}
+  {{#flash-message flash=flash as |component flash|}}
+    <button class='msg__close' {{action 'close' target=component}}>{{t 'actions.close'}}</button>
+    {{fa-icon 'warning'}}
+    <h3 class='msg__content' role='alert'>{{flash.message}}</h3>
+  {{/flash-message}}
+{{/each}}
+
 {{outlet}}

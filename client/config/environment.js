@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    flashMessageDefaults: {
+      types: ['success', 'error']
+    },
     i18n: {
       defaultLocale: 'en',
       allowLocaleOverride: true
