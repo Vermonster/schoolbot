@@ -12,9 +12,9 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
 
     perform(district, [
-      { sha: '123', bus_identifier: 'ABC' },
-      { sha: '456', bus_identifier: 'DEF' },
-      { sha: '789', bus_identifier: 'ABC' }
+      { sha: '1' * 64, bus_identifier: 'ABC' },
+      { sha: '2' * 64, bus_identifier: 'DEF' },
+      { sha: '3' * 64, bus_identifier: 'ABC' }
     ])
 
     expect(Bus.count).to be 2
@@ -28,11 +28,11 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
     student = create(:student,
       district: district,
-      digest: '123',
+      digest: '1' * 64,
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
-    perform(district, [{ sha: '123', bus_identifier: 'DEF' }])
+    perform(district, [{ sha: '1' * 64, bus_identifier: 'DEF' }])
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 1
@@ -47,13 +47,13 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
     student = create(:student,
       district: district,
-      digest: '123',
+      digest: '1' * 64,
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
     perform(district, [
-      { sha: '123', bus_identifier: '' },
-      { sha: '456', bus_identifier: nil }
+      { sha: '1' * 64, bus_identifier: '' },
+      { sha: '2' * 64, bus_identifier: nil }
     ])
 
     expect(Bus.count).to be 1
@@ -69,16 +69,16 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
     assigned_student = create(:student,
       district: district,
-      digest: '123',
+      digest: '1' * 64,
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
     unassigned_student = create(:student,
       district: district,
-      digest: '456',
+      digest: '2' * 64,
       current_bus: create(:bus, district: district, identifier: 'DEF')
     )
 
-    perform(district, [{ sha: '123', bus_identifier: 'ABC' }])
+    perform(district, [{ sha: '1' * 64, bus_identifier: 'ABC' }])
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 2
@@ -93,14 +93,14 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
     create(:student,
       district: district,
-      digest: '123',
+      digest: '1' * 64,
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
     perform(district, [
       { sha: '', bus_identifier: 'ABC' },
       { sha: nil, bus_identifier: 'ABC' },
-      { sha: '123', bus_identifier: 'ABC' }
+      { sha: '1' * 64, bus_identifier: 'ABC' }
     ])
 
     expect(Student.count).to be 1
@@ -109,7 +109,7 @@ describe API::V0::ImportAssignmentsJob do
   end
 
   it 'does not unassign students if the input is empty' do
-    student = create(:student, digest: '123', current_bus: create(:bus))
+    student = create(:student, digest: '1' * 64, current_bus: create(:bus))
 
     perform(student.district, [])
 
@@ -121,13 +121,13 @@ describe API::V0::ImportAssignmentsJob do
     district = create(:district)
     create(:student,
       district: district,
-      digest: '123',
+      digest: '1' * 64,
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
     perform(district, [
-      { sha: '123', bus_identifier: 'DEF' },
-      { sha: '123', bus_identifier: 'XYZ' }
+      { sha: '1' * 64, bus_identifier: 'DEF' },
+      { sha: '1' * 64, bus_identifier: 'XYZ' }
     ])
 
     expect(Bus.count).to be 3
@@ -136,7 +136,7 @@ describe API::V0::ImportAssignmentsJob do
     expect(district.buses.count).to be 3
     expect(district.students.count).to be 1
     expect(
-      Student.find_by!(digest: '123').current_bus_assignment.bus.identifier
+      Student.find_by!(digest: '1' * 64).current_bus_assignment.bus.identifier
     ).to eq 'XYZ'
   end
 end

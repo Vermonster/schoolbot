@@ -15,22 +15,22 @@ describe 'v0 assignments API' do
   describe 'show endpoint' do
     it 'retrieves a student by digest to allow remote verification' do
       student = create(:student,
-        digest: '123',
+        digest: '1' * 64,
         current_bus: create(:bus, identifier: 'ABC')
       )
 
-      get api_v0_assignment_path('123'), nil, auth_headers(student.district)
+      get api_v0_assignment_path('1' * 64), nil, auth_headers(student.district)
 
       expect(response).to be_successful
       expect(response_json).to eq(
-        assignment: { sha: '123', bus_identifier: 'ABC' }
+        assignment: { sha: '1' * 64, bus_identifier: 'ABC' }
       )
     end
 
     it 'fails with incorrect credentials' do
-      create(:student, digest: '123')
+      create(:student, digest: '2' * 64)
 
-      get api_v0_assignment_path('123'), nil, invalid_auth_headers
+      get api_v0_assignment_path('2' * 64), nil, invalid_auth_headers
 
       expect(response.status).to be 401
     end
@@ -41,13 +41,13 @@ describe 'v0 assignments API' do
       district = create(:district)
       create(:student,
         district: district,
-        digest: '123',
+        digest: '1' * 64,
         current_bus: create(:bus, district: district, identifier: 'ABC')
       )
       request_data = {
         assignments: [
-          { sha: '123', bus_identifier: 'DEF' },
-          { sha: '456', bus_identifier: 'ABC' }
+          { sha: '1' * 64, bus_identifier: 'DEF' },
+          { sha: '2' * 64, bus_identifier: 'ABC' }
         ]
       }
 
@@ -71,7 +71,7 @@ describe 'v0 assignments API' do
 
     it 'fails with an incorrect top-level parameter' do
       district = create(:district)
-      request_data = { wrong_key: [{ sha: '123', bus_identifier: 'ABC' }] }
+      request_data = { wrong_key: [{ sha: '1' * 64, bus_identifier: 'ABC' }] }
 
       post api_v0_assignments_path, request_data.as_json, auth_headers(district)
 
@@ -82,7 +82,7 @@ describe 'v0 assignments API' do
 
     it 'fails with an incorrect assignment attribute' do
       district = create(:district)
-      request_data = { assignments: [{ sha: '123', wrong_attribute: 'ABC' }] }
+      request_data = { assignments: [{ sha: '1' * 64, wrong_attr: 'ABC' }] }
 
       post api_v0_assignments_path, request_data.as_json, auth_headers(district)
 

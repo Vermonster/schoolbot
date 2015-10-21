@@ -84,12 +84,12 @@ describe 'Students API' do
       district = create(:district, slug: 'foo')
       school = create(:school, district: district)
       user = create(:user, district: district)
-      student = create(:student, district: district, digest: '12345')
+      student = create(:student, district: district, digest: '4' * 64)
       bus = create(:bus, district: district, identifier: 'BUS001')
       create(:bus_assignment, student: student, bus: bus)
 
       payload = {
-        student: { digest: '12345', nickname: 'Bobby', school_id: school.id }
+        student: { digest: '4' * 64, nickname: 'Bobby', school_id: school.id }
       }
       post api_students_url(subdomain: 'foo'), payload, auth_headers(user)
 
@@ -114,7 +114,7 @@ describe 'Students API' do
         nickname: 'Dobby'
       )
 
-      payload = { student: { digest: '12345', nickname: 'Dobby' } }
+      payload = { student: { digest: '4' * 64, nickname: 'Dobby' } }
       post api_students_url(subdomain: 'foo'), payload, auth_headers(user)
 
       expect(response.status).to be 422

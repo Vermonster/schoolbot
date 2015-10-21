@@ -5,7 +5,7 @@ describe 'Registrations API' do
     it 'creates a new user account with a student label' do
       district = create(:district, slug: 'baz')
       school = create(:school, district: district)
-      create(:student, district: district, digest: 'abc123')
+      create(:student, district: district, digest: 'abc12345' * 8)
       data = {
         name: 'tester',
         email: 'tester@example.com',
@@ -15,7 +15,7 @@ describe 'Registrations API' do
         city: 'someplace',
         state: 'MA',
         zip_code: '98765',
-        digest: 'abc123',
+        digest: 'abc12345' * 8,
         nickname: 'dave',
         school_id: school.id,
         terms_accepted: true
@@ -36,7 +36,7 @@ describe 'Registrations API' do
         email: 'test@example.com',
         password: 'secret',
         password_confirmation: 'sorcret',
-        digest: 'abc123',
+        digest: 'abc12345' * 8,
         terms_accepted: false
       }
 
