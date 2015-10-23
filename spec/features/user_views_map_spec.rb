@@ -130,4 +130,22 @@ feature 'User views map' do
 
     expect(page).to have_css('.school-marker', count: 1)
   end
+
+  scenario 'with an error displayed when background requests fail' do
+    sign_in_as @user
+    expect(page).to have_content t('map.settings').upcase
+
+    allow_any_instance_of(API::StudentsController)
+      .to receive(:index)
+      .and_raise(ActiveRecord::RecordNotFound)
+
+    expect(page).to have_content t('map.messages.connection'), wait: 5
+    expect(page).to_not have_content t('flashes.error.generic')
+
+    allow_any_instance_of(API::StudentsController)
+      .to receive(:index)
+      .and_call_original
+
+    expect(page).to_not have_content t('map.messages.connection'), wait: 5
+  end
 end

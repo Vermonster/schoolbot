@@ -3,12 +3,12 @@
 
   {{outlet}}
 
-  {{#if showingMapMsg }}
+  {{#unless isOnline}}
     <div class='msg msg--map'>
       {{fa-icon 'warning'}}
-      <h3 class='msg__content' role='alert'>{{ t 'map.messages.map' }}</h3>
+      <h3 class='msg__content' role='alert'>{{t 'map.messages.connection'}}</h3>
     </div>
-  {{/if}}
+  {{/unless}}
 
   <div class='menu'>
     {{#link-to 'map.settings' replace=true tagName='button' class='btn--settings'}}
