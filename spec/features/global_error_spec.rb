@@ -2,9 +2,7 @@ require 'rails_helper'
 
 feature 'Global error handler' do
   scenario 'displays a generic message when an unhandled error occurs' do
-    allow_any_instance_of(API::SessionsController)
-      .to receive(:create)
-      .and_raise(ActiveRecord::RecordNotFound)
+    mock_api_failure(:sessions, :create)
 
     use_subdomain(create(:district).slug)
     visit root_path

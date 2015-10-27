@@ -135,17 +135,11 @@ feature 'User views map' do
     sign_in_as @user
     expect(page).to have_content t('map.settings').upcase
 
-    allow_any_instance_of(API::StudentsController)
-      .to receive(:index)
-      .and_raise(ActiveRecord::RecordNotFound)
-
+    mock_api_failure(:students, :index)
     expect(page).to have_content t('map.messages.connection'), wait: 5
     expect(page).to_not have_content t('flashes.error.generic')
 
-    allow_any_instance_of(API::StudentsController)
-      .to receive(:index)
-      .and_call_original
-
+    unmock_api_failure(:students, :index)
     expect(page).to_not have_content t('map.messages.connection'), wait: 5
   end
 end
