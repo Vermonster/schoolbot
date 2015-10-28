@@ -66,6 +66,17 @@ feature 'User adds student' do
     expect(page).to have_content t('errors.birthdate.invalid')
   end
 
+  scenario 'and sees a generic message when an unhandled error occurs' do
+    mock_api_failure(:students, :create)
+    sign_in_as create(:user)
+
+    click_on t('map.settings')
+    click_on t('actions.add')
+    click_on t('actions.save')
+
+    expect(page).to have_content t('flashes.error.generic')
+  end
+
   def fill_in_student_information
     fill_in t('labels.nickname'), with: 'Danny'
     fill_in t('labels.lastName'), with: 'Smith'

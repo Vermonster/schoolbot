@@ -44,4 +44,15 @@ feature 'User updates profile' do
     expect(page).to have_content t('errors.password.too_short')
     expect(page).to have_content t('errors.passwordConfirmation.confirmation')
   end
+
+  scenario 'and sees a generic message when an unhandled error occurs' do
+    mock_api_failure(:users, :update)
+    sign_in_as create(:user)
+
+    click_on t('map.settings')
+    click_on t('actions.edit')
+    click_on t('actions.save')
+
+    expect(page).to have_content t('flashes.error.generic')
+  end
 end

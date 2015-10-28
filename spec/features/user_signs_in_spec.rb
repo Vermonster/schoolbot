@@ -46,4 +46,15 @@ feature 'User signs in' do
 
     expect(page).to have_content t('errors.session.invalid')
   end
+
+  scenario 'and sees a generic message when an unhandled error occurs' do
+    mock_api_failure(:sessions, :create)
+    use_subdomain('boston')
+
+    visit root_path
+    click_on t('actions.signIn')
+    click_on t('actions.signIn')
+
+    expect(page).to have_content t('flashes.error.generic')
+  end
 end

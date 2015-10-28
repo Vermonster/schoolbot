@@ -77,4 +77,15 @@ feature 'User creates account' do
 
     expect(page).to have_content t('errors.address.invalid')
   end
+
+  scenario 'and sees a generic message when an unhandled error occurs' do
+    mock_api_failure(:registrations, :create)
+    use_subdomain(create(:district).slug)
+
+    visit root_path
+    click_on t('actions.register')
+    click_on t('createAccount.cta')
+
+    expect(page).to have_content t('flashes.error.generic')
+  end
 end
