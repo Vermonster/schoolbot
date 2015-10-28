@@ -64,16 +64,18 @@ feature 'User views map' do
     expect(page).to have_css('.bus-marker', count: 1, text: 'FISE')
   end
 
-  scenario 'with markers displayed only for buses that have locations' do
+  scenario 'with markers displayed only for buses with recent locations' do
     first_bus = create(:bus, district: @district)
     second_bus = create(:bus, district: @district)
     create(:bus_location, bus: first_bus)
+    create(:bus_location, bus: second_bus, recorded_at: 6.minutes.ago)
     create(:bus_assignment, student: @first_label.student, bus: first_bus)
     create(:bus_assignment, student: @second_label.student, bus: second_bus)
 
     sign_in_as @user
 
     expect(page).to have_css('.bus-marker', count: 1, text: 'FI')
+    expect(page).to have_content t('map.messages.missingStudents')
   end
 
   scenario 'with markers displayed only for students assigned to a bus' do
@@ -84,6 +86,7 @@ feature 'User views map' do
     sign_in_as @user
 
     expect(page).to have_css('.bus-marker', count: 1, text: 'SE')
+    expect(page).to have_content t('map.messages.missingStudents')
   end
 
   scenario 'with time information displayed for outdated bus positions' do

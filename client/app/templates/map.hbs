@@ -8,6 +8,13 @@
       {{fa-icon icon='warning'}}
       <h3 class='msg__content' role='alert'>{{t 'map.messages.connection'}}</h3>
     </div>
+  {{else}}
+    {{#unless showingAllStudents}}
+      <div class='msg msg--map'>
+        {{fa-icon icon='warning'}}
+        <h3 class='msg__content' role='alert'>{{t 'map.messages.missingStudents'}}</h3>
+      </div>
+    {{/unless}}
   {{/unless}}
 
   <div class='menu'>

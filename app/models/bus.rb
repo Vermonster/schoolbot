@@ -6,6 +6,9 @@ class Bus < ActiveRecord::Base
   validates! :identifier, presence: true
 
   def recent_locations
-    bus_locations.order(recorded_at: :desc).limit(5)
+    bus_locations
+      .where('recorded_at > ?', 5.minutes.ago)
+      .order(recorded_at: :desc)
+      .limit(8)
   end
 end

@@ -9,6 +9,7 @@ export default DS.Model.extend({
   nickname: DS.attr('string'),
 
   isAssigned: Ember.computed.notEmpty('bus'),
+  isLocated: Ember.computed.alias('bus.hasLocations'),
 
   // TODO: Calculate the shortest distinct abbreviation among all nicknames?
   abbreviation: Ember.computed('nickname', function() {

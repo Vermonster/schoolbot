@@ -24,32 +24,34 @@ describe 'Students API' do
       expect(response.status).to be 401
     end
 
-    it 'includes data on students and current bus locations' do
+    it 'includes data on students and recent bus locations' do
       district = create(:district, slug: 'foo')
       user = create(:user, district: district)
       school = create(:school, district: district)
       label = create(:student_label,
+        user: user,
         school: school,
         student: create(:student, district: district),
-        user: user,
         nickname: 'First'
       )
       create(:student_label,
+        user: user,
         school: school,
         student: create(:student, district: district),
-        user: user,
         nickname: 'Second'
       )
       bus = create(:bus, district: district, identifier: 'BUS001')
-      6.times do |n|
+      create(:bus_assignment, student: label.student, bus: bus)
+      9.times do |n|
         create(:bus_location,
           bus: bus,
-          recorded_at: Time.zone.local(2015, 1, 1, n)
+          recorded_at: Time.zone.local(2015, 10, 10, 1, n)
         )
       end
-      create(:bus_assignment, student: label.student, bus: bus)
 
-      get api_students_url(subdomain: 'foo'), nil, auth_headers(user)
+      Timecop.travel(Time.zone.local(2015, 10, 10, 1, 9)) do
+        get api_students_url(subdomain: 'foo'), nil, auth_headers(user)
+      end
 
       expect(response).to be_successful
       expect(response_json.keys).to match_array [
@@ -65,9 +67,9 @@ describe 'Students API' do
       expect(first_student[:school_id]).to eq school.id
       expect(second_student[:bus_id]).to eq nil
       expect(response_json[:buses].first[:identifier]).to eq 'BUS001'
-      expect(response_json[:buses].first[:bus_location_ids]).to have(5).items
+      expect(response_json[:buses].first[:bus_location_ids]).to have(4).items
       bus_location = response_json[:bus_locations].first
-      expect(bus_location[:recorded_at]).to eq '2015-01-01T05:00:00Z'
+      expect(bus_location[:recorded_at]).to eq '2015-10-10T01:08:00Z'
     end
   end
 
