@@ -1,16 +1,16 @@
 <div class='modal modal__overlay'>
   <div class='modal__outer'>
     <div class='modal__inner'>
-      <h1 class='modal__title'>{{ t 'map.help.title' }}</h1>
+      <h1 class='modal__title'>{{ t 'help.title' }}</h1>
       {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
       <div class='modal__body'>
         <section class='form__section'>
-          <h2 class='form__section-heading form__section-heading--help'>{{ t 'map.help.phone' }}</h2>
+          <h2 class='form__section-heading form__section-heading--help'>{{ t 'help.phone' }}</h2>
           <div>{{districts.current.contactPhone}}</div>
         </section>
 
         <section class='form__section'>
-          <h2 class='form__section-heading form__section-heading--help'>{{ t 'map.help.email' }}</h2>
+          <h2 class='form__section-heading form__section-heading--help'>{{ t 'help.email' }}</h2>
           <div><a href='mailto:{{districts.current.contactEmail}}'>{{districts.current.contactEmail}}</a></div>
         </section>
 

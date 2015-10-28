@@ -6,7 +6,7 @@ feature 'User views help dialog' do
     sign_in_as create(:user, district: district)
 
     within('.menu') do
-      click_on t('map.help.title')
+      click_on t('help.title')
     end
 
     expect(page).to have_content '555-5678'

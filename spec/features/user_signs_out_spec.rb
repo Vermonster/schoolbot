@@ -5,7 +5,7 @@ feature 'User signs out' do
     sign_in_as create(:user)
 
     within('.menu') do
-      click_on t('map.settings')
+      click_on t('settings.title')
     end
 
     within('.modal') do

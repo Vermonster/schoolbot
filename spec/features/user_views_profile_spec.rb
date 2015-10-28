@@ -13,7 +13,7 @@ feature 'User views profile' do
     sign_in_as user
 
     within('.menu') do
-      click_on t('map.settings')
+      click_on t('settings.title')
     end
 
     within('section', text: 'MY INFORMATION') do

@@ -1,11 +1,11 @@
 <div class='modal modal__overlay'>
   <div class='modal__outer'>
     <div class='modal__inner'>
-      <h1 class='modal__title'>{{ t 'map.settings' }}</h1>
+      <h1 class='modal__title'>{{ t 'settings.title' }}</h1>
       {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
       <div class='modal__body'>
         <section class='form__section form__section--settings'>
-          <h2 class='form__section-heading'>{{ t 'map.information' }}</h2>
+          <h2 class='form__section-heading'>{{ t 'settings.information.title' }}</h2>
           {{#if showingProfileForm}}
             <div>
               {{profile-fields model=user}}
@@ -29,7 +29,7 @@
         </section>
 
         <section class='form__section form__section--settings'>
-          <h2 class='form__section-heading'>{{ t 'map.students' }}</h2>
+          <h2 class='form__section-heading'>{{ t 'settings.students.title' }}</h2>
           {{#unless showingStudentForm}}
             <a href='#' class='settings__edit-cta' {{action 'toggleAddStudent'}}>
               {{fa-icon icon='plus'}}

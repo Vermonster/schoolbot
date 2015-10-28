@@ -133,7 +133,7 @@ feature 'User views map' do
 
   scenario 'with an error displayed when background requests fail' do
     sign_in_as @user
-    expect(page).to have_content t('map.settings').upcase
+    expect(page).to have_content t('settings.title').upcase
 
     mock_api_failure(:students, :index)
     expect(page).to have_content t('map.messages.connection'), wait: 5
