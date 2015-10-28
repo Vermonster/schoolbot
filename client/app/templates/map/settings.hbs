@@ -41,8 +41,13 @@
           {{/if}}
           <ul>
             {{#each students as |student|}}
-              <li class='student'>
-                <span class='student__abbreviation'>{{student.abbreviation}}</span>
+              <li class='student {{unless student.isLocated 'student--not-located'}}'>
+                <div class='student__abbreviation'>{{student.abbreviation}}</div>
+
+                {{#unless student.isLocated}}
+                  <div class='student__warning-icon'>{{fa-icon icon='warning'}}</div>
+                {{/unless}}
+
                 <div>
                   <div class='student__nickname'>
                     {{student.nickname}}
@@ -50,6 +55,20 @@
                   <div class='student__school'>
                     {{student.school.name}}
                   </div>
+
+                  {{#unless student.isLocated}}
+                    <div class='student__warning'>
+                      {{#if student.isAssigned}}
+                        {{t 'settings.students.problems.busOutdated' busNumber=student.bus.identifier}}
+                      {{else}}
+                        {{t 'settings.students.problems.notAssigned'}}
+                      {{/if}}
+
+                      {{#link-to 'map.help' replace=true}}
+                        {{t 'settings.students.problems.contactDistrict'}}
+                      {{/link-to}}
+                    </div>
+                  {{/unless}}
                 </div>
               </li>
             {{/each}}

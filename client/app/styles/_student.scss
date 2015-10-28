@@ -1,6 +1,5 @@
 .student {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-bottom: $item-spacing * 2;
 
@@ -23,8 +22,20 @@
   }
 }
 
+.student--not-located {
+  position: relative;
+  align-items: flex-start;
+
+  .student__abbreviation,
+  .student__nickname,
+  .student__school {
+    opacity: .3;
+  }
+}
+
 .student__abbreviation {
   @include student-abbrev;
+  flex-shrink: 0;
 }
 
 .student__abbreviation--bus-marker {
@@ -55,10 +66,20 @@
   }
 }
 
+.student__warning-icon {
+  position: absolute;
+  top: rem(20);
+  left: rem(25);
+}
+
 .student__nickname {
   font-size: rem(14);
 }
 
 .student__school {
   font-size: rem(10);
+}
+
+.student__warning {
+  font-size: rem(12);
 }

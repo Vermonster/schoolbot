@@ -105,9 +105,9 @@ en:
         notAssigned: |
           Your school district has not assigned this student to a bus.
         busOutdated: |
-          We can't locate this student's bus right now (number {{busNumber}}).
+          We can't locate this student's bus right now ({{busNumber}}).
           It could be offline, parked, or in an area with poor reception.
-        contactDistrict: Contact your school district for help.
+        contactDistrict: Contact your school district for assistance.
   help:
     title: Help
     phone: 'Need help? To report a problem with SchoolBot, you can call your school district at:'
