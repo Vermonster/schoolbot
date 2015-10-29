@@ -61,6 +61,11 @@ $base-color-action-hover: $color-secondary-darken-2;
 $color-error: $color-primary-darken-5;
 $color-error-bg: lighten($color-primary-darken-5, 55%);
 
+// Shadows and Overlays
+$color-modal-overlay: rgba(#000, .85);
+$color-bus-marker-shadow: rgba(#000, .5);
+$color-form-box-shadow: rgba(#000, .06);
+
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
@@ -69,7 +74,7 @@ $base-border: 1px solid $base-border-color;
 $menu-height: rem(50);
 
 // Msg-box and Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, .06);
+$form-box-shadow: inset 0 1px 3px $color-form-box-shadow;
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($base-color-action, $lightness: -5%, $alpha: -.3);
 $msg-box-radius: rem(10);
 $form-bottom-spacing: rem(20);

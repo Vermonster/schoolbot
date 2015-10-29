@@ -2,7 +2,7 @@
   @include transition(opacity .25s ease);
   @include position(fixed, 0);
   padding-top: rem(10);
-  background-color: rgba(#000, .85);
+  background-color: $color-modal-overlay;
   text-align: center;
   z-index: z('modal-overlay');
   overflow-y: scroll;

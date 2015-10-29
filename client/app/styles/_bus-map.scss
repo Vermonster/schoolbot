@@ -38,7 +38,7 @@
   font-style: italic;
   text-align: center;
   white-space: nowrap;
-  filter: drop-shadow(rem(2) rem(3) rem(3) rgba(0, 0, 0, .5));
+  filter: drop-shadow(rem(2) rem(3) rem(3) $color-bus-marker-shadow);
 
   &:before {
     position: absolute;
