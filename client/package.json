@@ -51,7 +51,7 @@
     "ember-deploy-s3": "0.0.5",
     "ember-disable-proxy-controllers": "1.0.1",
     "ember-export-application-global": "1.0.5",
-    "ember-i18n": "git://github.com/grantovich/ember-i18n.git#1b49678c470f741a39da7f6dbc593a8efdc2f323",
+    "ember-i18n": "git://github.com/grantovich/ember-i18n.git#2d831574ca1db92fd53f6783500c3d7871c1f13a",
     "ember-i18n-errors": "0.1.2",
     "ember-leaflet": "git://github.com/gabesmed/ember-leaflet.git#c80b3234801f971a64c2e633303114ded6b7fbaf",
     "ember-moment": "4.1.0",
