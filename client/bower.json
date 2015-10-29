@@ -15,7 +15,7 @@
     "leaflet": "0.7.5",
     "leaflet.markercluster": "0.4.0",
     "loader.js": "3.4.0",
-    "modernizr": "2.8.3",
+    "modernizr": "https://modernizr.com/download?-cssgradients-flexbox-setclasses",
     "moment": "2.10.6",
     "moment-timezone": "0.4.1",
     "neat": "1.7.2",
