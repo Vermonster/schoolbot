@@ -5,19 +5,19 @@
 
   {{#unless isOnline}}
     <div class='msg msg--map'>
-      {{fa-icon 'warning'}}
+      {{fa-icon icon='warning'}}
       <h3 class='msg__content' role='alert'>{{t 'map.messages.connection'}}</h3>
     </div>
   {{/unless}}
 
   <div class='menu'>
     {{#link-to 'map.settings' replace=true tagName='button' class='btn--settings'}}
-      {{fa-icon 'user'}}
+      {{fa-icon icon='user'}}
       <span class='btn--settings__text'>{{ t 'map.settings' }}</span>
     {{/link-to}}
 
     {{#link-to 'map.help' replace=true tagName='button' class='btn--help'}}
-      {{fa-icon 'question-circle'}}
+      {{fa-icon icon='question-circle'}}
       <span class='btn--help__text'>{{ t 'map.help.title' }}</span>
     {{/link-to}}
   </div>
