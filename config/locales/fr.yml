@@ -1,2 +1,90 @@
 fr:
   localeName: Français
+  notImplemented: "Désolé, cette fonctionnalité est pas encore implémentée! Pour de l'aide, contactzr votre district scolaire à l'adresse email suivante :"
+  errors:
+    accepted: "Il faut que vous acceptiez les termes pour l'inscription."
+    blank: Ce champ est obligatoire.
+    address:
+      invalid: |
+        L'adresse que vous avez entrée n'a pu être trouvée.
+        Vérifiez que vous utilisez bien le mot de passe de votre compte Schoolbot.
+    birthdate:
+      invalid: "S'il vous plaît, entrez une date valide MM/JJ/AAAA."
+    digest:
+      blank: "Nous ne pouvions pas trouver un étudiant correspondant. S'assurer que vous avez entré les renseignements exactement comme il apparaît dans les documents de votre secteur scolaire."
+    email:
+      invalid: "S'il vous plaît entrer une adresse de courriel valide."
+      taken: Il y a déjà un compte associé à cette adresse.
+    nickname:
+      blank: Veuillez entrer le prénom de votre étudiant.
+      taken: Vous avez déjà ajouté un étudiant portant le même nom.
+    password:
+      too_short: Utilisez au moins 8 caractères.
+    passwordConfirmation:
+      confirmation: Les mots de passe utilisés ne correspondent pas.
+    school:
+      blank: Veuillez sélectionner une école.
+    session:
+      invalid: "L'adresse e-mail et le mot de passe utilisés ne correspondent pas."
+  labels:
+    locale: Langue
+    name: Nom et prénom
+    email: Email
+    password: Mot de passe
+    confirmPassword: Confirmez le mot de passe
+    address: Adresse
+    street: Rue
+    city: Ville
+    state: État
+    zip: Code postal
+    nickname: Prénom
+    lastName: Nom de Famille
+    identifier: "Numéro d'indentification étudiant"
+    birthdate: Date de Naissance (MM/JJ/AAAA)
+    school: École
+    termsAccepted: "J'ai lu et j'accepte les conditions qui suivent:"
+  actions:
+    signIn: Se connecter
+    register: "S'inscrire"
+    save: Enregistrer
+    cancel: Annuler
+    edit: Éditer
+    close: Fermer
+    signOut: Se déconnecter
+    add: Ajouter un étudiant
+    changePassword: Changer votre mot de passe
+  district:
+    title: Bienvenue à SchoolBot
+    backTo: "Retour à l'accueil"
+    welcome:
+      message: "SchoolBot est une application qui indique quand l'autobus scolaire de votre enfant est tout près."
+      use: "Afin d'utiliser SchoolBot, vous devez être le parent ou le tuteur d'au moins un enfant inscrit à {{districtName}}. Vous aurez besoin de numéro d'identification unique de l'enfant assigné par votre district scolaire."
+  createAccount:
+    title: Inscription
+    heading: Mes renseignements
+    studentInformation:
+      heading: "Renseignements sur l'élève"
+      copy: "Pour vous inscrire à SchoolBot, vous devez être le tuteur juridique d'un élève dans ce secteur scolaire."
+    cta: "Créer un compte et s'inscrire"
+  addStudent:
+    encrypted: "Cette information est cryptée et utilisée pour rechercher votre étudiant avec le secteur scolaire. SchoolBot ne l'enregistre pas."
+    identifier:
+      note: Vous auriez dû recevoir ce numéro de votre secteur scolaires.
+  map:
+    settings: Préférences de compte
+    information: Mes renseignements
+    students: Mes étudiants
+    help:
+      title: Aide
+      phone: "Avez-vous besoin d'aide? Pour signaler un problème avec SchoolBot, vous pouvez appeler votre district scolaire à 'adresse:"
+      email: "Vous pouvez également envoyer un message e-mail à votre district scolaire à l'adresse:"
+  signIn:
+    title:
+      main: Merci de revenir nous voir!
+      sub: Connexion Schoolbot
+    backTo: Retour à la connexion
+    remember: Maintenir la connexion sur cet appareil
+    forgot: "Avez-vous oublié votre mot de passe ou nom d'utilisateur?"
+    needToRegister: Avez-vous besoing de créer un compte Schoolbot?
+  resetPassword:
+    title: Réinitialiser le mot de passe

@@ -1,4 +1,88 @@
 es:
   localeName: Español
+  notImplemented: 'Lo sentimos, esta función todavía no está implementada. Para obtener ayuda, contacte a su distrito escolar en esta dirección de correo electrónico:'
+  errors:
+    accepted: Usted debe aceptar los términos para poder registrarse.
+    blank: Esta información es obligatoria.
+    address:
+      invalid: No pudimos encontrar esta dirección. Compruebe que la ha escrito correctamente.
+    birthdate:
+      invalid: Por favor escriba una fecha valida en este formato MM/DD/AAAA.
+    digest:
+      blank: No pudimos encontrar a este estudiante. Asegúrese de que escribió la información según aparece en los archivos del distrito escolar.
+    email:
+      invalid: Por favor escriba una dirección de correo electrónico valida.
+      taken: Ya existe una cuenta asociada con esta dirección.
+    nickname:
+      blank: Por favor escriba el primer nombre del estudiante.
+      taken: Ya ha añadido a un estudiante con este nombre.
+    password:
+      too_short: Debe tener por lo menos 8 caracteres.
+    passwordConfirmation:
+      confirmation: La contraseña introducida no coincide.
+    school:
+      blank: Por favor seleccione la escuela.
+    session:
+      invalid: Inválida dirección de correo electrónico o contraseña.
+  labels:
+    locale: Lenguaje
+    name: Nombre completo
+    email: Dirección de correo electrónico
+    password: Contraseña
+    confirmPassword: Confirme la contraseña
+    address: Dirección
+    street: Calle
+    city: Ciudad
+    state: Estado
+    zip: Zona postal
+    nickname: Primer nombre
+    lastName: Apellido
+    identifier: Número de identificación del estudiante
+    birthdate: Fecha de nacimiento (MM/DD/AAAA)
+    school: Escuela
+    termsAccepted: 'Yo he leído y estoy de acuerdo con lo siguiente:'
+  actions:
+    signIn: Ingresar
+    register: Registrar
+    save: Almacenar
+    cancel: Cancelar
+    edit: Editar
+    close: Cerrar
+    signOut: Desconectar
+    add: Añadir un estudiante
+    changePassword: Cambiar la contraseña
   district:
-    title: Bienvenida a SchoolBot
+    title: Bienvenido a SchoolBot
+    backTo: Regresar a la bienvenida
+    welcome:
+      message: SchoolBot es una aplicación que le deja saber cuando el autobús escolar de su niño está cerca.
+      use: 'Para poder usar SchoolBot, usted tiene que ser el padre o tutor de al menos un estudiante inscrito en {{districtName}}. Usted va a necesitar el número de identificación exclusivo del estudiante usado por su distrito escolar.'
+  createAccount:
+    title: Registración
+    heading: Mi información
+    studentInformation:
+      heading: Información del estudiante
+      copy: Para registrarse para SchoolBot, usted debe ser el tutor legal de un estudiante en este distrito escolar.
+    cta: Crear una cuenta e ingresar
+  addStudent:
+    encrypted: Esta información está cifrada y es usada para buscar a su estudiante en el distrito escolar. SchoolBot no almacena la información.
+    identifier:
+      note: Usted bebe haber recibido este número de su distrito escolar.
+  map:
+    settings: Mi configuración
+    information: Mi información
+    students: Mis estudiantes
+    help:
+      title: Ayuda
+      phone: 'Necesita ayuda? Para reportar un problema con SchoolBot, usted puede llamar a su distrito escolar al:'
+      email: 'También le puede enviar una un correo electrónico a su distrito escolar a:'
+  signIn:
+    title:
+      main: ¡Bienvenido!
+      sub: Ingresar a SchoolBot
+    backTo: Regresar a ingresar
+    remember: Recuérdeme en este dispositivo
+    forgot: ¿Se le olvidó su nombre de usuario o contraseña?
+    needToRegister: ¿Necesita registrar una cuenta?
+  resetPassword:
+    title: Cambiar Contraseña

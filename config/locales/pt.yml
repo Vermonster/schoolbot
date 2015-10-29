@@ -1,2 +1,88 @@
 pt:
   localeName: Português
+  notImplemented: 'Desculpa, esta característica não está ainda implementada. Para assistência, contacte o seu distrito escolar neste endereço de email:'
+  errors:
+    accepted: Você deve aceitar os termos para registar.
+    blank: Esta informação é exigida.
+    address:
+      invalid: Nós não conseguimos localizar este endereço. Por favor, verifique se escreveu o endereço corretamente.
+    birthdate:
+      invalid: Por favor, digite uma data válida no formato MM/DD/AAAA.
+    digest:
+      blank: Não conseguimos encontrar um estudante correspondente. Verifique se entrou a informação exatamente como está no registo do seu distrito escolar.
+    email:
+      invalid: Por favor, digite um endereço de email válido.
+      taken: Já exite uma conta associada com este endereço.
+    nickname:
+      blank: Por favor, digite o nome do seu estudante.
+      taken: Você já adicionou um estudante com esse nome.
+    password:
+      too_short: Este deve ser, pelo menos, 8 letras.
+    passwordConfirmation:
+      confirmation: O password que digitou não corresponde.
+    school:
+      blank: Por favor, selecione uma escola.
+    session:
+      invalid: Endereço de email ou password inválido.
+  labels:
+    locale: Língua
+    name: Nome Completo
+    email: Email
+    password: Password
+    confirmPassword: Confirmar Password
+    address: Endereço
+    street: Rua
+    city: Cidade
+    state: Estado
+    zip: Código Postal
+    nickname: Nome
+    lastName: Apelido
+    identifier: Número de ID do Estudante
+    birthdate: Data de Nascimento (MM/DD/AAAA)
+    school: Escola
+    termsAccepted: 'Tenho lido e concordado com o seguinte:'
+  actions:
+    signIn: Entrar
+    register: Registar
+    save: Guardar
+    cancel: Cancelar
+    edit: Editar
+    close: Fechar
+    signOut: Sair
+    add: Adicionar Estudante
+    changePassword: Alterar Password
+  district:
+    title: Bem-vindo ao SchoolBot
+    backTo: Volte ao Bem-vindo
+    welcome:
+      message: SchoolBot é um aplicativo que lhe informa quando o autocarro do seu estudante está na vizinhança.
+      use: 'Para poder usar o SchoolBot, você deve ser um dos pais ou encarregado de educação de, pelo menos, um estudante das {{districtName}}. Você tem necessidade do número de ID da sua criança, emitido pelo seu distrito escolar.'
+  createAccount:
+    title: Registar
+    heading: Minha Informação
+    studentInformation:
+      heading: Informação do Estudante
+      copy: Para registar para o SchoolBot, você deve ser um encarregado de educação legal de um estudante, neste distrito escolar.
+    cta: Criar uma conta e entrar
+  addStudent:
+    encrypted: Esta informação é encriptado e usado para procurar o seu estudante com o distrito escolar. SchoolBot não guarda esta informação.
+    identifier:
+      note: Você deve ter recebido este número do seu distrito escolar.
+  map:
+    settings: Minha Configuração
+    information: Minha Informação
+    students: Meus Estudantes
+    help:
+      title: Ajuda
+      phone: 'Tem necessidade de ajuda? Para reportar um problema com o SchoolBot, você pode telefonar o seu distrito escolar pelo número:'
+      email: 'Também, você pode enviar um email ao seu distrito escolar pelo endereço:'
+  signIn:
+    title:
+      main: Outra vez, Bem-vindo!
+      sub: Entrar no SchoolBot
+    backTo: Entrar de volta
+    remember: Lembre-me neste dispositivo
+    forgot: Esqueceu a sua conta ou o seu password?
+    needToRegister: Você precisa abrir uma conta?
+  resetPassword:
+    title: Recuperar Password
