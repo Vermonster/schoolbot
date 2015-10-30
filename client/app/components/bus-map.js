@@ -2,7 +2,6 @@
 
 import env from 'client/config/environment';
 import Ember from 'ember';
-import moment from 'moment';
 
 import LeafletMap from 'ember-leaflet/components/leaflet-map';
 import TileLayer from 'ember-leaflet/layers/tile';
@@ -19,11 +18,11 @@ const ATTRIBUTION = [
   '<a href="https://www.mapbox.com/map-feedback/">Improve this map</a>'
 ].join(' | ');
 
-const currentLocalePath = 'controller.i18n.locale';
+const momentLocalePath = 'controller.moment.locale';
 const busLocationsPath = 'controller.uniqueBuses.@each.busLocations';
 
 export default LeafletMap.extend({
-  i18n: Ember.inject.service(),
+  moment: Ember.inject.service(),
 
   user: null,
   students: [],
@@ -39,10 +38,6 @@ export default LeafletMap.extend({
 
   options: {
     attributionControl: false
-  },
-
-  didInitAttrs() {
-    this.get('i18n'); // https://github.com/jamesarosen/ember-i18n/issues/299
   },
 
   didCreateLayer() {
@@ -132,15 +127,17 @@ export default LeafletMap.extend({
         })
       }),
 
-      content: Ember.computed(currentLocalePath, busLocationsPath, function() {
+      content: Ember.computed(momentLocalePath, busLocationsPath, function() {
+        const moment = this.get('controller.moment');
+
         return this.get('controller.uniqueBuses').map((bus) => {
           const latLng = bus
             .get('busLocations.firstObject')
             .getProperties('latitude', 'longitude');
           const lastRecordedAt = bus.get('busLocations.firstObject.recordedAt');
           let timeAgo = null;
-          if (lastRecordedAt < moment().subtract(45, 'seconds')) {
-            timeAgo = moment(lastRecordedAt).fromNow();
+          if (lastRecordedAt < moment.moment().subtract(45, 'seconds')) {
+            timeAgo = moment.moment(lastRecordedAt).fromNow();
           }
 
           return {
