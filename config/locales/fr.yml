@@ -6,7 +6,7 @@ fr:
     blank: Ce champ est obligatoire.
     address:
       invalid: |
-        L'adresse que vous avez entrée n'a pu être trouvée.
+        L'adresse que vous avez entrée n'a pu être trouvée. 
         Vérifiez que vous utilisez bien le mot de passe de votre compte Schoolbot.
     birthdate:
       invalid: "S'il vous plaît, entrez une date valide MM/JJ/AAAA."
@@ -70,14 +70,16 @@ fr:
     encrypted: "Cette information est cryptée et utilisée pour rechercher votre étudiant avec le secteur scolaire. SchoolBot ne l'enregistre pas."
     identifier:
       note: Vous auriez dû recevoir ce numéro de votre secteur scolaires.
-  map:
-    settings: Préférences de compte
-    information: Mes renseignements
-    students: Mes étudiants
-    help:
-      title: Aide
-      phone: "Avez-vous besoin d'aide? Pour signaler un problème avec SchoolBot, vous pouvez appeler votre district scolaire à 'adresse:"
-      email: "Vous pouvez également envoyer un message e-mail à votre district scolaire à l'adresse:"
+  settings:
+    title: Préférences de compte
+    information:
+      title: Mes renseignements
+    students:
+      title: Mes étudiants
+  help:
+    title: Aide
+    phone: "Avez-vous besoin d'aide? Pour signaler un problème avec SchoolBot, vous pouvez appeler votre district scolaire à 'adresse:"
+    email: "Vous pouvez également envoyer un message e-mail à votre district scolaire à l'adresse:"
   signIn:
     title:
       main: Merci de revenir nous voir!

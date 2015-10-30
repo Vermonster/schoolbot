@@ -68,14 +68,16 @@ pt:
     encrypted: Esta informação é encriptado e usado para procurar o seu estudante com o distrito escolar. SchoolBot não guarda esta informação.
     identifier:
       note: Você deve ter recebido este número do seu distrito escolar.
-  map:
-    settings: Minha Configuração
-    information: Minha Informação
-    students: Meus Estudantes
-    help:
-      title: Ajuda
-      phone: 'Tem necessidade de ajuda? Para reportar um problema com o SchoolBot, você pode telefonar o seu distrito escolar pelo número:'
-      email: 'Também, você pode enviar um email ao seu distrito escolar pelo endereço:'
+  settings:
+    title: Minha Configuração
+    information:
+      title: Minha Informação
+    students:
+      title: Meus Estudantes
+  help:
+    title: Ajuda
+    phone: 'Tem necessidade de ajuda? Para reportar um problema com o SchoolBot, você pode telefonar o seu distrito escolar pelo número:'
+    email: 'Também, você pode enviar um email ao seu distrito escolar pelo endereço:'
   signIn:
     title:
       main: Outra vez, Bem-vindo!
