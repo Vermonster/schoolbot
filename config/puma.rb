@@ -3,8 +3,8 @@
 # The environment variable WEB_CONCURRENCY may be set to a default value based
 # on dyno size. To manually configure this value use heroku config:set
 # WEB_CONCURRENCY.
-workers Integer(ENV.fetch("WEB_CONCURRENCY", 3))
-threads_count = Integer(ENV.fetch("MAX_THREADS", 5))
+workers Integer(ENV.fetch("WEB_CONCURRENCY", 2))
+threads_count = Integer(ENV.fetch("MAX_THREADS", 2))
 threads(threads_count, threads_count)
 
 preload_app!
