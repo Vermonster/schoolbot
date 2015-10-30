@@ -36,11 +36,8 @@ module.exports = function(environment) {
     }
   };
 
-  var isProductionLikeBuild =
-    ['production', 'staging'].indexOf(environment) > -1;
-
   if (!process.env.MAPBOX_MAP_ID || !process.env.MAPBOX_ACCESS_TOKEN) {
-    if (isProductionLikeBuild) {
+    if (environment === 'production') {
       throw new Error('MAPBOX_MAP_ID and MAPBOX_ACCESS_TOKEN must be defined!');
     } else {
       console.log('Warning: MAPBOX_MAP_ID or MAPBOX_ACCESS_TOKEN not defined!');
@@ -72,7 +69,7 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (isProductionLikeBuild) {
+  if (environment === 'production') {
     if (!process.env.AIRBRAKE_ID || !process.env.AIRBRAKE_KEY) {
       throw new Error('AIRBRAKE_ID and AIRBRAKE_KEY must be defined in .env!');
     }

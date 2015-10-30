@@ -12,5 +12,4 @@ heroku run rake db:migrate --remote "$target"
 heroku restart --remote "$target"
 
 cd client
-ember deploy --environment "$target"
-ember deploy:activate --environment "$target" --revision client:$(git rev-parse --short=7 HEAD)
+ember deploy "$target" --activate

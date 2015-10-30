@@ -8,7 +8,7 @@ class ClientController < ActionController::Base
   private
 
   def client_html
-    $redis.get($redis.get('client:current'))
+    $redis.get('client:index:' + $redis.get('client:index:current'))
   end
 
   def redirect_www
