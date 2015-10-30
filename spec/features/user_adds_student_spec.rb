@@ -72,9 +72,11 @@ feature 'User adds student' do
 
     click_on t('settings.title')
     click_on t('actions.add')
-    click_on t('actions.save')
 
-    expect(page).to have_content t('flashes.error.generic')
+    ignoring_ember_errors do
+      click_on t('actions.save')
+      expect(page).to have_content t('flashes.error.generic')
+    end
   end
 
   def fill_in_student_information

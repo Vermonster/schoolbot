@@ -5,13 +5,22 @@ export default Ember.Service.extend({
   i18n: Ember.inject.service(),
 
   setup() {
-    const originalHandler = Ember.onerror || Ember.K;
+    const originalHandler = Ember.onerror;
 
     Ember.onerror = (error) => {
       const errorText = this.get('i18n').t('flashes.error.generic');
       this.get('flashMessages').error(errorText, { sticky: true });
 
-      originalHandler(error);
+      if (originalHandler) {
+        originalHandler(error);
+      } else {
+        // Work around PhantomJS not reacting well to re-thrown errors (?)
+        if (window._phantom) {
+          Ember.Logger.error(error);
+        } else {
+          throw error;
+        }
+      }
     };
   }
 });

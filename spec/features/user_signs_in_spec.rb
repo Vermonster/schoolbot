@@ -53,8 +53,10 @@ feature 'User signs in' do
 
     visit root_path
     click_on t('actions.signIn')
-    click_on t('actions.signIn')
 
-    expect(page).to have_content t('flashes.error.generic')
+    ignoring_ember_errors do
+      click_on t('actions.signIn')
+      expect(page).to have_content t('flashes.error.generic')
+    end
   end
 end

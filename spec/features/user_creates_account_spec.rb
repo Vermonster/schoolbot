@@ -84,8 +84,10 @@ feature 'User creates account' do
 
     visit root_path
     click_on t('actions.register')
-    click_on t('createAccount.cta')
 
-    expect(page).to have_content t('flashes.error.generic')
+    ignoring_ember_errors do
+      click_on t('createAccount.cta')
+      expect(page).to have_content t('flashes.error.generic')
+    end
   end
 end
