@@ -1,0 +1,32 @@
+machine:
+  environment:
+    RAILS_ENV: test
+  node:
+    version: 5
+checkout:
+  post:
+    - cp .sample.env .env
+    - cp client/.sample.env client/.env
+dependencies:
+  pre:
+    - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+    - tar -xvf phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $HOME/bin
+  override:
+    - bundle config --local path .bundle
+    - bundle config --local without development
+    - bundle check || bundle install --jobs 4 --retry 3
+    - cd client; npm install --no-optional
+    - cd client; node_modules/.bin/bower --version || npm install bower
+    - cd client; node_modules/.bin/bower install
+  cache_directories:
+    - .bundle
+    - client/node_modules
+    - client/bower_components
+database:
+  override:
+    - bin/rake dev:prime
+test:
+  override:
+    - bin/rake
+  post:
+    - cp tmp/rspec.xml $CIRCLE_TEST_REPORTS

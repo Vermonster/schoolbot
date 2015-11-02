@@ -44,6 +44,8 @@ group :test do
   gem "launchy"
   gem "poltergeist"
   gem "rspec-collection_matchers"
+  gem "rspec-retry"
+  gem "rspec_junit_formatter"
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
   gem "timecop"
