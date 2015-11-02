@@ -6,8 +6,8 @@ before_install:
 install:
   - bundle config --local path .bundle
   - bundle config --local without development
-  - nvm install 4
-  - nvm use 4
+  - nvm install 5
+  - nvm use 5
   - mkdir travis-phantomjs
   - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
   - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
