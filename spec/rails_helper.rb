@@ -6,6 +6,7 @@ abort("DATABASE_URL environment variable is set") if ENV["DATABASE_URL"]
 require "rspec/rails"
 require "shoulda/matchers"
 require "capybara/poltergeist"
+require "billy/rspec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 
@@ -33,4 +34,6 @@ RSpec.configure do |config|
 end
 
 ActiveRecord::Migration.maintain_test_schema!
-Capybara.javascript_driver = :poltergeist
+
+Capybara.javascript_driver = :poltergeist_billy
+Capybara.default_driver = Capybara.javascript_driver
