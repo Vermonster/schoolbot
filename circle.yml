@@ -30,3 +30,9 @@ test:
     - bin/rake
   post:
     - cp tmp/rspec.xml $CIRCLE_TEST_REPORTS
+deployment:
+  staging:
+    branch: master
+    commands:
+      - git remote add staging git@heroku.com:omnibus-staging.git
+      - bin/deploy staging
