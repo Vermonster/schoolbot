@@ -1,9 +1,10 @@
 import Ember from 'ember';
-import AuthenticatedRoute from 'simple-auth/mixins/authenticated-route-mixin';
+import AuthenticatedRouteMixin from
+  'ember-simple-auth/mixins/authenticated-route-mixin';
 
 const POLL_INTERVAL = 3000;
 
-export default Ember.Route.extend(AuthenticatedRoute, {
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
   controller: null,
 
   afterModel() {

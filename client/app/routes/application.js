@@ -1,5 +1,6 @@
 import Ember from 'ember';
-import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from
+  'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   districts: Ember.inject.service(),
@@ -11,7 +12,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   beforeModel() {
     this.get('onError').setup();
-    this._super(...arguments);
 
     const storedLocale = this.get('sessionStorage.locale');
     if (Ember.isPresent(storedLocale)) {

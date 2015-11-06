@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  session: Ember.inject.service(),
   store: Ember.inject.service(),
   districts: Ember.inject.service(),
   districtName: Ember.computed.alias('districts.current.name'),
@@ -18,14 +19,13 @@ export default Ember.Component.extend({
 
     register() {
       this.get('registration').save().then(() => {
-        this.get('session')
-          .authenticate('simple-auth-authenticator:devise', {
-            identification: this.get('registration.email'),
-            password: this.get('registration.password')
-          });
+        this.get('session').authenticate(
+          'authenticator:token',
+          this.get('registration.email'),
+          this.get('registration.password')
+        );
       }).catch((error) => {
         if (this.get('registration.isValid')) {
-          // TODO: Handle errors with the sign-in rather than the registration
           Ember.onerror(error);
         }
       });

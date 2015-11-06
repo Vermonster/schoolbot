@@ -14,13 +14,8 @@ module.exports = function(environment) {
       allowLocaleOverride: true
     },
     moment: { includeLocales: true },
-    'simple-auth': {
-      store: 'store:simple-auth-session',
-      authorizer: 'simple-auth-authorizer:devise',
+    'ember-simple-auth': {
       authenticationRoute: 'sign-in'
-    },
-    'simple-auth-devise': {
-      serverTokenEndpoint: '/api/sessions'
     },
     EmberENV: {
       FEATURES: {
