@@ -23,7 +23,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   pollTask: null,
   poll() {
-    this.store.findAll('student')
+    this.store.findAll('student', { reload: true })
       .then(() => this.set('controller.isOnline', true))
       .catch(() => this.set('controller.isOnline', false));
     this.set('pollTask', Ember.run.later(this, this.poll, POLL_INTERVAL));
