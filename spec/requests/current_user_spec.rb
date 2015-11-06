@@ -11,15 +11,12 @@ describe 'Current user API' do
     }
   end
 
-  def invalid_auth_headers
-    { 'HTTP_AUTHORIZATION' => encode_credentials('nope', email: 'invalid') }
-  end
-
   describe 'update action' do
     it 'cannot be accessed without authentication' do
-      create(:district, slug: 'qux')
+      district = create(:district, slug: 'qux')
+      user = create(:user, district: district)
 
-      get api_students_url(subdomain: 'qux'), nil, invalid_auth_headers
+      put api_update_current_user_url(user.id, subdomain: 'qux')
 
       expect(response.status).to be 401
     end

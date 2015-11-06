@@ -10,16 +10,13 @@ module TokenAuthenticated
   private
 
   def authenticate_user!
-    authenticate_with_http_token do |token, options|
-      user_email = options[:email].presence
-      district = District.find_by(slug: request.subdomains.first)
-      user = user_email && district && district.users.find_by(email: user_email)
+    @current_user = authenticate_with_http_token do |token, options|
+      district = District.find_by!(slug: request.subdomains.first)
+      user = district.users.find_by(email: options[:email].presence)
 
-      if user && user.authentication_token == token
-        @current_user = user
-      else
-        head :unauthorized
-      end
+      user if user.present? && user.authentication_token == token
     end
+
+    head :unauthorized unless @current_user.present?
   end
 end
