@@ -51,6 +51,9 @@ es:
     signOut: Desconectar
     add: Añadir un estudiante
     changePassword: Cambiar la contraseña
+  flashes:
+    error:
+      generic: ¡Uy! Algo salió mal y no pudimos procesar esa acción. Quizá quieras intentarlo de nuevo o si eso no funciona, actualice la página.
   district:
     title: Bienvenido a SchoolBot
     backTo: Regresar a la bienvenida
@@ -68,12 +71,20 @@ es:
     encrypted: Esta información está cifrada y es usada para buscar a su estudiante en el distrito escolar. SchoolBot no almacena la información.
     identifier:
       note: Usted bebe haber recibido este número de su distrito escolar.
+  map:
+    messages:
+      connection: Conexión interrumpida. Tratando de volver a conectar...
+      missingStudents: 'Algunos estudiantes no se muestran en el mapa porque la información del autobús no está actualizada o disponible. Ver "Mi configuración" para obtener más información.'
   settings:
     title: Mi configuración
     information:
       title: Mi información
     students:
       title: Mis estudiantes
+      problems:
+        notAssigned: Su distrito escolar no ha asignado al estudiante a un autobús.
+        busOutdated: 'No podemos encontrar el autobuses de este estudiante ahora ({{busNumber}}). Podría estar fuera de línea, estacionado o en un área con mala recepción.'
+        contactDistrict: Para obtener ayuda, póngase en contacto con su distrito escolar.
   help:
     title: Ayuda
     phone: 'Necesita ayuda? Para reportar un problema con SchoolBot, usted puede llamar a su distrito escolar al:'

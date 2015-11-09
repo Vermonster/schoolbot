@@ -51,6 +51,9 @@ pt:
     signOut: Sair
     add: Adicionar Estudante
     changePassword: Alterar Password
+  flashes:
+    error:
+      generic: Opa! Algo deu errado e nós não podemos processar essa ação. Você pode querer tentar de novo, ou se não funcionar, atualize a página.
   district:
     title: Bem-vindo ao SchoolBot
     backTo: Volte ao Bem-vindo
@@ -68,12 +71,20 @@ pt:
     encrypted: Esta informação é encriptado e usado para procurar o seu estudante com o distrito escolar. SchoolBot não guarda esta informação.
     identifier:
       note: Você deve ter recebido este número do seu distrito escolar.
+  map:
+    messages:
+      connection: Ligação interrompida. Tentando ligar...
+      missingStudents: 'Alguns alunos não aparecem no mapa porque as informações do autocarro não estão disponíveis ou estão desatualizadas. Consulte "Minhas configurações" para mais detalhes.'
   settings:
     title: Minha Configuração
     information:
       title: Minha Informação
     students:
       title: Meus Estudantes
+      problems:
+        notAssigned: O seu distrito escolar não designou um autocarro para este aluno.
+        busOutdated: 'Neste momento, não conseguimos localizar o autocarro deste aluno ({{busNumber}}). Pode estar desligado, estacionado ou em uma área com má qualidade de rede.'
+        contactDistrict: Contacte o seu distrito escolar para assistência.
   help:
     title: Ajuda
     phone: 'Tem necessidade de ajuda? Para reportar um problema com o SchoolBot, você pode telefonar o seu distrito escolar pelo número:'

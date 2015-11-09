@@ -1,6 +1,6 @@
 fr:
   localeName: Français
-  notImplemented: "Désolé, cette fonctionnalité est pas encore implémentée! Pour de l'aide, contactzr votre district scolaire à l'adresse email suivante :"
+  notImplemented: "Désolé, cette fonctionnalité est pas encore implémentée! Pour de l'aide, contactez votre district scolaire à l'adresse email suivante :"
   errors:
     accepted: "Il faut que vous acceptiez les termes pour l'inscription."
     blank: Ce champ est obligatoire.
@@ -53,6 +53,9 @@ fr:
     signOut: Se déconnecter
     add: Ajouter un étudiant
     changePassword: Changer votre mot de passe
+  flashes:
+    error:
+      generic: "Oups! Quelque chose n'allait pas et nous ne pouvions pas traiter cette action. Vous pouvez essayer à nouveau, ou si cela ne fonctionne pas, actualisez la page."
   district:
     title: Bienvenue à SchoolBot
     backTo: "Retour à l'accueil"
@@ -70,12 +73,20 @@ fr:
     encrypted: "Cette information est cryptée et utilisée pour rechercher votre étudiant avec le secteur scolaire. SchoolBot ne l'enregistre pas."
     identifier:
       note: Vous auriez dû recevoir ce numéro de votre secteur scolaires.
+  map:
+    messages:
+      connection: Connexion interrompue. Essayer de se reconnecter...
+      missingStudents: "Certains étudiants ne figurent pas sur la carte car l’information de l’autobus scolaire n'est pas disponible ou est périmée. Cochez « Mes Paramètres de compte » pour plus de détails."
   settings:
     title: Préférences de compte
     information:
       title: Mes renseignements
     students:
       title: Mes étudiants
+      problems:
+        notAssigned: "Votre district scolaire n'a pas assigné cet étudiant à un autobus scolaire."
+        busOutdated: 'Nous ne pouvons localiser l‘autobus scolaire de cet étudiant en cemoment ({{busNumber}}). Il pourrait être hors ligne, en stationnement ou dans une zone de mauvaise réception.'
+        contactDistrict: Contactez votre district scolaire pour obtenir de l’aide.
   help:
     title: Aide
     phone: "Avez-vous besoin d'aide? Pour signaler un problème avec SchoolBot, vous pouvez appeler votre district scolaire à 'adresse:"
