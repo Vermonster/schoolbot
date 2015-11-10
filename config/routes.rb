@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :sessions, only: :create
     resources :registrations, only: :create
+    resources :confirmations, only: :create
     get 'users/current', to: 'users#show', as: :current_user
     put 'users/:ignored', to: 'users#update', as: :update_current_user
     resources :students, only: [:index, :create]

@@ -62,6 +62,23 @@ en:
       generic: |
         Oops! Something went wrong and we couldn't process that action. You
         might want to try it again, or if that doesn't work, refresh the page.
+      invalidConfirmation: |
+        The email confirmation link you followed is not valid. Your account may
+        already be confirmed; try signing in.
+    success:
+      accountConfirmed: |
+        Welcome to SchoolBot! Your email address has been confirmed.
+  emails:
+    confirmAccount:
+      subject: Confirm your SchoolBot registration
+      body: |
+        Hi %{user_name}, thanks for registering an account with SchoolBot!
+        To confirm your account and start using the app, follow this link:
+
+        %{confirmation_url}
+
+        If you don't remember registering for a SchoolBot account, you can
+        safely ignore this message. We won't send you any further emails.
   district:
     title: Welcome to SchoolBot
     backTo: Back to welcome
@@ -81,7 +98,13 @@ en:
       copy: |
         To register for SchoolBot, you must be the legal guardian of a student
         in this school district.
-    cta: Create account and sign in
+    cta: Create account
+    success:
+      heading: Confirm Your Email
+      copy: |
+        Success! We've sent a confirmation to your email address at {{email}}.
+        Click the link in the email to confirm your registration and sign into
+        SchoolBot!
   addStudent:
     encrypted: |
       This information is encrypted and used to look up your student with the

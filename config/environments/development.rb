@@ -5,7 +5,7 @@ Rails.application.configure do
 
   config.action_controller.perform_caching = false
 
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.raise_delivery_errors = true
 
   config.active_record.migration_error = :page_load

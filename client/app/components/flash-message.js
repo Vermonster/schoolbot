@@ -9,6 +9,8 @@ export default FlashMessage.extend({
 
   click: Ember.K, // Default is to dismiss the message when clicked anywhere
 
+  isError: Ember.computed.equal('flash.type', 'error'),
+
   actions: {
     close() {
       this._destroyFlashMessage();

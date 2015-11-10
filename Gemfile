@@ -23,6 +23,7 @@ gem "responders"
 gem "rest-client"
 
 group :development do
+  gem "letter_opener"
   gem "spring"
   gem "spring-commands-rspec"
 end
@@ -41,6 +42,7 @@ end
 
 group :test do
   gem "database_cleaner"
+  gem "email_spec"
   gem "launchy"
   gem "poltergeist"
   gem "puffing-billy"

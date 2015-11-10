@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     flashMessageDefaults: {
+      timeout: 5000,
       types: ['success', 'error']
     },
     i18n: {

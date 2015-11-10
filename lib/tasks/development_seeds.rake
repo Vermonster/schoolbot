@@ -57,6 +57,12 @@ if Rails.env.development? || Rails.env.test?
         latitude: 42.016633,
         longitude: -71.001635
       )
+      create(:user, :unconfirmed,
+        district: brockton,
+        confirmation_token: '12345',
+        latitude: 42.016633,
+        longitude: -71.001635
+      )
 
       bobby_label = create(:student_label,
         nickname: 'Bobby',

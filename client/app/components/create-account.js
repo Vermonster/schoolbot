@@ -17,11 +17,7 @@ export default Ember.Component.extend({
 
     register() {
       this.get('registration').save().then(() => {
-        this.get('session').authenticate(
-          'authenticator:token',
-          this.get('registration.email'),
-          this.get('registration.password')
-        );
+        this.sendAction('didRegister', this.get('registration.email'));
       }).catch((error) => {
         if (this.get('registration.isValid')) {
           Ember.onerror(error);

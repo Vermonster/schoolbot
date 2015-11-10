@@ -61,9 +61,14 @@ FactoryGirl.define do
     sequence(:name) { |n| "Test User #{n}" }
     sequence(:email) { |n| "user#{n}@example.org" }
     password "TestPassword"
+    confirmed_at { Time.current }
     sequence(:street) { |n| "#{n} Guardian St" }
     city "Anytown"
     state "USA"
     zip_code "12345"
+
+    trait :unconfirmed do
+      confirmed_at nil
+    end
   end
 end

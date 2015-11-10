@@ -12,7 +12,7 @@ module TokenAuthenticated
 
   def authenticate_user!
     @current_user = authenticate_with_http_token do |token, options|
-      current_district.users.find_by(
+      current_district.users.confirmed.find_by(
         email: options[:email].presence,
         authentication_token: token
       )

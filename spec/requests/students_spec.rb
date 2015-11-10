@@ -26,7 +26,10 @@ describe 'Students API' do
 
     it 'includes data on students and recent bus locations' do
       district = create(:district, slug: 'foo')
-      user = create(:user, district: district)
+      user = create(:user,
+        district: district,
+        confirmed_at: Time.zone.local(2015, 10, 1)
+      )
       school = create(:school, district: district)
       label = create(:student_label,
         user: user,

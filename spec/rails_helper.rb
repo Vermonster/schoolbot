@@ -7,6 +7,7 @@ require "rspec/rails"
 require "shoulda/matchers"
 require "capybara/poltergeist"
 require "billy/rspec"
+require "email_spec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 
@@ -28,6 +29,8 @@ end
 RSpec.configure do |config|
   config.include Requests, type: :request
   config.include Features, type: :feature
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
   config.infer_base_class_for_anonymous_controllers = false
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false

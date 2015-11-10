@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     signIn() {
       const { email, password } = this.getProperties('email', 'password');
       this.get('session')
-        .authenticate('authenticator:token', email, password)
+        .authenticate('authenticator:application', email, password)
         .catch((response) => {
           if (response && response.error) {
             this.set('errorMessage', this.get('i18n').t(response.error));

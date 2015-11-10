@@ -18,7 +18,7 @@ module API
     end
 
     def authenticating_user
-      current_district.users.find_by(email: email)
+      current_district.users.confirmed.find_by(email: email)
     end
 
     def email

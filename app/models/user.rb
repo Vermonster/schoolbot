@@ -15,10 +15,24 @@ class User < ActiveRecord::Base
   auto_strip_attributes :name, :street, :city, :state, :zip_code, squish: true
 
   before_validation -> { email.try(:downcase!) }
-  before_save :ensure_authentication_token
+  before_save :ensure_tokens
 
   def address
     [street, city, state, zip_code].join(', ')
+  end
+
+  def confirm!
+    self.confirmed_at = Time.current
+    self.confirmation_token = nil
+    save!
+  end
+
+  def confirmed?
+    !confirmed_at.nil? && confirmed_at <= Time.current
+  end
+
+  def self.confirmed
+    where('confirmed_at <= ?', Time.current)
   end
 
   # Don't unset the password digest if a blank password is sent
@@ -34,16 +48,17 @@ class User < ActiveRecord::Base
     end
   end
 
-  def ensure_authentication_token
-    if authentication_token.blank?
-      self.authentication_token = generate_authentication_token
-    end
+  def ensure_tokens
+    ensure_token(:authentication_token)
+    ensure_token(:confirmation_token) unless confirmed?
   end
 
-  def generate_authentication_token
-    loop do
-      token = SecureRandom.hex
-      break token unless User.find_by(authentication_token: token)
+  def ensure_token(token_name)
+    if self[token_name].blank?
+      self[token_name] = loop do
+        token = SecureRandom.hex
+        break token unless User.exists?(token_name => token)
+      end
     end
   end
 end

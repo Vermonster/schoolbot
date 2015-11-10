@@ -30,7 +30,9 @@ class Registration
 
   def save
     if valid?
-      user.save
+      user.save!
+      ConfirmationMailer.confirmation(user).deliver_later
+      true
     else
       false
     end

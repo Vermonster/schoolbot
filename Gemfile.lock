@@ -107,6 +107,9 @@ GEM
       eventmachine (>= 1.0.0.beta.4)
     em-synchrony (1.0.4)
       eventmachine (>= 1.0.0.beta.1)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
@@ -128,6 +131,8 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -300,10 +305,12 @@ DEPENDENCIES
   delayed-plugins-airbrake
   delayed_job_active_record
   dotenv-rails
+  email_spec
   email_validator
   factory_girl_rails
   geocoder
   launchy
+  letter_opener
   paperclip
   pg
   poltergeist

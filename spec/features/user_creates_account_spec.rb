@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User creates account' do
-  scenario 'and is signed into the app with their first student added' do
+  scenario 'and signs in via an emailed confirmation link' do
     district = create(:district)
     create(:school, district: district, name: 'Springfield High')
     student = create(:student,
@@ -31,7 +31,17 @@ feature 'User creates account' do
     check t('labels.termsAccepted')
     click_on t('createAccount.cta')
 
-    expect(page).to have_css 'button.btn--settings', wait: 5
+    expect(page).to have_content t('createAccount.success.heading')
+    expect(page).to have_content(
+      t('createAccount.success.copy').sub('{{email}}', 'guy@example.com')
+    )
+    expect(mailbox_for('guy@example.com')).to have(1).message
+
+    open_email('guy@example.com', subject: t('emails.confirmAccount.subject'))
+    click_first_link_in_email
+
+    expect(page).to have_content t('flashes.success.accountConfirmed')
+    expect(page).to have_css 'button.btn--settings'
     within('.leaflet-container') do
       expect(page).to have_css('.bus-marker', text: 'JO')
     end
@@ -61,6 +71,7 @@ feature 'User creates account' do
     expect(page).to have_content t('errors.school.blank')
     expect(page).to have_content t('errors.accepted')
     expect(page).to_not have_content t('errors.address.invalid')
+    expect(mailbox_for('guy@example.com')).to be_empty
   end
 
   scenario 'and sees an error message if their address could not be found' do
