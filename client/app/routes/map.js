@@ -5,6 +5,7 @@ import AuthenticatedRouteMixin from
 const POLL_INTERVAL = 3000;
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  i18n: Ember.inject.service(),
   controller: null,
 
   afterModel() {
@@ -19,6 +20,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     this.set('controller', controller);
     controller.set('allStudents', this.students);
     controller.set('currentUser', this.currentUser);
+    this.get('i18n').set('locale', this.currentUser.get('locale'));
   },
 
   pollTask: null,

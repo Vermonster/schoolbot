@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  i18n: Ember.inject.service(),
   session: Ember.inject.service(),
   map: Ember.inject.controller(),
   user: Ember.computed.alias('map.currentUser'),
@@ -31,6 +32,11 @@ export default Ember.Controller.extend({
           Ember.onerror(error);
         }
       });
+    },
+
+    updateLocale() {
+      this.get('user').set('locale', this.get('i18n.locale'));
+      this.get('user').save();
     },
 
     signOut() {

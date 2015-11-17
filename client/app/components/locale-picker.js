@@ -16,11 +16,14 @@ export default Ember.Component.extend({
     });
   }),
 
+  localePicked: Ember.K,
+
   actions: {
     setLocale(locale) {
       this.get('moment').changeLocale(locale);
       this.get('i18n').set('locale', locale);
       this.get('session').set('data.locale', locale);
+      this.sendAction('localePicked');
     }
   }
 });

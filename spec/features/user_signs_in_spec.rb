@@ -11,18 +11,21 @@ feature 'User signs in' do
       create(:user,
         district: @district,
         email: 'bob@example.com',
-        password: 'secretpass'
+        password: 'secretpass',
+        locale: 'es'
       )
     end
 
-    scenario 'successfully and is sent to the main page' do
+    scenario 'successfully with their preferred locale' do
       visit root_path
       click_on t('actions.signIn')
       fill_in t('labels.email'), with: 'bob@example.com'
       fill_in t('labels.password'), with: 'secretpass'
       click_on t('actions.signIn')
 
-      expect(page).to have_css 'button.btn--settings'
+      expect(page).to have_content(
+        t('settings.title', locale: :es).mb_chars.upcase.to_s
+      )
     end
 
     scenario 'unsuccessfully due to invalid credentials' do

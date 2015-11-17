@@ -26,6 +26,21 @@ feature 'User updates profile' do
     end
   end
 
+  scenario 'and has their preferred locale persisted' do
+    user = create(:user)
+    sign_in_as user
+
+    click_on t('settings.title')
+    select t('localeName', locale: :fr), from: 'Language'
+    sleep 0.5 # the user update request doesn't make it if we reset immediately
+    page.driver.reset! # clear any browser storage of the locale
+    sign_in_as user
+
+    expect(page).to have_content(
+      t('settings.title', locale: :fr).mb_chars.upcase.to_s
+    )
+  end
+
   scenario 'and sees error messages when bad data is input' do
     district = create(:district)
     create(:user, district: district, email: 'guy@example.com')

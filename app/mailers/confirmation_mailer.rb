@@ -1,15 +1,15 @@
 class ConfirmationMailer < ApplicationMailer
   def confirmation(user)
-    # TODO: Translate into locale based on what the user selected in Ember
-    mail(
-      to: user.email,
-      subject: t('emails.confirmAccount.subject', locale: :en),
-      body: t('emails.confirmAccount.body',
-        locale: :en,
-        user_name: user.name,
-        confirmation_url: confirmation_url(user)
+    I18n.with_locale(user.locale) do
+      mail(
+        to: user.email,
+        subject: t('emails.confirmAccount.subject'),
+        body: t('emails.confirmAccount.body',
+          user_name: user.name,
+          confirmation_url: confirmation_url(user)
+        )
       )
-    )
+    end
   end
 
   private

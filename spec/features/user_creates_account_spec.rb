@@ -14,36 +14,39 @@ feature 'User creates account' do
     use_subdomain(district.slug)
 
     visit root_path
-    click_on t('actions.register')
-    fill_in t('labels.name'), with: 'Guy Test'
-    fill_in t('labels.email'), with: 'guy@example.com'
-    fill_in t('labels.password'), with: 'secretpass'
-    fill_in t('labels.confirmPassword'), with: 'secretpass'
-    fill_in t('labels.street'), with: '123 Main St'
-    fill_in t('labels.city'), with: 'Someplace'
-    fill_in t('labels.state'), with: 'MA'
-    fill_in t('labels.zip'), with: '12345'
-    fill_in t('labels.nickname'), with: 'Johnny'
-    fill_in t('labels.lastName'), with: 'Test'
-    fill_in t('labels.identifier'), with: 'ABC123'
-    fill_in t('labels.birthdate'), with: '3/21/2002'
-    select 'Springfield High', from: t('labels.school')
-    check t('labels.termsAccepted')
-    click_on t('createAccount.cta')
+    select t('localeName', locale: :pt), from: 'Language'
+    with_locale(:pt) do
+      click_on t('actions.register')
+      fill_in t('labels.name'), with: 'Guy Test'
+      fill_in t('labels.email'), with: 'guy@example.com'
+      fill_in t('labels.password'), with: 'secretpass'
+      fill_in t('labels.confirmPassword'), with: 'secretpass'
+      fill_in t('labels.street'), with: '123 Main St'
+      fill_in t('labels.city'), with: 'Someplace'
+      fill_in t('labels.state'), with: 'MA'
+      fill_in t('labels.zip'), with: '12345'
+      fill_in t('labels.nickname'), with: 'Johnny'
+      fill_in t('labels.lastName'), with: 'Test'
+      fill_in t('labels.identifier'), with: 'ABC123'
+      fill_in t('labels.birthdate'), with: '3/21/2002'
+      select 'Springfield High', from: t('labels.school')
+      check t('labels.termsAccepted')
+      click_on t('createAccount.cta')
 
-    expect(page).to have_content t('createAccount.success.heading')
-    expect(page).to have_content(
-      t('createAccount.success.copy').sub('{{email}}', 'guy@example.com')
-    )
-    expect(mailbox_for('guy@example.com')).to have(1).message
+      expect(page).to have_content t('createAccount.success.heading')
+      expect(page).to have_content(
+        t('createAccount.success.copy').sub('{{email}}', 'guy@example.com')
+      )
+      expect(mailbox_for('guy@example.com')).to have(1).message
 
-    open_email('guy@example.com', subject: t('emails.confirmAccount.subject'))
-    click_first_link_in_email
+      open_email('guy@example.com', subject: t('emails.confirmAccount.subject'))
+      click_first_link_in_email
 
-    expect(page).to have_content t('flashes.success.accountConfirmed')
-    expect(page).to have_css 'button.btn--settings'
-    within('.leaflet-container') do
-      expect(page).to have_css('.bus-marker', text: 'JO')
+      expect(page).to have_content t('flashes.success.accountConfirmed')
+      expect(page).to have_css 'button.btn--settings'
+      within('.leaflet-container') do
+        expect(page).to have_css('.bus-marker', text: 'JO')
+      end
     end
   end
 

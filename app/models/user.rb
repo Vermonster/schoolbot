@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :student_labels
   has_many :students, through: :student_labels
 
+  validates! :locale, presence: true
   validates :email, :name, :street, :city, :state, :zip_code, presence: true
   validates :email, uniqueness: true, format: { with: /.+@.+\..+/ }
   validates :password, length: { minimum: 8 }, allow_blank: true

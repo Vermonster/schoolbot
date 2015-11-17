@@ -8,8 +8,9 @@ class Registration
 
   REGISTRATION_ATTRIBUTES = %i(terms_accepted)
   STUDENT_LABEL_ATTRIBUTES = %i(digest nickname school_id)
-  USER_ATTRIBUTES =
-    %i(email password password_confirmation name street city state zip_code)
+  USER_ATTRIBUTES = %i(
+    email password password_confirmation name street city state zip_code locale
+  )
   ATTRIBUTES =
     REGISTRATION_ATTRIBUTES + STUDENT_LABEL_ATTRIBUTES + USER_ATTRIBUTES
 

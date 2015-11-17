@@ -29,6 +29,7 @@ end
 RSpec.configure do |config|
   config.include Requests, type: :request
   config.include Features, type: :feature
+  config.include I18nHelper
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
   config.infer_base_class_for_anonymous_controllers = false

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  i18n: Ember.inject.service(),
   session: Ember.inject.service(),
   store: Ember.inject.service(),
   schools: Ember.computed.alias('currentDistrict.model.schools'),
@@ -16,6 +17,7 @@ export default Ember.Component.extend({
     },
 
     register() {
+      this.get('registration').set('locale', this.get('i18n.locale'));
       this.get('registration').save().then(() => {
         this.sendAction('didRegister', this.get('registration.email'));
       }).catch((error) => {
