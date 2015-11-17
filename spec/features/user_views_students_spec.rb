@@ -32,14 +32,27 @@ feature 'User views students' do
 
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'First') do
-        expect(page).to have_content 'FI'
+        expect(page).to have_css '.student__nickname', text: 'F'
         expect(page).to have_content 'Middle School'
       end
       within('li', text: 'Second') do
-        expect(page).to have_content 'SE'
+        expect(page).to have_css '.student__nickname', text: 'S'
         expect(page).to have_content 'High School'
       end
     end
+  end
+
+  scenario 'and sees unique abbreviations for each student nickname' do
+    create(:student_label, user: @user, nickname: 'Bobby')
+    create(:student_label, user: @user, nickname: 'Benny')
+    create(:student_label, user: @user, nickname: 'Berky')
+
+    sign_in_as @user
+    click_on t('settings.title')
+
+    expect(page).to have_css '.student__nickname', text: 'Bo'
+    expect(page).to have_css '.student__nickname', text: 'Ben'
+    expect(page).to have_css '.student__nickname', text: 'Ber'
   end
 
   scenario 'and sees a message if no recent bus locations are available' do

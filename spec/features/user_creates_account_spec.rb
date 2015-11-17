@@ -45,7 +45,7 @@ feature 'User creates account' do
       expect(page).to have_content t('flashes.success.accountConfirmed')
       expect(page).to have_css 'button.btn--settings'
       within('.leaflet-container') do
-        expect(page).to have_css('.bus-marker', text: 'JO')
+        expect(page).to have_css('.bus-marker', text: 'J')
       end
     end
   end

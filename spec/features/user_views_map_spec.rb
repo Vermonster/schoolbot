@@ -33,16 +33,16 @@ feature 'User views map' do
 
       within('.leaflet-container') do
         expect(page).to have_css('.bus-marker', count: 2)
-        expect(page).to have_css('.bus-marker', text: 'FI')
-        expect(page).to have_css('.bus-marker', text: 'SE')
+        expect(page).to have_css('.bus-marker', text: 'F')
+        expect(page).to have_css('.bus-marker', text: 'S')
       end
     end
 
     scenario 'live-updated as locations change' do
       sign_in_as @user
 
-      first_bus_style = page.find('.bus-marker', text: 'FI')[:style]
-      second_bus_style = page.find('.bus-marker', text: 'SE')[:style]
+      first_bus_style = page.find('.bus-marker', text: 'F')[:style]
+      second_bus_style = page.find('.bus-marker', text: 'S')[:style]
 
       create(:bus_location, bus: @first_bus, latitude: 42.03)
 
@@ -61,7 +61,7 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    expect(page).to have_css('.bus-marker', count: 1, text: 'FISE')
+    expect(page).to have_css('.bus-marker', count: 1, text: 'FS')
   end
 
   scenario 'with markers displayed only for buses with recent locations' do
@@ -74,7 +74,7 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    expect(page).to have_css('.bus-marker', count: 1, text: 'FI')
+    expect(page).to have_css('.bus-marker', count: 1, text: 'F')
     expect(page).to have_content t('map.messages.missingStudents')
   end
 
@@ -85,7 +85,7 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    expect(page).to have_css('.bus-marker', count: 1, text: 'SE')
+    expect(page).to have_css('.bus-marker', count: 1, text: 'S')
     expect(page).to have_content t('map.messages.missingStudents')
   end
 

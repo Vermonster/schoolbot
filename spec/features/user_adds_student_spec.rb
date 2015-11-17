@@ -25,7 +25,7 @@ feature 'User adds student' do
     expect(page).to_not have_button t('actions.save')
     within('section', text: 'MY STUDENTS') do
       within('li', text: 'Danny') do
-        expect(page).to have_content 'DA'
+        expect(page).to have_css '.student__nickname', text: 'D'
         expect(page).to have_content 'Springfield Elementary'
       end
     end
