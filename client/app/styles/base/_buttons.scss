@@ -60,9 +60,11 @@ button {
 .btn--settings,
 .btn--help {
   @include button-with-yellow-stripes-bg-bottom;
-  padding-top: rem(4);
+  height: 100%;
+  padding-top: rem(10);
   padding-right: rem(20);
   padding-left: rem(20);
+  border-radius: 0;
   background-color: transparent;
   color: $base-color-action;
 
