@@ -54,6 +54,18 @@ pt:
   flashes:
     error:
       generic: Opa! Algo deu errado e nós não podemos processar essa ação. Você pode querer tentar de novo, ou se não funcionar, atualize a página.
+      invalidConfirmation: No link de confirmação de e-mail seguiu não é válido. Sua conta já pode ser confirmada; Tente entrar.
+    success:
+      accountConfirmed: Bem-vindo ao SchoolBot! Seu endereço de e-mail foi confirmado.
+  emails:
+    confirmAccount:
+      subject: Confirme a sua inscrição SchoolBot
+      body: |
+        Oi %{user_name}, obrigado por registrar uma conta com SchoolBot! Para confirmar sua conta e começar a usar o app, siga este link:
+        
+        %{confirmation_url}
+        
+        Se você não se lembra se registrar para uma conta de SchoolBot, você pode ignorar esta mensagem. Não enviaremos e-mails adicionais.
   district:
     title: Bem-vindo ao SchoolBot
     backTo: Volte ao Bem-vindo
@@ -66,7 +78,10 @@ pt:
     studentInformation:
       heading: Informação do Estudante
       copy: Para registar para o SchoolBot, você deve ser um encarregado de educação legal de um estudante, neste distrito escolar.
-    cta: Criar uma conta e entrar
+    cta: Criar uma conta
+    success:
+      heading: Confirme seu Email
+      copy: 'Sucesso! Enviamos uma confirmação para seu endereço de e-mail no {{email}}. Clique no link no e-mail para confirmar o seu registo e o sinal em SchoolBot!'
   addStudent:
     encrypted: Esta informação é encriptado e usado para procurar o seu estudante com o distrito escolar. SchoolBot não guarda esta informação.
     identifier:

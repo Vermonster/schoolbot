@@ -56,6 +56,18 @@ fr:
   flashes:
     error:
       generic: "Oups! Quelque chose n'allait pas et nous ne pouvions pas traiter cette action. Vous pouvez essayer à nouveau, ou si cela ne fonctionne pas, actualisez la page."
+      invalidConfirmation: "Le lien de confirmation par courriel que vous avez suivi n'est pas valide. Votre compte est déjà susceptible de confirmation; essayez de vous connecter."
+    success:
+      accountConfirmed: Bienvenue sur SchoolBot! Votre adresse e-mail a été confirmée.
+  emails:
+    confirmAccount:
+      subject: Confirmer votre inscription de SchoolBot
+      body: |
+        Salut %{user_name}, merci pour l'enregistrement d'un compte avec SchoolBot! Pour confirmer votre compte et commencer à utiliser l'application, suivez ce lien:
+        
+        %{confirmation_url}
+        
+        Si vous avez oublié de vous inscrire à un compte SchoolBot, vous pouvez ignorer ce message. Nous ne vous envoyons des e-mails supplémentaires.
   district:
     title: Bienvenue à SchoolBot
     backTo: "Retour à l'accueil"
@@ -69,6 +81,9 @@ fr:
       heading: "Renseignements sur l'élève"
       copy: "Pour vous inscrire à SchoolBot, vous devez être le tuteur juridique d'un élève dans ce secteur scolaire."
     cta: "Créer un compte et s'inscrire"
+    success:
+      heading: Confirmez votre Email
+      copy: "Succès! Nous avons envoyé un courriel de confirmation à votre adresse e-mail à {{email}}. Cliquez sur le lien dans l'email pour confirmer votre inscription et votre signe dans SchoolBot!"
   addStudent:
     encrypted: "Cette information est cryptée et utilisée pour rechercher votre étudiant avec le secteur scolaire. SchoolBot ne l'enregistre pas."
     identifier:

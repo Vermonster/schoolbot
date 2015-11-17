@@ -54,6 +54,18 @@ es:
   flashes:
     error:
       generic: ¡Uy! Algo salió mal y no pudimos procesar esa acción. Quizá quieras intentarlo de nuevo o si eso no funciona, actualice la página.
+      invalidConfirmation: El enlace de confirmación de correo electrónico seguido no es válido. Su cuenta ya puede ser confirmado; prueba de firma en.
+    success:
+      accountConfirmed: Bienvenido a SchoolBot! Se ha confirmado tu dirección de correo electrónico.
+  emails:
+    confirmAccount:
+      subject: Confirme su registro SchoolBot
+      body: |
+        Hola %{user_name}, gracias por registrar una cuenta con SchoolBot! Para confirmar tu cuenta y comenzar a utilizar la aplicación, siga este enlace:
+        
+        %{confirmation_url}
+        
+        Si no recuerde registrarse para una cuenta de SchoolBot, usted puede ignorar este mensaje. No le enviaremos ningún correo electrónico más.
   district:
     title: Bienvenido a SchoolBot
     backTo: Regresar a la bienvenida
@@ -66,7 +78,10 @@ es:
     studentInformation:
       heading: Información del estudiante
       copy: Para registrarse para SchoolBot, usted debe ser el tutor legal de un estudiante en este distrito escolar.
-    cta: Crear una cuenta e ingresar
+    cta: Crear una cuenta
+    success:
+      heading: Confirme su correo electrónico
+      copy: '¡Un éxito! Hemos enviado una confirmación a su dirección de correo electrónico en {{email}}. Haga clic en el enlace en el correo electrónico para confirmar tu registro y signo en SchoolBot!'
   addStudent:
     encrypted: Esta información está cifrada y es usada para buscar a su estudiante en el distrito escolar. SchoolBot no almacena la información.
     identifier:
