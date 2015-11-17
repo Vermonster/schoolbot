@@ -1,2 +1,2 @@
 #!/bin/sh
-foreman start -f Procfile.dev
+heroku local -f Procfile.dev

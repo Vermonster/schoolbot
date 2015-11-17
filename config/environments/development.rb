@@ -11,4 +11,10 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   config.active_support.deprecation = :log
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    Bullet.rails_logger = true
+  end
 end

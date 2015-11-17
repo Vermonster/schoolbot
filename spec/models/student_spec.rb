@@ -11,9 +11,9 @@ describe StudentLabel do
 
     it 'strictly disallows invalid digests' do
       ['0' * 63, '0' * 65, 'nope' * 16].each do |invalid_digest|
-        expect do
+        expect{
           create(:student, digest: invalid_digest)
-        end.to raise_error ActiveModel::StrictValidationFailed
+        }.to raise_error ActiveModel::StrictValidationFailed
       end
     end
   end

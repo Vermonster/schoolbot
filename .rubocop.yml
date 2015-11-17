@@ -24,6 +24,9 @@ Metrics/LineLength:
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
 # https://github.com/bbatsov/rubocop/issues/1758
 Style/ClosingParenthesisIndentation:
   Enabled: false
