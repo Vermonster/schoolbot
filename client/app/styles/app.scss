@@ -5,6 +5,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/#{$fa-version}/fonts';
 
 @import 'bower_components/normalize.css/normalize';
 @import 'bower_components/font-awesome/scss/font-awesome';
+@import 'spin-button-base';
 @import 'bourbon';
 @import 'base/grid-settings';
 @import 'neat';

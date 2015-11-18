@@ -18,7 +18,7 @@ export default Ember.Component.extend({
 
     register() {
       this.get('registration').set('locale', this.get('i18n.locale'));
-      this.get('registration').save().then(() => {
+      return this.get('registration').save().then(() => {
         this.sendAction('didRegister', this.get('registration.email'));
       }).catch((error) => {
         if (this.get('registration.isValid')) {

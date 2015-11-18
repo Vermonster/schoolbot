@@ -11,7 +11,7 @@
               {{profile-fields model=user}}
             </div>
             <div class='button-group button-group--edit-profile'>
-              <button {{action 'updateProfile'}}>{{ t 'actions.save' }}</button>
+              {{#spin-button action=(action 'updateProfile')}}{{ t 'actions.save' }}{{/spin-button}}
               <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
             </div>
           {{else}}

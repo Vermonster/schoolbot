@@ -1,4 +1,4 @@
-<form class='form--register' {{action 'register' on='submit'}}>
+<form class='form--register'>
   <div class='form__title'>
     {{#link-to 'index' class='form__title__back-cta' title=(t 'district.backTo')}}
       {{fa-icon 'chevron-left'}}
@@ -31,7 +31,10 @@
           {{t-error registration.errors.termsAccepted.firstObject}}
         </span>
       {{/if}}
-      <button class='form__submit-cta' type="submit">{{ t 'createAccount.cta' }}</button>
+
+      {{#spin-button action=(action 'register') class='form__submit-cta'}}
+        {{ t 'createAccount.cta' }}
+      {{/spin-button}}
     </div>
   </section>
 </form>

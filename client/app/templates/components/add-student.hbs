@@ -1,7 +1,7 @@
 <form class='form--add-student'>
   {{student-fields errors=student.errors schools=schools update='update'}}
   <div class='button-group'>
-    <button class='form__cta--save' {{action 'save'}}>{{ t 'actions.save' }}</button>
+    {{#spin-button action=(action 'save') class='form__cta--save'}}{{ t 'actions.save' }}{{/spin-button}}
     <button class='form__cta--cancel' {{action 'cancel'}}>{{ t 'actions.cancel' }}</button>
   </div>
 </form>

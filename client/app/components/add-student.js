@@ -15,7 +15,7 @@ export default Ember.Component.extend({
     },
 
     save() {
-      this.get('student').save().then(() => {
+      return this.get('student').save().then(() => {
         this.sendAction('saved');
       }).catch((error) => {
         if (this.get('student.isValid')) {

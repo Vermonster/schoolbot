@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
     },
 
     updateProfile() {
-      this.get('user').save().then(() => {
+      return this.get('user').save().then(() => {
         // Update auth data in-place so the session stays valid
         // FIXME: Remove once email confirmation is implemented
         this.get('session.data.authenticated').email = this.get('user.email');
