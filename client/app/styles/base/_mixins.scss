@@ -1,5 +1,5 @@
 %wrapper {
-  width: rem(310);
+  width: rem(314);
   margin: auto;
 }
 
@@ -146,7 +146,7 @@
   top: rem(4);
   right: rem(10);
   width: rem(30);
-  height: rem(30);
+  height: rem(35);
   transform: rotate(45deg);
   border-radius: rem(2);
   background: none;
@@ -170,6 +170,10 @@
 
   &:hover {
     background-color: transparent;
+  }
+
+  .msg & {
+    height: rem(25);
   }
 }
 
@@ -270,7 +274,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: rem(8);
+  padding-top: rem(12);
   padding-right: rem(15);
   padding-bottom: rem(6);
   padding-left: rem(15);
@@ -284,7 +288,7 @@
 
 @mixin error-msg {
   display: block;
-  font-size: rem(12);
+  font-size: rem(14);
   color: $color-error;
   line-height: 1.4;
 }

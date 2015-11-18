@@ -2,7 +2,7 @@ form {
   margin-bottom: $section-spacing;
   padding-top: rem(10);
   color: $base-font-color;
-  font-size: rem(12);
+  font-size: $form-font-size;
 
   &.form--add-student {
     padding-top: 0;
@@ -40,12 +40,12 @@ label,
 select {
   display: block;
   font-family: $base-font-family;
-  font-size: rem(12);
+  font-size: $form-font-size;
 }
 
 label {
   margin-bottom: $small-spacing / 2;
-  font-size: rem(12);
+  font-size: $form-font-size;
 
   &.required::after {
     content: '*';
@@ -66,7 +66,7 @@ textarea {
   border-radius: $base-border-radius;
   background-color: $base-background-color;
   font-family: $base-font-family;
-  font-size: rem(12);
+  font-size: $form-font-size;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
 
@@ -145,13 +145,6 @@ select {
 
 .form__title__back-cta {
   @include msg-box-back-cta;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: rem(8);
-  padding-right: rem(15);
-  padding-bottom: rem(6);
-  padding-left: rem(15);
   color: $color-secondary-darkest;
 }
 
@@ -228,7 +221,7 @@ select {
 }
 
 .form__note {
-  font-size: rem(10);
+  font-size: $form-font-size-sm;
   font-style: italic;
   line-height: 1.3;
 }
@@ -253,7 +246,7 @@ select {
 .form__link--cancel {
   @include form-link;
   display: block;
-  font-size: rem(12);
+  font-size: $form-font-size-sm;
 }
 
 .form__error--field {

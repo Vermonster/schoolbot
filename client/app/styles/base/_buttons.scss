@@ -8,7 +8,7 @@
   border-radius: $base-border-radius;
   color: $base-background-color;
   font-family: $heading-font-family;
-  font-size: rem(14);
+  font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
@@ -48,8 +48,8 @@ button {
   text-align: center;
 
   &--district {
-    padding-top: rem(10);
-    padding-bottom: 0;
+    padding-top: $section-spacing;
+    padding-bottom: rem(5);
   }
 
   &--edit-profile {
