@@ -28,7 +28,6 @@ module Omnibus
     end
 
     config.active_record.raise_in_transactional_callbacks = true
-    config.action_mailer.default_url_options = { host: ENV.fetch("APPLICATION_HOST") }
     config.active_job.queue_adapter = :delayed_job
   end
 end
