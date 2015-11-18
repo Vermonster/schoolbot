@@ -1,2 +1,2 @@
 #!/bin/sh
-heroku local -f Procfile.dev
+heroku local -f Procfile.dev -p 3000
