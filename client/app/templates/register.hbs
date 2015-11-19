@@ -1,7 +1,6 @@
 {{#page-layout}}
   {{#if isCompleted}}
-    {{t 'createAccount.success.heading'}}
-    {{t 'createAccount.success.copy' email=registeredEmail}}
+    {{account-created email=registeredEmail}}
   {{else}}
     {{create-account didRegister='didRegister'}}
   {{/if}}

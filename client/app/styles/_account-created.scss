@@ -1,15 +1,15 @@
-.invalid-district {
+.account-created {
   @include msg-box-wrapper;
 }
 
-.invalid-district__title {
+.account-created__title {
   @include msg-box-title;
 }
 
-.invalid-district__title--main {
+.account-created__title--main {
   @include msg-box-main-title;
 }
 
-.invalid-district__content {
+.account-created__content {
   padding: rem(10) $form-bottom-spacing;
 }

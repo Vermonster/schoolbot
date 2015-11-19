@@ -33,7 +33,9 @@ feature 'User creates account' do
       check t('labels.termsAccepted')
       click_on t('createAccount.cta')
 
-      expect(page).to have_content t('createAccount.success.heading')
+      expect(page).to have_content(
+        t('createAccount.success.heading').mb_chars.upcase.to_s
+      )
       expect(page).to have_content(
         t('createAccount.success.copy').sub('{{email}}', 'guy@example.com')
       )
