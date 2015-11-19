@@ -16,7 +16,7 @@
             </div>
           {{else}}
             <a href='#' class='settings__edit-cta' {{action 'toggleEditProfile'}}>
-              {{fa-icon icon='pencil'}}
+              {{fa-icon 'pencil'}}
               <span class="settings__edit-cta__text">{{t 'actions.edit'}}</span>
             </a>
             <div>
@@ -32,7 +32,7 @@
           <h2 class='form__section-heading'>{{ t 'settings.students.title' }}</h2>
           {{#unless showingStudentForm}}
             <a href='#' class='settings__edit-cta' {{action 'toggleAddStudent'}}>
-              {{fa-icon icon='plus'}}
+              {{fa-icon 'plus'}}
               <span class='settings__edit-cta__text'>{{ t 'actions.add' }}</span>
             </a>
           {{/unless}}
@@ -45,7 +45,7 @@
                 <div class='student__abbreviation'>{{student.abbreviation}}</div>
 
                 {{#unless student.isLocated}}
-                  <div class='student__warning-icon'>{{fa-icon icon='warning'}}</div>
+                  <div class='student__warning-icon'>{{fa-icon 'warning'}}</div>
                 {{/unless}}
 
                 <div>

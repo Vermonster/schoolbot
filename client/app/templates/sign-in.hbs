@@ -2,7 +2,7 @@
   <form class='form--sign-in' {{action 'signIn' on='submit'}}>
     <div class='form__title'>
       {{#link-to 'index' class='form__title__back-cta' title=(t 'district.backTo')}}
-        {{fa-icon icon='chevron-left'}}
+        {{fa-icon 'chevron-left'}}
       {{/link-to}}
       <h1 class='form__title--main'>{{ t 'signIn.title.main' }}</h1>
       <h2 class='form__title--sub'>{{ t 'signIn.title.sub' }}</h2>
