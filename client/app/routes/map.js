@@ -7,6 +7,7 @@ const POLL_INTERVAL = 3000;
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   i18n: Ember.inject.service(),
   controller: null,
+  intercom: Ember.inject.service(),
   metrics: Ember.inject.service(),
 
   afterModel() {
@@ -23,6 +24,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     controller.set('currentUser', this.currentUser);
     this.get('i18n').set('locale', this.currentUser.get('locale'));
     this.get('metrics').identify({ distinctId: this.currentUser.id });
+
+    this.get('intercom').boot({
+      user: this.currentUser,
+      students: this.students,
+      district: this.get('currentDistrict.model')
+    });
   },
 
   pollTask: null,

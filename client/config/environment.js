@@ -14,6 +14,11 @@ module.exports = function(environment) {
       defaultLocale: 'en',
       allowLocaleOverride: true
     },
+    intercom: {
+      appId: environment === 'production' ?
+        process.env.INTERCOM_ID :
+        process.env.INTERCOM_ID_TEST
+    },
     metricsAdapters: [
       {
         name: 'GoogleAnalytics',
@@ -81,6 +86,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
     if (!process.env.GOOGLE_ANALYTICS_ID) {
       throw new Error('GOOGLE_ANALYTICS_ID must be defined in .env!');
+    }
+
+    if (!process.env.INTERCOM_ID) {
+      throw new Error('INTERCOM_ID must be defined in .env!');
     }
 
     if (!process.env.AIRBRAKE_ID || !process.env.AIRBRAKE_KEY) {
