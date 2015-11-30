@@ -45,7 +45,8 @@ if Rails.env.staging? || Rails.env.development?
         state: 'MA',
         zip_code: '02379',
         latitude: 42.016633,
-        longitude: -71.001635
+        longitude: -71.001635,
+        confirmed_at: Time.current
       )
 
       bobby_label = StudentLabel.create!(
