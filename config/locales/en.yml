@@ -1,8 +1,5 @@
 en:
   localeName: English
-  notImplemented: |
-    Sorry, this feature is not implemented yet! For assistance, contact your
-    school district at this email address:
   errors:
     accepted: You must accept the terms to register.
     blank: This field is required.
@@ -65,9 +62,14 @@ en:
       invalidConfirmation: |
         The email confirmation link you followed is not valid. Your account may
         already be confirmed; try signing in.
+      invalidReset: |
+        The password reset link you followed is not valid. Password reset links
+        are only valid for a limited time; try requesting a new one.
     success:
       accountConfirmed: |
         Welcome to SchoolBot! Your email address has been confirmed.
+      passwordReset: |
+        Success! Your password has been updated.
   emails:
     confirmAccount:
       subject: Confirm your SchoolBot registration
@@ -79,6 +81,18 @@ en:
 
         If you don't remember registering for a SchoolBot account, you can
         safely ignore this message. We won't send you any further emails.
+    resetPassword:
+      subject: SchoolBot password reset request
+      body: |
+        Hi %{user_name}, someone has requested a password reset for your
+        SchoolBot account. If you made this request, follow this link to reset
+        your password:
+
+        %{password_reset_url}
+
+        If you didn't make this request, you can safely ignore this message.
+        Your password will not be reset unless you follow the link and enter a
+        new password.
   district:
     title: Welcome to SchoolBot
     backTo: Back to welcome
@@ -103,7 +117,7 @@ en:
       heading: Confirm Your Email
       copy: |
         Success! We've sent a confirmation to your email address at {{email}}.
-        Click the link in the email to confirm your registration and sign into
+        Follow the link in the email to confirm your registration and sign into
         SchoolBot!
   addStudent:
     encrypted: |
@@ -141,7 +155,19 @@ en:
       sub: Sign in to SchoolBot
     backTo: Back to sign in
     remember: Remember me on this device
-    forgot: Forgot your username or password?
+    forgot: Forgot your password?
     needToRegister: Need to register an account?
   resetPassword:
     title: Reset Password
+    instructions: |
+      Enter the email address you used to register for SchoolBot, and we'll send
+      you a link to reset your password.
+    success: |
+      Success! We've emailed a password reset link to {{email}}. Follow the link
+      in the email to reset your password.
+    error: There is no account registered with this email address.
+  newPassword:
+    title: Enter New Password
+    instructions: |
+      Choose a new password to sign into SchoolBot. This will change the
+      password for {{email}}.

@@ -12,6 +12,7 @@ Router.map(function() {
   });
 
   this.route('confirm');
+  this.route('new-password');
   this.route('register');
   this.route('reset-password');
   this.route('sign-in');

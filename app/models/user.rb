@@ -36,6 +36,21 @@ class User < ActiveRecord::Base
     where('confirmed_at <= ?', Time.current)
   end
 
+  def disable_password_reset
+    self.reset_password_token = nil
+  end
+
+  def enable_password_reset!
+    self.reset_password_token = nil
+    self.reset_password_sent_at = Time.current
+    ensure_token(:reset_password_token)
+    save!
+  end
+
+  def self.password_resettable
+    where('reset_password_sent_at >= ?', 7.days.ago)
+  end
+
   # Don't unset the password digest if a blank password is sent
   def password=(value)
     super if value.present?

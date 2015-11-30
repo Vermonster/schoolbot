@@ -71,4 +71,34 @@ describe User do
       expect(User.confirmed).to match_array [users[0], users[2]]
     end
   end
+
+  describe '#enable_password_reset!' do
+    it 'randomizes the password reset token and sets the "sent at" date' do
+      user = build(:user,
+        reset_password_token: '123',
+        reset_password_sent_at: 1.day.ago
+      )
+
+      Timecop.freeze(Time.current.change(usec: 0)) do
+        user.enable_password_reset!
+
+        expect(user.reset_password_token).to_not eq '123'
+        expect(user.reset_password_sent_at).to eq Time.current
+        expect(user).to be_persisted
+      end
+    end
+  end
+
+  describe '.password_resettable' do
+    it 'returns users enabled for password resets within the last 7 days' do
+      users = [
+        create(:user, reset_password_sent_at: 8.days.ago),
+        create(:user, reset_password_sent_at: 6.days.ago),
+        create(:user, reset_password_sent_at: nil),
+        create(:user, reset_password_sent_at: Time.current)
+      ]
+
+      expect(User.password_resettable).to match_array [users[1], users[3]]
+    end
+  end
 end

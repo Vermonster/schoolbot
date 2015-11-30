@@ -70,5 +70,11 @@ FactoryGirl.define do
     trait :unconfirmed do
       confirmed_at nil
     end
+
+    after(:build) do |user|
+      if user.reset_password_token.present? && user.reset_password_sent_at.nil?
+        user.reset_password_sent_at = 1.day.ago
+      end
+    end
   end
 end
