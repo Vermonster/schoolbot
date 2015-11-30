@@ -1,6 +1,5 @@
 fr:
   localeName: Français
-  notImplemented: "Désolé, cette fonctionnalité est pas encore implémentée! Pour de l'aide, contactez votre district scolaire à l'adresse email suivante :"
   errors:
     accepted: "Il faut que vous acceptiez les termes pour l'inscription."
     blank: Ce champ est obligatoire.
@@ -57,8 +56,10 @@ fr:
     error:
       generic: "Oups! Quelque chose n'allait pas et nous ne pouvions pas traiter cette action. Vous pouvez essayer à nouveau, ou si cela ne fonctionne pas, actualisez la page."
       invalidConfirmation: "Le lien de confirmation par courriel que vous avez suivi n'est pas valide. Votre compte est déjà susceptible de confirmation; essayez de vous connecter."
+      invalidReset: "Le lien de réinitialisation de mot de passe vous avez suivi n'est pas valide. Liens de réinitialisation de mot de passe ne sont valables que pour un temps limité; essayez de demander un nouveau."
     success:
       accountConfirmed: Bienvenue sur SchoolBot! Votre adresse e-mail a été confirmée.
+      passwordReset: Succès! Votre mot de passe a été mis à jour.
   emails:
     confirmAccount:
       subject: Confirmer votre inscription de SchoolBot
@@ -68,6 +69,14 @@ fr:
         %{confirmation_url}
         
         Si vous avez oublié de vous inscrire à un compte SchoolBot, vous pouvez ignorer ce message. Nous ne vous envoyons des e-mails supplémentaires.
+    resetPassword:
+      subject: Demande de réinitialisation de mot de passe SchoolBot
+      body: |
+        Salut %{user_name}, quelqu'un a demandé un mot de passe réinitialiser votre compte SchoolBot. Si vous faites cette demande, suivez ce lien pour réinitialiser votre mot de passe:
+        
+        %{password_reset_url}
+        
+        Si vous n'a pas fait cette demande, vous pouvez ignorer ce message. Votre mot de passe n'est pas réinitialisée sauf si vous suivez le lien et entrez un nouveau mot de passe.
   district:
     title: Bienvenue à SchoolBot
     backTo: "Retour à l'accueil"
@@ -112,7 +121,13 @@ fr:
       sub: Connexion Schoolbot
     backTo: Retour à la connexion
     remember: Maintenir la connexion sur cet appareil
-    forgot: "Avez-vous oublié votre mot de passe ou nom d'utilisateur?"
+    forgot: Avez-vous oublié votre mot de passe?
     needToRegister: Avez-vous besoing de créer un compte Schoolbot?
   resetPassword:
     title: Réinitialiser le mot de passe
+    instructions: "Entrez l'adresse e-mail utilisée pour vous inscrire à SchoolBot et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+    success: "Succès! Nous avons envoyé un lien de réinitialisation de mot de passe pour {{email}}. Suivez le lien dans l'email pour réinitialiser votre mot de passe."
+    error: "Il n'y a aucun compte enregistré avec cette adresse email."
+  newPassword:
+    title: Entrez le nouveau mot de passe
+    instructions: 'Choisissez un nouveau mot de passe pour vous connecter à SchoolBot. Cela va changer le mot de passe {{email}}.'

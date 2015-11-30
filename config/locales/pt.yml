@@ -1,6 +1,5 @@
 pt:
   localeName: Português
-  notImplemented: 'Desculpa, esta característica não está ainda implementada. Para assistência, contacte o seu distrito escolar neste endereço de email:'
   errors:
     accepted: Você deve aceitar os termos para registar.
     blank: Esta informação é exigida.
@@ -55,8 +54,10 @@ pt:
     error:
       generic: Opa! Algo deu errado e nós não podemos processar essa ação. Você pode querer tentar de novo, ou se não funcionar, atualize a página.
       invalidConfirmation: No link de confirmação de e-mail seguiu não é válido. Sua conta já pode ser confirmada; Tente entrar.
+      invalidReset: O link de redefinição de senha você seguiu não é válido. Ligações de redefinição de senha são válidas apenas por um tempo limitado; tente solicitar um novo.
     success:
       accountConfirmed: Bem-vindo ao SchoolBot! Seu endereço de e-mail foi confirmado.
+      passwordReset: Sucesso! Sua senha foi atualizada.
   emails:
     confirmAccount:
       subject: Confirme a sua inscrição SchoolBot
@@ -66,6 +67,14 @@ pt:
         %{confirmation_url}
         
         Se você não se lembra se registrar para uma conta de SchoolBot, você pode ignorar esta mensagem. Não enviaremos e-mails adicionais.
+    resetPassword:
+      subject: Pedido de redefinição de senha SchoolBot
+      body: |
+        Oi %{user_name}, alguém solicitou uma senha Redefinir para sua conta de SchoolBot. Se você fez este pedido, siga este link para redefinir sua senha:
+        
+        %{password_reset_url}
+        
+        Se você não fez esta solicitação, você pode ignorar com segurança essa mensagem. Sua senha não será reiniciada a menos que você siga o link e digite uma nova senha.
   district:
     title: Bem-vindo ao SchoolBot
     backTo: Volte ao Bem-vindo
@@ -110,7 +119,13 @@ pt:
       sub: Entrar no SchoolBot
     backTo: Entrar de volta
     remember: Lembre-me neste dispositivo
-    forgot: Esqueceu a sua conta ou o seu password?
+    forgot: Esqueceu sua senha?
     needToRegister: Você precisa abrir uma conta?
   resetPassword:
     title: Recuperar Password
+    instructions: Digite o endereço de e-mail que você usou para registrar-se para SchoolBot, e vamos enviar-lhe um link para redefinir sua senha.
+    success: 'Sucesso! Nós, enviei um link de redefinição de senha para {{email}}. Siga o link no e-mail para redefinir sua senha.'
+    error: Não há nenhuma conta registrada com este endereço de e-mail.
+  newPassword:
+    title: Digite a nova senha
+    instructions: 'Escolha uma nova senha para entrar no SchoolBot. Isto mudará a senha para {{email}}.'

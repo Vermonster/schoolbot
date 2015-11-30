@@ -1,6 +1,5 @@
 es:
   localeName: Español
-  notImplemented: 'Lo sentimos, esta función todavía no está implementada. Para obtener ayuda, contacte a su distrito escolar en esta dirección de correo electrónico:'
   errors:
     accepted: Usted debe aceptar los términos para poder registrarse.
     blank: Esta información es obligatoria.
@@ -55,8 +54,10 @@ es:
     error:
       generic: ¡Uy! Algo salió mal y no pudimos procesar esa acción. Quizá quieras intentarlo de nuevo o si eso no funciona, actualice la página.
       invalidConfirmation: El enlace de confirmación de correo electrónico seguido no es válido. Su cuenta ya puede ser confirmado; prueba de firma en.
+      invalidReset: El enlace de restablecimiento de contraseña seguido no es válido. Enlaces de reset de contraseña sólo son válidos para un tiempo limitado; trate de solicitar una nueva.
     success:
       accountConfirmed: Bienvenido a SchoolBot! Se ha confirmado tu dirección de correo electrónico.
+      passwordReset: ¡Un éxito! Su contraseña ha sido actualizada.
   emails:
     confirmAccount:
       subject: Confirme su registro SchoolBot
@@ -66,6 +67,14 @@ es:
         %{confirmation_url}
         
         Si no recuerde registrarse para una cuenta de SchoolBot, usted puede ignorar este mensaje. No le enviaremos ningún correo electrónico más.
+    resetPassword:
+      subject: Solicitud de restablecimiento de contraseña SchoolBot
+      body: |
+        Hola %{user_name}, alguien ha solicitado una contraseña restablecer la cuenta de SchoolBot. Si usted hizo esta solicitud, siga este enlace para restablecer tu contraseña:
+        
+        %{password_reset_url}
+        
+        Si no haces esta solicitud, puede ignorar este mensaje. No se restablecerá la contraseña a menos que siga el enlace y escriba una nueva contraseña.
   district:
     title: Bienvenido a SchoolBot
     backTo: Regresar a la bienvenida
@@ -110,7 +119,13 @@ es:
       sub: Ingresar a SchoolBot
     backTo: Regresar a ingresar
     remember: Recuérdeme en este dispositivo
-    forgot: ¿Se le olvidó su nombre de usuario o contraseña?
+    forgot: ¿Se le olvidó su contraseña?
     needToRegister: ¿Necesita registrar una cuenta?
   resetPassword:
     title: Cambiar Contraseña
+    instructions: Introduzca la dirección de correo electrónico que utilizó para registrarse en SchoolBot y le enviaremos un enlace para restablecer tu contraseña.
+    success: '¡Un éxito! Nosotros hemos enviado por correo electrónico un enlace de restablecimiento de contraseña a {{email}}. Siga el enlace en el correo electrónico para restablecer tu contraseña.'
+    error: No hay ningún caso registrado con esta dirección de correo electrónico.
+  newPassword:
+    title: Escriba la nueva contraseña
+    instructions: 'Elija una nueva contraseña para iniciar sesión en SchoolBot. Esto va a cambiar la contraseña de {{email}}.'
