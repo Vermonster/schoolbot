@@ -1,11 +1,34 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+  var requiredEnvironmentVariables = [
+    'AIRBRAKE_ID',
+    'AIRBRAKE_KEY',
+    'MAPBOX_ACCESS_TOKEN',
+    'MAPBOX_MAP_ID'
+  ];
+
+  if (environment === 'production') {
+    requiredEnvironmentVariables.forEach(function(variable) {
+      if (!process.env[variable]) {
+        throw new Error('Required environment variable missing: ' + variable);
+      }
+    });
+  }
+
   var ENV = {
     modulePrefix: 'client',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    airbrake: {
+      projectId: process.env.AIRBRAKE_ID,
+      projectKey: process.env.AIRBRAKE_KEY
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'sign-in'
+    },
     flashMessageDefaults: {
       timeout: 5000,
       types: ['success', 'error']
@@ -14,10 +37,15 @@ module.exports = function(environment) {
       defaultLocale: 'en',
       allowLocaleOverride: true
     },
-    moment: { includeLocales: true },
-    'ember-simple-auth': {
-      authenticationRoute: 'sign-in'
+    intercom: {
+      appId: process.env.INTERCOM_ID
     },
+    mapbox: {
+      mapId: process.env.MAPBOX_MAP_ID,
+      accessToken: process.env.MAPBOX_ACCESS_TOKEN
+    },
+    moment: { includeLocales: true },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -31,19 +59,6 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
-  if (!process.env.MAPBOX_MAP_ID || !process.env.MAPBOX_ACCESS_TOKEN) {
-    if (environment === 'production') {
-      throw new Error('MAPBOX_MAP_ID and MAPBOX_ACCESS_TOKEN must be defined!');
-    } else {
-      console.log('Warning: MAPBOX_MAP_ID or MAPBOX_ACCESS_TOKEN not defined!');
-    }
-  }
-
-  ENV.mapbox = {
-    mapId: process.env.MAPBOX_MAP_ID,
-    accessToken: process.env.MAPBOX_ACCESS_TOKEN
-  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -63,17 +78,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-  }
-
-  if (environment === 'production') {
-    if (!process.env.AIRBRAKE_ID || !process.env.AIRBRAKE_KEY) {
-      throw new Error('AIRBRAKE_ID and AIRBRAKE_KEY must be defined in .env!');
-    }
-
-    ENV.airbrake = {
-      projectId: process.env.AIRBRAKE_ID,
-      projectKey: process.env.AIRBRAKE_KEY
-    };
   }
 
   return ENV;

@@ -11,5 +11,6 @@ export default DS.Model.extend({
   zipCode: DS.attr('string'),
   latitude: DS.attr('number'),
   longitude: DS.attr('number'),
-  locale: DS.attr('string')
+  locale: DS.attr('string'),
+  intercomHash: DS.attr('string')
 });

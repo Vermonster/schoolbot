@@ -1,6 +1,7 @@
 /* jshint node: true */
 
 module.exports = function(deployTarget) {
+  // Load plain .env for common values (.env.deploy.<target> is auto-loaded)
   require('dotenv').load();
 
   var ENV = {
@@ -27,14 +28,7 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'staging' || deployTarget === 'production') {
     ENV.build.environment = 'production';
-  }
-
-  if (deployTarget === 'staging') {
-    ENV.redis.url = process.env['REDIS_URL_STAGING'];
-  }
-
-  if (deployTarget === 'production') {
-    ENV.redis.url = process.env['REDIS_URL_PRODUCTION'];
+    ENV.redis.url = process.env['REDIS_URL'];
   }
 
   return ENV;

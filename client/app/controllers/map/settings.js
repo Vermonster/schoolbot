@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   i18n: Ember.inject.service(),
   session: Ember.inject.service(),
+  intercom: Ember.inject.service(),
   map: Ember.inject.controller(),
   user: Ember.computed.alias('map.currentUser'),
   studentOrdering: ['nickname'],
@@ -40,6 +41,7 @@ export default Ember.Controller.extend({
     },
 
     signOut() {
+      this.get('intercom').shutdown();
       this.get('session').invalidate();
     }
   }
