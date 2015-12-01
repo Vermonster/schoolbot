@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates! :locale, presence: true
   validates :email, :name, :street, :city, :state, :zip_code, presence: true
-  validates :email, uniqueness: true, format: { with: /.+@.+\..+/ }
+  validates :email, uniqueness: true, format: { with: /\A.+@.+\..+\z/ }
   validates :password, length: { minimum: 8 }, allow_blank: true
   validate :address_must_geocode
 

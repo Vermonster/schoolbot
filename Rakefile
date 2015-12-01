@@ -37,9 +37,13 @@ if Rails.env.test? || Rails.env.development?
   SCSSLint::RakeTask.new(:scss_lint)
   task default: :scss_lint
 
+  task default: 'brakeman:check'
+
   task default: 'ember:test'
 
   task default: :spec
+
+  task default: 'bundler:audit'
 end
 
 if defined? RSpec
@@ -50,5 +54,3 @@ if defined? RSpec
 
   task spec: 'ember:build'
 end
-
-task default: "bundler:audit"

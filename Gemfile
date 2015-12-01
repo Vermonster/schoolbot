@@ -31,6 +31,7 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "byebug"
   gem "dotenv-rails"
