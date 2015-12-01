@@ -34,8 +34,8 @@
   position: absolute;
 }
 
-.msg__close:before,
-.msg__close:after {
+.msg__close::before,
+.msg__close::after {
 
   .msg--error & {
     color: $color-error;

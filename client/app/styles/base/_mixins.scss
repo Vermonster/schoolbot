@@ -105,13 +105,13 @@
 @mixin btn--plus {
   @extend %icon-circle;
 
-  &:before {
+  &::before {
     width: rem(9);
     height: rem(1);
     margin-left: rem(-4);
   }
 
-  &:after {
+  &::after {
     width: rem(1);
     height: rem(9);
     margin-top: rem(-4);
@@ -121,13 +121,13 @@
 @mixin btn--minus {
   @extend %icon-circle;
 
-  &:before {
+  &::before {
     width: rem(9);
     height: rem(1);
     margin-left: rem(-4);
   }
 
-  &:after {
+  &::after {
     width: 0;
     height: 0;
   }
@@ -151,18 +151,18 @@
   border-radius: rem(2);
   background: none;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     color: $color;
   }
 
-  &:before {
+  &::before {
     width: rem(16);
     height: rem(2);
     margin-left: rem(-7);
   }
 
-  &:after {
+  &::after {
     width: rem(2);
     height: rem(16);
     margin-top: rem(-7);
@@ -315,14 +315,14 @@
   text-decoration: none;
   counter-increment: itemNum;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     position: absolute;
     top: rem(6);
     left: 0;
   }
 
-  &:before {
+  &::before {
     top: rem(5);
     padding-top: rem(2);
     padding-left: rem(11);
@@ -335,7 +335,7 @@
     counter-increment: list-item;
   }
 
-  &:after {
+  &::after {
     width: rem(30);
     height: rem(30);
     border-radius: 50%;

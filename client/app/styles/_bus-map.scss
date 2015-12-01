@@ -40,7 +40,7 @@
   white-space: nowrap;
   filter: drop-shadow(rem(2) rem(3) rem(3) $color-bus-marker-shadow);
 
-  &:before {
+  &::before {
     position: absolute;
     top: 100%;
     left: rem(17);
