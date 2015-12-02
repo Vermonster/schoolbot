@@ -7,6 +7,10 @@ export default DS.Model.extend({
 
   identifier: DS.attr('string'),
 
+  latitude: Ember.computed.alias('busLocations.firstObject.latitude'),
+  longitude: Ember.computed.alias('busLocations.firstObject.longitude'),
+  lastSeenAt: Ember.computed.alias('busLocations.firstObject.recordedAt'),
+
   // FIXME: computed.notEmpty does not work here, why?
   hasLocations: Ember.computed('busLocations.[]', function(){
     return this.get('busLocations.length') > 0;

@@ -6,10 +6,10 @@
   position: absolute;
   bottom: $menu-height;
   width: 100%;
-  padding: $item-spacing $section-spacing $map-credit-height;
+  padding: $item-spacing $section-spacing;
 
   @include media($medium-screen) {
-    padding: rem(8) $button-padding-side + rem(25) $map-credit-height;
+    padding: rem(8) $button-padding-side + rem(25);
   }
 }
 

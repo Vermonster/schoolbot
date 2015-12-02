@@ -1,5 +1,18 @@
 <div class='main__outer--map-view'>
-  {{bus-map students=students user=currentUser}}
+  {{#bus-map user=currentUser buses=uniqueBuses}}
+    {{mapbox-tiles}}
+
+    {{simple-marker object=currentUser iconClass='home-marker'}}
+
+    {{#each uniqueSchools as |school|}}
+      {{simple-marker object=school iconClass='school-marker'}}
+    {{/each}}
+
+    {{#each uniqueBuses as |bus|}}
+      {{bus-marker model=bus}}
+      {{bus-trail model=bus}}
+    {{/each}}
+  {{/bus-map}}
 
   {{outlet}}
 
