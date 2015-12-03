@@ -73,10 +73,14 @@
 }
 
 .bus-map__controls__group {
-  margin-bottom: rem(10);
+  margin-bottom: rem(15);
   border-radius: rem(5);
   box-shadow: $map-control-shadow;
   overflow: hidden;
+
+  &--disabled {
+    opacity: .25;
+  }
 }
 
 .bus-map__controls__button {

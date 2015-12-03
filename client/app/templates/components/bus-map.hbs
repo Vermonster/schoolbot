@@ -20,6 +20,12 @@
       {{fa-icon 'minus'}}
     </a>
   </div>
+
+  <div class='bus-map__controls__group {{if isTrackingBuses 'bus-map__controls__group--disabled'}}'>
+    <a {{action 'enableTracking'}} title={{t 'actions.follow'}} class='bus-map__controls__button' href='#'>
+      {{fa-icon 'crosshairs'}}
+    </a>
+  </div>
 </div>
 
 <div class='bus-map__attribution'>

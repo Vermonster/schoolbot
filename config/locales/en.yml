@@ -56,6 +56,7 @@ en:
     changePassword: Change Password
     zoomIn: Zoom in
     zoomOut: Zoom out
+    follow: Follow buses
   flashes:
     error:
       generic: |

@@ -134,6 +134,17 @@ feature 'User views map' do
     expect(page).to have_css('.school-marker', count: 1)
   end
 
+  scenario 'and can disable bus tracking by dragging the map' do
+    sign_in_as @user
+    expect(page).to have_css '.bus-map__controls__group--disabled'
+
+    find('.leaflet-container').native.drag_by(10, 10)
+    expect(page).to_not have_css '.bus-map__controls__group--disabled'
+
+    click_on t('actions.follow')
+    expect(page).to have_css '.bus-map__controls__group--disabled'
+  end
+
   scenario 'with an error displayed when background requests fail' do
     sign_in_as @user
     expect(page).to have_content t('settings.title').upcase

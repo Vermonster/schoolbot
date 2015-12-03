@@ -10,9 +10,30 @@ export default LeafletMap.extend({
   zoomControl: false,
   attributionControl: false,
 
-  bounds: Ember.computed(function() { return this.trackingBounds(); }),
+  isTrackingBuses: true,
 
-  trackingBounds() {
+  didCreateLayer() {
+    this.setTrackingBounds();
+    this._super(...arguments);
+  },
+
+  // FIXME: This is currently undocumented and may change in new releases
+  // https://github.com/miguelcobain/ember-leaflet/issues/11
+  _dragstart() {
+    this.set('isTrackingBuses', false);
+  },
+
+  busLocationsChanged: Ember.observer('buses.@each.lastSeenAt', function() {
+    if (this.get('isTrackingBuses')) {
+      this.setTrackingBounds();
+    }
+  }),
+
+  setTrackingBounds() {
+    Ember.run.debounce(this, this._setTrackingBounds, 250, true);
+  },
+
+  _setTrackingBounds() {
     const bounds = this.L.latLngBounds([]);
 
     bounds.extend([this.get('user.latitude'), this.get('user.longitude')]);
@@ -20,11 +41,23 @@ export default LeafletMap.extend({
       bounds.extend([bus.get('latitude'), bus.get('longitude')]);
     });
 
-    return bounds;
+    this.set('bounds', bounds);
   },
 
   actions: {
-    zoomIn() { this._layer.zoomIn(); },
-    zoomOut() { this._layer.zoomOut(); }
+    zoomIn() {
+      this.set('isTrackingBuses', false);
+      this._layer.zoomIn();
+    },
+
+    zoomOut() {
+      this.set('isTrackingBuses', false);
+      this._layer.zoomOut();
+    },
+
+    enableTracking() {
+      this.set('isTrackingBuses', true);
+      this.setTrackingBounds();
+    }
   }
 });
