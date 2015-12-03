@@ -1,0 +1,29 @@
+{{mapbox-tiles}}
+
+{{simple-marker object=user iconClass='home-marker'}}
+
+{{#each schools as |school|}}
+  {{simple-marker object=school iconClass='school-marker'}}
+{{/each}}
+
+{{#each buses as |bus|}}
+  {{bus-marker model=bus}}
+  {{bus-trail model=bus}}
+{{/each}}
+
+<div class='bus-map__controls'>
+  <div class='bus-map__controls__group'>
+    <a {{action 'zoomIn'}} title={{t 'actions.zoomIn'}} class='bus-map__controls__button bus-map__controls__button--grouped-top' href='#'>
+      {{fa-icon 'plus'}}
+    </a>
+    <a {{action 'zoomOut'}} title={{t 'actions.zoomOut'}} class='bus-map__controls__button bus-map__controls__button--grouped-bottom' href='#'>
+      {{fa-icon 'minus'}}
+    </a>
+  </div>
+</div>
+
+<div class='bus-map__attribution'>
+  {{!-- https://www.mapbox.com/help/attribution/ --}}
+  © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>
+  & <a href="http://osm.org/copyright">OpenStreetMap</a>
+</div>

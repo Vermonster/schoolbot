@@ -1,28 +1,14 @@
 import Ember from 'ember';
 import LeafletMap from 'ember-leaflet/components/leaflet-map';
 
-// https://www.mapbox.com/help/attribution/
-const ATTRIBUTION = [
-  '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>',
-  '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-  '<a href="https://www.mapbox.com/map-feedback/">Improve this map</a>'
-].join(' | ');
-
 export default LeafletMap.extend({
   buses: [],
+  schools: [],
   user: null,
 
   maxZoom: 18, // Ensure bounds fitting still works with only one point
-
+  zoomControl: false,
   attributionControl: false,
-
-  didCreateLayer() {
-    this._super(...arguments);
-
-    this.L.control.attribution({ prefix: false, position: 'topright' })
-      .addAttribution(ATTRIBUTION)
-      .addTo(this._layer);
-  },
 
   bounds: Ember.computed(function() { return this.trackingBounds(); }),
 
@@ -35,5 +21,10 @@ export default LeafletMap.extend({
     });
 
     return bounds;
+  },
+
+  actions: {
+    zoomIn() { this._layer.zoomIn(); },
+    zoomOut() { this._layer.zoomOut(); }
   }
 });

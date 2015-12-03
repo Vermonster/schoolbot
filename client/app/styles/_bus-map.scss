@@ -1,8 +1,3 @@
-.leaflet-top,
-.leaflet-bottom {
-  z-index: z('map-controls');
-}
-
 .leaflet-container {
   position: absolute;
   top: 0;
@@ -10,6 +5,10 @@
   width: 100%;
   height: calc(100% - #{$menu-height});
   font: inherit;
+
+  a {
+    color: inherit; // Cancel out default Leaflet link style
+  }
 }
 
 .home-marker {
@@ -66,26 +65,49 @@
   stroke-dasharray: rem(9);
 }
 
-.leaflet-bar {
-  border: 0;
+.bus-map__controls {
+  position: absolute;
+  top: rem(15);
+  left: rem(15);
+  z-index: z('map-controls');
 }
 
-.leaflet-control a {
+.bus-map__controls__group {
+  margin-bottom: rem(10);
+  border-radius: rem(5);
+  box-shadow: $map-control-shadow;
+  overflow: hidden;
+}
 
-  &.leaflet-control-zoom-in,
-  &.leaflet-control-zoom-out {
-    color: $base-font-color;
+.bus-map__controls__button {
+  display: block;
+  width: rem(30);
+  height: rem(30);
+  color: $base-color-action;
+  line-height: rem(30);
+  text-align: center;
 
-    &:hover {
-      color: $base-font-color;
-    }
+  &:hover {
+    color: $icon-color-hover;
   }
 
-  &.leaflet-control-zoom-in {
+  &:first-child {
     @include button-with-yellow-stripes-bg-top;
   }
 
-  &.leaflet-control-zoom-out {
+  &:last-child {
     @include button-with-yellow-stripes-bg-bottom;
   }
+}
+
+.bus-map__attribution {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: rem(5);
+  border-top-left-radius: rem(5);
+  background-color: $attribution-background-color;
+  color: $attribution-color;
+  font-size: $attribution-font-size;
+  z-index: z('map-controls');
 }

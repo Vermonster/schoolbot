@@ -54,6 +54,8 @@ en:
     signOut: Sign Out
     add: Add student
     changePassword: Change Password
+    zoomIn: Zoom in
+    zoomOut: Zoom out
   flashes:
     error:
       generic: |

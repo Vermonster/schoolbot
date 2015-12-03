@@ -14,6 +14,7 @@ $about-cta-font-size-small: rem(14);
 $about-cta-font-size-large: rem(16);
 $about-content-font-size-small: rem(14);
 $about-content-font-size-large: rem(16);
+$attribution-font-size: rem(10);
 
 // Line height
 $base-line-height: 1.5;
@@ -64,6 +65,7 @@ $color-error-bg: lighten($color-primary-darken-5, 55%);
 // Shadows and Overlays
 $color-modal-overlay: rgba(#000, .85);
 $color-bus-marker-shadow: rgba(#000, .5);
+$color-map-control-shadow: rgba(#000, .5);
 $color-form-box-shadow: rgba(#000, .06);
 
 // Border
@@ -110,6 +112,9 @@ $abbreviation-third-color: $color-primary-darken-1;
 
 // Map
 $bus-path-color: $dark-gray;
+$attribution-color: lighten($base-font-color, 30%);
+$attribution-background-color: rgba($base-background-color, .7);
+$map-control-shadow: 1px 1px 4px $color-map-control-shadow;
 
 // Transition
 $base-transition-speed: .1s;
@@ -119,11 +124,11 @@ $base-transition-ease: ease;
 $background-landscape: new-breakpoint(min-width $background-landscape-width);
 
 // Z-index
-// NOTE: map-controls should not be less than the Leaflet default of 1000
 $z-layers: (
-  'flash-msg': 2001,
-  'modal-overlay': 2000,
-  'map-controls': 1000,
+  'flash-msg': 300,
+  'modal-overlay': 200,
+  'map-message': 101,
+  'map-controls': 100,
   'district-heading': 5,
   'about-content-list-number': 4,
   'about-content-list-number-circle': 3,
