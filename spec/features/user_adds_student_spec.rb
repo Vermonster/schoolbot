@@ -15,7 +15,7 @@ feature 'User adds student' do
     sign_in_as user
 
     click_on t('settings.title')
-    click_on t('actions.add')
+    click_on t('actions.addStudent')
 
     fill_in_student_information
 
@@ -43,7 +43,7 @@ feature 'User adds student' do
     sign_in_as user
 
     click_on t('settings.title')
-    click_on t('actions.add')
+    click_on t('actions.addStudent')
 
     fill_in_student_information
 
@@ -60,7 +60,7 @@ feature 'User adds student' do
     sign_in_as create(:user)
 
     click_on t('settings.title')
-    click_on t('actions.add')
+    click_on t('actions.addStudent')
     fill_in t('labels.birthdate'), with: '2003-05-27'
 
     expect(page).to have_content t('errors.birthdate.invalid')
@@ -71,7 +71,7 @@ feature 'User adds student' do
     sign_in_as create(:user)
 
     click_on t('settings.title')
-    click_on t('actions.add')
+    click_on t('actions.addStudent')
 
     ignoring_ember_errors do
       click_on t('actions.save')
