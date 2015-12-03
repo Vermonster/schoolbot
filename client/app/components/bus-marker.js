@@ -8,6 +8,8 @@ export default MarkerLayer.extend({
 
   lat: Ember.computed.alias('model.busLocations.firstObject.latitude'),
   lng: Ember.computed.alias('model.busLocations.firstObject.longitude'),
+  clickable: false,
+  keyboard: false,
 
   icon: Ember.computed(
     'moment.locale',
