@@ -48,8 +48,11 @@ pt:
     edit: Editar
     close: Fechar
     signOut: Sair
-    add: Adicionar Estudante
+    addStudent: Adicionar estudante
     changePassword: Alterar Password
+    zoomIn: Zoom
+    zoomOut: Diminuir o zoom
+    follow: Siga o ônibus
   flashes:
     error:
       generic: Opa! Algo deu errado e nós não podemos processar essa ação. Você pode querer tentar de novo, ou se não funcionar, atualize a página.

@@ -50,8 +50,11 @@ fr:
     edit: Éditer
     close: Fermer
     signOut: Se déconnecter
-    add: Ajouter un étudiant
+    addStudent: Ajouter un étudiant
     changePassword: Changer votre mot de passe
+    zoomIn: Effectuez un zoom avant
+    zoomOut: Effectuer un zoom arrière
+    follow: Suivez le bus
   flashes:
     error:
       generic: "Oups! Quelque chose n'allait pas et nous ne pouvions pas traiter cette action. Vous pouvez essayer à nouveau, ou si cela ne fonctionne pas, actualisez la page."

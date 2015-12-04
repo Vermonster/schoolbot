@@ -48,8 +48,11 @@ es:
     edit: Editar
     close: Cerrar
     signOut: Desconectar
-    add: Añadir un estudiante
+    addStudent: Añadir un estudiante
     changePassword: Cambiar la contraseña
+    zoomIn: Zoom
+    zoomOut: Zoom de alejamiento
+    follow: Siga autobuses
   flashes:
     error:
       generic: ¡Uy! Algo salió mal y no pudimos procesar esa acción. Quizá quieras intentarlo de nuevo o si eso no funciona, actualice la página.
