@@ -42,7 +42,9 @@
           <ul>
             {{#each students as |student|}}
               <li class='student {{unless student.isLocated 'student--not-located'}}'>
-                <div class='student__abbreviation'>{{student.abbreviation}}</div>
+                <div class='student__abbreviation' data-index='{{student.index}}'>
+                  {{student.abbreviation}}
+                </div>
 
                 {{#unless student.isLocated}}
                   <div class='student__warning-icon'>{{fa-icon 'warning'}}</div>

@@ -17,12 +17,16 @@ export default MarkerLayer.extend({
     'model.students.@each.abbreviation',
     function() {
       const moment = this.get('moment').moment.bind(this.get('moment'));
-      const labels = this.get('model.students').mapBy('abbreviation').sort();
+      const students = this.get('model.students').sortBy('nickname');
 
       let extraClass = '';
-      let html = labels.map((label) =>
-        `<span class="student__abbreviation--bus-marker">${label}</span>`
-      ).join('');
+      let html = students.map((student) => {
+        return `<span
+          class='bus-marker__student-abbreviation'
+          data-index='${student.get('index')}'>
+            ${student.get('abbreviation')}
+          </span>`;
+      }).join('');
 
       if (this.get('model.lastSeenAt') < moment().subtract(45, 'seconds')) {
         extraClass = 'bus-marker--time-ago';

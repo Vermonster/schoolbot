@@ -59,6 +59,22 @@
   margin-left: rem(-17);
 }
 
+.bus-marker__student-abbreviation {
+  @include student-abbreviation;
+  width: rem(30);
+  height: rem(30);
+  margin-right: 0;
+  margin-bottom: rem(3);
+  margin-left: $item-spacing;
+  font-size: rem(20);
+  font-style: normal;
+  line-height: rem(22);
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
 .leaflet-overlay-pane path {
   stroke: $bus-path-color;
   stroke-width: rem(4);

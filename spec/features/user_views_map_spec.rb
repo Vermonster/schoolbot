@@ -61,7 +61,7 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    expect(page).to have_css('.bus-marker', count: 1, text: 'FS')
+    expect(page).to have_css('.bus-marker', count: 1, text: 'F S')
   end
 
   scenario 'with markers displayed only for buses with recent locations' do

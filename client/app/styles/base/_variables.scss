@@ -47,7 +47,6 @@ $color-secondary-darken-1: #b56ba5;
 $color-secondary-darken-2: #864685;
 $color-secondary-darken-3: #b9276e;
 $color-secondary-darken-4: #ef4558;
-$color-secondary-darken-5: #b9276e;
 $color-secondary-darkest: #1c1836;
 $color-tertiary: #b3d15d;
 $color-tertiary-darken: #78c273;
@@ -109,6 +108,7 @@ $footer-height: $menu-height;
 $abbreviation-first-color: $color-primary-darken-3;
 $abbreviation-second-color: $color-secondary;
 $abbreviation-third-color: $color-primary-darken-1;
+$abbreviation-fallback-color: $color-tertiary;
 
 // Map
 $bus-path-color: $dark-gray;

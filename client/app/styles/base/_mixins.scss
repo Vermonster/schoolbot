@@ -363,19 +363,23 @@
 }
 
 // Map makers
-@mixin student-abbrev {
+@mixin student-abbreviation {
   display: inline-block;
   width: rem(40);
   height: rem(40);
   margin-right: $item-spacing * 2;
   padding: rem(5);
   border-radius: 50%;
-  background-color: $color-primary;
+  background-color: $abbreviation-fallback-color;
   color: $base-font-invert-color;
   font-family: $heading-font-family;
   font-size: rem(18);
   text-align: center;
   line-height: rem(30);
+
+  &[data-index='0'] { background-color: $abbreviation-first-color; }
+  &[data-index='1'] { background-color: $abbreviation-second-color; }
+  &[data-index='2'] { background-color: $abbreviation-third-color; }
 }
 
 // Transition

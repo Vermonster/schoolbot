@@ -2,24 +2,6 @@
   display: flex;
   align-items: center;
   margin-bottom: $item-spacing * 2;
-
-  &:nth-child(3n+1) {
-    .student__abbreviation {
-      background-color: $abbreviation-first-color;
-    }
-  }
-
-  &:nth-child(3n+2) {
-    .student__abbreviation {
-      background-color: $abbreviation-second-color;
-    }
-  }
-
-  &:nth-child(3n+3) {
-    .student__abbreviation {
-      background-color: $abbreviation-third-color;
-    }
-  }
 }
 
 .student--not-located {
@@ -34,36 +16,8 @@
 }
 
 .student__abbreviation {
-  @include student-abbrev;
+  @include student-abbreviation;
   flex-shrink: 0;
-}
-
-.student__abbreviation--bus-marker {
-  @include student-abbrev;
-  width: rem(30);
-  height: rem(30);
-  margin-right: 0;
-  margin-bottom: rem(3);
-  margin-left: $item-spacing;
-  font-size: rem(20);
-  font-style: normal;
-  line-height: rem(22);
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:nth-child(3n+1) {
-    background-color: $abbreviation-first-color;
-  }
-
-  &:nth-child(3n+2) {
-    background-color: $abbreviation-second-color;
-  }
-
-  &:nth-child(3n+3) {
-    background-color: $abbreviation-third-color;
-  }
 }
 
 .student__warning-icon {
