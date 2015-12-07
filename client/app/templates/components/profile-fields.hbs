@@ -1,7 +1,11 @@
 <div class='form__item {{if model.errors.name 'form__item--error'}}'>
   <label>
     {{ t 'labels.name'}}
-    {{input value=model.name}}
+    {{#if autofocus}}
+      {{focus-input value=model.name}}
+    {{else}}
+      {{input value=model.name}}
+    {{/if}}
   </label>
   {{#if model.errors.name}}
     <span class='form__error--field'>
