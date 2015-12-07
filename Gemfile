@@ -23,7 +23,6 @@ gem "responders"
 gem "rest-client"
 
 group :development do
-  gem "bullet"
   gem "letter_opener"
   gem "spring"
   gem "spring-commands-rspec"
@@ -31,6 +30,7 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "bullet"
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "byebug"

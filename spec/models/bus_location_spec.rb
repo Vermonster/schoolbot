@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe Bus do
-  describe '#recent_locations' do
-    it 'returns the 8 most recently recorded bus locations' do
+describe BusLocation do
+  describe '.recent' do
+    it 'returns the 8 most recently recorded locations' do
       bus = create(:bus)
       Timecop.freeze(Time.current.change(usec: 0)) do
         [
@@ -19,7 +19,7 @@ describe Bus do
           create(:bus_location, bus: bus, recorded_at: time)
         end
 
-        expect(bus.recent_locations.map(&:recorded_at)).to eq [
+        expect(BusLocation.recent.map(&:recorded_at)).to eq [
           5.seconds.ago,
           12.seconds.ago,
           23.seconds.ago,
@@ -32,7 +32,7 @@ describe Bus do
       end
     end
 
-    it 'returns only bus locations recorded within the last 5 minutes' do
+    it 'returns only locations recorded within the last 5 minutes' do
       bus = create(:bus)
       Timecop.freeze(Time.current.change(usec: 0)) do
         [
@@ -47,7 +47,7 @@ describe Bus do
           create(:bus_location, bus: bus, recorded_at: time)
         end
 
-        expect(bus.recent_locations.map(&:recorded_at)).to eq [
+        expect(BusLocation.recent.map(&:recorded_at)).to eq [
           40.seconds.ago,
           90.seconds.ago,
           2.minutes.ago,

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe StudentLabel do
+describe Student do
   describe 'validation' do
     it 'allows and normalizes uppercase or lowercase letters in digests' do
       student = create(:student, digest: 'aBcdEfeD' * 8)

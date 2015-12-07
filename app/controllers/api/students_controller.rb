@@ -3,7 +3,10 @@ module API
     include TokenAuthenticated
 
     def index
-      respond_with current_user.student_labels
+      respond_with current_user.student_labels.includes(
+        :school,
+        student: { current_bus_assignment: { bus: :recent_locations } }
+      )
     end
 
     def create
