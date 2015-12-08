@@ -25,7 +25,7 @@ export default Ember.Component.extend({
     },
 
     cancel() {
-      this.get('student').deleteRecord();
+      this.get('student').rollbackAttributes();
       this.sendAction('canceled');
     }
   }
