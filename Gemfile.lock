@@ -163,6 +163,7 @@ GEM
     minitest (5.8.3)
     multi_json (1.11.2)
     netrc (0.11.0)
+    newrelic_rpm (3.14.0.305)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     paperclip (4.3.2)
@@ -347,6 +348,7 @@ DEPENDENCIES
   geocoder
   launchy
   letter_opener
+  newrelic_rpm
   paperclip
   pg
   poltergeist
