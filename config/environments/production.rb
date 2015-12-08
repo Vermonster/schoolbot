@@ -25,4 +25,4 @@ Rails.application.configure do
   config.middleware.use Rack::Deflater
 end
 
-Rack::Timeout.timeout = (ENV.fetch("RACK_TIMEOUT", 5)).to_i
+Rack::Timeout.timeout = (ENV.fetch("RACK_TIMEOUT", 10)).to_i
