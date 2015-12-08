@@ -9,10 +9,17 @@ class StudentLabel < ActiveRecord::Base
   validates :nickname,
     presence: true,
     uniqueness: { scope: :user_id, case_sensitive: false }
+  validate :student_must_be_unique_to_user
 
   auto_strip_attributes :nickname, squish: true
 
   def digest=(value)
     self.student = Student.find_by(digest: value)
+  end
+
+  private
+
+  def student_must_be_unique_to_user
+    errors.add(:digest, 'taken') if StudentLabel.exists?(student_id: student_id)
   end
 end

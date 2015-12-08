@@ -13,12 +13,14 @@ en:
       blank: |
         We couldn't find a matching student. Ensure you've entered the
         information exactly as it appears in your school district's records.
+      taken: |
+        You've already added this student to your account.
     email:
       invalid: Please enter a valid email address.
       taken: There is already an account associated with this address.
     nickname:
       blank: Please enter your student's first name.
-      taken: You've already added a student with that name.
+      taken: You've already added a student with this name.
     password:
       too_short: This must be at least 8 characters.
     passwordConfirmation:

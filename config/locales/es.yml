@@ -9,6 +9,7 @@ es:
       invalid: Por favor escriba una fecha valida en este formato MM/DD/AAAA.
     digest:
       blank: No pudimos encontrar a este estudiante. Asegúrese de que escribió la información según aparece en los archivos del distrito escolar.
+      taken: Ya has añadido este alumno a su cuenta.
     email:
       invalid: Por favor escriba una dirección de correo electrónico valida.
       taken: Ya existe una cuenta asociada con esta dirección.

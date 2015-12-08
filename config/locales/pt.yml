@@ -9,6 +9,7 @@ pt:
       invalid: Por favor, digite uma data válida no formato MM/DD/AAAA.
     digest:
       blank: Não conseguimos encontrar um estudante correspondente. Verifique se entrou a informação exatamente como está no registo do seu distrito escolar.
+      taken: Você já adicionou este estudante para sua conta.
     email:
       invalid: Por favor, digite um endereço de email válido.
       taken: Já exite uma conta associada com este endereço.

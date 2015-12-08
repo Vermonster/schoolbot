@@ -11,6 +11,7 @@ fr:
       invalid: "S'il vous plaît, entrez une date valide MM/JJ/AAAA."
     digest:
       blank: "Nous ne pouvions pas trouver un étudiant correspondant. S'assurer que vous avez entré les renseignements exactement comme il apparaît dans les documents de votre secteur scolaire."
+      taken: Vous avez déjà ajouté cet étudiant à votre compte.
     email:
       invalid: "S'il vous plaît entrer une adresse de courriel valide."
       taken: Il y a déjà un compte associé à cette adresse.
