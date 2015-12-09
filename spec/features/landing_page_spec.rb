@@ -28,4 +28,13 @@ feature 'Landing page' do
 
     expect(page).to have_content 'DISTRICT NOT FOUND'
   end
+
+  scenario 'shows an error message when the relevant district is inactive' do
+    create(:district, slug: 'bar', is_active: false)
+    use_subdomain 'bar'
+
+    visit root_path
+
+    expect(page).to have_content 'DISTRICT NOT FOUND'
+  end
 end

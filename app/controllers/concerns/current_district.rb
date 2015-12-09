@@ -4,6 +4,7 @@ module CurrentDistrict
   private
 
   def current_district
-    @_current_district ||= District.find_by!(slug: request.subdomains.first)
+    @_current_district ||=
+      District.active.find_by!(slug: request.subdomains.first)
   end
 end

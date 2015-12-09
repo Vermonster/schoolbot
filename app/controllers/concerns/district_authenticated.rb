@@ -13,7 +13,7 @@ module DistrictAuthenticated
 
   def authenticated_district
     @_authenticated_district ||= authenticate_with_http_basic do |user, pass|
-      District.find_by(slug: user, api_secret: pass)
+      District.active.find_by(slug: user, api_secret: pass)
     end
   end
 end

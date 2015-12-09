@@ -7,7 +7,7 @@ module Clockwork
   end
 
   every(Zonar::REQUEST_INTERVAL, 'UpdateBusLocations') do
-    District.find_each do |district|
+    District.active.find_each do |district|
       UpdateBusLocationsJob.perform_later(district)
     end
   end

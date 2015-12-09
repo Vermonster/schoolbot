@@ -24,7 +24,7 @@ class Zonar
   TIME_HEADER_PATTERN = /^Time\(([A-Z]+)\)$/
 
   READ_TIMEOUT = 5.seconds
-  REQUEST_INTERVAL = 20.seconds
+  REQUEST_INTERVAL = 15.seconds
   MAX_REQUEST_WINDOW = 2.minutes
   CIRCUIT_RETRY_INTERVAL = 1.minute
 

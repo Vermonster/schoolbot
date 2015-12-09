@@ -34,6 +34,14 @@ describe 'v0 assignments API' do
 
       expect(response.status).to be 401
     end
+
+    it 'fails if the district is inactive' do
+      district = create(:district, is_active: false)
+
+      get api_v0_assignment_path('3' * 64), nil, auth_headers(district)
+
+      expect(response.status).to be 401
+    end
   end
 
   describe 'create endpoint' do
@@ -65,6 +73,14 @@ describe 'v0 assignments API' do
       request_data = { assignments: [] }
 
       post api_v0_assignments_path, request_data.as_json, invalid_auth_headers
+
+      expect(response.status).to be 401
+    end
+
+    it 'fails if the district is inactive' do
+      district = create(:district, is_active: false)
+
+      post api_v0_assignments_path, {}, auth_headers(district)
 
       expect(response.status).to be 401
     end

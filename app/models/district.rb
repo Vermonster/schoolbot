@@ -31,6 +31,10 @@ class District < ActiveRecord::Base
   auto_strip_attributes :name, :contact_phone, squish: true
   auto_strip_attributes :contact_email, delete_whitespaces: true
 
+  def self.active
+    where(is_active: true)
+  end
+
   private
 
   def assign_api_secret
