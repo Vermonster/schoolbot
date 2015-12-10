@@ -3,7 +3,7 @@ class School < ActiveRecord::Base
 
   belongs_to :district
 
-  validates :name, :address, presence: true
+  validates! :name, :address, presence: true
 
   auto_strip_attributes :name, :address, squish: true
 end
