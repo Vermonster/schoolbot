@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   i18n: Ember.inject.service(),
   session: Ember.inject.service(),
+  intercom: Ember.inject.service(),
   map: Ember.inject.controller(),
   user: Ember.computed.alias('map.currentUser'),
   studentOrdering: ['nickname'],
@@ -11,7 +12,16 @@ export default Ember.Controller.extend({
   showingStudentForm: false,
   showingProfileForm: false,
 
+  updateIntercom() {
+    this.get('intercom').update(this.getProperties('user', 'students'));
+  },
+
   actions: {
+    savedStudent() {
+      this.send('toggleAddStudent');
+      this.updateIntercom();
+    },
+
     toggleAddStudent() {
       this.toggleProperty('showingStudentForm');
     },
@@ -27,6 +37,7 @@ export default Ember.Controller.extend({
         // FIXME: Remove once email confirmation is implemented
         this.get('session.data.authenticated').email = this.get('user.email');
         this.send('toggleEditProfile');
+        this.updateIntercom();
       }).catch((error) => {
         if (this.get('user.isValid')) {
           Ember.onerror(error);
@@ -40,6 +51,7 @@ export default Ember.Controller.extend({
     },
 
     signOut() {
+      this.get('intercom').shutdown();
       this.get('session').invalidate();
     }
   }

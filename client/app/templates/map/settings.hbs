@@ -37,7 +37,7 @@
             </a>
           {{/unless}}
           {{#if showingStudentForm}}
-            {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
+            {{add-student canceled='toggleAddStudent' saved='savedStudent'}}
           {{/if}}
           <ul>
             {{#each students as |student|}}

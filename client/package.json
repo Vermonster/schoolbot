@@ -52,6 +52,8 @@
     "ember-i18n": "git://github.com/grantovich/ember-i18n.git#2981d5fe0b4b5c7121d4111521c10e6ebdc5f7c8",
     "ember-i18n-errors": "0.1.2",
     "ember-leaflet": "2.1.1",
+    "ember-metrics": "0.5.3",
+    "ember-intercom": "0.0.2",
     "ember-moment": "4.1.0",
     "ember-normalize": "0.0.9",
     "ember-resolver": "2.0.3",
