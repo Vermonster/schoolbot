@@ -15,4 +15,12 @@ module Clockwork
   every(1.day, 'CleanBusLocations') do
     BusLocation.where('created_at < ?', 1.week.ago).delete_all
   end
+
+  if INTERCOM_ENABLED
+    every(1.day, 'IntercomUpdateDistrict') do
+      District.find_each do |district|
+        IntercomUpdateJob.perform_later(district)
+      end
+    end
+  end
 end

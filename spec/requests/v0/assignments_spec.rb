@@ -45,7 +45,7 @@ describe 'v0 assignments API' do
   end
 
   describe 'create endpoint' do
-    it 'creates or updates student bus assignments' do
+    it 'creates or updates student bus assignments', :perform_jobs do
       district = create(:district)
       create(:student,
         district: district,

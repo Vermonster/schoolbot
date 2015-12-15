@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   before_validation -> { email.try(:downcase!) }
   before_save :ensure_tokens
+  after_commit :update_intercom
 
   def address
     [street, city, state, zip_code].join(', ')
@@ -76,5 +77,9 @@ class User < ActiveRecord::Base
         break token unless User.exists?(token_name => token)
       end
     end
+  end
+
+  def update_intercom
+    IntercomUpdateJob.perform_later(self) if INTERCOM_ENABLED
   end
 end

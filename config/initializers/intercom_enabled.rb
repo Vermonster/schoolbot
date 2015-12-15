@@ -1,0 +1,1 @@
+INTERCOM_ENABLED = ENV['INTERCOM_ID'].present?

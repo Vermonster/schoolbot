@@ -5,7 +5,7 @@ describe UpdateBusLocationsJob do
   before { stub_zonar }
 
   def perform(district)
-    described_class.perform_later(district)
+    described_class.perform_now(district)
   end
 
   it 'handles an empty Zonar response' do

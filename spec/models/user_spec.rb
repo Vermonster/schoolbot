@@ -26,6 +26,23 @@ describe User do
     end
   end
 
+  describe 'after_commit' do
+    it 'enqueues an Intercom update when the user is updated or destroyed' do
+      user = build(:user)
+      actions = [
+        -> { user.save! },
+        -> { user.update!(name: 'test') },
+        -> { user.destroy! }
+      ]
+
+      actions.each do |action|
+        expect {
+          action.call
+        }.to have_enqueued_job(IntercomUpdateJob).with(user)
+      end
+    end
+  end
+
   describe 'validation' do
     it 'downcases and removes all whitespace from the email address' do
       user = build(:user, email: ' Test @Example.com  ')

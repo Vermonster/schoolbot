@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User resets password' do
-  scenario 'and is emailed a link allowing them to change their password' do
+  scenario 'and receives a password change link via email', :perform_jobs do
     district = create(:district, slug: 'boston')
     use_subdomain('boston')
     create(:user,

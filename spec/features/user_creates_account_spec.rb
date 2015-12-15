@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User creates account' do
-  scenario 'and signs in via an emailed confirmation link' do
+  scenario 'and signs in via an emailed confirmation link', :perform_jobs do
     district = create(:district)
     create(:school, district: district, name: 'Springfield High')
     student = create(:student,

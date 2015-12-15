@@ -13,6 +13,7 @@ gem "delayed-plugins-airbrake"
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "geocoder"
+gem "intercom"
 gem "newrelic_rpm"
 gem "paperclip"
 gem "pg"
@@ -54,6 +55,7 @@ group :test do
   gem "rspec_junit_formatter"
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
+  gem "test_after_commit"
   gem "timecop"
   gem "webmock"
 end

@@ -1,6 +1,4 @@
 class UpdateBusLocationsJob < ActiveJob::Base
-  queue_as :buses
-
   def perform(district)
     @district = district
 

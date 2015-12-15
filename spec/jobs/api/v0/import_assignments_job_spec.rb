@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe API::V0::ImportAssignmentsJob do
   def perform(district, assignments)
-    described_class.perform_later(
+    described_class.perform_now(
       district: district,
       data: { assignments: assignments }.to_json
     )
