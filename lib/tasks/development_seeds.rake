@@ -6,23 +6,11 @@ if Rails.env.development? || Rails.env.test?
     task prime: "db:setup" do
       include FactoryGirl::Syntax::Methods
 
-      boston = create(:district, name: 'Boston Public Schools', slug: 'boston')
-      brockton = create(:district, name: 'Brockton Schools', slug: 'brockton')
+      brockton = create(:district,
+        slug: 'brockton',
+        name: 'Brockton Public Schools'
+      )
 
-      create(:school,
-        district: boston,
-        name: 'Samuel Adams Elementary',
-        address: '165 East Webster St, East Boston, MA',
-        latitude: 42.365727789474,
-        longitude: -71.034763052632
-      )
-      create(:school,
-        district: boston,
-        name: 'Jeremiah E. Burke High',
-        address: '60 Washington St, Dorchester, MA',
-        latitude: 42.246033,
-        longitude: -71.1199965
-      )
       brockton_high = create(:school,
         district: brockton,
         name: 'Brockton High School',
@@ -47,8 +35,8 @@ if Rails.env.development? || Rails.env.test?
 
       user = create(:user,
         district: brockton,
-        email: 'test@test.com',
-        password: 'testtest',
+        email: 'test@example.com',
+        password: 'testpass',
         name: 'Test User',
         street: '1 Ash St',
         city: 'West Bridgewater',
