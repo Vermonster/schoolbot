@@ -20,6 +20,8 @@ class StudentLabel < ActiveRecord::Base
   private
 
   def student_must_be_unique_to_user
-    errors.add(:digest, 'taken') if StudentLabel.exists?(student_id: student_id)
+    if user.student_labels.where(student_id: student_id).where.not(id: id).any?
+      errors.add(:digest, 'taken')
+    end
   end
 end
