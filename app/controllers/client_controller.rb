@@ -24,7 +24,7 @@ class ClientController < ActionController::Base
   end
 
   def raw_client_html
-    $redis.get('client:index:' + $redis.get('client:index:current'))
+    $redis.get('client:index:current-content')
   end
 
   def redirect_www
