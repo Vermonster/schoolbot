@@ -9,6 +9,15 @@ feature 'Landing page' do
     expect(page).to have_content 'WELCOME!'
   end
 
+  scenario 'redirects to the root domain when accessed at "www" subdomain' do
+    use_subdomain 'www'
+
+    visit root_path
+
+    expect(page).to have_content 'WELCOME!'
+    expect(current_url).to_not include 'www'
+  end
+
   scenario 'shows the district name and logo when accessed at a subdomain' do
     create(:district, name: 'District Foo')
     district = create(:district, name: 'District Qux', slug: 'qux')
