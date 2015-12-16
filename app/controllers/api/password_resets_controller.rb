@@ -28,10 +28,6 @@ module API
       params.require(:password_reset).fetch(:email)
     end
 
-    def reset_token
-      params.require(:password_reset).fetch(:id)
-    end
-
     def reset_params
       params.require(:password_reset).permit(PasswordReset::ATTRIBUTES)
     end
