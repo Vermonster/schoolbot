@@ -2,12 +2,11 @@ require 'rails_helper'
 
 feature 'User updates profile' do
   scenario 'and sees the updated information' do
-    sign_in_as create(:user)
+    sign_in_as create(:user, email: 'guy@example.com')
 
     click_on t('settings.title')
     click_on t('actions.edit')
     fill_in t('labels.name'), with: 'Guy Test'
-    fill_in t('labels.email'), with: 'guy@example.com'
     click_on t('actions.changePassword')
     fill_in t('labels.password'), with: 'secretpass'
     fill_in t('labels.confirmPassword'), with: 'secretpass'
@@ -19,11 +18,31 @@ feature 'User updates profile' do
     expect(page).to_not have_button t('actions.save')
     within('section', text: 'MY INFORMATION') do
       expect(page).to have_content 'Guy Test'
-      expect(page).to have_content 'guy@example.com'
       expect(page).to have_content '123 Main St'
       expect(page).to have_content 'Someplace'
       expect(page).to have_content 'MA'
     end
+    expect(mailbox_for('guy@example.com')).to be_empty
+  end
+
+  scenario 'and must confirm a change to their email address', :perform_jobs do
+    sign_in_as create(:user)
+
+    click_on t('settings.title')
+    click_on t('actions.edit')
+    fill_in t('labels.email'), with: 'guy@example.com'
+    click_on t('actions.save')
+
+    expect(page).to have_content(
+      t('settings.information.notConfirmed').sub('{{email}}', 'guy@example.com')
+    )
+    expect(mailbox_for('guy@example.com')).to have(1).message
+
+    open_email('guy@example.com', subject: t('emails.confirmEmail.subject'))
+    click_first_link_in_email
+
+    expect(page).to have_content t('flashes.success.emailConfirmed')
+    expect(page).to have_css 'button.btn--settings'
   end
 
   scenario 'and has their preferred locale persisted' do

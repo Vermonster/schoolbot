@@ -24,6 +24,12 @@
               <div>{{user.email}}</div>
               <div>{{user.street}}</div>
               <div>{{user.city}} {{user.state}} {{user.zipCode}}</div>
+
+              {{#if user.unconfirmedEmail}}
+                <div class='settings__profile__unconfirmed-email'>
+                  {{t 'settings.information.notConfirmed' email=user.unconfirmedEmail}}
+                </div>
+              {{/if}}
             </div>
           {{/if}}
         </section>

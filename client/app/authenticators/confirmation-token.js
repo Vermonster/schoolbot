@@ -14,7 +14,8 @@ export default ApplicationAuthenticator.extend({
       confirmation.save().then(() => {
         resolve({
           email: confirmation.get('userEmail'),
-          token: confirmation.get('userToken')
+          token: confirmation.get('userToken'),
+          isNew: !confirmation.get('isReconfirmation')
         });
       }).catch((error) => {
         if (confirmation.get('isValid')) {

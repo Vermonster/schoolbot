@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id,
     :email,
+    :unconfirmed_email,
     :name,
     :street,
     :city,

@@ -1,5 +1,5 @@
 class ConfirmationSerializer < ActiveModel::Serializer
-  attributes :user_email, :user_token
+  attributes :user_email, :user_token, :is_reconfirmation
 
   def user_email
     object.user.email

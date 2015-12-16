@@ -66,7 +66,7 @@ en:
         Oops! Something went wrong and we couldn't process that action. You
         might want to try it again, or if that doesn't work, refresh the page.
       invalidConfirmation: |
-        The email confirmation link you followed is not valid. Your account may
+        The confirmation link you followed is not valid. Your email address may
         already be confirmed; try signing in.
       invalidReset: |
         The password reset link you followed is not valid. Password reset links
@@ -74,6 +74,8 @@ en:
     success:
       accountConfirmed: |
         Welcome to SchoolBot! Your email address has been confirmed.
+      emailConfirmed: |
+        Success! Your email address has been changed.
       passwordReset: |
         Success! Your password has been updated.
   emails:
@@ -87,6 +89,15 @@ en:
 
         If you don't remember registering for a SchoolBot account, you can
         safely ignore this message. We won't send you any further emails.
+    confirmEmail:
+      subject: Confirm your email address change
+      body: |
+        Hi %{user_name}, you've requested to use this email address to sign into
+        SchoolBot from now on. Follow this link to confirm the change:
+
+        %{confirmation_url}
+
+        If you didn't request this change, you can safely ignore this message.
     resetPassword:
       subject: SchoolBot password reset request
       body: |
@@ -142,6 +153,9 @@ en:
     title: My Settings
     information:
       title: My Information
+      notConfirmed: |
+        Awaiting confirmation for {{email}}. We've sent an email to your new
+        address: follow the link in the email to confirm this change.
     students:
       title: My Students
       problems:

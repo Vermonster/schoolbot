@@ -24,9 +24,6 @@ export default Ember.Controller.extend({
 
     updateProfile() {
       return this.get('user').save().then(() => {
-        // Update auth data in-place so the session stays valid
-        // FIXME: Remove once email confirmation is implemented
-        this.get('session.data.authenticated').email = this.get('user.email');
         this.send('toggleEditProfile');
       }).catch((error) => {
         if (this.get('user.isValid')) {

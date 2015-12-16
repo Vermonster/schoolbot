@@ -7,14 +7,19 @@ module API
     end
 
     def update
-      current_user.update(user_params)
-      respond_with current_user
+      profile_update = ProfileUpdate.new(
+        user: current_user,
+        attributes: user_params
+      )
+      profile_update.save
+
+      respond_with profile_update, json: profile_update
     end
 
     private
 
     def user_params
-      params.require(:user).permit(Registration::USER_ATTRIBUTES)
+      params.require(:user).permit(ProfileUpdate::ATTRIBUTES)
     end
   end
 end

@@ -27,7 +27,7 @@ describe 'Current user API' do
       previous_digest = target_user.password_digest
       new_attributes = {
         name: 'tester',
-        email: 'tester@example.com',
+        email: 'test@example.com',
         password: 'secretpass',
         password_confirmation: 'secretpass',
         street: '123 main st',
@@ -39,9 +39,11 @@ describe 'Current user API' do
       url = api_update_current_user_url(other_user.id, subdomain: 'foo')
       put url, { user: new_attributes }, auth_headers(target_user)
 
-      expect(response.status).to be 204
+      expect(response.status).to be 200
+      expect(response_json[:user][:email]).to_not eq 'test@example.com'
+      expect(response_json[:user][:unconfirmed_email]).to eq 'test@example.com'
       target_user.reload
-      expect(target_user.email).to eq 'tester@example.com'
+      expect(target_user.unconfirmed_email).to eq 'test@example.com'
       expect(target_user.zip_code).to eq '98765'
       expect(target_user.password_digest).to_not eq previous_digest
     end
@@ -59,7 +61,7 @@ describe 'Current user API' do
       url = api_update_current_user_url(user.id, subdomain: 'bip')
       put url, { user: new_attributes }, auth_headers(user)
 
-      expect(response.status).to be 204
+      expect(response.status).to be 200
       expect(user.reload.password_digest).to eq previous_digest
     end
 

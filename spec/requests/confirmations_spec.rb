@@ -17,10 +17,34 @@ describe 'Confirmations API' do
       expect(response_json).to eq(
         confirmation: {
           user_email: 'bob@example.com',
-          user_token: 'B'
+          user_token: 'B',
+          is_reconfirmation: false
         }
       )
       expect(user.reload).to be_confirmed
+    end
+
+    it 'confirms an email address change for a user' do
+      district = create(:district, slug: 'dit')
+      user = create(:user,
+        district: district,
+        email: 'pat@example.com',
+        unconfirmed_email: 'pat@example.net',
+        confirmation_token: 'C',
+        authentication_token: 'D'
+      )
+
+      post api_confirmations_url(subdomain: 'dit'), confirmation: { token: 'C' }
+
+      expect(response.status).to be 201
+      expect(response_json).to eq(
+        confirmation: {
+          user_email: 'pat@example.net',
+          user_token: 'D',
+          is_reconfirmation: true
+        }
+      )
+      expect(user.reload.unconfirmed_email).to be nil
     end
 
     it 'returns error information if the token is invalid' do

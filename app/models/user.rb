@@ -37,6 +37,13 @@ class User < ActiveRecord::Base
     where('confirmed_at <= ?', Time.current)
   end
 
+  def reconfirm!
+    self.email = unconfirmed_email
+    self.unconfirmed_email = nil
+    self.confirmation_token = nil
+    save!
+  end
+
   def disable_password_reset
     self.reset_password_token = nil
   end
@@ -52,11 +59,6 @@ class User < ActiveRecord::Base
     where('reset_password_sent_at >= ?', 7.days.ago)
   end
 
-  # Don't unset the password digest if a blank password is sent
-  def password=(value)
-    super if value.present?
-  end
-
   private
 
   def address_must_geocode
@@ -67,7 +69,7 @@ class User < ActiveRecord::Base
 
   def ensure_tokens
     ensure_token(:authentication_token)
-    ensure_token(:confirmation_token) unless confirmed?
+    ensure_token(:confirmation_token) if needs_confirmation_token?
   end
 
   def ensure_token(token_name)
@@ -77,6 +79,10 @@ class User < ActiveRecord::Base
         break token unless User.exists?(token_name => token)
       end
     end
+  end
+
+  def needs_confirmation_token?
+    !confirmed? || unconfirmed_email.present?
   end
 
   def update_intercom
