@@ -106,5 +106,16 @@ describe 'v0 assignments API' do
       expect(Bus.count).to be 0
       expect(Student.count).to be 0
     end
+
+    it 'fails if an attribute is a data type other than null or string' do
+      district = create(:district)
+      request_data = { assignments: [{ sha: '1' * 64, bus_identifier: 123 }] }
+
+      post api_v0_assignments_path, request_data.as_json, auth_headers(district)
+
+      expect(response.status).to be 422
+      expect(Bus.count).to be 0
+      expect(Student.count).to be 0
+    end
   end
 end
