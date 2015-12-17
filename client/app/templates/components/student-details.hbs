@@ -1,0 +1,72 @@
+<li class='student {{unless student.isLocated 'student--not-located'}}'>
+  <div class='student__abbreviation' data-index='{{student.index}}'>
+    {{student.abbreviation}}
+  </div>
+
+  {{#unless student.isLocated}}
+    <div class='student__warning-icon'>{{fa-icon 'warning'}}</div>
+  {{/unless}}
+
+  <div class='student__details'>
+    {{#if isEditing}}
+      <form class='form--edit-student'>
+        <div class='form__item'>
+          <label>
+            {{t 'labels.nickname'}}
+            {{input value=student.nickname}}
+          </label>
+
+          {{#if student.errors.nickname}}
+            <span class='form__error--field'>
+              {{t-error student.errors.nickname.firstObject}}
+            </span>
+          {{/if}}
+        </div>
+
+        <div class='form__item'>
+          <label>
+            {{t 'labels.school'}}
+            {{#x-select class='form__select--school' value=student.school}}
+              {{#each orderedSchools as |school|}}
+                {{#x-option value=school}}{{school.name}}{{/x-option}}
+              {{/each}}
+            {{/x-select}}
+          </label>
+        </div>
+
+        <div class='button-group'>
+          {{#spin-button action=(action 'save') class='form__cta--save'}}
+            {{t 'actions.save'}}
+          {{/spin-button}}
+          <button class='form__cta--cancel' {{action 'cancel'}}>
+            {{t 'actions.cancel'}}
+          </button>
+        </div>
+      </form>
+    {{else}}
+      <div class='student__nickname'>
+        {{student.nickname}}
+        <a href='#' title={{t 'actions.editStudent'}} {{action 'edit'}}>
+          {{fa-icon 'pencil'}}
+        </a>
+      </div>
+      <div class='student__school'>
+        {{student.school.name}}
+      </div>
+
+      {{#unless student.isLocated}}
+        <div class='student__warning'>
+          {{#if student.isAssigned}}
+            {{t 'settings.students.problems.busOutdated' busNumber=student.bus.identifier}}
+          {{else}}
+            {{t 'settings.students.problems.notAssigned'}}
+          {{/if}}
+
+          {{#link-to 'map.help' replace=true}}
+            {{t 'settings.students.problems.contactDistrict'}}
+          {{/link-to}}
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</li>

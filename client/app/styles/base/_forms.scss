@@ -4,7 +4,8 @@ form {
   color: $base-font-color;
   font-size: $form-font-size;
 
-  &.form--add-student {
+  &.form--add-student,
+  &.form--edit-student {
     padding-top: 0;
   }
 }

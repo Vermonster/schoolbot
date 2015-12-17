@@ -130,4 +130,59 @@ describe 'Students API' do
       )
     end
   end
+
+  describe 'update action' do
+    it 'cannot be accessed without authentication' do
+      create(:district, slug: 'qux')
+
+      put api_student_url(0, subdomain: 'qux'), nil, invalid_auth_headers
+
+      expect(response.status).to be 401
+    end
+
+    it 'cannot update student labels that do not belong to the current user' do
+      district = create(:district, slug: 'foo')
+      first_user, second_user = create_list(:user, 2, district: district)
+      student_label = create(:student_label, user: first_user)
+
+      url = api_student_url(student_label.id, subdomain: 'foo')
+      put url, {}, auth_headers(second_user)
+
+      expect(response.status).to be 404
+    end
+
+    it 'updates a student label for the current user' do
+      district = create(:district, slug: 'foo')
+      old_school, new_school = create_list(:school, 2, district: district)
+      user = create(:user, district: district)
+      student_label = create(:student_label, user: user, school: old_school)
+
+      put(
+        api_student_url(student_label.id, subdomain: 'foo'),
+        { student: { nickname: 'Jenny', school_id: new_school.id } },
+        auth_headers(user)
+      )
+
+      expect(response).to be_successful
+      student_label.reload
+      expect(student_label.nickname).to eq 'Jenny'
+      expect(student_label.school).to eq new_school
+    end
+
+    it 'returns error information if the input is invalid' do
+      district = create(:district, slug: 'baz')
+      user = create(:user, district: district)
+      school = create(:school, district: district)
+      student_label = create(:student_label, user: user)
+
+      put(
+        api_student_url(student_label.id, subdomain: 'baz'),
+        { student: { nickname: '', school_id: school.id } },
+        auth_headers(user)
+      )
+
+      expect(response.status).to be 422
+      expect(response_json[:errors]).to eq(nickname: ['blank'])
+    end
+  end
 end

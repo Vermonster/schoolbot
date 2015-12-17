@@ -10,19 +10,26 @@ module API
     end
 
     def create
-      student_label = current_user.student_labels.create(
-        nickname: student_params[:nickname],
-        school: School.find_by(id: student_params[:school_id]),
-        student: Student.find_by(digest: student_params[:digest])
-      )
+      student_label = current_user.student_labels.create(create_params)
 
       respond_with student_label, location: nil
     end
 
+    def update
+      student_label = current_user.student_labels.find(params[:id])
+      student_label.update(update_params)
+
+      respond_with student_label
+    end
+
     private
 
-    def student_params
+    def create_params
       params.require(:student).permit(:digest, :nickname, :school_id)
+    end
+
+    def update_params
+      create_params.except(:digest)
     end
   end
 end

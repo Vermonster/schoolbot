@@ -55,6 +55,7 @@ en:
     close: Close
     signOut: Sign Out
     addStudent: Add student
+    editStudent: Edit student
     changePassword: Change Password
     zoomIn: Zoom in
     zoomOut: Zoom out

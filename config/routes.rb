@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :password_resets, only: [:show, :create, :update]
     get 'users/current', to: 'users#show', as: :current_user
     put 'users/:ignored', to: 'users#update', as: :update_current_user
-    resources :students, only: [:index, :create]
+    resources :students, only: [:index, :create, :update]
     resource :translations, only: :show
 
     namespace :v0 do

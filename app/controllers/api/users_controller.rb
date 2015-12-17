@@ -8,7 +8,7 @@ module API
 
     def update
       current_user.update(user_params)
-      respond_with current_user, location: nil
+      respond_with current_user
     end
 
     private

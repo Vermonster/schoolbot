@@ -41,38 +41,7 @@
           {{/if}}
           <ul>
             {{#each students as |student|}}
-              <li class='student {{unless student.isLocated 'student--not-located'}}'>
-                <div class='student__abbreviation' data-index='{{student.index}}'>
-                  {{student.abbreviation}}
-                </div>
-
-                {{#unless student.isLocated}}
-                  <div class='student__warning-icon'>{{fa-icon 'warning'}}</div>
-                {{/unless}}
-
-                <div>
-                  <div class='student__nickname'>
-                    {{student.nickname}}
-                  </div>
-                  <div class='student__school'>
-                    {{student.school.name}}
-                  </div>
-
-                  {{#unless student.isLocated}}
-                    <div class='student__warning'>
-                      {{#if student.isAssigned}}
-                        {{t 'settings.students.problems.busOutdated' busNumber=student.bus.identifier}}
-                      {{else}}
-                        {{t 'settings.students.problems.notAssigned'}}
-                      {{/if}}
-
-                      {{#link-to 'map.help' replace=true}}
-                        {{t 'settings.students.problems.contactDistrict'}}
-                      {{/link-to}}
-                    </div>
-                  {{/unless}}
-                </div>
-              </li>
+              {{student-details student=student}}
             {{/each}}
           </ul>
         </section>

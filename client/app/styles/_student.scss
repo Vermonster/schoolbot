@@ -1,13 +1,10 @@
 .student {
   display: flex;
-  align-items: center;
+  position: relative;
   margin-bottom: $item-spacing * 2;
 }
 
 .student--not-located {
-  position: relative;
-  align-items: flex-start;
-
   .student__abbreviation,
   .student__nickname,
   .student__school {
@@ -24,6 +21,10 @@
   position: absolute;
   top: rem(20);
   left: rem(25);
+}
+
+.student__details {
+  flex-grow: 1;
 }
 
 .student__nickname {

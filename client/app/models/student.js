@@ -30,7 +30,7 @@ export default DS.Model.extend({
     return this.get('nickname').slice(0, length);
   }),
 
-  index: Ember.computed('persistedStudents.[]', function() {
+  index: Ember.computed('persistedStudents.@each.nickname', function() {
     return this.get('persistedStudents').sortBy('nickname').indexOf(this);
   })
 });
