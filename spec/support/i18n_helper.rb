@@ -1,5 +1,5 @@
 module I18nHelper
-  delegate :t, to: I18n
+  include ActionView::Helpers::TranslationHelper
   delegate :with_locale, to: I18n
 end
 

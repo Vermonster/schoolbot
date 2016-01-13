@@ -9,7 +9,6 @@ gem "aws-sdk", "~> 1.6" # TODO: Remove constraint once Paperclip supports 2.0
 gem "bcrypt"
 gem "cb2"
 gem "clockwork"
-gem "delayed-plugins-airbrake"
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "geocoder"
@@ -35,9 +34,9 @@ group :development, :test do
   gem "bullet"
   gem "brakeman", require: false
   gem "bundler-audit", require: false
-  gem "byebug"
   gem "dotenv-rails"
   gem "factory_girl_rails"
+  gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails"
   gem "rubocop", require: false

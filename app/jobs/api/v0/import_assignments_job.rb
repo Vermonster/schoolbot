@@ -40,13 +40,13 @@ module API
 
       def update_student_assignments!
         @assignments.each do |assignment|
-          begin
+          if assignment[:sha].blank?
+            Airbrake.notify('Blank digest!', bus: assignment[:bus_identifier])
+          else
             assign_student_to_bus(
               student_digest: assignment[:sha],
               bus_identifier: assignment[:bus_identifier]
             )
-          rescue ActiveModel::StrictValidationFailed
-            Airbrake.notify($ERROR_INFO, parameters: { district: @district })
           end
         end
       end

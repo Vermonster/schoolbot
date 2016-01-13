@@ -1,3 +1,5 @@
 Airbrake.configure do |config|
-  config.api_key = ENV.fetch('AIRBRAKE_KEY')
+  config.project_id = ENV.fetch('AIRBRAKE_ID')
+  config.project_key = ENV.fetch('AIRBRAKE_KEY')
+  config.ignore_environments = %w(development test)
 end

@@ -64,3 +64,4 @@ else
 '
 fi
 
+git config heroku.remote staging
