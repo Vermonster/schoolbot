@@ -19,6 +19,8 @@ Router.map(function() {
 
   this.route('privacy');
   this.route('terms');
+
+  this.route('notFound', { path: '*anything' });
 });
 
 export default Router;

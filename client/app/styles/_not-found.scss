@@ -1,0 +1,15 @@
+.not-found {
+  @include msg-box-wrapper;
+}
+
+.not-found__title {
+  @include msg-box-title;
+}
+
+.not-found__title--main {
+  @include msg-box-main-title;
+}
+
+.not-found__content {
+  padding: rem(10) $form-bottom-spacing;
+}
