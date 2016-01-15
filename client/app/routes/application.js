@@ -22,6 +22,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
     if (this.get('currentDistrict.isPresent')) {
       return this.get('translations').setup();
+    } else if (this.get('currentDistrict.isInvalid')) {
+      this.replaceWith('index');
     }
   }
 });

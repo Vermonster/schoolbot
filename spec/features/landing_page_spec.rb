@@ -29,21 +29,4 @@ feature 'Landing page' do
     expect(page).to have_css "img[src='#{district.logo.url}']"
     expect(page).to_not have_content 'DISTRICT FOO'
   end
-
-  scenario 'shows an error message when accessed at an invalid subdomain' do
-    use_subdomain 'qux'
-
-    visit root_path
-
-    expect(page).to have_content 'DISTRICT NOT FOUND'
-  end
-
-  scenario 'shows an error message when the relevant district is inactive' do
-    create(:district, slug: 'bar', is_active: false)
-    use_subdomain 'bar'
-
-    visit root_path
-
-    expect(page).to have_content 'DISTRICT NOT FOUND'
-  end
 end
