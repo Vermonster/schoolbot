@@ -34,5 +34,5 @@ deployment:
   staging:
     branch: master
     commands:
-      - git remote add staging git@heroku.com:omnibus-staging.git
+      - git remote add staging git@heroku.com:schoolbot-staging.git
       - bin/deploy staging

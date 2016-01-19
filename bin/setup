@@ -46,21 +46,21 @@ fi
 # fi
 
 # Set up the staging and production apps.
-if heroku join --app omnibus-staging &> /dev/null; then
-  git remote add staging git@heroku.com:omnibus-staging.git || true
-  printf 'You are a collaborator on the "omnibus-staging" Heroku app
+if heroku join --app schoolbot-staging &> /dev/null; then
+  git remote add staging git@heroku.com:schoolbot-staging.git || true
+  printf 'You are a collaborator on the "schoolbot-staging" Heroku app
 '
 else
-  printf 'Ask for access to the "omnibus-staging" Heroku app
+  printf 'Ask for access to the "schoolbot-staging" Heroku app
 '
 fi
 
-if heroku join --app omnibus-production &> /dev/null; then
-  git remote add production git@heroku.com:omnibus-production.git || true
-  printf 'You are a collaborator on the "omnibus-production" Heroku app
+if heroku join --app schoolbot-production &> /dev/null; then
+  git remote add production git@heroku.com:schoolbot-production.git || true
+  printf 'You are a collaborator on the "schoolbot-production" Heroku app
 '
 else
-  printf 'Ask for access to the "omnibus-production" Heroku app
+  printf 'Ask for access to the "schoolbot-production" Heroku app
 '
 fi
 

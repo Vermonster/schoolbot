@@ -12,7 +12,7 @@ require "action_mailer/railtie"
 
 Bundler.require(*Rails.groups)
 
-module Omnibus
+module Schoolbot
   class Application < Rails::Application
     config.i18n.default_locale = :api
     config.i18n.enforce_available_locales = true

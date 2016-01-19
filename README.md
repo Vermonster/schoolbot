@@ -1,4 +1,4 @@
-# Omnibus
+# SchoolBot
 
 An app that parents can use to track the location of their student's school bus.
 

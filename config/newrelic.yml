@@ -1,5 +1,5 @@
 common: &default_settings
-  app_name: "Omnibus (<%= Rails.env.capitalize %>)"
+  app_name: "SchoolBot (<%= Rails.env.capitalize %>)"
   license_key: "<%= ENV['NEW_RELIC_LICENSE_KEY'] %>"
   monitor_mode: true
 
