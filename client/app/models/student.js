@@ -16,6 +16,7 @@ export default DS.Model.extend({
   }),
   persistedStudents: Ember.computed.filterBy('allStudents', 'isNew', false),
 
+  /* jshint -W083 */
   abbreviation: Ember.computed('persistedStudents.@each.nickname', function() {
     let length = 1;
     for (; length < 3; length++) {
@@ -29,6 +30,7 @@ export default DS.Model.extend({
     }
     return this.get('nickname').slice(0, length);
   }),
+  /* jshint +W083 */
 
   index: Ember.computed('persistedStudents.@each.nickname', function() {
     return this.get('persistedStudents').sortBy('nickname').indexOf(this);
