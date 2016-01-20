@@ -3,7 +3,7 @@ Paperclip::Attachment.default_options.merge!(
   storage: :s3,
   s3_protocol: :https,
   s3_credentials: {
-    bucket: 'omnibus-uploads',
+    bucket: ENV.fetch('AWS_BUCKET'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY'),
     secret_access_key: ENV.fetch('AWS_SECRET_KEY')
   }
