@@ -8,7 +8,7 @@ module.exports = function(defaults) {
 
   var app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: process.env.ASSET_URL_BASE,
+      prepend: process.env.CLIENT_ASSET_URL_BASE,
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg', 'eot', 'otf', 'ttf', 'woff', 'woff2']
     },
 

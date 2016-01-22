@@ -10,10 +10,10 @@ module.exports = function(deployTarget) {
       allowOverwrite: true
     },
     s3: {
-      accessKeyId: process.env['AWS_ACCESS_KEY'],
-      secretAccessKey: process.env['AWS_SECRET_KEY'],
-      bucket: process.env['AWS_BUCKET'],
-      region: process.env['AWS_REGION']
+      accessKeyId: process.env['CLIENT_AWS_ACCESS_KEY'],
+      secretAccessKey: process.env['CLIENT_AWS_SECRET_KEY'],
+      bucket: process.env['CLIENT_AWS_BUCKET'],
+      region: process.env['CLIENT_AWS_REGION']
     }
   };
 
@@ -28,7 +28,7 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'staging' || deployTarget === 'production') {
     ENV.build.environment = 'production';
-    ENV.redis.url = process.env['REDIS_URL'];
+    ENV.redis.url = process.env['CLIENT_REDIS_URL'];
   }
 
   return ENV;

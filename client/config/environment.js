@@ -2,10 +2,10 @@
 
 module.exports = function(environment) {
   var requiredEnvironmentVariables = [
-    'AIRBRAKE_ID',
-    'AIRBRAKE_KEY',
-    'MAPBOX_ACCESS_TOKEN',
-    'MAPBOX_MAP_ID'
+    'CLIENT_AIRBRAKE_ID',
+    'CLIENT_AIRBRAKE_KEY',
+    'CLIENT_MAPBOX_ACCESS_TOKEN',
+    'CLIENT_MAPBOX_MAP_ID'
   ];
 
   if (environment === 'production') {
@@ -23,8 +23,8 @@ module.exports = function(environment) {
     locationType: 'auto',
 
     airbrake: {
-      projectId: process.env.AIRBRAKE_ID,
-      projectKey: process.env.AIRBRAKE_KEY
+      projectId: process.env.CLIENT_AIRBRAKE_ID,
+      projectKey: process.env.CLIENT_AIRBRAKE_KEY
     },
     'ember-simple-auth': {
       authenticationRoute: 'sign-in'
@@ -38,11 +38,11 @@ module.exports = function(environment) {
       allowLocaleOverride: true
     },
     intercom: {
-      appId: process.env.INTERCOM_ID
+      appId: process.env.CLIENT_INTERCOM_ID
     },
     mapbox: {
-      mapId: process.env.MAPBOX_MAP_ID,
-      accessToken: process.env.MAPBOX_ACCESS_TOKEN
+      mapId: process.env.CLIENT_MAPBOX_MAP_ID,
+      accessToken: process.env.CLIENT_MAPBOX_ACCESS_TOKEN
     },
     moment: { includeLocales: true },
 
