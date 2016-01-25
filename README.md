@@ -1,51 +1,55 @@
 # SchoolBot
 
-An app that parents can use to track the location of their student's school bus.
+This is the open-source code behind [SchoolBot](https://schoolbot.io), a web app
+created by [Vermonster](http://www.vermonster.com) that parents and guardians of
+students can use to track school bus locations.
 
-## Getting Started
+School districts interested in offering SchoolBot have two options: Deploy and
+maintain this code on their own servers, or purchase a subscription to
+**schoolbot.io**, a deployment of SchoolBot hosted and supported by Vermonster.
 
-After you have cloned this repo, run this setup script to set up your machine
-with the necessary dependencies to run and test this app:
+## schoolbot.io
 
-    % bin/setup
+Our hosted SchoolBot service is available to any school district that meets the
+basic requirements. Please contact us at <schoolbot@vermonster.com> for pricing.
 
-It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
-your machine with [this script].
+## Requirements
 
-[this script]: https://github.com/Vermonster/laptop
+Regardless of whether you subscribe to the schoolbot.io service or host your own
+installation of SchoolBot, the basic requirements are:
 
-After setting up, this script will run the application using [Heroku Local]:
+1. School buses must be tracked using [Zonar Ground Traffic Control][zonargtc].
+2. Students must be assigned to buses in your student information system using
+   a unique bus identifier that is also present in Zonar.
+3. You must have a way of regularly exporting (and anonymizing) bus assignment
+   data from your student information system to the SchoolBot API.
 
-    % bin/serve
+[zonargtc]: http://www.zonarsystems.com/solutions/ground-traffic-control/
 
-To access the app in development, use the `lvh.me` domain. This resolves to
-127.0.0.1, but allows arbitrary subdomains to be used. For instance, with the
-development seed data, try <http://brockton.lvh.me:3000>.
+## Documentation
 
-[Heroku Local]: https://devcenter.heroku.com/articles/heroku-local
+* See the **[onboarding guide](doc/onboarding.md)** for a detailed checklist of
+  requirements to set up your school district on the schoolbot.io service (or on
+  your own installation).
 
-## Running Tests
+* See our **[FAQs](doc/faqs.md)** for answers to common questions about
+  SchoolBot and the schoolbot.io service.
 
-To run all available test suites and linters, use the default Rake task:
+* See the **[hosting documentation](doc/hosting.md)** for guidance on setting
+  up your own installation of SchoolBot.
 
-    % rake
+## Hire Us
 
-To run only the Rails or Ember test suites, use the appropriate Rake tasks:
+We are [Vermonster](http://www.vermonster.com), a team of product designers and
+developers in Boston, MA. Is there a feature or integration you'd like see in
+SchoolBot? Hire us and we'll build it for you as a consulting project. Contact
+us at <schoolbot@vermonster.com> for more information.
 
-    % rake spec
-    % rake ember:test
+## Contributing
 
-Be aware that using the `rspec` command (e.g. for faster focused testing) will
-not automatically rebuild the Ember app. Use `ember build -w` for this, or just
-keep `bin/serve` running.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** to learn how to work on this project.
 
-## Deploying
+## License
 
-Deploy to staging and production with:
-
-    $ bin/deploy staging
-    $ bin/deploy production
-
-This requires that you have previously run `bin/setup`, and that all values in
-`client/.env` are present and set correctly. The values can be found in a pinned
-item in the project's Slack channel.
+SchoolBot is © 2016 Vermonster LLC. It is free software, and may be
+redistributed under the terms specified in **[LICENSE.md](LICENSE.md)**.
