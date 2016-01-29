@@ -10,7 +10,7 @@ module API
       end
 
       def bus_identifier
-        object.current_bus_assignment.try(:bus).try(:identifier)
+        object.current_bus_assignment&.bus&.identifier
       end
     end
   end

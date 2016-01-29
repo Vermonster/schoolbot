@@ -12,7 +12,7 @@ class District < ActiveRecord::Base
     content_type: { content_type: 'image/svg+xml' }
 
   after_initialize :assign_api_secret, if: :new_record?
-  before_validation -> { contact_email.try(:downcase!) }
+  before_validation -> { contact_email&.downcase! }
 
   validates :name,
     :slug,

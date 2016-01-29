@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   auto_strip_attributes :email, delete_whitespaces: true
   auto_strip_attributes :name, :street, :city, :state, :zip_code, squish: true
 
-  before_validation -> { email.try(:downcase!) }
+  before_validation -> { email&.downcase! }
   before_save :ensure_tokens
   after_commit :update_intercom
 

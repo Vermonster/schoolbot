@@ -9,7 +9,7 @@ class Confirmation
 
   def initialize(district:, token:)
     @user = district.users.find_by(confirmation_token: token)
-    @is_reconfirmation = @user.try(:confirmed?)
+    @is_reconfirmation = @user&.confirmed?
   end
 
   def save

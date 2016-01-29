@@ -23,7 +23,7 @@ module API
         end
         assignment = student.current_bus_assignment
 
-        if assignment.present? && assignment.bus_id == bus.try(:id)
+        if assignment.present? && assignment.bus_id == bus&.id
           assignment.touch
         else
           student.bus_assignments.create!(bus: bus)

@@ -14,7 +14,7 @@ module API
     private
 
     def authenticated_user
-      @_authenticated_user ||= authenticating_user.try(:authenticate, password)
+      @_authenticated_user ||= authenticating_user&.authenticate(password)
     end
 
     def authenticating_user

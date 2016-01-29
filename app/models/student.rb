@@ -8,5 +8,5 @@ class Student < ActiveRecord::Base
 
   validates! :digest, length: { is: 64 }, format: { with: /\A[0-9a-f]*\z/ }
 
-  before_validation -> { digest.try(:downcase!) }
+  before_validation -> { digest&.downcase! }
 end

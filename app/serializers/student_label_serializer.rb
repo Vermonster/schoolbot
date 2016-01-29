@@ -6,6 +6,6 @@ class StudentLabelSerializer < ActiveModel::Serializer
   attributes :id, :nickname
 
   def bus
-    object.student.current_bus_assignment.try(:bus)
+    object.student.current_bus_assignment&.bus
   end
 end
