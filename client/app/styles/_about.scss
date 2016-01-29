@@ -70,10 +70,6 @@
   @include list-item-number($color-primary);
 }
 
-.about__content__link {
-  @include page-view-link;
-}
-
 .about__content-wrapper--intro {
   @include global-content-width;
   position: relative;
@@ -123,50 +119,13 @@
   }
 }
 
-.about__form {
-  @include clearfix;
-}
-
-.about__input {
-  margin-bottom: $item-spacing;
-  color: $base-font-color;
-
-  @include placeholder {
-    color: lighten($color-tertiary-darkest, 40%);
-  }
-}
-
-input[type='text'] {
-
-  &.about__input--district {
-    padding-top: rem(8);
-    padding-bottom: rem(8);
-    font-size: $about-content-font-size-small;
-
-    @include media($medium-screen) {
-      width: calc(100% - #{rem(120)});
-      margin-right: rem(5);
-      float: left;
-    }
-  }
-}
-
-.about__cta {
-  @include about-cta-font-size;
-}
-
-.about__cta--learn,
-.about__cta--district,
-.about__cta--parent {
+.about__cta--learn {
   @include button-with-purple-stripes-bg;
+  display: block;
 
   @include media($medium-screen) {
     float: left;
   }
-}
-
-.about__cta--learn {
-  display: block;
 }
 
 .about__footer {
@@ -199,13 +158,4 @@ input[type='text'] {
   width: rem(80);
   height: rem(15);
   margin-top: rem(-8);
-}
-
-.about__form__feedback {
-  font-size: rem(13);
-  font-style: italic;
-}
-
-.about__form__feedback--success {
-  @include about-content-font-size;
 }

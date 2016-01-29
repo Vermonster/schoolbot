@@ -90,6 +90,13 @@
   }
 
   .terms-link {
-    @include page-view-link-bottom-invert;
+    color: $base-font-invert-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $base-font-invert-color;
+      text-decoration: none;
+    }
   }
 }

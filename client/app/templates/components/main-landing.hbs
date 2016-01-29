@@ -5,7 +5,7 @@
     <div class='logo'>Schoolbot</div>
     <div class='about__content about__content--intro'>
       <h1 class='about__heading about__heading--welcome'>Welcome!</h1>
-      <p>SchoolBot is an application that maps the locations of school buses. It is available to parents of students in participating school districts, and works on a wide variety of devices.</p>
+      <p>SchoolBot is an open-source application that maps the locations of school buses. It is available to parents and guardians of students in participating school districts, and works on a wide variety of devices.</p>
       {{#scroll-to href='#districts' tagName='button' class='about__cta about__cta--learn'}}Learn more{{/scroll-to}}
     </div>
   </div>
@@ -14,25 +14,14 @@
 <section id='districts' class='about__content-wrapper--district'>
   <div class='about__content about__content--district'>
     <h1 class='about__heading'>For School Districts</h1>
-    <p>If you work for a school district, you should know:</p>
+    <p>If you work for a school district or transport provider, you should know:</p>
     <ul class='about__content__list'>
-      <li class='about__content__list-item--district'>SchoolBot uses your existing Zonar Ground Traffic Control subscription to provide live bus mapping.</li>
-      <li class='about__content__list-item--district'>You can export student bus assignment data to SchoolBot from Versatrans or any other system.</li>
-      <li class='about__content__list-item--district'>SchoolBot uses one-way encryption to ensure identifiable student data is never transmitted or stored.</li>
-      <li class='about__content__list-item--district'>SchoolBot is fully <a class='about__content__link' href='http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html' target='_blank'>FERPA</a>-compliant.</li>
+      <li class='about__content__list-item--district'>SchoolBot uses an existing Zonar Ground Traffic Control subscription to provide live bus mapping.</li>
+      <li class='about__content__list-item--district'>You can export student bus assignments to SchoolBot from any student information system, using a simple API.</li>
+      <li class='about__content__list-item--district'>SchoolBot is <a href='http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html' target='_blank'>FERPA</a>-compliant, and never transmits or stores identifiable student data.</li>
+      <li class='about__content__list-item--district'>We offer SchoolBot as a subscription service, but the code behind it is <a href='https://github.com/Vermonster/schoolbot/blob/master/README.md'>open-source</a> and free for anyone to use or modify. You can contribute new features and integrations, or even run SchoolBot on your own servers.</li>
     </ul>
-    <p>To learn more about SchoolBot and how you can offer it in your district, enter your email address below and we'll get in touch!</p>
-    {{#if districtContactSubmitted}}
-      <p class='about__form__feedback about__form__feedback--success'>Thanks for your interest – we'll contact you soon!</p>
-    {{else}}
-      <form class='about__form' {{action 'submitDistrictContact' on='submit'}}>
-        {{input class='about__input about__input--district' placeholder='Enter your email address' value=districtContactEmail}}
-        <button class='about__cta about__cta--district' type='submit' disabled={{districtContactInFlight}}>Submit</button>
-      </form>
-      {{#if districtContactErrored}}
-        <p class='about__form__feedback'>There was a problem submitting your email. Check your network connection and try again, or <a class='about__content__link' href="mailto:schoolbot-contact@vermonster.com?subject=SchoolBot information request">email us directly</a>.</p>
-      {{/if}}
-    {{/if}}
+    <p>To learn more about SchoolBot and how you can offer it in your district, email us at <a href='mailto:schoolbot@vermonster.com'>schoolbot@vermonster.com</a> and we'll be in touch!</p>
   </div>
 </section>
 

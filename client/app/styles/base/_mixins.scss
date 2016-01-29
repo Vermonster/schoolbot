@@ -25,41 +25,6 @@
   align-items: center;
 }
 
-// Link style when it is on the illustration background
-@mixin page-view-link {
-  color: $base-font-color;
-  text-decoration: underline;
-
-  &:hover,
-  &:focus {
-    color: $color-secondary-darken-2;
-    text-decoration: none;
-  }
-}
-
-@mixin page-view-link-bottom {
-  color: $base-font-color;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: $base-font-color;
-    text-decoration: none;
-  }
-}
-
-@mixin page-view-link-bottom-invert {
-  color: $base-font-invert-color;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: $base-font-invert-color;
-    text-decoration: none;
-  }
-}
-
-
 // Background
 @mixin bg-gradient-with-lines($space-color, $line-top-color, $line-bottom-color, $space-width: rem(3), $line-width: rem(1)) {
   background-color: $space-color;
