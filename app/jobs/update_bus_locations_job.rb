@@ -5,7 +5,8 @@ class UpdateBusLocationsJob < ActiveJob::Base
     zonar.bus_events_since(last_event_time).each do |attributes|
       identifier = attributes.delete(:bus_identifier)
       bus = district.buses.find_or_create_by!(identifier: identifier)
-      bus.bus_locations
+      bus
+        .bus_locations
         .find_or_initialize_by(recorded_at: attributes.delete(:recorded_at))
         .update!(attributes)
     end

@@ -7,19 +7,16 @@ AllCops:
   - "vendor/**/*"
   - "db/**/*"
   - "client/**/*"
-  RunRailsCops: true
+  TargetRubyVersion: 2.3
 
-GuardClause:
-  Enabled: false
-
-Documentation:
-  Enabled: false
-
-StringLiterals:
-  Enabled: false
+Lint/EndAlignment:
+  AlignWith: variable
 
 Metrics/LineLength:
   Enabled: false
+
+Rails:
+  Enabled: true
 
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
@@ -31,11 +28,26 @@ Style/BlockDelimiters:
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
+Style/Documentation:
+  Enabled: false
+
 Style/GlobalVars:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/MutableConstant:
   Enabled: false
 
 Style/Send:
   Enabled: true
 
-Lint/EndAlignment:
-  AlignWith: variable
+Style/StringLiterals:
+  Enabled: false
