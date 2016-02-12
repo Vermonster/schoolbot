@@ -19,7 +19,7 @@ module Clockwork
   if INTERCOM_ENABLED
     every(1.day, 'IntercomUpdateDistrict') do
       District.find_each do |district|
-        IntercomUpdateJob.perform_later(district)
+        IntercomUpdateJob.perform_later('update_district', district)
       end
     end
   end

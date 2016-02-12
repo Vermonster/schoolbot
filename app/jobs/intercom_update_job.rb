@@ -1,14 +1,11 @@
 class IntercomUpdateJob < ActiveJob::Base
-  def perform(model)
-    if model.is_a?(User)
-      if model.destroyed?
-        destroy_user(model)
-      else
-        update_user(model)
-      end
-    elsif model.is_a?(District)
-      update_district(model)
-    else raise ArgumentError
+  ACTIONS = %w(update_user destroy_user update_district)
+
+  def perform(action, *arguments)
+    if action.in?(ACTIONS)
+      __send__(action, *arguments)
+    else
+      raise ArgumentError, "'#{action}' is not a valid Intercom action"
     end
   end
 
@@ -25,8 +22,8 @@ class IntercomUpdateJob < ActiveJob::Base
     )
   end
 
-  def destroy_user(user)
-    intercom_user = intercom.users.find(user_id: user.id)
+  def destroy_user(user_id)
+    intercom_user = intercom.users.find(user_id: user_id)
     intercom.users.delete(intercom_user)
   end
 

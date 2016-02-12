@@ -29,17 +29,18 @@ describe User do
   describe 'after_commit' do
     it 'enqueues an Intercom update when the user is updated or destroyed' do
       user = build(:user)
-      actions = [
-        -> { user.save! },
-        -> { user.update!(name: 'test') },
-        -> { user.destroy! }
-      ]
 
-      actions.each do |action|
-        expect {
-          action.call
-        }.to have_enqueued_job(IntercomUpdateJob).with(user)
-      end
+      expect {
+        user.save!
+      }.to have_enqueued_job(IntercomUpdateJob).with('update_user', user)
+
+      expect {
+        user.update!(name: 'test')
+      }.to have_enqueued_job(IntercomUpdateJob).with('update_user', user)
+
+      expect {
+        user.destroy!
+      }.to have_enqueued_job(IntercomUpdateJob).with('destroy_user', user.id)
     end
   end
 

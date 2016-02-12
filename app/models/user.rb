@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
 
   before_validation -> { email&.downcase! }
   before_save :ensure_tokens
-  after_commit :update_intercom
+  after_commit :update_intercom, on: [:create, :update]
+  after_commit :destroy_intercom, on: :destroy
 
   def address
     [street, city, state, zip_code].join(', ')
@@ -86,6 +87,10 @@ class User < ActiveRecord::Base
   end
 
   def update_intercom
-    IntercomUpdateJob.perform_later(self) if INTERCOM_ENABLED
+    IntercomUpdateJob.perform_later('update_user', self) if INTERCOM_ENABLED
+  end
+
+  def destroy_intercom
+    IntercomUpdateJob.perform_later('destroy_user', id) if INTERCOM_ENABLED
   end
 end
