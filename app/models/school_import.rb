@@ -1,3 +1,5 @@
+require 'csv'
+
 class SchoolImport
   attr_reader :csv, :district
 
@@ -6,7 +8,7 @@ class SchoolImport
     @csv = CSV.parse(data, headers: true, header_converters: [:symbol])
 
     if !@csv.headers.present? || ([:name, :address] - @csv.headers).any?
-      fail ArgumentError, 'CSV headers must include `name` and `address`!'
+      raise ArgumentError, 'CSV headers must include `name` and `address`!'
     end
   end
 

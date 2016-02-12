@@ -1,3 +1,5 @@
+require 'csv'
+
 class Zonar
   STATIC_PARAMS = {
     action: 'showposition',

@@ -1,3 +1,5 @@
+require 'csv'
+
 module ZonarStubbing
   CSV_PATH = 'spec/support/files/zonar_showposition_path-brockton.csv'
 

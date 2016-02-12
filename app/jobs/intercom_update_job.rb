@@ -8,7 +8,7 @@ class IntercomUpdateJob < ActiveJob::Base
       end
     elsif model.is_a?(District)
       update_district(model)
-    else fail ArgumentError
+    else raise ArgumentError
     end
   end
 

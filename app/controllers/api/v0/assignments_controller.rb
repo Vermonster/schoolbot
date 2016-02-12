@@ -22,7 +22,7 @@ module API
 
       def validate_assignments_params!
         unless params[:assignments].is_a?(Array)
-          fail ActionController::ParameterMissing, :assignments
+          raise ActionController::ParameterMissing, :assignments
         end
 
         params[:assignments].each do |assignment_params|
@@ -32,13 +32,13 @@ module API
 
       def validate_assignment_params!(assignment_params)
         unless assignment_params.keys == ASSIGNMENT_KEYS
-          fail ActionController::UnpermittedParameters, assignment_params.keys
+          raise ActionController::UnpermittedParameters, assignment_params.keys
         end
 
         ASSIGNMENT_KEYS.each do |key|
           value = assignment_params[key]
           unless value.nil? || value.is_a?(String)
-            fail ActionController::UnpermittedParameters, [value.inspect]
+            raise ActionController::UnpermittedParameters, [value.inspect]
           end
         end
       end
