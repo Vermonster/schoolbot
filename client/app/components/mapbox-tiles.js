@@ -3,10 +3,15 @@ import Ember from 'ember';
 import TileLayer from 'ember-leaflet/components/tile-layer';
 
 export default TileLayer.extend({
+  tileSize: 512,
+  zoomOffset: -1,
+
   url: Ember.computed(function() {
+    const baseUrl = 'https://api.mapbox.com/styles/v1';
     const suffix = this.L.Browser.retina ? '@2x' : '';
 
-    return `https://api.mapbox.com/v4/${env.mapbox.mapId}` +
-      `/{z}/{x}/{y}${suffix}.png?access_token=${env.mapbox.accessToken}`;
+    return `${baseUrl}/${env.mapbox.username}` +
+      `/${env.mapbox.styleId}/tiles/{z}/{x}/{y}${suffix}` +
+      `?access_token=${env.mapbox.accessToken}`;
   })
 });

@@ -5,7 +5,8 @@ module.exports = function(environment) {
     'CLIENT_AIRBRAKE_ID',
     'CLIENT_AIRBRAKE_KEY',
     'CLIENT_MAPBOX_ACCESS_TOKEN',
-    'CLIENT_MAPBOX_MAP_ID'
+    'CLIENT_MAPBOX_STYLE_ID',
+    'CLIENT_MAPBOX_USERNAME'
   ];
 
   if (environment === 'production') {
@@ -41,7 +42,8 @@ module.exports = function(environment) {
       appId: process.env.CLIENT_INTERCOM_ID
     },
     mapbox: {
-      mapId: process.env.CLIENT_MAPBOX_MAP_ID,
+      username: process.env.CLIENT_MAPBOX_USERNAME,
+      styleId: process.env.CLIENT_MAPBOX_STYLE_ID,
       accessToken: process.env.CLIENT_MAPBOX_ACCESS_TOKEN
     },
     moment: { includeLocales: true },

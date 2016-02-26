@@ -26,7 +26,7 @@ An unmodified installation of SchoolBot requires the following services:
 * [Amazon S3][s3] ([Cloudfront][cloudfront] recommended but not required)
 * [Airbrake](https://airbrake.io/)
 * [Geocodio](http://geocod.io/)
-* [Mapbox][mapbox] with a published [Mapbox Studio Classic][studio] project
+* [Mapbox Studio](https://www.mapbox.com/mapbox-studio/)
 
 Airbrake, Geocodio, and Mapbox all offer free service tiers with usage limits
 that should be sufficient for a single school district of average size.
@@ -41,8 +41,6 @@ in-app user messaging, but the current SchoolBot code does not support this.
 [s3]: https://aws.amazon.com/s3/
 [cloudfront]: https://aws.amazon.com/cloudfront/
 [sendgrid]: https://sendgrid.com/
-[mapbox]: https://www.mapbox.com/
-[studio]: https://www.mapbox.com/mapbox-studio-classic/
 [intercom]: https://www.intercom.io/
 
 ## Multi-Tenancy
