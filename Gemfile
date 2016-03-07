@@ -44,11 +44,10 @@ group :development, :test do
 end
 
 group :test do
+  gem "capybara-webkit"
   gem "database_cleaner"
   gem "email_spec"
   gem "launchy"
-  gem "poltergeist"
-  gem "puffing-billy"
   gem "rspec-collection_matchers"
   gem "rspec-retry"
   gem "rspec_junit_formatter"

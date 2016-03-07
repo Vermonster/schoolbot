@@ -5,8 +5,6 @@ abort("DATABASE_URL environment variable is set") if ENV["DATABASE_URL"]
 
 require "rspec/rails"
 require "shoulda/matchers"
-require "capybara/poltergeist"
-require "billy/rspec"
 require "email_spec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
@@ -21,7 +19,6 @@ module Features
   # Extend this module in spec/support/features/*.rb
   include APIMocking
   include DefaultLocale
-  include EmberErrors
   include Sessions
   include Subdomains
 end
@@ -43,5 +40,5 @@ end
 
 ActiveRecord::Migration.maintain_test_schema!
 
-Capybara.javascript_driver = :poltergeist_billy
+Capybara.javascript_driver = :webkit
 Capybara.default_driver = Capybara.javascript_driver

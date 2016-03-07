@@ -54,21 +54,21 @@ feature 'User adds student' do
     click_on t('settings.title')
     click_on t('actions.addStudent')
     fill_in t('labels.birthdate'), with: '2003-05-27'
+    # Change the focus so the birthdate validation occurs
+    fill_in t('labels.nickname'), with: ''
 
     expect(page).to have_content t('errors.birthdate.invalid')
   end
 
-  scenario 'and sees a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:students, :create)
     sign_in_as create(:user)
 
     click_on t('settings.title')
     click_on t('actions.addStudent')
+    click_on t('actions.save')
 
-    ignoring_ember_errors do
-      click_on t('actions.save')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 
   def fill_in_student_information

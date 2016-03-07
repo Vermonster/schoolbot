@@ -40,7 +40,7 @@ feature 'User edits student' do
     expect(page).to have_content t('errors.nickname.blank')
   end
 
-  scenario 'and sees a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:students, :update)
     district = create(:district)
     user = create(:user, district: district)
@@ -49,10 +49,8 @@ feature 'User edits student' do
 
     click_on t('settings.title')
     click_on t('actions.editStudent')
+    click_on t('actions.save')
 
-    ignoring_ember_errors do
-      click_on t('actions.save')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 end

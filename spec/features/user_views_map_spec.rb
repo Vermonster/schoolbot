@@ -106,7 +106,8 @@ feature 'User views map' do
 
     sign_in_as @user
 
-    expect(page).to_not have_css('.bus-marker', text: 'ago')
+    expect(page).to have_css('.bus-marker', count: 1, text: 'F')
+    expect(page).to_not have_content 'ago'
   end
 
   scenario 'with a marker displayed at their home location' do
@@ -138,7 +139,9 @@ feature 'User views map' do
     sign_in_as @user
     expect(page).to have_css '.bus-map__controls__group--disabled'
 
-    find('.leaflet-container').native.drag_by(10, 10)
+    # Drag the map "to" an arbitrary element, since capybara-webkit doesn't have
+    # an equivalent to Poltergeist's `drag_by`
+    find('.leaflet-container').drag_to(find('.bus-map__controls'))
     expect(page).to_not have_css '.bus-map__controls__group--disabled'
 
     click_on t('actions.follow')

@@ -68,15 +68,13 @@ feature 'User signs in' do
     expect(page).to have_content t('errors.session.invalid')
   end
 
-  scenario 'and sees a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:sessions, :create)
 
     visit root_path
     click_on t('actions.signIn')
+    click_on t('actions.signIn')
 
-    ignoring_ember_errors do
-      click_on t('actions.signIn')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 end

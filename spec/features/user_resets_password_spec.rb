@@ -44,17 +44,15 @@ feature 'User resets password' do
     expect(mailbox_for('ann@example.com')).to be_empty
   end
 
-  scenario 'with a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:password_resets, :create)
     use_subdomain(create(:district).slug)
 
     visit root_path
     click_on t('actions.signIn')
     click_on t('signIn.forgot')
+    click_on t('resetPassword.title')
 
-    ignoring_ember_errors do
-      click_on t('resetPassword.title')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 end

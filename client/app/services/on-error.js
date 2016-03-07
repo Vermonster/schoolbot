@@ -14,12 +14,7 @@ export default Ember.Service.extend({
       if (originalHandler) {
         originalHandler(error);
       } else {
-        // Work around PhantomJS not reacting well to re-thrown errors (?)
-        if (window._phantom) {
-          Ember.Logger.error(error);
-        } else {
-          throw error;
-        }
+        throw error;
       }
     };
   }

@@ -63,8 +63,11 @@ feature 'User creates account' do
     fill_in t('labels.password'), with: 'secret'
     fill_in t('labels.confirmPassword'), with: 'sorcret'
     fill_in t('labels.lastName'), with: 'Test'
-    fill_in t('labels.identifier'), with: 'ABC123'
+    # For some reason (possibly related to the focus-out validation), birthdate
+    # cannot be filled in last. If it is, the subsequent `click_on` won't "take"
+    # and must be executed again to have any effect.
     fill_in t('labels.birthdate'), with: '2002-03-2'
+    fill_in t('labels.identifier'), with: 'ABC123'
     click_on t('createAccount.cta')
 
     expect(page).to have_content t('errors.blank'), count: 1
@@ -94,16 +97,14 @@ feature 'User creates account' do
     expect(page).to have_content t('errors.address.invalid')
   end
 
-  scenario 'and sees a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:registrations, :create)
     use_subdomain(create(:district).slug)
 
     visit root_path
     click_on t('actions.register')
+    click_on t('createAccount.cta')
 
-    ignoring_ember_errors do
-      click_on t('createAccount.cta')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 end

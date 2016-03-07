@@ -79,16 +79,14 @@ feature 'User updates profile' do
     expect(page).to have_content t('errors.passwordConfirmation.confirmation')
   end
 
-  scenario 'and sees a generic message when an unhandled error occurs' do
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
     mock_api_failure(:users, :update)
     sign_in_as create(:user)
 
     click_on t('settings.title')
     click_on t('actions.edit')
+    click_on t('actions.save')
 
-    ignoring_ember_errors do
-      click_on t('actions.save')
-      expect(page).to have_content t('flashes.error.generic')
-    end
+    expect(page).to have_content t('flashes.error.generic')
   end
 end
