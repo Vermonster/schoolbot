@@ -23,10 +23,6 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
 
-    airbrake: {
-      projectId: process.env.CLIENT_AIRBRAKE_ID,
-      projectKey: process.env.CLIENT_AIRBRAKE_KEY
-    },
     'ember-simple-auth': {
       authenticationRoute: 'sign-in'
     },
@@ -80,6 +76,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+  }
+
+  if (environment === 'production') {
+    ENV.airbrake = {
+      projectId: process.env.CLIENT_AIRBRAKE_ID,
+      projectKey: process.env.CLIENT_AIRBRAKE_KEY
+    };
   }
 
   return ENV;
