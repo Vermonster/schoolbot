@@ -5,6 +5,6 @@ export function initialize(application) {
 }
 
 export default {
-  name: 'current-district',
-  initialize: initialize
+  initialize,
+  name: 'current-district'
 };

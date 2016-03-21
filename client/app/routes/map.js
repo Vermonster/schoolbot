@@ -10,7 +10,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   intercom: Ember.inject.service(),
 
   afterModel() {
-    const store = this.store;
+    let { store } = this;
     return Ember.RSVP.all([
       store.findAll('student').then((students) => this.students = students),
       store.find('user', 'current').then((user) => this.currentUser = user)

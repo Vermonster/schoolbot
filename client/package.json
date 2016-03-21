@@ -58,6 +58,7 @@
     "ember-scroll-to": "0.5.1",
     "ember-simple-auth": "1.0.1",
     "ember-spin-button": "git://github.com/ivanvanderbyl/ember-spin-button.git#6dd5f21d6b2bcaf8c0a19f71fbf400716286902e",
+    "ember-suave": "2.0.1",
     "ember-watson": "0.8.0",
     "emberx-select": "2.0.2",
     "loader.js": "4.0.1",

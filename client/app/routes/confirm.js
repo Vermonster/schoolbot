@@ -11,16 +11,16 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
     this.get('session').authenticate(
       'authenticator:confirmation-token', transition.queryParams.token
     ).then(() => {
-      const isNew = this.get('session.data.authenticated.isNew');
-      const flashKey = isNew ? 'accountConfirmed' : 'emailConfirmed';
-      const message = this.get('i18n').t(`flashes.success.${flashKey}`);
+      let isNew = this.get('session.data.authenticated.isNew');
+      let flashKey = isNew ? 'accountConfirmed' : 'emailConfirmed';
+      let message = this.get('i18n').t(`flashes.success.${flashKey}`);
       this.get('flashMessages').success(message);
       this.transitionTo('map');
     }).catch((error) => {
       if (error) {
         Ember.onerror(error);
       } else {
-        const message = this.get('i18n').t('flashes.error.invalidConfirmation');
+        let message = this.get('i18n').t('flashes.error.invalidConfirmation');
         this.get('flashMessages').error(message, { sticky: true });
       }
       this.transitionTo('sign-in');

@@ -14,6 +14,6 @@ export default Ember.Controller.extend({
   uniqueSchools: Ember.computed.uniq('schools'),
 
   showingAllStudents: Ember.computed('students.@each.isLocated', function() {
-    return this.get('students').every(student => student.get('isLocated'));
+    return this.get('students').every((student) => student.get('isLocated'));
   })
 });

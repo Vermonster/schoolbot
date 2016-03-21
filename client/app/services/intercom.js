@@ -1,4 +1,3 @@
-/* jshint camelcase: false */
 import Ember from 'ember';
 import config from 'client/config/environment';
 
@@ -6,6 +5,7 @@ export default Ember.Service.extend({
   intercom: window.Intercom || Ember.K,
 
   boot({ user, district }) {
+    // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
     this.intercom('boot', {
       app_id: config.intercom.appId,
       user_id: user.get('id'),
@@ -18,6 +18,7 @@ export default Ember.Service.extend({
         name: district.get('name')
       }]
     });
+    // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
   },
 
   shutdown() {

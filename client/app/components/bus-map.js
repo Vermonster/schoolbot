@@ -47,7 +47,7 @@ export default LeafletMap.extend({
   },
 
   _setTrackingBounds() {
-    const bounds = this.L.latLngBounds([]);
+    let bounds = this.L.latLngBounds([]);
 
     bounds.extend([this.get('user.latitude'), this.get('user.longitude')]);
     this.get('buses').forEach((bus) => {
@@ -59,8 +59,12 @@ export default LeafletMap.extend({
   },
 
   actions: {
-    zoomIn() { this._layer.zoomIn(); },
-    zoomOut() { this._layer.zoomOut(); },
+    zoomIn() {
+      this._layer.zoomIn();
+    },
+    zoomOut() {
+      this._layer.zoomOut();
+    },
 
     enableTracking() {
       this.set('isTrackingBuses', true);

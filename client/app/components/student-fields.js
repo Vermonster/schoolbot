@@ -17,19 +17,19 @@ export default Ember.Component.extend({
   orderedSchools: Ember.computed.sort('schools', 'schoolOrdering'),
 
   digester: Ember.observer('birthdate', 'identifier', 'lastName', function() {
-    const digestTarget = [
+    let digestTarget = [
       this.get('identifier'),
       this.get('lastName'),
       moment(this.get('birthdate'), inputDateFormat).format('YYYY-MM-DD')
     ].join(':').toLowerCase();
 
-    const digester = new jsSHA('SHA-256', 'TEXT');
+    let digester = new jsSHA('SHA-256', 'TEXT'); // jscs:ignore requireCapitalizedConstructors
     digester.update(digestTarget);
     this.set('digest', digester.getHash('HEX'));
   }),
 
   updater: Ember.observer('digest', 'nickname', 'school', function() {
-    const fields = {
+    let fields = {
       digest: this.get('digest'),
       nickname: this.get('nickname'),
       school: this.get('school')
@@ -42,7 +42,7 @@ export default Ember.Component.extend({
   actions: {
     validateBirthdate() {
       if (Ember.isPresent(this.get('birthdate'))) {
-        const parsedDate = moment(this.get('birthdate'), inputDateFormat);
+        let parsedDate = moment(this.get('birthdate'), inputDateFormat);
         if (parsedDate.isValid()) {
           this.set('birthdate', parsedDate.format(inputDateFormat));
           this.set('birthdateIsValid', true);

@@ -20,13 +20,16 @@ export default DS.Model.extend({
   abbreviation: Ember.computed('persistedStudents.@each.nickname', function() {
     let length = 1;
     for (; length < 3; length++) {
-      const abbreviationIsUnique =
+      let abbreviationIsUnique =
         this.get('persistedStudents').without(this).every((student) => {
-          const myAbbreviation = this.get('nickname').slice(0, length);
-          const otherAbbreviation = student.get('nickname').slice(0, length);
+          let myAbbreviation = this.get('nickname').slice(0, length);
+          let otherAbbreviation = student.get('nickname').slice(0, length);
           return myAbbreviation !== otherAbbreviation;
         });
-      if (abbreviationIsUnique) { break; }
+
+      if (abbreviationIsUnique) {
+        break;
+      }
     }
     return this.get('nickname').slice(0, length);
   }),

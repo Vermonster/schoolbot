@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
   actions: {
     signIn() {
-      const { email, password } = this.getProperties('email', 'password');
+      let { email, password } = this.getProperties('email', 'password');
       return this.get('session')
         .authenticate('authenticator:application', email, password)
         .catch((response) => {

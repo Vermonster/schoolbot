@@ -8,11 +8,11 @@ export default Ember.Controller.extend({
   actions: {
     confirm() {
       return this.get('model').save().then((model) => {
-        const { email, password } = model.getProperties('email', 'password');
+        let { email, password } = model.getProperties('email', 'password');
         return this.get('session')
           .authenticate('authenticator:application', email, password)
           .then(() => {
-            const message = this.get('i18n').t('flashes.success.passwordReset');
+            let message = this.get('i18n').t('flashes.success.passwordReset');
             this.get('flashMessages').success(message);
           });
       }).catch((error) => {

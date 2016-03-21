@@ -6,7 +6,7 @@ export default ApplicationAuthenticator.extend({
 
   authenticate(confirmationToken) {
     return new Ember.RSVP.Promise((resolve, reject) => {
-      const confirmation = this.get('store').createRecord(
+      let confirmation = this.get('store').createRecord(
         'confirmation',
         { token: confirmationToken }
       );

@@ -11,7 +11,7 @@ export default Ember.Component.extend({
     return this.get('i18n.locales').map((locale) => {
       return {
         id: locale,
-        label: this.get('i18n').t('localeName', { locale: locale })
+        label: this.get('i18n').t('localeName', { locale })
       };
     });
   }),

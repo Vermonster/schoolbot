@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     this.get('onError').setup();
     this.get('dataPreload').setup();
 
-    const storedLocale = this.get('session.data.locale');
+    let storedLocale = this.get('session.data.locale');
     if (Ember.isPresent(storedLocale)) {
       this.get('moment').changeLocale(storedLocale);
       this.get('i18n').set('locale', storedLocale);

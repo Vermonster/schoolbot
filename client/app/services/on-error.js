@@ -5,10 +5,10 @@ export default Ember.Service.extend({
   i18n: Ember.inject.service(),
 
   setup() {
-    const originalHandler = Ember.onerror;
+    let originalHandler = Ember.onerror;
 
     Ember.onerror = (error) => {
-      const errorText = this.get('i18n').t('flashes.error.generic');
+      let errorText = this.get('i18n').t('flashes.error.generic');
       this.get('flashMessages').error(errorText, { sticky: true });
 
       if (originalHandler) {

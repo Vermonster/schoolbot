@@ -11,7 +11,7 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       .findRecord('passwordReset', transition.queryParams.token)
       .catch(() => {
         // TODO: Handle 404s differently from other failures?
-        const message = this.get('i18n').t('flashes.error.invalidReset');
+        let message = this.get('i18n').t('flashes.error.invalidReset');
         this.get('flashMessages').error(message, { sticky: true });
         this.transitionTo('reset-password');
       });

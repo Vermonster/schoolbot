@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   didInsertElement() {
+    // jscs: disable
+
     // Facebook button setup
     (function(d, s, id) {
       let js, fjs = d.getElementsByTagName(s)[0];
@@ -23,5 +25,7 @@ export default Ember.Component.extend({
         fjs.parentNode.insertBefore(js, fjs);
       }
     }(document, 'script', 'twitter-wjs'));
+
+    // jscs: enable
   }
 });

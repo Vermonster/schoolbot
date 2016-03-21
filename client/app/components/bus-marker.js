@@ -16,8 +16,8 @@ export default MarkerLayer.extend({
     'model.lastSeenAt',
     'model.students.@each.abbreviation',
     function() {
-      const moment = this.get('moment').moment.bind(this.get('moment'));
-      const students = this.get('model.students').sortBy('nickname');
+      let moment = this.get('moment').moment.bind(this.get('moment'));
+      let students = this.get('model.students').sortBy('nickname');
 
       let extraClass = '';
       let html = students.map((student) => {
@@ -30,11 +30,11 @@ export default MarkerLayer.extend({
 
       if (this.get('model.lastSeenAt') < moment().subtract(45, 'seconds')) {
         extraClass = 'bus-marker--time-ago';
-        html += '<br>' + moment(this.get('model.lastSeenAt')).fromNow();
+        html += `<br>${moment(this.get('model.lastSeenAt')).fromNow()}`;
       }
 
       return this.L.divIcon({
-        html: html,
+        html,
         iconSize: null,
         className: `bus-marker ${extraClass}`
       });

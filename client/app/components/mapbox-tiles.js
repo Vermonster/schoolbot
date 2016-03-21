@@ -7,8 +7,8 @@ export default TileLayer.extend({
   zoomOffset: -1,
 
   url: Ember.computed(function() {
-    const baseUrl = 'https://api.mapbox.com/styles/v1';
-    const suffix = this.L.Browser.retina ? '@2x' : '';
+    let baseUrl = 'https://api.mapbox.com/styles/v1';
+    let suffix = this.L.Browser.retina ? '@2x' : '';
 
     return `${baseUrl}/${env.mapbox.username}` +
       `/${env.mapbox.styleId}/tiles/{z}/{x}/{y}${suffix}` +
