@@ -1,10 +1,11 @@
 @charset 'utf-8';
 
+// https://github.com/martndemus/ember-font-awesome/issues/64
 @import 'bower_components/font-awesome/scss/variables';
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/#{$fa-version}/fonts';
-
-@import 'bower_components/normalize.css/normalize';
 @import 'bower_components/font-awesome/scss/font-awesome';
+
+@import 'normalize';
 @import 'spin-button-base';
 @import 'bourbon';
 @import 'base/grid-settings';

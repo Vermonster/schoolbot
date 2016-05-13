@@ -1,9 +1,6 @@
 /* jshint node: true */
 
 module.exports = function(deployTarget) {
-  // Load plain .env for common values (.env.deploy.<target> is auto-loaded)
-  require('dotenv').load();
-
   var ENV = {
     build: {},
     redis: {

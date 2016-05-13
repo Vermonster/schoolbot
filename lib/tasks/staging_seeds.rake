@@ -53,7 +53,7 @@ if Rails.env.staging? || Rails.env.development?
           )
 
           locations = district.bus_locations.order(recorded_at: :desc).limit(50)
-          buses = Bus.find(locations.pluck(:bus_id).uniq)
+          buses = Bus.find(locations.uniq.pluck(:bus_id))
 
           BusAssignment.create!(student: bobby_label.student, bus: buses.first)
           BusAssignment.create!(student: jenny_label.student, bus: buses.second)

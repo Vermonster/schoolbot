@@ -46,6 +46,10 @@ Style/IndentArray:
 Style/IndentHash:
   EnforcedStyle: consistent
 
+Style/MultilineMethodCallBraceLayout:
+  Enabled: false # https://github.com/bbatsov/rubocop/issues/3133
+  EnforcedStyle: new_line
+
 Style/MutableConstant:
   Enabled: false
 

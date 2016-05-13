@@ -3,6 +3,7 @@ module API
     include CurrentDistrict
 
     respond_to :json
+    before_action :verify_request_format!
 
     rescue_from ActiveRecord::RecordNotFound do
       head :not_found

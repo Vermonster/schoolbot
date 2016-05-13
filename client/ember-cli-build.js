@@ -17,8 +17,10 @@ module.exports = function(defaults) {
       shouldActivate: true
     },
 
-    // https://github.com/martndemus/ember-cli-font-awesome/issues/33
-    emberCliFontAwesome: { includeFontAwesomeAssets: false }
+    'ember-font-awesome': {
+      // https://github.com/martndemus/ember-font-awesome/issues/64
+      includeFontAwesomeAssets: false
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
