@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from
   'ember-simple-auth/mixins/authenticated-route-mixin';
+import { task, timeout } from 'ember-concurrency';
 
 const POLL_INTERVAL = 3000;
 
@@ -18,6 +19,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   setupController(controller) {
+    this.get('pollTask').perform();
     this.set('controller', controller);
     controller.set('allStudents', this.students);
     controller.set('currentUser', this.currentUser);
@@ -29,21 +31,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     });
   },
 
-  pollTask: null,
-  poll() {
-    this.store.findAll('student', { reload: true })
-      .then(() => this.set('controller.isOnline', true))
-      .catch(() => this.set('controller.isOnline', false));
-    this.set('pollTask', Ember.run.later(this, this.poll, POLL_INTERVAL));
-  },
-
-  actions: {
-    didTransition() {
-      this.set('pollTask', Ember.run.later(this, this.poll, POLL_INTERVAL));
-    },
-
-    willTransition() {
-      Ember.run.cancel(this.get('pollTask'));
+  pollTask: task(function*() {
+    while (true) {
+      yield timeout(POLL_INTERVAL);
+      this.store.findAll('student', { reload: true })
+        .then(() => this.set('controller.isOnline', true))
+        .catch(() => this.set('controller.isOnline', false));
     }
-  }
+  }).cancelOn('deactivate').restartable()
 });

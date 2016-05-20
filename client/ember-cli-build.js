@@ -7,6 +7,10 @@ module.exports = function(defaults) {
   var env = EmberApp.env();
 
   var app = new EmberApp(defaults, {
+    babel: {
+      includePolyfill: true
+    },
+
     fingerprint: {
       prepend: process.env.CLIENT_ASSET_URL_BASE,
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg', 'eot', 'otf', 'ttf', 'woff', 'woff2']
