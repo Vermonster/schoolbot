@@ -26,11 +26,13 @@
         <div class='form__item'>
           <label>
             {{t 'labels.school'}}
-            {{#x-select class='form__select--school' value=student.school}}
+            <select class="form__select--school" onchange={{action 'setSchool' value='target.value'}}>
               {{#each orderedSchools as |school|}}
-                {{#x-option value=school}}{{school.name}}{{/x-option}}
+                <option value="{{school.id}}" selected={{eq school.id student.school.id}}>
+                  {{school.name}}
+                </option>
               {{/each}}
-            {{/x-select}}
+            </select>
           </label>
         </div>
 

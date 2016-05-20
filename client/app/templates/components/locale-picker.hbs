@@ -1,8 +1,10 @@
 <label class='locale-picker__label'>
   {{t 'labels.locale'}}
-  {{#x-select class='locale-picker__select' action='setLocale' value=i18n.locale}}
-    {{#each locales as |locale|}}
-      {{#x-option value=locale.id}}{{locale.label}}{{/x-option}}
+  <select class="locale-picker__select" onchange={{action 'setLocale' value='target.value'}}>
+    {{#each locales key='id' as |locale|}}
+      <option value="{{locale.id}}" selected={{eq locale.id i18n.locale}}>
+        {{locale.label}}
+      </option>
     {{/each}}
-  {{/x-select}}
+  </select>
 </label>

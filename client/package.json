@@ -60,8 +60,8 @@
     "ember-simple-auth": "1.1.0",
     "ember-spin-button": "git://github.com/ivanvanderbyl/ember-spin-button.git#6dd5f21d6b2bcaf8c0a19f71fbf400716286902e",
     "ember-suave": "2.0.1",
+    "ember-truth-helpers": "1.2.0",
     "ember-watson": "0.8.2",
-    "emberx-select": "2.0.2",
     "loader.js": "4.0.4",
     "moment": "2.13.0",
     "moment-timezone": "0.5.4"

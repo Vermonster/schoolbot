@@ -2,12 +2,13 @@
   <div class='form__item {{if errors.school 'form__item--error'}}'>
     <label>
       {{ t 'labels.school' }}
-      {{#x-select class='form__select--school' value=school}}
-        <option value=''></option>
-        {{#each orderedSchools as |school|}}
-          {{#x-option value=school}}{{school.name}}{{/x-option}}
+      <select class="form__select--school" onchange={{action 'setSchool' value='target.value'}}>
+        {{#each orderedSchools as |schoolOption|}}
+          <option value="{{schoolOption.id}}" selected={{eq schoolOption.id school.id}}>
+            {{schoolOption.name}}
+          </option>
         {{/each}}
-      {{/x-select}}
+      </select>
     </label>
     {{#if errors.school}}
       <span class='form__error--field'>
