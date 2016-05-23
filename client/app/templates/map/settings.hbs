@@ -46,7 +46,7 @@
             {{add-student canceled='toggleAddStudent' saved='toggleAddStudent'}}
           {{/if}}
           <ul>
-            {{#each students as |student|}}
+            {{#each (sort-by 'nickname' students) as |student|}}
               {{student-details student=student}}
             {{/each}}
           </ul>

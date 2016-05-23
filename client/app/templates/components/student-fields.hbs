@@ -3,7 +3,7 @@
     <label>
       {{ t 'labels.school' }}
       <select class="form__select--school" onchange={{action 'setSchool' value='target.value'}}>
-        {{#each orderedSchools as |schoolOption|}}
+        {{#each (sort-by 'name' schools) as |schoolOption|}}
           <option value="{{schoolOption.id}}" selected={{eq schoolOption.id school.id}}>
             {{schoolOption.name}}
           </option>

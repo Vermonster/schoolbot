@@ -3,13 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: '',
 
-  schools: Ember.computed.alias('currentDistrict.model.schools'),
-  schoolOrdering: ['name'],
-  orderedSchools: Ember.computed.sort('schools', 'schoolOrdering'),
-
-  student: null,
-
   isEditing: false,
+  schools: Ember.computed.alias('currentDistrict.model.schools'),
+  student: null,
 
   actions: {
     edit() {

@@ -11,10 +11,7 @@ export default Ember.Component.extend({
   lastName: '',
   nickname: '',
   school: null,
-
   schools: [],
-  schoolOrdering: ['name'],
-  orderedSchools: Ember.computed.sort('schools', 'schoolOrdering'),
 
   digester: Ember.observer('birthdate', 'identifier', 'lastName', function() {
     let digestTarget = [

@@ -27,7 +27,7 @@
           <label>
             {{t 'labels.school'}}
             <select class="form__select--school" onchange={{action 'setSchool' value='target.value'}}>
-              {{#each orderedSchools as |school|}}
+              {{#each (sort-by 'name' schools) as |school|}}
                 <option value="{{school.id}}" selected={{eq school.id student.school.id}}>
                   {{school.name}}
                 </option>

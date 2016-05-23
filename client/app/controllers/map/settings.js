@@ -6,8 +6,7 @@ export default Ember.Controller.extend({
   intercom: Ember.inject.service(),
   map: Ember.inject.controller(),
   user: Ember.computed.alias('map.currentUser'),
-  studentOrdering: ['nickname'],
-  students: Ember.computed.sort('map.students', 'studentOrdering'),
+  students: Ember.computed.alias('map.students'),
 
   showingStudentForm: false,
   showingProfileForm: false,

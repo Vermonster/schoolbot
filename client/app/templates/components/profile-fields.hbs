@@ -51,7 +51,7 @@
     {{/if}}
   </div>
 {{else}}
-  <a href='#' class='settings__change-password-cta' {{action 'togglePasswordFields'}}>
+  <a href='#' class='settings__change-password-cta' {{action (toggle 'showingPasswordFields' this)}}>
     {{fa-icon 'pencil'}}
     {{t 'actions.changePassword'}}
   </a>
