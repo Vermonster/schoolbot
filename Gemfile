@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby File.read(".ruby-version").strip
 
-gem "active_model_serializers"
+gem "active_model_serializers", "~> 0.9.5"
 gem "airbrake"
 gem "auto_strip_attributes"
 gem "aws-sdk", "~> 1.6" # TODO: Remove constraint once Paperclip supports 2.0
