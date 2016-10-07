@@ -12,7 +12,7 @@ describe SchoolImport do
       ]
 
       invalid_data.each do |data|
-        expect{
+        expect {
           SchoolImport.new(district: district, data: data)
         }.to raise_error ArgumentError
       end
@@ -58,7 +58,7 @@ describe SchoolImport do
       district = create(:district)
       data = "name,address\nhas address,address1\nno address,"
 
-      expect{
+      expect {
         SchoolImport.new(district: district, data: data).import!
       }.to raise_error ActiveModel::StrictValidationFailed
 

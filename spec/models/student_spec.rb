@@ -11,7 +11,7 @@ describe Student do
 
     it 'strictly disallows invalid digests' do
       ['0' * 63, '0' * 65, 'nope' * 16].each do |invalid_digest|
-        expect{
+        expect {
           create(:student, digest: invalid_digest)
         }.to raise_error ActiveModel::StrictValidationFailed
       end

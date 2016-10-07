@@ -11,11 +11,13 @@ describe API::V0::ImportAssignmentsJob do
   it 'creates student and bus records for the specified district' do
     district = create(:district)
 
-    perform(district, [
-      { sha: '1' * 64, bus_identifier: 'ABC' },
-      { sha: '2' * 64, bus_identifier: 'DEF' },
-      { sha: '3' * 64, bus_identifier: 'ABC' }
-    ])
+    perform(district,
+      [
+        { sha: '1' * 64, bus_identifier: 'ABC' },
+        { sha: '2' * 64, bus_identifier: 'DEF' },
+        { sha: '3' * 64, bus_identifier: 'ABC' }
+      ]
+    )
 
     expect(Bus.count).to be 2
     expect(Student.count).to be 3
@@ -51,10 +53,12 @@ describe API::V0::ImportAssignmentsJob do
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
-    perform(district, [
-      { sha: '1' * 64, bus_identifier: '' },
-      { sha: '2' * 64, bus_identifier: nil }
-    ])
+    perform(district,
+      [
+        { sha: '1' * 64, bus_identifier: '' },
+        { sha: '2' * 64, bus_identifier: nil }
+      ]
+    )
 
     expect(Bus.count).to be 1
     expect(Student.count).to be 2
@@ -97,11 +101,13 @@ describe API::V0::ImportAssignmentsJob do
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
-    perform(district, [
-      { sha: '', bus_identifier: 'ABC' },
-      { sha: nil, bus_identifier: 'ABC' },
-      { sha: '1' * 64, bus_identifier: 'ABC' }
-    ])
+    perform(district,
+      [
+        { sha: '', bus_identifier: 'ABC' },
+        { sha: nil, bus_identifier: 'ABC' },
+        { sha: '1' * 64, bus_identifier: 'ABC' }
+      ]
+    )
 
     expect(Student.count).to be 1
     expect(BusAssignment.count).to be 1
@@ -125,10 +131,12 @@ describe API::V0::ImportAssignmentsJob do
       current_bus: create(:bus, district: district, identifier: 'ABC')
     )
 
-    perform(district, [
-      { sha: '1' * 64, bus_identifier: 'DEF' },
-      { sha: '1' * 64, bus_identifier: 'XYZ' }
-    ])
+    perform(district,
+      [
+        { sha: '1' * 64, bus_identifier: 'DEF' },
+        { sha: '1' * 64, bus_identifier: 'XYZ' }
+      ]
+    )
 
     expect(Bus.count).to be 3
     expect(Student.count).to be 1
