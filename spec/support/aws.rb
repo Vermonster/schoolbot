@@ -1,1 +1,1 @@
-AWS.stub!
+Aws.config[:stub_responses] = true

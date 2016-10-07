@@ -73,9 +73,9 @@ class Zonar
       method: :get,
       url: "https://#{@credentials[:customer]}.zonarsystems.net/interface.php",
       # https://github.com/rest-client/rest-client#passing-advanced-options
-      headers: { params: # rubocop:disable MultilineHashBraceLayout
+      headers: { params:
         STATIC_PARAMS.merge(starttime: start_time.to_i, endtime: end_time.to_i)
-      },
+      }, # rubocop:disable MultilineHashBraceLayout
       user: @credentials[:username],
       password: @credentials[:password],
       timeout: READ_TIMEOUT.to_i

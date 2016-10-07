@@ -7,7 +7,6 @@ AllCops:
   - "vendor/**/*"
   - "db/**/*"
   - "client/**/*"
-  TargetRubyVersion: 2.3
 
 Lint/EndAlignment:
   AlignWith: variable
@@ -18,15 +17,15 @@ Metrics/LineLength:
 Rails:
   Enabled: true
 
+# https://github.com/bbatsov/rubocop/issues/3629
+Rails/HttpPositionalArguments:
+  Enabled: false
+
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
-
-# https://github.com/bbatsov/rubocop/issues/1758
-Style/ClosingParenthesisIndentation:
-  Enabled: false
 
 Style/Documentation:
   Enabled: false
@@ -47,7 +46,6 @@ Style/IndentHash:
   EnforcedStyle: consistent
 
 Style/MultilineMethodCallBraceLayout:
-  Enabled: false # https://github.com/bbatsov/rubocop/issues/3133
   EnforcedStyle: new_line
 
 Style/MutableConstant:

@@ -58,17 +58,17 @@ if Rails.env.staging? || Rails.env.development?
           BusAssignment.create!(student: bobby_label.student, bus: buses.first)
           BusAssignment.create!(student: jenny_label.student, bus: buses.second)
 
-          free_student_1 = Student.create!(
+          first_free_student = Student.create!(
             district: district,
             digest: Digest::SHA256.hexdigest('b1:smith:2001-01-01')
           )
-          free_student_2 = Student.create!(
+          second_free_student = Student.create!(
             district: district,
             digest: Digest::SHA256.hexdigest('b2:smith:2002-02-02')
           )
 
-          BusAssignment.create!(student: free_student_1, bus: buses.second)
-          BusAssignment.create!(student: free_student_2, bus: buses.third)
+          BusAssignment.create!(student: first_free_student, bus: buses.second)
+          BusAssignment.create!(student: second_free_student, bus: buses.third)
         else
           puts "Skipping: #{district.slug}"
         end
