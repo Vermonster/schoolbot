@@ -13,6 +13,5 @@ feature 'User signs out' do
     end
 
     expect(page).to have_content t('actions.signIn').upcase
-    expect(page).to have_content t('actions.register').upcase
   end
 end

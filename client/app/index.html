@@ -29,8 +29,8 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/client.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/client.css">
 
     {{content-for "head-footer"}}
   </head>
@@ -40,8 +40,8 @@
     <script>
       window.dataPreload = '%%DATA_PRELOAD%%';
     </script>
-    <script src="assets/vendor.js"></script>
-    <script src="assets/client.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/client.js"></script>
 
     {{content-for "body-footer"}}
   </body>

@@ -31,7 +31,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     });
   },
 
-  pollTask: task(function*() {
+  pollTask: task(function* () {
     while (true) {
       yield timeout(POLL_INTERVAL);
       this.store.findAll('student', { reload: true })

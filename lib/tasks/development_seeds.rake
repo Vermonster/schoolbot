@@ -1,3 +1,5 @@
+require Rails.root.join('spec', 'support', 'aws')
+
 if Rails.env.development? || Rails.env.test?
   require "factory_girl"
 
