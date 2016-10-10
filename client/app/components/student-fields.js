@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       moment(this.get('birthdate'), inputDateFormat).format('YYYY-MM-DD')
     ].join(':').toLowerCase();
 
-    let digester = new jsSHA('SHA-256', 'TEXT'); // jscs:ignore requireCapitalizedConstructors
+    let digester = new jsSHA('SHA-256', 'TEXT'); // eslint-disable-line new-cap
     digester.update(digestTarget);
     this.set('digest', digester.getHash('HEX'));
   }),

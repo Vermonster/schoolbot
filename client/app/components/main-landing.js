@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   didInsertElement() {
-    // jscs: disable
+    /* eslint-disable */
 
     // Facebook button setup
     (function(d, s, id) {
@@ -26,6 +26,6 @@ export default Ember.Component.extend({
       }
     }(document, 'script', 'twitter-wjs'));
 
-    // jscs: enable
+    /* eslint-enable */
   }
 });

@@ -123,10 +123,10 @@ $background-landscape: new-breakpoint(min-width $background-landscape-width);
 
 // Z-index
 $z-layers: (
-  'flash-msg': 300,
-  'modal-overlay': 200,
-  'map-message': 101,
-  'map-controls': 100,
+  'flash-msg': 3000,
+  'modal-overlay': 2000,
+  'map-message': 1100,
+  'map-controls': 1000,
   'district-heading': 5,
   'about-content-list-number': 4,
   'about-content-list-number-circle': 3,

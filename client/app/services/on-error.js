@@ -5,7 +5,7 @@ export default Ember.Service.extend({
   i18n: Ember.inject.service(),
 
   setup() {
-    let originalHandler = Ember.onerror;
+    let originalHandler = Ember.onerror; // eslint-disable-line
 
     Ember.onerror = (error) => {
       let errorText = this.get('i18n').t('flashes.error.generic');

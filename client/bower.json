@@ -1,17 +1,15 @@
 {
   "name": "client",
   "dependencies": {
-    "airbrake-js-client": "airbrake-js#0.5.8",
+    "airbrake-js-client": "airbrake-js#0.5.9",
     "bourbon": "4.2.7",
-    "ember": "2.5.1",
-    "ember-cli-shims": "0.1.1",
-    "ember-cli-test-loader": "0.2.2",
-    "ember-qunit-notifications": "0.1.0",
-    "font-awesome": "4.6.2",
-    "jsSHA": "2.0.2",
-    "leaflet": "0.7.7",
+    "ember": "2.8.2",
+    "ember-cli-shims": "0.1.3",
+    "font-awesome": "4.6.3",
+    "jsSHA": "2.2.0",
+    "leaflet": "1.0.1",
     "modernizr": "https://modernizr.com/download?-cssgradients-flexbox-setclasses",
-    "neat": "1.7.4",
+    "neat": "1.8.0",
     "spin.js": "2.3.2"
   }
 }
