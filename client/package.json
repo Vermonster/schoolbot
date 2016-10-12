@@ -50,7 +50,7 @@
     "ember-disable-proxy-controllers": "1.0.1",
     "ember-export-application-global": "1.0.5",
     "ember-font-awesome": "2.1.1",
-    "ember-i18n": "git://github.com/grantovich/ember-i18n.git#9e840285b53879e5a1eeb7fca57076b69b6f8c9b",
+    "ember-i18n": "grantovich/ember-i18n#locale-override",
     "ember-i18n-errors": "0.2.0",
     "ember-intercom": "0.0.2",
     "ember-leaflet": "2.2.6",
