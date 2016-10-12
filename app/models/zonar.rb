@@ -76,16 +76,10 @@ class Zonar
       headers: { params: # rubocop:disable MultilineHashBraceLayout
         STATIC_PARAMS.merge(starttime: start_time.to_i, endtime: end_time.to_i)
       },
-      cookies: authentication_params,
+      user: @credentials[:username],
+      password: @credentials[:password],
       timeout: READ_TIMEOUT.to_i
     )
-  end
-
-  def authentication_params
-    {
-      username: @credentials[:username],
-      password: @credentials[:password]
-    }
   end
 
   def csv_to_bus_events(csv_string)
