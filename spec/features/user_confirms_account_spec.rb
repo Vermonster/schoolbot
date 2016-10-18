@@ -21,8 +21,11 @@ feature 'User confirms account' do
     expect(page).to have_content t('signIn.title.main').upcase
   end
 
-  # TODO: Test that an unhandled error results in seeing the generic error and
-  # being redirected to the sign-in page. Tricky since the relevant action is a
-  # direct `visit`, but by that point it's too late for ignoring_ember_errors to
-  # set up its stuff.
+  scenario 'and sees a generic message on unhandled errors', :allow_js_errors do
+    mock_api_failure(:confirmations, :create)
+
+    visit root_path + 'confirm?token=1'
+
+    expect(page).to have_content t('flashes.error.generic')
+  end
 end
