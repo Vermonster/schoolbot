@@ -1,0 +1,5 @@
+# Required to get CodeClimate aligned with ember-cli-eslint
+client/config/deploy.js
+client/config/environment.js
+client/ember-cli-build.js
+client/testem.js
