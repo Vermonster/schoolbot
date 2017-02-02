@@ -1,7 +1,7 @@
 machine:
   environment:
     RAILS_ENV: test
-    QMAKE: /opt/qt5/bin/qmake
+    QMAKE: /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
   node:
     version: 5
 checkout:
