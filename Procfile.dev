@@ -1,3 +1,4 @@
 web: bundle exec puma -p $PORT -C ./config/puma.rb
+clock: bundle exec clockwork lib/clock.rb
 worker: bundle exec rake jobs:work
 ember: cd client && node_modules/.bin/ember build --watch
