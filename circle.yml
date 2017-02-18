@@ -1,19 +1,22 @@
+# Reference for QT 5.5 configuration:
+# https://discuss.circleci.com/t/containers-running-out-of-memory-on-14-04-image-but-runs-fine-on-12-04/4475/9
+# https://discuss.circleci.com/t/using-qt-5-with-circleci/88/19
+
 machine:
   environment:
     RAILS_ENV: test
-    QMAKE: /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    QMAKE: /opt/qt55/bin/qmake
   node:
     version: 5
+  services:
+    - redis
 checkout:
   post:
     - cp .sample.env .env
     - cp client/.sample.env client/.env
 dependencies:
   pre:
-    - sudo apt-get update -y; true
-    - sudo apt-get install apt -y
-    - sudo apt-get -y install qt5-default qt5-qmake qtbase5-dev libqt5webkit5-dev
-    - echo "/opt/qt5/bin/qt5-env.sh" >> ~/.circlerc
+    - echo 'source /opt/qt55/bin/qt55-env.sh' >> /home/ubuntu/.circlerc
   override:
     - bundle config --local path .bundle
     - bundle config --local without development
