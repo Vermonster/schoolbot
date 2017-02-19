@@ -42,8 +42,8 @@ installation of SchoolBot, the basic requirements are:
 
 We are [Vermonster](http://www.vermonster.com), a team of product designers and
 developers in Boston, MA. Is there a feature or integration you'd like see in
-SchoolBot? Hire us and we'll build it for you as a consulting project. Contact
-us at <schoolbot@vermonster.com> for more information.
+SchoolBot? We can build it for you! Contact us at <schoolbot@vermonster.com> for
+more information.
 
 ## Contributing
 
