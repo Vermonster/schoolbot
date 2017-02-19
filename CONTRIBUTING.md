@@ -1,26 +1,34 @@
 # Contributing
 
 Thanks for contributing to SchoolBot! Just so you know, all contributors agree
-to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
+to abide by our [Code of Conduct](CODE_OF_CONDUCT.md) and license their work
+under the [Contributor License Agreement](#contributor-license-agreement).
 
-Before contributing a new feature, please open an [issue][issues] to discuss it.
+## Workflow
+
+We follow thoughtbot's **[Git Protocol][protocol]** for all work, from both
+maintainers and contributors. Contributors without write access should create
+feature branches in their own GitHub fork of the project, and a maintainer will
+perform the final merge.
+
+Before contributing a new feature, please [open an issue][issues] to discuss it.
 The Vermonster team is responsible for maintaining all contributed code, and to
-keep the project focused, we may not want to accept all proposed features. (You
-could still fork the code and maintain the feature yourself, though!)
+keep the project focused, we may not want to accept all proposed features.
 
+[protocol]: https://github.com/thoughtbot/guides/tree/master/protocol/git
 [issues]: https://github.com/Vermonster/schoolbot/issues
 
-## Getting Started
+## Development
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:
 
     % bin/setup
 
-It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
-your machine with [this script].
+It assumes you have a machine equipped with Ruby, Postgres, Node, etc. If not,
+set up your machine with [this script].
 
-[this script]: https://github.com/Vermonster/laptop
+[this script]: https://github.com/Vermonster/laptop-local
 
 After setting up, this script will run the application using [Heroku Local]:
 
@@ -32,7 +40,7 @@ development seed data, try <http://brockton.lvh.me:3000>.
 
 [Heroku Local]: https://devcenter.heroku.com/articles/heroku-local
 
-### Running Tests
+### Testing
 
 To run all available test suites and linters, use the default Rake task:
 
@@ -47,7 +55,7 @@ Be aware that using the `rspec` command (e.g. for faster focused testing) will
 not automatically rebuild the Ember app. Use `ember build -w` for this, or just
 keep `bin/serve` running.
 
-### Deploying
+### Deployment
 
 Deploy to staging and production with:
 
@@ -57,16 +65,6 @@ Deploy to staging and production with:
 This assumes you have run `bin/setup`, and all values in `client/.env` and
 `client/.env.deploy.<target>` are set correctly. The values for Vermonster's
 deployment can be found in a pinned item in the `#schoolbot` Slack channel.
-
-## Pull Requests
-
-We follow thoughtbot's **[Git Protocol][protocol]** for all contributions.
-
-Maintainers take note: This protocol requires that all merges be fast-forward.
-The "Merge pull request" button on GitHub should never be used, as this always
-creates a merge commit even when a fast-forward merge is possible.
-
-[protocol]: https://github.com/thoughtbot/guides/tree/master/protocol/git
 
 ## Contributor License Agreement
 
