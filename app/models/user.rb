@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def most_recent_bus_locations
+    district.bus_locations.where('recorded_at > ?', 5.minutes.ago).select("distinct on (bus_id) *")
+  end
+
   def disable_password_reset
     self.reset_password_token = nil
   end

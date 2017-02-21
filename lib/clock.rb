@@ -16,6 +16,17 @@ module Clockwork
     BusLocation.where('created_at < ?', 1.week.ago).delete_all
   end
 
+  every(60.seconds, 'CheckUserNotifications') do
+    User.find_each do |user|
+      user.most_recent_bus_locations.each do |bus_location|
+        if bus_location.near_user(user) <= 1.5
+          rails "bus is close!"
+          puts "yay its close!"
+        end
+      end
+    end
+  end
+
   if INTERCOM_ENABLED
     every(1.day, 'IntercomUpdateDistrict') do
       District.find_each do |district|
