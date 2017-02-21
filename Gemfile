@@ -22,6 +22,7 @@ gem "recipient_interceptor"
 gem "redis"
 gem "responders"
 gem "rest-client"
+gem "rpush"
 
 group :development do
   gem "letter_opener"

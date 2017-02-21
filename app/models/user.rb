@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :district
   has_many :student_labels
   has_many :students, through: :student_labels
+  has_many :rpush_notifications, through: :device_token
 
   validates! :locale, presence: true
   validates :email, :name, :street, :city, :state, :zip_code, presence: true
