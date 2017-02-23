@@ -12,7 +12,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   afterModel() {
     let { store } = this;
-    webkit.messageHandlers.callbackHandler.postMessage("successful sign-in");
+    this.ios.login();
     return Ember.RSVP.all([
       store.findAll('student').then((students) => this.students = students),
       store.find('user', 'current').then((user) => this.currentUser = user)

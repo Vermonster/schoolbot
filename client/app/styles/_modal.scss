@@ -1,7 +1,7 @@
 .modal__overlay {
   @include transition(opacity .25s ease);
   @include position(fixed, 0);
-  padding-top: rem(10);
+  padding-top: rem(30);
   background-color: $color-modal-overlay;
   text-align: center;
   z-index: z('modal-overlay');

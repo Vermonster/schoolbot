@@ -39,6 +39,7 @@ export default Ember.Controller.extend({
     signOut() {
       this.get('intercom').shutdown();
       this.get('session').invalidate();
+      this.ios.statusBar('show');
     }
   }
 });
