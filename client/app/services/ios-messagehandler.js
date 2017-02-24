@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   statusBar(message) {
-    sendMessage("statusBar_" + message);
+    sendMessage(`statusBar_${message}`);
   },
 
   login() {
-    sendMessage("login");
+    sendMessage('login');
   }
 
 });

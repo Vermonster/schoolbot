@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :district
   has_many :student_labels
   has_many :students, through: :student_labels
+  has_many :rpush_notifications, through: :device_token
 
   validates! :locale, presence: true
   validates :email, :name, :street, :city, :state, :zip_code, presence: true
@@ -43,10 +44,6 @@ class User < ActiveRecord::Base
     self.unconfirmed_email = nil
     self.confirmation_token = nil
     save!
-  end
-
-  def most_recent_bus_locations
-    district.bus_locations.where('recorded_at > ?', 5.minutes.ago).select("distinct on (bus_id) *")
   end
 
   def disable_password_reset

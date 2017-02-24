@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     resources :password_resets, only: [:show, :create, :update]
     get 'users/current', to: 'users#show', as: :current_user
     put 'users/:ignored', to: 'users#update', as: :update_current_user
-    # ios notification service
-    get 'users/incoming_bus', to: 'users#incoming_bus_notification'
     resources :students, only: [:index, :create, :update]
     resource :translations, only: :show
 

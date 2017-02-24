@@ -42,6 +42,7 @@ GEM
     airbrake (5.5.0)
       airbrake-ruby (~> 1.5)
     airbrake-ruby (1.5.0)
+    ansi (1.5.0)
     arel (6.0.3)
     ast (2.3.0)
     auto_strip_attributes (2.1.0)
@@ -84,6 +85,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.5.3)
@@ -139,6 +141,9 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    multi_json (1.12.1)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
     netrc (0.11.0)
     newrelic_rpm (3.16.3.323)
     nokogiri (1.6.8.1)
@@ -203,6 +208,13 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rpush (2.7.0)
+      activesupport
+      ansi
+      multi_json (~> 1.0)
+      net-http-persistent
+      railties
+      thor (>= 0.18.1, < 2.0)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.5.4)
@@ -316,6 +328,7 @@ DEPENDENCIES
   redis
   responders
   rest-client
+  rpush
   rspec-collection_matchers
   rspec-rails
   rspec-retry
@@ -334,4 +347,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.2
+   1.14.3

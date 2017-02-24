@@ -1,6 +1,6 @@
 export function initialize(application) {
   ['route', 'controller'].forEach((type) => {
-      application.inject(type, 'ios', 'service:ios-messagehandler');
+    application.inject(type, 'ios', 'service:ios-messagehandler');
   });
 }
 
