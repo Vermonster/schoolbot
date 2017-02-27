@@ -1,6 +1,5 @@
 require File.expand_path('../../config/boot', __FILE__)
 require File.expand_path('../../config/environment', __FILE__)
-require 'push_notification_service'
 
 module Clockwork
   error_handler do |error|

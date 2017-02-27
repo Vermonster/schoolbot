@@ -34,7 +34,7 @@ class UpdateBusLocationsJob < ActiveJob::Base
 
   def trigger_push_notification(user, student_id)
     student_name = StudentLabel.find_by(user_id: user.id, student_id: student_id).nickname
-    PushNotificationService.send_notification("Bus is coming for #{student_name}", user.device_token)
+    PushNotificationService.send_notification("Bus is coming for #{student_name}", user)
   end
 
   def last_event_time
