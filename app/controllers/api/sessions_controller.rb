@@ -2,6 +2,7 @@ module API
   class SessionsController < BaseController
     def create
       if authenticated_user
+        authenticated_user.update(device_token: params[:device_token]) if mobile_token_registration?
         render json: {
           token: authenticated_user.authentication_token,
           email: authenticated_user.email
@@ -12,6 +13,10 @@ module API
     end
 
     private
+
+    def mobile_token_registration?
+      params[:device_token].present?
+    end
 
     def authenticated_user
       @_authenticated_user ||= authenticating_user&.authenticate(password)

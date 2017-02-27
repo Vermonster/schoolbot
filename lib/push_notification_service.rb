@@ -1,13 +1,12 @@
 require 'rpush'
 
 class PushNotificationService
-  def self.send_notification(message, device_token)
-    # TODO: don't do anything if push notification is not setup
+  def self.send_notification(message, user)
     n = Rpush::Apns::Notification.new
     n.app = Rpush::Apns::App.find_by(name: ENV["APN_APP_NAME"])
-    n.device_token = device_token
+    n.device_token = user.device_token
+    n.user_id = user.id
     n.alert = message
-    n.data = { foo: :bar }
     n.save!
     Rpush.push
   end
