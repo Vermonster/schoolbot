@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224142738) do
+ActiveRecord::Schema.define(version: 20170227161106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,9 +149,11 @@ ActiveRecord::Schema.define(version: 20170224142738) do
     t.string   "category"
     t.boolean  "content_available",            default: false
     t.text     "notification"
+    t.integer  "user_id"
   end
 
   add_index "rpush_notifications", ["delivered", "failed"], name: "index_rpush_notifications_multi", where: "((NOT delivered) AND (NOT failed))", using: :btree
+  add_index "rpush_notifications", ["user_id"], name: "index_rpush_notifications_on_user_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
     t.integer  "district_id", null: false
@@ -210,6 +212,7 @@ ActiveRecord::Schema.define(version: 20170224142738) do
     t.datetime "confirmed_at"
     t.text     "unconfirmed_email"
     t.text     "locale",                 default: "en", null: false
+    t.text     "device_token"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -221,6 +224,7 @@ ActiveRecord::Schema.define(version: 20170224142738) do
   add_foreign_key "bus_assignments", "students", on_delete: :cascade
   add_foreign_key "bus_locations", "buses", on_delete: :restrict
   add_foreign_key "buses", "districts", on_delete: :restrict
+  add_foreign_key "rpush_notifications", "users"
   add_foreign_key "schools", "districts", on_delete: :restrict
   add_foreign_key "student_labels", "schools", on_delete: :restrict
   add_foreign_key "student_labels", "students", on_delete: :cascade
