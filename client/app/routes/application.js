@@ -13,7 +13,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   beforeModel() {
     this.get('onError').setup();
     this.get('dataPreload').setup();
-
+    this.ios.init();
     let storedLocale = this.get('session.data.locale');
     if (Ember.isPresent(storedLocale)) {
       this.get('moment').changeLocale(storedLocale);
@@ -25,5 +25,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     } else if (this.get('currentDistrict.isInvalid')) {
       this.replaceWith('index');
     }
+  },
+
+  //When tokens are outdated or invalid on iOS they need to be wiped from cache
+  //with ios.logOut()
+  sessionInvalidated() {
+    this.ios.logout()
+    this.transitionTo('sign-in')
   }
 });

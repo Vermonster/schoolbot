@@ -7,6 +7,14 @@ export default Ember.Service.extend({
 
   login() {
     sendMessage('login');
+  },
+
+  init() {
+    sendMessage('init');
+  },
+
+  logout() {
+    sendMessage('logout');
   }
 
 });
