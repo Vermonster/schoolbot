@@ -12,10 +12,9 @@
 }
 
 .home-marker {
-  width: rem(40);
-  height: rem(40);
-  background-image: image-path('home.svg');
-  background-repeat: no-repeat;
+  width: $icon-size;
+  height: $icon-size;
+  background: image-path('home.svg') no-repeat center;
 }
 
 .school-marker {
