@@ -8,7 +8,15 @@ export default Ember.Controller.extend({
   user: Ember.computed.alias('map.currentUser'),
   students: Ember.computed.alias('map.students'),
 
+  // Current support for IOS, so only where device token is set
+  canEditNotifications: Ember.computed('user.device_token', function() {
+    console.log('can edit notifications')
+    // should be !! instead of !
+    return !this.get('user.device_token');
+  }),
+
   showingStudentForm: false,
+  showingNotificationForm: false,
   showingProfileForm: false,
 
   actions: {
@@ -21,9 +29,14 @@ export default Ember.Controller.extend({
       this.toggleProperty('showingProfileForm');
     },
 
-    updateProfile() {
+    toggleEditNotifications() {
+      this.get('user').rollbackAttributes();
+      this.toggleProperty('showingNotificationForm');
+    },
+
+    updateProfile(callbackAction) {
       return this.get('user').save().then(() => {
-        this.send('toggleEditProfile');
+        this.send(callbackAction);
       }).catch((error) => {
         if (this.get('user.isValid')) {
           Ember.onerror(error);

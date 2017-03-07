@@ -4,14 +4,14 @@
       <h1 class='modal__title'>{{ t 'settings.title' }}</h1>
       {{#link-to 'map' replace=true class='modal__close--title' title=(t 'actions.close')}}{{/link-to}}
       <div class='modal__body'>
-        <section class='form__section form__section--settings'>
+        <section class=' etst form__section form__section--settings'>
           <h2 class='form__section-heading'>{{ t 'settings.information.title' }}</h2>
           {{#if showingProfileForm}}
             <div>
               {{profile-fields model=user}}
             </div>
             <div class='button-group button-group--edit-profile'>
-              {{#spin-button action=(action 'updateProfile')}}{{ t 'actions.save' }}{{/spin-button}}
+              {{#spin-button action=(action 'updateProfile' 'toggleEditProfile')}}{{ t 'actions.save' }}{{/spin-button}}
               <button {{action 'toggleEditProfile'}}>{{ t 'actions.cancel' }}</button>
             </div>
           {{else}}
@@ -33,6 +33,31 @@
             </div>
           {{/if}}
         </section>
+
+        {{#if canEditNotifications}}
+          <section class=' etst form__section form__section--settings'>
+              <h2 class='form__section-heading'>{{ t 'settings.notifications.title' }}</h2>
+              {{#if showingNotificationForm}}
+                {{notifications-fields model=user}}
+                <div class='button-group button-group--edit-profile'>
+                  {{#spin-button action=(action 'updateProfile' 'toggleEditNotifications')}}{{ t 'actions.save' }}{{/spin-button}}
+                  <button {{action 'toggleEditNotifications'}}>{{ t 'actions.cancel' }}</button>
+                </div>
+              {{else}}
+                <a href='#' class='settings__edit-cta' {{action 'toggleEditNotifications'}}>
+                  {{fa-icon 'pencil'}}
+                  <span class="settings__edit-cta__text">{{t 'actions.edit'}}</span>
+                </a>
+                {{#if user.enableNotifications}}
+                  <div>{{t 'settings.notifications.enabled'}}</div>
+                  <div>{{t 'settings.notifications.distance' radius=user.notificationRadius }} </div>
+                  <div>{{t 'settings.notifications.time' times=user.notificationTimeOfDay days=user.notificationDays}} </div>
+                {{else}}
+                  <div>{{t 'settings.notifications.disabled'}}</div>
+                {{/if}}
+              {{/if}}
+          </section>
+        {{/if}}
 
         <section class='form__section form__section--settings'>
           <h2 class='form__section-heading'>{{ t 'settings.students.title' }}</h2>

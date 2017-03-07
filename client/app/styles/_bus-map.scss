@@ -17,9 +17,13 @@
   background: image-path('home.svg') no-repeat center;
 }
 
+.notification-radius {
+
+}
+
 .school-marker {
-  width: rem(40);
-  height: rem(40);
+  width: $icon-size;
+  height: $icon-size;
   background-image: image-path('school.svg');
   background-repeat: no-repeat;
 }

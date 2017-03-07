@@ -1,0 +1,56 @@
+<div class='form__item {{if model.errors.enableNotfications 'form__item--error'}}'>
+  <label>
+    {{ t 'labels.enableNotifications'}}
+    {{input type="checkbox" name="enableNotifications" checked=model.enableNotifications}}
+  </label>
+  {{#if model.errors.enableNotfications}}
+    <span class='form__error--field'>
+      {{t-error model.errors.enableNotfications.firstObject}}
+    </span>
+  {{/if}}
+</div>
+<div class='form__item {{if model.errors.notificationRadius 'form__item--error'}}'>
+  <label>
+    {{ t 'labels.notificationRadius'}}
+    {{#if autofocus}}
+      {{focus-input value=model.notificationRadius}}
+    {{else}}
+      {{input value=model.notificationRadius}}
+    {{/if}}
+  </label>
+  {{#if model.errors.notificationRadius}}
+    <span class='form__error--field'>
+      {{t-error model.errors.notificationRadius.firstObject}}
+    </span>
+  {{/if}}
+</div>
+<div class='form__item {{if model.errors.notificationDays 'form__item--error'}}'>
+  <label>
+    {{ t 'labels.notificationDays'}}
+    {{#if autofocus}}
+      {{focus-input value=model.notificationDays}}
+    {{else}}
+      {{input value=model.notificationDays}}
+    {{/if}}
+  </label>
+  {{#if model.errors.notificationDays}}
+    <span class='form__error--field'>
+      {{t-error model.errors.notificationDays.firstObject}}
+    </span>
+  {{/if}}
+</div>
+<div class='form__item {{if model.errors.notificationTimeOfDay 'form__item--error'}}'>
+  <label>
+    {{ t 'labels.notificationTimeOfDay'}}
+    {{#if autofocus}}
+      {{focus-input value=model.notificationTimeOfDay}}
+    {{else}}
+      {{input value=model.notificationTimeOfDay}}
+    {{/if}}
+  </label>
+  {{#if model.errors.notificationTimeOfDay}}
+    <span class='form__error--field'>
+      {{t-error model.errors.noTimeOfDay.firstObject}}
+    </span>
+  {{/if}}
+</div>

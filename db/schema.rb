@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227161106) do
+ActiveRecord::Schema.define(version: 20170307152609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -193,26 +193,30 @@ ActiveRecord::Schema.define(version: 20170227161106) do
   add_index "students", ["district_id"], name: "index_students_on_district_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.integer  "district_id",                           null: false
-    t.text     "email",                                 null: false
-    t.text     "password_digest",                       null: false
-    t.text     "authentication_token",                  null: false
+    t.integer  "district_id",                                  null: false
+    t.text     "email",                                        null: false
+    t.text     "password_digest",                              null: false
+    t.text     "authentication_token",                         null: false
     t.text     "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.text     "name",                                  null: false
-    t.text     "street",                                null: false
-    t.text     "city",                                  null: false
-    t.text     "state",                                 null: false
-    t.text     "zip_code",                              null: false
-    t.float    "latitude",                              null: false
-    t.float    "longitude",                             null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.text     "name",                                         null: false
+    t.text     "street",                                       null: false
+    t.text     "city",                                         null: false
+    t.text     "state",                                        null: false
+    t.text     "zip_code",                                     null: false
+    t.float    "latitude",                                     null: false
+    t.float    "longitude",                                    null: false
     t.text     "confirmation_token"
     t.datetime "confirmed_at"
     t.text     "unconfirmed_email"
-    t.text     "locale",                 default: "en", null: false
+    t.text     "locale",                   default: "en",      null: false
     t.text     "device_token"
+    t.boolean  "enable_notifications",     default: false
+    t.float    "notification_radius",      default: 0.5
+    t.string   "notification_time_of_day", default: "day"
+    t.string   "notification_days",        default: "weekday"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

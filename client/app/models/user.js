@@ -13,5 +13,9 @@ export default DS.Model.extend({
   latitude: DS.attr('number'),
   longitude: DS.attr('number'),
   locale: DS.attr('string'),
+  enableNotifications: DS.attr('boolean'),
+  notificationRadius: DS.attr('number'),
+  notificationTimeOfDay: DS.attr('string'),
+  notificationDays: DS.attr('number'),
   intercomHash: DS.attr('string')
 });

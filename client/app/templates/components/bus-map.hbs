@@ -1,5 +1,9 @@
 {{mapbox-tiles}}
 
+{{#if showingNotificationRadius }}
+  {{notification-radius home=user}}
+{{/if}}
+
 {{simple-marker object=user iconClass='home-marker'}}
 
 {{#each schools as |school|}}

@@ -46,6 +46,10 @@ en:
     birthdate: Birthdate (MM/DD/YYYY)
     school: School
     termsAccepted: 'I have read and agree to the following:'
+    enableNotifications: Enable Notifications
+    notificationTimeOfDay: Time of Day
+    notificationRadius: Distance from Home in Miles
+    notificationDays: Days of the Week
   actions:
     signIn: Sign In
     register: Register
@@ -156,6 +160,12 @@ en:
       notConfirmed: |
         Awaiting confirmation for {{email}}. We've sent an email to your new
         address: follow the link in the email to confirm this change.
+    notifications:
+      title: My Notifications
+      enabled: Notifications Enabled
+      disabled: Notifications Disabled
+      time: Restrict to {{times}} {{days}}
+      distance: Triggered within {{radius}} miles from home
     students:
       title: My Students
       problems:
