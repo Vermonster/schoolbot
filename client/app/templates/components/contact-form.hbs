@@ -1,0 +1,50 @@
+{{#unless contactSubmitted}}
+  {{#unless contactErrored}}
+    <form {{action 'submit' on='submit'}}>
+        <div class="control-group">
+          <div class="control-label">
+            <label>Name</label>
+          </div>
+          <div class="controls">
+            {{input value=contactName required=true name='Name' type="text"}}
+          </div>
+        </div>
+        <div class="control-group">
+            <div class="control-label">
+              <label>Email</label>
+            </div>
+            <div class="controls">
+              {{input value=contactEmail name='Email' required=true type="email"}}
+            </div>
+        </div>
+        <div class="control-group">
+          <div class="control-label">
+            <label>Title</label>
+          </div>
+          <select class="form__select--school" onchange={{action "updateRole" value="target.value"}}>
+            <option value="" disabled selected>Select your option</option>
+            <option>School Administrator</option>
+            <option>Parent</option>
+            <option>Director of Operations/ Transportation</option>
+            <option>Superintendent</option>
+            <option>PTA Member</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <div class="control-label">
+            <label>Message</label>
+          </div>
+          <div class="controls">
+            {{textarea value=contactMessage type="text" name='Message' rows="6" placeholder="We want SchoolBot!"}}
+          </div>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit"> Send </button>
+    </form>
+  {{else}}
+    <p>There was a problem submitting your email. Check your network connection and try again, or <a href="mailto:schoolbot@vermonster.com?subject=SchoolBot information request">email us directly</a>.</p>
+  {{/unless}}
+{{else}}
+  <h1>Thanks, {{contactName}}, we'll get in touch with you soon!</h1>
+{{/unless}}

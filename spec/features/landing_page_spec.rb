@@ -29,4 +29,16 @@ feature 'Landing page' do
     expect(page).to have_css "img[src='#{district.logo.url}']"
     expect(page).to_not have_content 'DISTRICT FOO'
   end
+
+  scenario 'submission made through contact form' do
+    visit root_path
+    expect(page).to have_content 'CONTACT US'
+
+    fill_in 'Name', with: 'David'
+    fill_in 'Email', with: 'schoolbotty@example.com'
+    fill_in 'Message', with: 'Yay Schoolbot'
+    click_button 'Send'
+
+    expect(page).to have_content "Thanks, David, we'll get in touch with you soon!"
+  end
 end
