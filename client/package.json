@@ -38,6 +38,7 @@
     "ember-cli-focus-input": "1.0.0",
     "ember-cli-htmlbars": "1.1.0",
     "ember-cli-htmlbars-inline-precompile": "0.3.5",
+    "ember-cli-mirage": "0.2.8",
     "ember-cli-moment-shim": "2.2.1",
     "ember-cli-neat": "0.0.5",
     "ember-cli-qunit": "3.0.2",

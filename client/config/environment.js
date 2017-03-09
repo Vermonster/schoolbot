@@ -20,7 +20,9 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
-
+    'ember-cli-mirage' : {
+      enabled: false
+    },
     'ember-simple-auth': {
       authenticationRoute: 'sign-in'
     },
@@ -53,7 +55,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
   };
 
   if (environment === 'development') {
@@ -62,6 +65,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   if (environment === 'test') {
@@ -73,6 +79,9 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   if (environment === 'production') {

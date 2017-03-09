@@ -21,7 +21,9 @@
       <li class='about__content__list-item--district'>SchoolBot is <a href='http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html' target='_blank'>FERPA</a>-compliant, and never transmits or stores identifiable student data.</li>
       <li class='about__content__list-item--district'>We offer SchoolBot as a subscription service, but the code behind it is <a href='https://github.com/Vermonster/schoolbot/blob/master/README.md'>open-source</a> and free for anyone to use or modify. You can contribute new features and integrations, or even run SchoolBot on your own servers.</li>
     </ul>
-    <p>To learn more about SchoolBot and how you can offer it in your district, email us at <a href='mailto:schoolbot@vermonster.com'>schoolbot@vermonster.com</a> and we'll be in touch!</p>
+    <p>To learn more about SchoolBot and how you can offer it in your district,
+      {{#scroll-to href='#contact-form'}}contact us{{/scroll-to}}
+    and we'll be in touch!</p>
   </div>
 </section>
 
@@ -34,15 +36,15 @@
       <li class='about__content__list-item--parent'>The position of your child's bus is plotted on a map in real time – and if you have more than one student in the district, you can view bus locations for all of them.</li>
       <li class='about__content__list-item--parent'>SchoolBot complies with federal regulations on storing student data, and uses secure connections to protect your data.</li>
     </ul>
-    <p class='about__content__copy--parent'>If you think SchoolBot is a good idea, why not tell your school district administrators about it?</p>
   </div>
 </section>
 
 <section class='about__content-wrapper--share'>
   <div class='about__content'>
+    <h1 id='contact-form' class='about__heading'>Contact Us</h1>
+    {{ contact-form }}
     <h1 class='about__heading'>Share</h1>
     <p>If SchoolBot seems interesting or useful, please spread the word on your networks!</p>
-
     <div class='social-media'>
       <a class='social-media__cta social-media__cta--email' href="mailto:?subject=SchoolBot: a secure school bus tracking app&body=Check out SchoolBot: https://schoolbot.io">Email</a>
       <div class="fb-share-button social-media__cta social-media__cta--fb" data-href="https://schoolbot.io" data-layout="button"></div>
@@ -55,7 +57,7 @@
 
 <footer class='about__footer'>
   <div class='about__content about__content--footer'>
-    <span class='about__footer__copyright'>© 2016</span>
+    <span class='about__footer__copyright'>© 2017</span>
     <a class='about__footer__link' href='http://www.vermonster.com/' target='_blank' aria-label='Vermonster LLC'>
       <img src='assets/images/logo_vermonster_footer.svg' alt='Vermonster LLC'/>
     </a>
