@@ -42,11 +42,11 @@
 <div class='form__item {{if model.errors.notificationTimeOfDay 'form__item--error'}}'>
   <label>
     {{ t 'labels.notificationTimeOfDay'}}
-    {{#if autofocus}}
-      {{focus-input value=model.notificationTimeOfDay}}
-    {{else}}
-      {{input value=model.notificationTimeOfDay}}
-    {{/if}}
+    <select class="form-control" multiple onchange={{action "selectTime"}}>
+        {{#each times as |timeChoice|}}
+        <option value={{timeChoice}} selected={{include selectedTimes timeChoice}}>{{timeChoice}}</option>
+            {{/each}}
+    </select>
   </label>
   {{#if model.errors.notificationTimeOfDay}}
     <span class='form__error--field'>

@@ -47,9 +47,15 @@ en:
     school: School
     termsAccepted: 'I have read and agree to the following:'
     enableNotifications: Enable Notifications
-    notificationTimeOfDay: Time of Day
+    notificationTimeOfDay: Time of Day (Check all relevant times)
     notificationRadius: Distance from Home in Miles
     notificationDays: Days of the Week
+    notificationFields:
+      earlyMorning: 5AM EST to 6PM EST
+      morning: 6AM EST to 8PM EST
+      earlyAfternoon: 2PM EST to 3PM
+      afternoon: 3PM EST to 4PM EST
+      lateAfternoon: 4PM EST to 6PM EST
   actions:
     signIn: Sign In
     register: Register
