@@ -23,7 +23,11 @@ module API
     end
 
     def authenticating_user
-      current_district.users.confirmed.find_by(email: email)
+      if @_current_district.nil?
+        User.where(email: email).where.not(confirmed_at: nil).first
+      else
+        current_district.users.confirmed.find_by(email: email)
+      end
     end
 
     def email

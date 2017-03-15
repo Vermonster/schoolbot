@@ -1,9 +1,11 @@
 {{#page-layout}}
   <form class='form--sign-in'>
     <div class='form__title'>
-      {{#link-to 'index' class='form__title__back-cta' title=(t 'district.backTo')}}
-        {{fa-icon 'chevron-left'}}
-      {{/link-to}}
+      {{#unless ios.isMobileApp}}
+        {{#link-to 'index' class='form__title__back-cta' title=(t 'district.backTo')}}
+          {{fa-icon 'chevron-left'}}
+        {{/link-to}}
+      {{/unless}}
       <h1 class='form__title--main'>{{ t 'signIn.title.main' }}</h1>
       <h2 class='form__title--sub'>{{ t 'signIn.title.sub' }}</h2>
     </div>

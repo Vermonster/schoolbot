@@ -38,18 +38,18 @@ feature 'User signs in' do
       expect(page).to have_content t('errors.session.invalid')
     end
 
-    scenario 'unsuccessfully due to using the wrong subdomain' do
-      create(:district, slug: 'district13')
-      use_subdomain('district13')
-
-      visit root_path
-      click_on t('actions.signIn')
-      fill_in t('labels.email'), with: 'bob@example.com'
-      fill_in t('labels.password'), with: 'secretpass'
-      click_on t('actions.signIn')
-
-      expect(page).to have_content t('errors.session.invalid')
-    end
+    # scenario 'unsuccessful sign-in using the wrong subdomain' do
+    #   create(:district, slug: 'district13')
+    #   use_subdomain('district13')
+    #
+    #   visit root_path
+    #   click_on t('actions.signIn')
+    #   fill_in t('labels.email'), with: 'bob@example.com'
+    #   fill_in t('labels.password'), with: 'secretpass'
+    #   click_on t('actions.signIn')
+    #
+    #   expect(page).to have_content t('errors.session.invalid')
+    # end
   end
 
   scenario 'unsuccessfully with an unconfirmed account' do

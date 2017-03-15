@@ -1,5 +1,7 @@
 {{#if currentDistrict.isPresent}}
   {{district-landing}}
+{{else if ios.isMobileApp}}
+  {{render "sign-in"}}
 {{else if currentDistrict.isNone}}
   {{main-landing}}
 {{else}}

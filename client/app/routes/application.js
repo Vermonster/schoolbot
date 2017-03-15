@@ -20,17 +20,17 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('i18n').set('locale', storedLocale);
     }
 
-    if (this.get('currentDistrict.isPresent')) {
+    if (this.get('currentDistrict.isPresent') || this.get('ios.isMobileApp')) {
       return this.get('translations').setup();
     } else if (this.get('currentDistrict.isInvalid')) {
       this.replaceWith('index');
     }
   },
 
-  //When tokens are outdated or invalid on iOS they need to be wiped from cache
-  //with ios.logOut()
+  // When tokens are outdated or invalid on iOS they need to be wiped from cache
+  // with ios.logOut()
   sessionInvalidated() {
-    this.ios.logout()
-    this.transitionTo('sign-in')
+    this.ios.logout();
+    this.transitionTo('sign-in');
   }
 });

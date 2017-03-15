@@ -7,7 +7,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
   beforeModel() {
     if ((this.get('currentDistrict.isPresent') || this.get('ios.isMobileApp')) &&
         this.get('session.isAuthenticated')) {
-          this.transitionTo('map');
+      this.transitionTo('map');
     }
   }
 
