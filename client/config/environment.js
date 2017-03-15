@@ -89,6 +89,9 @@ module.exports = function(environment) {
       projectId: process.env.CLIENT_AIRBRAKE_ID,
       projectKey: process.env.CLIENT_AIRBRAKE_KEY
     };
+    ENV.googleAnalytics = {
+      webPropertyId: process.env.CLIENT_GOOGLE_ANALYTICS_ID
+    };
   }
 
   return ENV;
