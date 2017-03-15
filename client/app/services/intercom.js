@@ -2,12 +2,15 @@ import Ember from 'ember';
 import config from 'client/config/environment';
 
 export default Ember.Service.extend({
-  intercom: window.Intercom || Ember.K,
+
+  intercom: Ember.computed('window.Intercom', function() {
+    return window.Intercom || Ember.K;
+  }),
 
   boot({ user, district }) {
     /* eslint-disable camelcase */
 
-    this.intercom('boot', {
+    this.get('intercom')('boot', {
       app_id: config.intercom.appId,
       user_id: user.get('id'),
       name: user.get('name'),
@@ -23,7 +26,15 @@ export default Ember.Service.extend({
     /* eslint-enable camelcase */
   },
 
+  trackEvent(eventName) {
+    let eventAttribute = Ember.String.camelize(eventName);
+    if (!this.get(eventAttribute))  {
+      this.get('intercom')('trackEvent', eventName);
+      this.set(eventAttribute, true);
+    }
+  },
+
   shutdown() {
-    this.intercom('shutdown');
+    this.get('intercom')('shutdown');
   }
 });

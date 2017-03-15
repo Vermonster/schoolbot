@@ -5,6 +5,12 @@ export default Ember.Controller.extend({
   studentsAlertDismissed: false,
   isOnline: true,
 
+  trackMissingStudents: Ember.observer('showingAllStudents', function() {
+    if (!this.get('showingAllStudents')) {
+      this.send('trackEvent', 'missing-students');
+    }
+  }),
+
   students: Ember.computed.filterBy('allStudents', 'isNew', false),
   assignedStudents: Ember.computed.filterBy('students', 'isAssigned', true),
 

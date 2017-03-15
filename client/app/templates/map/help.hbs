@@ -12,7 +12,7 @@
         <section class='form__section'>
           <h2 class='form__section-heading form__section-heading--help'>{{ t 'help.email' }}</h2>
           <div>
-            <a href='mailto:{{currentDistrict.model.contactEmail}}'>
+            <a href='mailto:{{currentDistrict.model.contactEmail}}' {{action (route-action 'trackEvent' 'district-contacted-by-email') preventDefault=false}}>
               {{currentDistrict.model.contactEmail}}
             </a>
           </div>

@@ -4,6 +4,7 @@ import ApplicationRouteMixin from
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   dataPreload: Ember.inject.service(),
+  intercom: Ember.inject.service(),
   i18n: Ember.inject.service(),
   moment: Ember.inject.service(),
   onError: Ember.inject.service(),
@@ -24,6 +25,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       return this.get('translations').setup();
     } else if (this.get('currentDistrict.isInvalid')) {
       this.replaceWith('index');
+    }
+  },
+  actions: {
+    trackEvent(eventName) {
+      this.get('intercom').trackEvent(eventName);
     }
   }
 });
