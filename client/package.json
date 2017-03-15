@@ -61,6 +61,7 @@
     "ember-moment": "6.1.0",
     "ember-normalize": "1.0.0",
     "ember-resolver": "2.1.0",
+    "ember-route-action-helper": "2.0.2",
     "ember-scroll-to": "0.5.4",
     "ember-simple-auth": "1.1.0",
     "ember-spin-button": "0.3.0",

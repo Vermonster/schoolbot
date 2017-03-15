@@ -65,7 +65,7 @@
           {{/if}}
 
           {{#link-to 'map.help' replace=true}}
-            {{t 'settings.students.problems.contactDistrict'}}
+            <span {{action (route-action 'trackEvent' 'student-problem-district-contacted')}}>{{t 'settings.students.problems.contactDistrict'}}</span>
           {{/link-to}}
         </div>
       {{/unless}}
