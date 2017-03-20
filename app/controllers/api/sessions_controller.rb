@@ -2,7 +2,7 @@ module API
   class SessionsController < BaseController
     def create
       if authenticated_user
-        authenticated_user.update(device_token: params[:device_token]) if mobile_token_registration?
+        mobile_device_token_registration
         render json: {
           token: authenticated_user.authentication_token,
           email: authenticated_user.email
@@ -14,8 +14,24 @@ module API
 
     private
 
-    def mobile_token_registration?
-      params[:device_token].present?
+    def set_new_auth_and_device_tokens
+      old_device_token = authenticated_user.device_token
+      authenticated_user.update(authentication_token: SecureRandom.hex, device_token: params[:device_token])
+      unless old_device_token.nil?
+        # TODO: Send notification to old user
+      end
+    end
+
+    def mobile_device_token_registration
+      new_device = false
+      if params[:device_token].present?
+        new_device = authenticated_user.device_token.nil? ? true : new_device?
+      end
+      set_new_auth_and_device_tokens if new_device
+    end
+
+    def new_device?
+      authenticated_user.device_token != params[:device_token]
     end
 
     def authenticated_user
