@@ -31,6 +31,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     });
   },
 
+  resetController(controller, isExiting) {
+    if (isExiting) {
+      controller.set('studentsAlertDismissed', false);
+    }
+  },
+
   pollTask: task(function* () {
     while (true) {
       yield timeout(POLL_INTERVAL);
