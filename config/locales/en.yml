@@ -64,7 +64,7 @@ en:
     error:
       generic: |
         Oops! Something went wrong and we couldn't process that action. You
-        might want to try it again, or if that doesn't work, refresh the page.
+        might want to try it again.
       invalidConfirmation: |
         The confirmation link you followed is not valid. Your email address may
         already be confirmed; try signing in.

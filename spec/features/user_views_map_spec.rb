@@ -89,6 +89,18 @@ feature 'User views map' do
     expect(page).to have_content t('map.messages.missingStudents')
   end
 
+  scenario 'missing students alert dismissed' do
+    bus = create(:bus, district: @district)
+    create(:bus_location, bus: bus)
+    create(:bus_assignment, student: @second_label.student, bus: bus)
+
+    sign_in_as @user
+
+    expect(page).to have_content t('map.messages.missingStudents')
+    find('.close').click
+    expect(page).to_not have_content t('map.messages.missingStudents')
+  end
+
   scenario 'with time information displayed for outdated bus positions' do
     bus = create(:bus, district: @district)
     create(:bus_location, bus: bus, recorded_at: 1.minute.ago)

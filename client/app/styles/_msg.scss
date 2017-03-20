@@ -12,6 +12,10 @@
   @include media($medium-screen) {
     padding: rem(8) $button-padding-side + rem(25);
   }
+
+  .close {
+    float: right;
+  }
 }
 
 .msg--flash {
