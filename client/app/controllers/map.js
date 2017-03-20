@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  studentsAlertDismissed: false,
   isOnline: true,
 
   students: Ember.computed.filterBy('allStudents', 'isNew', false),
@@ -13,7 +15,14 @@ export default Ember.Controller.extend({
   schools: Ember.computed.mapBy('assignedStudents', 'school'),
   uniqueSchools: Ember.computed.uniq('schools'),
 
-  showingAllStudents: Ember.computed('students.@each.isLocated', function() {
-    return this.get('students').every((student) => student.get('isLocated'));
-  })
+  studentsAlertActive: Ember.computed('studentsAlertDismissed', 'students.@each.isLocated', function() {
+    return this.get('students').every((student) => student.get('isLocated')) || !this.get('studentsAlertDismissed');
+  }),
+
+  actions: {
+    closeAlert() {
+      this.set('studentsAlertDismissed', true);
+    }
+  }
+
 });

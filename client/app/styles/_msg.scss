@@ -12,6 +12,14 @@
   @include media($medium-screen) {
     padding: rem(8) $button-padding-side + rem(25);
   }
+
+  .close {
+    @media(max-width: 320px) {  //for iPhone 5 screen-size
+      padding-left: 3px;
+    }
+    padding-top: 3px;
+    float: right;
+  }
 }
 
 .msg--flash {
