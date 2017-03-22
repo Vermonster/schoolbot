@@ -11,9 +11,11 @@
   {{else}}
     {{#unless showingAllStudents}}
       <div class='msg msg--map'>
-        {{fa-icon 'warning'}}
+        <div class='msg__content-container'>
+          {{fa-icon 'warning'}}
+          <h3 class='msg__content' role='alert'>{{t 'map.messages.missingStudents'}}</h3>
+        </div>
         <i class='fa fa-close close' onClick={{action 'closeAlert'}}></i>
-        <h3 class='msg__content' role='alert'>{{t 'map.messages.missingStudents'}}</h3>
       </div>
     {{/unless}}
   {{/unless}}
