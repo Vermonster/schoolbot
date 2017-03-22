@@ -13,8 +13,6 @@ export default Ember.Service.extend({
 
       if (originalHandler) {
         originalHandler(error);
-      } else {
-        throw error;
       }
     };
   }
