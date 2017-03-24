@@ -7,7 +7,7 @@ machine:
     RAILS_ENV: test
     QMAKE: /opt/qt55/bin/qmake
   node:
-    version: 5
+    version: 6
   services:
     - redis
 checkout:
