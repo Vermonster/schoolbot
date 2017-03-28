@@ -47,12 +47,12 @@ if Rails.env.development? || Rails.env.test?
         latitude: 42.016633,
         longitude: -71.001635
       )
-      create(:user, :unconfirmed,
-        district: brockton,
-        confirmation_token: '12345',
-        latitude: 42.016633,
-        longitude: -71.001635
-      )
+      # create(:user, :unconfirmed,
+      #   district: brockton,
+      #   confirmation_token: '12345',
+      #   latitude: 42.016633,
+      #   longitude: -71.001635
+      # )
 
       bobby_label = create(:student_label,
         nickname: 'Bobby',
@@ -66,7 +66,7 @@ if Rails.env.development? || Rails.env.test?
         school: brockton_high,
         student: create(:student, district: brockton)
       )
-      create(:student_label,
+      davie_label = create(:student_label,
         nickname: 'Davie',
         user: user,
         school: ashfield_middle,
@@ -85,6 +85,7 @@ if Rails.env.development? || Rails.env.test?
 
       create(:bus_assignment, student: bobby_label.student, bus: bus1)
       create(:bus_assignment, student: jenny_label.student, bus: bus2)
+      create(:bus_assignment, student: davie_label.student, bus: bus2)
 
       not_added_student = create(:student,
         district: brockton,
