@@ -16,7 +16,7 @@ class UserSerializer < ActiveModel::Serializer
     if INTERCOM_ENABLED
       OpenSSL::HMAC.hexdigest(
         OpenSSL::Digest.new('sha256'),
-        ENV.fetch('INTERCOM_SECRET'),
+        ENV.fetch('INTERCOM_TOKEN'),
         object.id.to_s
       )
     end

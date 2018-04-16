@@ -55,7 +55,7 @@ class IntercomUpdateJob < ActiveJob::Base
   def intercom
     @_intercom ||= Intercom::Client.new(
       app_id: ENV.fetch('INTERCOM_ID'),
-      api_key: ENV.fetch('INTERCOM_API_KEY')
+      token: ENV.fetch('INTERCOM_TOKEN')
     )
   end
 end
