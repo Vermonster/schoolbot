@@ -15,4 +15,4 @@ linters:
     allow_element_with_attribute: true
 
   PropertySortOrder:
-    order: smacss
+    enabled: false

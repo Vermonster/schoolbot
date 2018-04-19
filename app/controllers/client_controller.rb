@@ -1,4 +1,5 @@
 class ClientController < ActionController::Base
+  protect_from_forgery with: :exception
   include CurrentDistrict
 
   before_action :redirect_www
