@@ -1,4 +1,6 @@
 AllCops:
+  TargetRailsVersion: 4.0
+
   Include:
   - "**/*.rake"
   - "**/Gemfile"
@@ -8,10 +10,20 @@ AllCops:
   - "db/**/*"
   - "client/**/*"
 
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - test
+    - staging
+
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
   Enabled: false
 
 Rails:
@@ -21,7 +33,22 @@ Rails:
 Rails/HttpPositionalArguments:
   Enabled: false
 
-Style/AlignParameters:
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/BlockDelimiters:
@@ -39,13 +66,13 @@ Style/GlobalVars:
 Style/GuardClause:
   Enabled: false
 
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
-Style/MultilineMethodCallBraceLayout:
+Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: new_line
 
 Style/MutableConstant:
