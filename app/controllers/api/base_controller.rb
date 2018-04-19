@@ -1,5 +1,6 @@
 module API
   class BaseController < ActionController::Base
+    protect_from_forgery with: :exception
     include CurrentDistrict
 
     respond_to :json
