@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
   before_validation -> { email&.downcase! }
   before_save :ensure_tokens
-  after_commit :update_intercom, on: [:create, :update]
+  after_commit :update_intercom, on: %i[create update]
   after_commit :destroy_intercom, on: :destroy
 
   def address

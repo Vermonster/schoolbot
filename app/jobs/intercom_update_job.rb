@@ -1,5 +1,5 @@
 class IntercomUpdateJob < ActiveJob::Base
-  ACTIONS = %w(update_user destroy_user update_district)
+  ACTIONS = %w[update_user destroy_user update_district]
 
   def perform(action, *arguments)
     if action.in?(ACTIONS)

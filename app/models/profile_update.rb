@@ -3,7 +3,7 @@ class ProfileUpdate
   include ActiveModel::SerializerSupport
   include ActiveModel::ForbiddenAttributesProtection
 
-  ATTRIBUTES = Registration::USER_ATTRIBUTES + %i(unconfirmed_email)
+  ATTRIBUTES = Registration::USER_ATTRIBUTES + %i[unconfirmed_email]
 
   ATTRIBUTES.each do |attribute|
     delegate attribute, "#{attribute}=", to: :user

@@ -6,7 +6,7 @@ module Clockwork
     Airbrake.notify(error)
   end
 
-  unless ENV['ENABLE_BUS_LOCATION_SIMULATOR'].present?
+  if ENV['ENABLE_BUS_LOCATION_SIMULATOR'].blank?
     every(Zonar::REQUEST_INTERVAL, 'UpdateBusLocations') do
       District.active.find_each do |district|
         UpdateBusLocationsJob.perform_later(district)

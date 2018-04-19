@@ -26,7 +26,7 @@ describe SchoolImport do
         data: "name,address,extra\ntest name,test address,extra data"
       )
 
-      expect(import.csv.headers).to eq [:name, :address, :extra]
+      expect(import.csv.headers).to eq %i[name address extra]
     end
   end
 

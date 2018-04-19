@@ -18,6 +18,6 @@ module TokenAuthenticated
       )
     end
 
-    head :unauthorized unless @current_user.present?
+    head :unauthorized if @current_user.blank?
   end
 end

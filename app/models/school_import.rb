@@ -7,7 +7,7 @@ class SchoolImport
     @district = district
     @csv = CSV.parse(data, headers: true, header_converters: [:symbol])
 
-    if !@csv.headers.present? || ([:name, :address] - @csv.headers).any?
+    if @csv.headers.blank? || (%i[name address] - @csv.headers).any?
       raise ArgumentError, 'CSV headers must include `name` and `address`!'
     end
   end

@@ -31,8 +31,8 @@ end
 
 group :development, :test do
   gem "awesome_print"
-  gem "bullet"
   gem "brakeman", require: false
+  gem "bullet"
   gem "bundler-audit", require: false
   gem "dotenv-rails"
   gem "factory_girl_rails"
@@ -59,6 +59,6 @@ group :test do
 end
 
 group :staging, :production do
-  gem "rails_stdout_logging"
   gem "rack-timeout"
+  gem "rails_stdout_logging"
 end

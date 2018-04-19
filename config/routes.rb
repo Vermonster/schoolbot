@@ -8,14 +8,14 @@ Rails.application.routes.draw do
     resources :sessions, only: :create
     resources :registrations, only: :create
     resources :confirmations, only: :create
-    resources :password_resets, only: [:show, :create, :update]
+    resources :password_resets, only: %i[show create update]
     get 'users/current', to: 'users#show', as: :current_user
     put 'users/:ignored', to: 'users#update', as: :update_current_user
-    resources :students, only: [:index, :create, :update]
+    resources :students, only: %i[index create update]
     resource :translations, only: :show
 
     namespace :v0 do
-      resources :assignments, only: [:show, :create]
+      resources :assignments, only: %i[show create]
     end
   end
 
