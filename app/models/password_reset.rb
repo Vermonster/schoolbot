@@ -13,7 +13,7 @@ class PasswordReset
   validates :user, presence: true
   validates :password, presence: true, on: :confirm
 
-  ATTRIBUTES = %w(password password_confirmation)
+  ATTRIBUTES = %w[password password_confirmation]
 
   def self.init(email, district:)
     new(district.users.find_by(email: email))

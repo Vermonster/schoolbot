@@ -18,7 +18,7 @@ module API
 
       private
 
-      ASSIGNMENT_KEYS = %w(sha bus_identifier)
+      ASSIGNMENT_KEYS = %w[sha bus_identifier]
 
       def validate_assignments_params!
         unless params[:assignments].is_a?(Array)

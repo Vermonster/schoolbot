@@ -57,8 +57,8 @@ describe 'Students API' do
       end
 
       expect(response).to be_successful
-      expect(response_json.keys).to match_array [
-        :students, :schools, :buses, :bus_locations
+      expect(response_json.keys).to match_array %i[
+        students schools buses bus_locations
       ]
       first_student = response_json[:students].find do |student|
         student[:nickname] == 'First'
@@ -99,8 +99,8 @@ describe 'Students API' do
       post api_students_url(subdomain: 'foo'), payload, auth_headers(user)
 
       expect(response).to be_successful
-      expect(response_json.keys).to match_array [
-        :student, :schools, :buses, :bus_locations
+      expect(response_json.keys).to match_array %i[
+        student schools buses bus_locations
       ]
       expect(response_json[:student][:nickname]).to eq 'Bobby'
       expect(response_json[:student][:school_id]).to eq school.id

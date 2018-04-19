@@ -60,7 +60,7 @@ class Zonar
       breaker.run { csv_events_between(start_time, end_time) }
     rescue CB2::BreakerOpen
       raise CB2::BreakerOpen, "Zonar breaker open: #{@credentials[:customer]}"
-    rescue => error
+    rescue StandardError => error
       Rails.logger.warn "Zonar error for #{@credentials[:customer]}: #{error}"
       ''
     end

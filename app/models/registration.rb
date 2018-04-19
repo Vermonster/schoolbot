@@ -6,11 +6,11 @@ class Registration
   attr_accessor :terms_accepted
   validates :terms_accepted, acceptance: { accept: true }
 
-  REGISTRATION_ATTRIBUTES = %i(terms_accepted)
-  STUDENT_LABEL_ATTRIBUTES = %i(digest nickname school_id)
-  USER_ATTRIBUTES = %i(
+  REGISTRATION_ATTRIBUTES = %i[terms_accepted]
+  STUDENT_LABEL_ATTRIBUTES = %i[digest nickname school_id]
+  USER_ATTRIBUTES = %i[
     email password password_confirmation name street city state zip_code locale
-  )
+  ]
   ATTRIBUTES =
     REGISTRATION_ATTRIBUTES + STUDENT_LABEL_ATTRIBUTES + USER_ATTRIBUTES
 

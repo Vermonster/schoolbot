@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+# rubocop:disable Metrics/AbcSize
 
 class SimulateBusLocationJob < ActiveJob::Base
   DISTANCE = 1 / 3437.670013352 # radius_of_circle/earth_radius in miles
@@ -32,3 +32,4 @@ class SimulateBusLocationJob < ActiveJob::Base
     radians * 180 / Math::PI
   end
 end
+# rubocop:enable Metrics/AbcSize

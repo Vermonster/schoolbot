@@ -8,7 +8,7 @@ module DistrictAuthenticated
   private
 
   def authenticate_district!
-    head :unauthorized unless authenticated_district.present?
+    head :unauthorized if authenticated_district.blank?
   end
 
   def authenticated_district
